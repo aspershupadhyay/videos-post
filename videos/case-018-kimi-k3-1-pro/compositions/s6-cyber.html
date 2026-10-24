@@ -1,0 +1,57 @@
+<template>
+  <style>
+    @font-face { font-family: "Bricolage Grotesque"; font-weight: 200 800; font-stretch: 75% 100%; font-display: block; src: url("assets/fonts/BricolageGrotesque.woff2") format("woff2"); }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0a0a0a; color: #f4f2ee; font-family: "Bricolage Grotesque", sans-serif; }
+    .s6-mono { font-family: "JetBrains Mono", monospace; font-weight: 500; font-size: 28px; letter-spacing: 0.06em; text-transform: uppercase; color: #8c8a86; }
+    #s6-head { position: absolute; left: 80px; top: 360px; width: 920px; font-weight: 650; font-stretch: 92%; font-size: 120px; line-height: 1; letter-spacing: -0.035em; }
+    #s6-head span { display: inline-block; }
+    #s6-card { position: absolute; left: 40px; top: 620px; width: 1000px; height: 516px; border-radius: 20px; overflow: hidden; }
+    #s6-card img { position: absolute; left: 0; top: 0; width: 1000px; height: 516px; }
+    #s6-pen { position: absolute; left: 0; top: 0; width: 1000px; height: 516px; overflow: visible; }
+    #s6-credit { position: absolute; left: 60px; top: 1160px; }
+    #s6-back { position: absolute; left: 80px; top: 700px; width: 920px; font-weight: 650; font-stretch: 92%; font-size: 120px; line-height: 1.02; letter-spacing: -0.035em; }
+    #s6-back small { display: block; margin-top: 26px; font-size: 40px; font-weight: 500; letter-spacing: -0.01em; color: #8c8a86; }
+    #s6-head span, #s6-card, #s6-credit, #s6-back { opacity: 0; }
+    #s6-c1, #s6-c2 { stroke-dasharray: 700; stroke-dashoffset: 700; }
+  </style>
+  <div id="root" data-composition-id="s6" data-width="1080" data-height="1920">
+    <div id="s6-head"><span id="s6-h1">Made</span> <span id="s6-h2">worse.</span> <span id="s6-h3">On purpose.</span></div>
+
+    <!-- Moonshot's xdev-bench-hard table (kimi.ai blog): 90.5 without the cyber data cut, 81.0 shipped. -->
+    <div id="s6-card">
+      <img src="assets/charts/xdev-bench-hard.png" alt="xdev-bench-hard: Kimi model without cyber risk-reduction 90.5, Kimi K3.1 Pro 81.0" />
+      <svg id="s6-pen" viewBox="0 0 1000 516" aria-hidden="true">
+        <path id="s6-c1" d="M461 212 C 530 206, 541 236, 537 248 C 533 272, 431 276, 405 250 C 401 228, 445 208, 489 214" fill="none" stroke="#e0502b" stroke-width="7" stroke-linecap="round" />
+        <path id="s6-c2" d="M461 314 C 530 308, 541 338, 537 350 C 533 374, 431 378, 405 352 C 401 330, 445 310, 489 316" fill="none" stroke="#e0502b" stroke-width="7" stroke-linecap="round" />
+      </svg>
+    </div>
+    <div id="s6-credit" class="s6-mono">Table: Moonshot AI · internal hacking benchmark, pass@3</div>
+
+    <div id="s6-back">Open weights can't be recalled.<small>Once they're downloaded, they're out.</small></div>
+  </div>
+  <script>
+    (() => {
+      const tl = gsap.timeline({ paused: true });
+      const at = (abs) => abs - 41.8;
+
+      // "Moonshot made it worse. On purpose."
+      [["#s6-h1", 42.41], ["#s6-h2", 42.69], ["#s6-h3", 43.27]].forEach(([sel, t]) => {
+        tl.fromTo(sel, { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.14, ease: "power4.out", immediateRender: false }, at(t));
+      });
+
+      // "The uncut version solved ninety percent…" — the real table; the red pen finds 90.5, then 81.0.
+      tl.fromTo("#s6-card", { opacity: 0, y: 40, filter: "blur(10px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.45, ease: "expo.out", immediateRender: false }, at(44.33));
+      tl.fromTo("#s6-credit", { opacity: 0 }, { opacity: 1, duration: 0.3, immediateRender: false }, at(44.6));
+      tl.to("#s6-c1", { strokeDashoffset: 0, duration: 0.35, ease: "power2.inOut" }, at(45.5));
+      tl.to("#s6-c1", { opacity: 0, duration: 0.15 }, at(49.4));
+      tl.to("#s6-c2", { strokeDashoffset: 0, duration: 0.35, ease: "power2.inOut" }, at(49.55));
+
+      // "Because once you release open weights, you can never take them back."
+      tl.to(["#s6-head", "#s6-card", "#s6-credit"], { opacity: 0, filter: "blur(8px)", duration: 0.18, ease: "power2.in" }, at(50.45));
+      tl.fromTo("#s6-back", { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.2, ease: "power4.out", immediateRender: false }, at(50.62));
+      tl.fromTo("#s6-back small", { opacity: 0 }, { opacity: 1, duration: 0.3, immediateRender: false }, at(52.6));
+
+      window.__timelines["s6"] = tl;
+    })();
+  </script>
+</template>

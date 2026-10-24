@@ -1,0 +1,26 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0a0a0a; }
+    .s3-shot { position: absolute; inset: 0; overflow: hidden; }
+    .s3-shot video { position: absolute; inset: 0; width: 1080px; height: 1920px; object-fit: cover; }
+    #s3-credit { position: absolute; left: 60px; top: 1130px; font-family: "JetBrains Mono", monospace; font-weight: 500; font-size: 28px; letter-spacing: 0.06em; text-transform: uppercase; color: #f4f2ee; text-shadow: 0 1px 8px rgba(0, 0, 0, 0.7); z-index: 5; }
+  </style>
+  <div id="root" data-composition-id="s3" data-width="1080" data-height="1920">
+    <!-- Cut on the words: "It builds / 3D worlds / games / even a lamp / you can actually print / And the weights…" -->
+    <div id="s3-a" class="s3-shot"><video id="s3-av" class="clip" src="assets/footage/airport-wire.mp4" data-start="0" data-duration="0.44" data-track-index="1" muted playsinline></video></div>
+    <div id="s3-b" class="s3-shot"><video id="s3-bv" class="clip" src="assets/footage/airport-render.mp4" data-start="0.44" data-duration="1.04" data-track-index="1" muted playsinline></video></div>
+    <div id="s3-c" class="s3-shot"><video id="s3-cv" class="clip" src="assets/footage/palace-leap.mp4" data-start="1.48" data-duration="0.76" data-track-index="1" muted playsinline></video></div>
+    <div id="s3-d" class="s3-shot"><video id="s3-dv" class="clip" src="assets/footage/lamp-print.mp4" data-start="2.24" data-duration="0.94" data-track-index="1" muted playsinline></video></div>
+    <div id="s3-e" class="s3-shot"><video id="s3-ev" class="clip" src="assets/footage/lamp-lit.mp4" data-start="3.18" data-duration="1.24" data-track-index="1" muted playsinline></video></div>
+    <div id="s3-f" class="s3-shot"><video id="s3-fv" class="clip" src="assets/footage/palace-dragon.mp4" data-start="4.42" data-duration="1.98" data-track-index="1" muted playsinline></video></div>
+    <div id="s3-credit" class="clip" data-start="0" data-duration="6.4" data-layout-ignore>Made by K3.1 Pro · Footage: Moonshot AI</div>
+  </div>
+  <script>
+    (() => {
+      const tl = gsap.timeline({ paused: true });
+      // One slow push on the last shot only; the cuts carry the rest.
+      tl.fromTo("#s3-f", { scale: 1 }, { scale: 1.08, duration: 1.98, ease: "none" }, 4.42);
+      window.__timelines["s3"] = tl;
+    })();
+  </script>
+</template>

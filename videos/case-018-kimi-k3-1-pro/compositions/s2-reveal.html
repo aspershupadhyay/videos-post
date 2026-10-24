@@ -1,0 +1,25 @@
+<template>
+  <style>
+    @font-face { font-family: "Bricolage Grotesque"; font-weight: 200 800; font-stretch: 75% 100%; font-display: block; src: url("assets/fonts/BricolageGrotesque.woff2") format("woff2"); }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0a0a0a; color: #f4f2ee; font-family: "Bricolage Grotesque", sans-serif; }
+    #s2-kicker { position: absolute; left: 0; top: 700px; width: 1080px; text-align: center; font-family: "JetBrains Mono", monospace; font-weight: 500; font-size: 28px; letter-spacing: 0.06em; text-transform: uppercase; color: #8c8a86; }
+    #s2-name { position: absolute; left: 0; top: 760px; width: 1080px; text-align: center; font-weight: 650; font-stretch: 92%; font-size: 168px; line-height: 1; letter-spacing: -0.035em; }
+    #s2-name span { display: inline-block; }
+    #s2-kicker, #s2-name span { opacity: 0; }
+  </style>
+  <div id="root" data-composition-id="s2" data-width="1080" data-height="1920">
+    <div id="s2-kicker">Moonshot AI · Oct 23, 2026</div>
+    <div id="s2-name"><span id="s2-w1">Kimi</span> <span id="s2-w2">K3.1</span> <span id="s2-w3">Pro</span></div>
+  </div>
+  <script>
+    (() => {
+      const tl = gsap.timeline({ paused: true });
+      const at = (abs) => abs - 17.3;
+      [["#s2-w1", 18.18], ["#s2-w2", 18.58], ["#s2-w3", 19.6]].forEach(([sel, t]) => {
+        tl.fromTo(sel, { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, ease: "power4.out", immediateRender: false }, at(t));
+      });
+      tl.fromTo("#s2-kicker", { opacity: 0 }, { opacity: 1, duration: 0.25, immediateRender: false }, at(19.9));
+      window.__timelines["s2"] = tl;
+    })();
+  </script>
+</template>

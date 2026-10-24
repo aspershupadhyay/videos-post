@@ -1,0 +1,51 @@
+<template>
+  <style>
+    @font-face { font-family: "Bricolage Grotesque"; font-weight: 200 800; font-stretch: 75% 100%; font-display: block; src: url("assets/fonts/BricolageGrotesque.woff2") format("woff2"); }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0a0a0a; color: #f4f2ee; font-family: "Bricolage Grotesque", sans-serif; }
+    #s9-mark { position: absolute; left: 315px; top: 470px; width: 450px; height: 450px; overflow: visible; }
+    #s9-word { position: absolute; left: 0; top: 960px; width: 1080px; text-align: center; font-weight: 650; font-stretch: 92%; font-size: 120px; line-height: 1; letter-spacing: -0.035em; }
+    #s9-line { position: absolute; left: 0; top: 1100px; width: 1080px; text-align: center; font-weight: 500; font-size: 44px; color: #8c8a86; }
+    #s9-handle { position: absolute; left: 0; top: 1180px; width: 1080px; text-align: center; font-family: "JetBrains Mono", monospace; font-weight: 500; font-size: 32px; letter-spacing: 0.06em; color: #f4f2ee; }
+    #s9-ring { stroke-dasharray: 942.48; stroke-dashoffset: 942.48; }
+    #s9-glint, #s9-bug, #s9-handle-g, #s9-word, #s9-line, #s9-handle { opacity: 0; }
+  </style>
+  <div id="root" data-composition-id="s9" data-width="1080" data-height="1920">
+    <!-- The CatchTheError mark (brand/logo), in white; the bug is the one red thing. -->
+    <svg id="s9-mark" viewBox="0 0 512 512" aria-hidden="true">
+      <g id="s9-handle-g">
+        <path d="M318 318 L446 446" stroke="#f4f2ee" stroke-width="62" stroke-linecap="round" />
+        <path d="M300 300 L334 334" stroke="#f4f2ee" stroke-width="82" />
+      </g>
+      <circle id="s9-ring" cx="214" cy="214" r="150" fill="none" stroke="#f4f2ee" stroke-width="34" transform="rotate(-90 214 214)" />
+      <path id="s9-glint" d="M110 170 A112 112 0 0 1 170 110" fill="none" stroke="#8c8a86" stroke-width="12" stroke-linecap="round" />
+      <g id="s9-bug">
+        <g stroke="#f4f2ee" stroke-width="11" stroke-linecap="round" fill="none">
+          <path d="M168 196 L124 172" /><path d="M260 196 L304 172" />
+          <path d="M164 228 L112 228" /><path d="M264 228 L316 228" />
+          <path d="M170 262 L128 292" /><path d="M258 262 L300 292" />
+          <path d="M204 150 L186 116" /><path d="M224 150 L242 116" />
+        </g>
+        <ellipse cx="214" cy="236" rx="52" ry="66" fill="#e0502b" />
+        <path d="M214 178 L214 298" stroke="#0a0a0a" stroke-width="7" stroke-linecap="round" />
+        <circle cx="214" cy="166" r="22" fill="#f4f2ee" />
+      </g>
+    </svg>
+    <div id="s9-word">Catch the Error</div>
+    <div id="s9-line">We read the fine print.</div>
+    <div id="s9-handle">@catchtheerror</div>
+  </div>
+  <script>
+    (() => {
+      const tl = gsap.timeline({ paused: true });
+      const at = (abs) => abs - 67.85;
+      tl.to("#s9-ring", { strokeDashoffset: 0, duration: 0.5, ease: "power2.inOut" }, at(67.95));
+      tl.fromTo("#s9-bug", { opacity: 1, y: -380 }, { opacity: 1, y: 0, duration: 0.28, ease: "power4.in", immediateRender: false }, at(68.2));
+      tl.fromTo("#s9-handle-g", { opacity: 1, rotation: -150, svgOrigin: "214 214" }, { opacity: 1, rotation: 0, svgOrigin: "214 214", duration: 0.5, ease: "expo.out", immediateRender: false }, at(68.4));
+      tl.fromTo("#s9-glint", { opacity: 0 }, { opacity: 1, duration: 0.12, immediateRender: false }, at(68.7));
+      tl.fromTo("#s9-word", { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.2, ease: "power4.out", immediateRender: false }, at(68.37));
+      tl.fromTo("#s9-line", { opacity: 0 }, { opacity: 1, duration: 0.3, immediateRender: false }, at(69.81));
+      tl.fromTo("#s9-handle", { opacity: 0 }, { opacity: 1, duration: 0.3, immediateRender: false }, at(71.0));
+      window.__timelines["s9"] = tl;
+    })();
+  </script>
+</template>

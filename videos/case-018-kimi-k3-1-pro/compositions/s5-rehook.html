@@ -1,0 +1,23 @@
+<template>
+  <style>
+    @font-face { font-family: "Bricolage Grotesque"; font-weight: 200 800; font-stretch: 75% 100%; font-display: block; src: url("assets/fonts/BricolageGrotesque.woff2") format("woff2"); }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0a0a0a; color: #f4f2ee; font-family: "Bricolage Grotesque", sans-serif; }
+    #s5-line { position: absolute; left: 80px; top: 640px; width: 920px; font-weight: 650; font-stretch: 92%; font-size: 132px; line-height: 1.02; letter-spacing: -0.035em; }
+    #s5-line span { display: inline-block; opacity: 0; }
+    #s5-line .s5-dim { color: #8c8a86; }
+  </style>
+  <div id="root" data-composition-id="s5" data-width="1080" data-height="1920">
+    <!-- The music is out for this beat (baked into assets/music/bed.wav). Big type replaces the captions. -->
+    <div id="s5-line"><span class="s5-dim">But here's</span> <span class="s5-dim">the part</span> <span>nobody's</span> <span>talking</span> <span>about.</span></div>
+  </div>
+  <script>
+    (() => {
+      const tl = gsap.timeline({ paused: true });
+      const at = (abs) => abs - 39.15;
+      document.querySelectorAll("#s5-line span").forEach((el, i) => {
+        tl.fromTo(el, { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.14, ease: "power4.out", immediateRender: false }, at([39.75, 40.21, 40.51, 40.87, 41.15][i]));
+      });
+      window.__timelines["s5"] = tl;
+    })();
+  </script>
+</template>
