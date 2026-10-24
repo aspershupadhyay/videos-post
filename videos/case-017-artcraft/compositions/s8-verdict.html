@@ -1,0 +1,77 @@
+<template>
+  <style>
+    @font-face { font-family: "Bricolage Grotesque"; font-weight: 200 800; font-stretch: 75% 100%; font-display: block; src: url("assets/fonts/BricolageGrotesque.woff2") format("woff2"); }
+    #root { position: absolute; inset: 0; overflow: hidden; background: var(--color-paper, #f2e8d5); color: #1b1814; font-family: "Bricolage Grotesque", sans-serif; }
+    #s8-stage { position: absolute; inset: 0; }
+    .s8-mono { font-family: "JetBrains Mono", monospace; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; }
+    #s8-head { position: absolute; left: 84px; top: 222px; font-weight: 800; font-stretch: 75%; font-size: 150px; line-height: 0.86; text-transform: uppercase; }
+    #s8-head span { display: inline-block; }
+    #s8-post { position: absolute; left: 90px; top: 400px; width: 900px; height: 590px; padding: 40px 48px; background: #fbf6ec; border: 4px solid #1b1814; border-radius: 16px; box-shadow: 10px 10px 0 #1b1814; }
+    #s8-post-top { display: flex; align-items: center; gap: 22px; }
+    #s8-avatar { width: 84px; height: 84px; border-radius: 50%; background: #d9cbb1; border: 4px solid #1b1814; display: flex; align-items: flex-end; justify-content: center; overflow: hidden; }
+    #s8-post-name { font-size: 40px; font-weight: 700; line-height: 1.05; }
+    #s8-post-name small { display: block; font-size: 28px; color: #6a6056; }
+    #s8-post-body { margin-top: 30px; font-size: 72px; font-weight: 700; font-stretch: 82%; line-height: 1.1; letter-spacing: -0.01em; }
+    .s8-hl { --st: 0%; background-image: linear-gradient(#c2502a, #c2502a), linear-gradient(#e2a72e, #e2a72e); background-repeat: no-repeat; background-size: var(--st) 12px, 100% 92%; background-position: 0 58%, 0 60%; -webkit-box-decoration-break: clone; box-decoration-break: clone; padding: 0 6px; margin: 0 -6px; }
+    #s8-tags { position: absolute; left: 90px; top: 1040px; display: flex; gap: 18px; }
+    .s8-tag { display: flex; align-items: center; gap: 12px; padding: 16px 22px; font-size: 32px; background: #1b1814; color: #f2e8d5; border-radius: 12px; }
+    .s8-tag svg { width: 30px; height: 30px; }
+    #s8-tag3 { background: var(--color-mustard, #e2a72e); color: #1b1814; }
+    #s8-stamp { position: absolute; left: 120px; top: 560px; width: 840px; padding: 22px 0 30px; text-align: center; border: 14px solid var(--color-rust, #c2502a); border-radius: 24px; color: var(--color-rust, #c2502a); background: rgba(251, 246, 236, 0.82); }
+    #s8-stamp div:first-child { font-weight: 800; font-stretch: 75%; font-size: 200px; line-height: 0.86; text-transform: uppercase; }
+    #s8-stamp div:last-child { font-size: 30px; margin-top: 10px; }
+    /* Hidden until their entrance (the timeline animates them in). */
+    #s8-h1, #s8-h2, .s8-tag, #s8-stamp { opacity: 0; }
+  </style>
+  <div id="root" data-composition-id="s8" data-width="1080" data-height="1920">
+    <div id="s8-stage">
+      <h2 id="s8-head"><span id="s8-h1">The</span> <span id="s8-h2">verdict</span></h2>
+
+      <div id="s8-post">
+        <div id="s8-post-top">
+          <div id="s8-avatar"><svg width="64" height="64" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="24" r="13" fill="#6a6056" /><path d="M6 64c2-16 13-24 26-24s24 8 26 24z" fill="#6a6056" /></svg></div>
+          <div id="s8-post-name">A post going viral<small class="s8-mono">Oct 2026</small></div>
+        </div>
+        <div id="s8-post-body">
+          One guy just cloned<br /><span id="s8-st1" class="s8-hl">$100 billion</span> worth of Adobe software
+          <span id="s8-st2" class="s8-hl">in about a week.</span> Then he put it on GitHub <span class="s8-hl">for free.</span>
+        </div>
+      </div>
+
+      <div id="s8-tags">
+        <div id="s8-tag1" class="s8-tag s8-mono"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6" fill="none" stroke="#e2a72e" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" /></svg>Real</div>
+        <div id="s8-tag2" class="s8-tag s8-mono"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6" fill="none" stroke="#e2a72e" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" /></svg>Impressive</div>
+        <div id="s8-tag3" class="s8-tag s8-mono"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="#1b1814" stroke-width="3" /><path d="M12 7v6M12 16.5v.5" stroke="#1b1814" stroke-width="3" stroke-linecap="round" /></svg>Early</div>
+      </div>
+
+      <div id="s8-stamp" data-layout-allow-occlusion data-layout-allow-overlap><div>Partly true</div><div class="s8-mono">CatchTheError · Case 017</div></div>
+    </div>
+  </div>
+  <script>
+    (() => {
+      const tl = gsap.timeline({ paused: true });
+      const at = (abs) => abs - 56.8;
+
+      // The music drops out; the post comes back down on "verdict".
+      tl.fromTo("#s8-post", { y: -1300, rotation: -6 }, { y: 0, rotation: -1, duration: 0.42, ease: "power4.in" }, at(56.86));
+      tl.fromTo("#s8-h1", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.15, ease: "power4.out" }, at(57.1));
+      tl.fromTo("#s8-h2", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.15, ease: "power4.out" }, at(57.26));
+
+      // "Real, impressive, and early."
+      [["#s8-tag1", 57.82], ["#s8-tag2", 58.5], ["#s8-tag3", 59.5]].forEach(([sel, t]) => {
+        tl.fromTo(sel, { opacity: 0, scale: 1.35 }, { opacity: 1, scale: 1, duration: 0.12, ease: "power4.in" }, at(t - 0.04));
+      });
+
+      // "Not a hundred-billion-dollar clone": red pen through the claim.
+      tl.fromTo("#s8-st1", { "--st": "0%" }, { "--st": "100%", duration: 0.2, ease: "power2.out" }, at(60.5));
+      tl.fromTo("#s8-st2", { "--st": "0%" }, { "--st": "100%", duration: 0.24, ease: "power2.out" }, at(61.05));
+
+      // "Not yet." — the stamp.
+      tl.fromTo("#s8-stamp", { opacity: 0, scale: 1.7, rotation: -2 }, { opacity: 1, scale: 1, rotation: -9, duration: 0.13, ease: "power4.in" }, at(61.98));
+      tl.to("#s8-post", { y: 8, duration: 0.06, ease: "power1.out" }, at(62.11));
+      tl.to("#s8-post", { y: 0, duration: 0.18, ease: "power2.out" }, at(62.17));
+
+      window.__timelines["s8"] = tl;
+    })();
+  </script>
+</template>

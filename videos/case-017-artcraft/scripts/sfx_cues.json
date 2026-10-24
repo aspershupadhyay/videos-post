@@ -1,0 +1,501 @@
+{
+ "_doc": "Each cue: [hit time in film seconds (when the picture lands), file in assets/sfx, volume, optional media-start]. build_sfx.py shifts each so its measured peak lands one frame after the picture.",
+ "cues": [
+  [
+   0.98,
+   "scratch-c",
+   0.35,
+   "highlighter: $100 billion"
+  ],
+  [
+   3.7,
+   "scratch-a",
+   0.35,
+   "highlighter: in about a week"
+  ],
+  [
+   4.74,
+   "scratch-b",
+   0.4,
+   "highlighter: for free"
+  ],
+  [
+   6.4,
+   "whoosh-short",
+   0.18,
+   "reposts fan out"
+  ],
+  [
+   7.95,
+   "whoosh-cinematic",
+   0.3,
+   "lens flies in",
+   2.35
+  ],
+  [
+   9.12,
+   "whoosh",
+   0.32,
+   "zoom through the lens"
+  ],
+  [
+   10.8,
+   "stamp-a",
+   0.45,
+   "calendar stamped"
+  ],
+  [
+   13.12,
+   "typing",
+   0.55,
+   "terminal types"
+  ],
+  [
+   14.42,
+   "select",
+   0.28,
+   "ArtCraft appears"
+  ],
+  [
+   15.26,
+   "whoosh-short",
+   0.32,
+   "whip up"
+  ],
+  [
+   15.54,
+   "stamp-b",
+   0.5,
+   "7 stamped"
+  ],
+  [
+   15.54,
+   "impact-bass-1",
+   0.2,
+   "7 stamped (low end)"
+  ],
+  [
+   16.93,
+   "scratch-a",
+   0.32,
+   "strike Photoshop"
+  ],
+  [
+   17.85,
+   "scratch-c",
+   0.32,
+   "strike Illustrator"
+  ],
+  [
+   18.71,
+   "scratch-b",
+   0.32,
+   "strike Premiere"
+  ],
+  [
+   19.49,
+   "scratch-a",
+   0.32,
+   "strike After Effects"
+  ],
+  [
+   20.55,
+   "scratch-c",
+   0.32,
+   "strike Lightroom"
+  ],
+  [
+   21.25,
+   "scratch-b",
+   0.32,
+   "strike InDesign"
+  ],
+  [
+   21.95,
+   "scratch-a",
+   0.32,
+   "strike Acrobat"
+  ],
+  [
+   23.5,
+   "stamp-c",
+   0.5,
+   "FROM SCRATCH stamp"
+  ],
+  [
+   23.5,
+   "punch",
+   0.25,
+   "FROM SCRATCH stamp (body)"
+  ],
+  [
+   24.95,
+   "whoosh-short",
+   0.18,
+   "co-pilot tag"
+  ],
+  [
+   27.05,
+   "pop",
+   0.3,
+   "star"
+  ],
+  [
+   28.62,
+   "tick-a",
+   0.22,
+   "count"
+  ],
+  [
+   28.69,
+   "tick-b",
+   0.22,
+   "count"
+  ],
+  [
+   28.77,
+   "tick-a",
+   0.22,
+   "count"
+  ],
+  [
+   28.86,
+   "tick-b",
+   0.22,
+   "count"
+  ],
+  [
+   28.97,
+   "tick-a",
+   0.22,
+   "count"
+  ],
+  [
+   29.1,
+   "tick-b",
+   0.22,
+   "count"
+  ],
+  [
+   29.27,
+   "tick-a",
+   0.22,
+   "count"
+  ],
+  [
+   29.5,
+   "tick-b",
+   0.22,
+   "count"
+  ],
+  [
+   29.9,
+   "impact-bass-1",
+   0.3,
+   "43,000 lands"
+  ],
+  [
+   29.9,
+   "stamp-b",
+   0.3,
+   "43,000 lands (top)"
+  ],
+  [
+   32.34,
+   "stamp-a",
+   0.5,
+   "ERROR 01"
+  ],
+  [
+   32.34,
+   "impact-bass-2",
+   0.2,
+   "ERROR 01 (low end)"
+  ],
+  [
+   34.3,
+   "whoosh-cinematic",
+   0.22,
+   "status board slides in",
+   2.35
+  ],
+  [
+   35.82,
+   "select",
+   0.3,
+   "early alpha"
+  ],
+  [
+   35.94,
+   "select",
+   0.3,
+   "early alpha"
+  ],
+  [
+   37.02,
+   "tick-a",
+   0.3,
+   "in development"
+  ],
+  [
+   37.09,
+   "tick-b",
+   0.3,
+   "in development"
+  ],
+  [
+   37.16,
+   "tick-a",
+   0.3,
+   "in development"
+  ],
+  [
+   37.23,
+   "tick-b",
+   0.3,
+   "in development"
+  ],
+  [
+   37.3,
+   "tick-a",
+   0.3,
+   "in development"
+  ],
+  [
+   38.52,
+   "whoosh",
+   0.3,
+   "whip left"
+  ],
+  [
+   38.87,
+   "stamp-b",
+   0.45,
+   "ERROR 02"
+  ],
+  [
+   40.9,
+   "whoosh-short",
+   0.2,
+   "quote card in"
+  ],
+  [
+   43.88,
+   "scratch-c",
+   0.5,
+   "red pen 1"
+  ],
+  [
+   44.1,
+   "scratch-a",
+   0.5,
+   "red pen 2"
+  ],
+  [
+   44.45,
+   "whoosh-cinematic",
+   0.2,
+   "second quote in",
+   2.35
+  ],
+  [
+   44.82,
+   "scratch-b",
+   0.3,
+   "highlighter: months"
+  ],
+  [
+   46.62,
+   "whoosh-short",
+   0.22,
+   "iris"
+  ],
+  [
+   46.94,
+   "stamp-c",
+   0.45,
+   "ERROR 03"
+  ],
+  [
+   47.92,
+   "drop",
+   0.3,
+   "FREE tag"
+  ],
+  [
+   48.47,
+   "scratch-c",
+   0.4,
+   "tick"
+  ],
+  [
+   49.17,
+   "drop",
+   0.3,
+   "RISK-FREE tag"
+  ],
+  [
+   50.04,
+   "stamp-a",
+   0.55,
+   "NO stamp"
+  ],
+  [
+   50.04,
+   "punch",
+   0.25,
+   "NO stamp (body)"
+  ],
+  [
+   51.98,
+   "thud-wood",
+   0.5,
+   "code hits the wall"
+  ],
+  [
+   52.14,
+   "scratch-a",
+   0.4,
+   "cross 1"
+  ],
+  [
+   52.28,
+   "scratch-b",
+   0.4,
+   "cross 2"
+  ],
+  [
+   53.65,
+   "whoosh-short",
+   0.22,
+   "patents pass through"
+  ],
+  [
+   54.62,
+   "plate",
+   0.22,
+   "pile"
+  ],
+  [
+   54.8,
+   "drop",
+   0.22,
+   "pile"
+  ],
+  [
+   55.0,
+   "plate",
+   0.22,
+   "pile"
+  ],
+  [
+   55.2,
+   "drop",
+   0.22,
+   "pile"
+  ],
+  [
+   55.4,
+   "plate",
+   0.22,
+   "pile"
+  ],
+  [
+   55.73,
+   "stamp-b",
+   0.5,
+   "THOUSANDS band"
+  ],
+  [
+   55.73,
+   "impact-bass-1",
+   0.25,
+   "THOUSANDS band (low end)"
+  ],
+  [
+   56.55,
+   "whoosh-cinematic",
+   0.22,
+   "cover sheet",
+   2.35
+  ],
+  [
+   57.28,
+   "thud-wood",
+   0.5,
+   "the post lands (music returns)"
+  ],
+  [
+   57.28,
+   "stamp-c",
+   0.3,
+   "the post lands (body)"
+  ],
+  [
+   57.9,
+   "thud-wood",
+   0.35,
+   "REAL"
+  ],
+  [
+   58.58,
+   "thud-wood",
+   0.35,
+   "IMPRESSIVE"
+  ],
+  [
+   59.58,
+   "thud-wood",
+   0.35,
+   "EARLY"
+  ],
+  [
+   60.52,
+   "scratch-c",
+   0.5,
+   "strike $100 billion"
+  ],
+  [
+   61.07,
+   "scratch-a",
+   0.5,
+   "strike in about a week"
+  ],
+  [
+   62.11,
+   "whoosh-cinematic",
+   0.24,
+   "build into the stamp"
+  ],
+  [
+   62.11,
+   "stamp-a",
+   0.6,
+   "PARTLY TRUE"
+  ],
+  [
+   62.11,
+   "impact-bass-1",
+   0.32,
+   "PARTLY TRUE (low end)"
+  ],
+  [
+   63.9,
+   "whoosh-short",
+   0.2,
+   "teal opens"
+  ],
+  [
+   64.55,
+   "stamp-c",
+   0.35,
+   "bug lands in the lens"
+  ],
+  [
+   64.7,
+   "whoosh-short",
+   0.18,
+   "handle swings"
+  ]
+ ]
+}

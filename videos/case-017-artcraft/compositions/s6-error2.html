@@ -1,0 +1,70 @@
+<template>
+  <style>
+    @font-face { font-family: "Bricolage Grotesque"; font-weight: 200 800; font-stretch: 75% 100%; font-display: block; src: url("assets/fonts/BricolageGrotesque.woff2") format("woff2"); }
+    @font-face { font-family: "Instrument Serif"; font-style: italic; font-weight: 400; font-display: block; src: url("assets/fonts/InstrumentSerif-Italic.woff2") format("woff2"); }
+    #root { position: absolute; inset: 0; overflow: hidden; background: var(--color-paper, #f2e8d5); color: #1b1814; font-family: "Bricolage Grotesque", sans-serif; }
+    #s6-stage { position: absolute; inset: 0; }
+    .s6-mono { font-family: "JetBrains Mono", monospace; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; }
+    #s6-head { position: absolute; left: 80px; top: 220px; font-weight: 800; font-stretch: 75%; font-size: 260px; line-height: 0.84; text-transform: uppercase; }
+    #s6-head span { color: var(--color-rust, #c2502a); }
+    #s6-aside { position: absolute; left: 470px; top: 470px; font-family: "Instrument Serif", serif; font-style: italic; font-size: 120px; line-height: 1; }
+    .s6-card { position: absolute; width: 900px; background: #fbf6ec; border: 4px solid #1b1814; border-radius: 16px; box-shadow: 10px 10px 0 #1b1814; padding: 30px 40px 36px; }
+    .s6-card .s6-mono { font-size: 31px; color: #6a6056; }
+    .s6-quote { margin-top: 14px; font-weight: 800; font-stretch: 75%; text-transform: uppercase; line-height: 0.92; }
+    #s6-q1 { left: 90px; top: 640px; }
+    #s6-q1 .s6-quote { font-size: 104px; }
+    #s6-q2 { left: 90px; top: 830px; background: #fbf6ec; }
+    #s6-q2 .s6-quote { font-size: 86px; }
+    #s6-pen { position: absolute; left: 70px; top: 0; width: 940px; height: 500px; overflow: visible; pointer-events: none; }
+    .s6-hl { --hl: 0%; background-image: linear-gradient(#e2a72e, #e2a72e); background-repeat: no-repeat; background-size: var(--hl) 88%; background-position: 0 70%; padding: 0 6px; margin: 0 -6px; }
+    /* Hidden until their entrance (the timeline animates them in). */
+    #s6-q2 { opacity: 0; }
+    #s6-p1, #s6-p2 { stroke-dasharray: 1000; stroke-dashoffset: 1000; }
+  </style>
+  <div id="root" data-composition-id="s6" data-width="1080" data-height="1920">
+    <div id="s6-stage">
+      <h2 id="s6-head">Error<br /><span>02</span></h2>
+      <div id="s6-aside">“in a week?”</div>
+
+      <!-- Quotes as reported by Ars Technica / Superpower Daily, Oct 7 2026. -->
+      <div id="s6-q1" class="s6-card">
+        <div class="s6-mono">His launch post · Reddit</div>
+        <div class="s6-quote">“100% feature parity within a month.”</div>
+        <svg id="s6-pen" viewBox="0 0 940 500" aria-hidden="true">
+          <path id="s6-p1" d="M10 150 C 260 120, 600 190, 920 130" fill="none" stroke="#c2502a" stroke-width="16" stroke-linecap="round" />
+          <path id="s6-p2" d="M20 300 C 300 250, 640 330, 910 270" fill="none" stroke="#c2502a" stroke-width="16" stroke-linecap="round" />
+        </svg>
+      </div>
+
+      <div id="s6-q2" class="s6-card" data-layout-allow-occlusion data-layout-allow-overlap>
+        <div class="s6-mono">Days later · Hacker News</div>
+        <div class="s6-quote">“99% parity… measured in <span id="s6-hl" class="s6-hl">months</span> and not years.”</div>
+      </div>
+    </div>
+  </div>
+  <script>
+    (() => {
+      const tl = gsap.timeline({ paused: true });
+      const at = (abs) => abs - 38.6;
+
+      // Arrive from the right, carrying the whip.
+      tl.fromTo("#s6-stage", { x: 700, filter: "blur(16px)" }, { x: 0, filter: "blur(0px)", duration: 0.34, ease: "expo.out" }, 0);
+      tl.fromTo("#s6-head", { opacity: 0, scale: 1.45 }, { opacity: 1, scale: 1, duration: 0.12, ease: "power4.in", transformOrigin: "0% 50%" }, at(38.75));
+      tl.fromTo("#s6-aside", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.18, ease: "power4.out" }, at(39.9));
+
+      // "He first promised full feature parity within a month."
+      tl.fromTo("#s6-q1", { opacity: 0, y: 420, rotation: 5 }, { opacity: 1, y: 0, rotation: -1.5, duration: 0.5, ease: "expo.out" }, at(40.75));
+
+      // "Days later": the red pen goes through it, and it's pushed back.
+      tl.to("#s6-p1", { strokeDashoffset: 0, duration: 0.22, ease: "power2.out" }, at(43.86));
+      tl.to("#s6-p2", { strokeDashoffset: 0, duration: 0.22, ease: "power2.out" }, at(44.08));
+      tl.to("#s6-q1", { rotation: -4, scale: 0.96, opacity: 0.6, duration: 0.45, ease: "power2.inOut" }, at(44.2));
+
+      // "…it became months, not years."
+      tl.fromTo("#s6-q2", { opacity: 1, y: 700, rotation: 6 }, { opacity: 1, y: 0, rotation: 1.5, immediateRender: false, duration: 0.5, ease: "expo.out" }, at(44.3));
+      tl.fromTo("#s6-hl", { "--hl": "0%" }, { "--hl": "100%", duration: 0.3, ease: "power2.out" }, at(44.8));
+
+      window.__timelines["s6"] = tl;
+    })();
+  </script>
+</template>

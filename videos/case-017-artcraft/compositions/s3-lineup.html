@@ -1,0 +1,86 @@
+<template>
+  <style>
+    @font-face { font-family: "Bricolage Grotesque"; font-weight: 200 800; font-stretch: 75% 100%; font-display: block; src: url("assets/fonts/BricolageGrotesque.woff2") format("woff2"); }
+    #root { position: absolute; inset: 0; overflow: hidden; background: var(--color-paper, #f2e8d5); color: #1b1814; font-family: "Bricolage Grotesque", sans-serif; }
+    #s3-stage { position: absolute; inset: 0; }
+    .s3-mono { font-family: "JetBrains Mono", monospace; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; }
+    .s3-d { font-weight: 800; font-stretch: 75%; text-transform: uppercase; line-height: 0.86; }
+    #s3-seven { position: absolute; left: 0; top: 330px; width: 1080px; text-align: center; font-size: 1000px; color: var(--color-rust, #c2502a); line-height: 0.8; }
+    #s3-head { position: absolute; left: 90px; top: 222px; display: flex; align-items: flex-end; gap: 22px; }
+    #s3-head .s3-d { font-size: 150px; }
+    #s3-head .s3-d span { color: var(--color-rust, #c2502a); }
+    #s3-head .s3-mono { font-size: 30px; padding-bottom: 14px; color: #4a433b; }
+    #s3-list { position: absolute; left: 90px; top: 420px; width: 900px; }
+    .s3-row { position: relative; height: 92px; border-bottom: 3px solid #d9cbb1; display: flex; align-items: center; justify-content: space-between; }
+    .s3-old { position: relative; font-size: 66px; color: #1b1814; }
+    .s3-strike { position: absolute; left: -8px; right: -8px; top: 46%; height: 9px; background: var(--color-rust, #c2502a); border-radius: 5px; transform-origin: 0 50%; }
+    .s3-new { font-size: 66px; color: var(--color-teal, #0e4a4a); }
+    .s3-arrow { font-family: "JetBrains Mono", monospace; font-size: 34px; font-weight: 800; color: #6a6056; }
+    #s3-stamp { position: absolute; left: 110px; top: 610px; width: 860px; padding: 26px 0; border: 10px solid var(--color-rust, #c2502a); border-radius: 18px; text-align: center; color: var(--color-rust, #c2502a); background: rgba(251, 246, 236, 0.86); }
+    #s3-stamp .s3-d { font-size: 124px; }
+    #s3-stamp .s3-mono { font-size: 32px; margin-top: 12px; }
+    #s3-tag { position: absolute; left: 90px; top: 1074px; padding: 20px 28px; background: #1b1814; color: #f2e8d5; font-size: 34px; border-radius: 12px; }
+    #s3-tag span { color: var(--color-mustard, #e2a72e); }
+    #s3-flood { position: absolute; inset: 0; background: var(--color-mustard, #e2a72e); clip-path: circle(0% at 540px 720px); }
+    /* Hidden until their entrance (the timeline animates them in). */
+    #s3-head, #s3-stamp, #s3-tag, .s3-row, .s3-new, .s3-arrow { opacity: 0; }
+    .s3-strike { clip-path: inset(0 100% 0 0); }
+  </style>
+  <div id="root" data-composition-id="s3" data-width="1080" data-height="1920">
+    <div id="s3-stage">
+      <div id="s3-seven" class="s3-d">7</div>
+      <div id="s3-head"><div class="s3-d"><span>7</span> apps</div><div class="s3-mono">one target each</div></div>
+
+      <!-- Adobe app as spoken → its ArtCraft twin (getartcraft.com/apps, Notebookcheck). -->
+      <div id="s3-list">
+        <div class="s3-row" id="s3-r1"><div class="s3-old s3-d">Photoshop<i class="s3-strike"></i></div><div class="s3-arrow">→</div><div class="s3-new s3-d">PhotoCraft</div></div>
+        <div class="s3-row" id="s3-r2"><div class="s3-old s3-d">Illustrator<i class="s3-strike"></i></div><div class="s3-arrow">→</div><div class="s3-new s3-d">VectorCraft</div></div>
+        <div class="s3-row" id="s3-r3"><div class="s3-old s3-d">Premiere<i class="s3-strike"></i></div><div class="s3-arrow">→</div><div class="s3-new s3-d">FilmCraft</div></div>
+        <div class="s3-row" id="s3-r4"><div class="s3-old s3-d">After Effects<i class="s3-strike"></i></div><div class="s3-arrow">→</div><div class="s3-new s3-d">EffectCraft</div></div>
+        <div class="s3-row" id="s3-r5"><div class="s3-old s3-d">Lightroom<i class="s3-strike"></i></div><div class="s3-arrow">→</div><div class="s3-new s3-d">LightCraft</div></div>
+        <div class="s3-row" id="s3-r6"><div class="s3-old s3-d">InDesign<i class="s3-strike"></i></div><div class="s3-arrow">→</div><div class="s3-new s3-d">DesignCraft</div></div>
+        <div class="s3-row" id="s3-r7"><div class="s3-old s3-d">Acrobat<i class="s3-strike"></i></div><div class="s3-arrow">→</div><div class="s3-new s3-d">PdfCraft</div></div>
+      </div>
+
+      <div id="s3-stamp" data-layout-allow-occlusion data-layout-allow-overlap><div class="s3-d">From scratch</div><div class="s3-mono">All seven written in Rust</div></div>
+      <div id="s3-tag" class="s3-mono">Co-pilot: <span>Claude Opus 5.5</span></div>
+      <div id="s3-flood"></div>
+    </div>
+  </div>
+  <script>
+    (() => {
+      const tl = gsap.timeline({ paused: true });
+      const at = (abs) => abs - 15.3;
+
+      // Arrive from below, carrying the whip from the last scene.
+      tl.fromTo("#s3-stage", { y: 520, filter: "blur(14px)" }, { y: 0, filter: "blur(0px)", duration: 0.34, ease: "expo.out" }, 0);
+
+      // "Seven" — the number is stamped, then becomes the header.
+      tl.fromTo("#s3-seven", { opacity: 0, scale: 1.5 }, { opacity: 1, scale: 1, duration: 0.12, ease: "power4.in" }, at(15.42));
+      tl.to("#s3-seven", { opacity: 0, scale: 0.18, x: -380, y: -600, duration: 0.42, ease: "power3.inOut" }, at(16.05));
+      tl.fromTo("#s3-head", { opacity: 0 }, { opacity: 1, duration: 0.12 }, at(16.36));
+
+      // Each Adobe app on its spoken word; struck, then its twin rolls in.
+      const spoken = [16.51, 17.43, 18.29, 19.07, 20.13, 20.83, 21.53];
+      spoken.forEach((t, i) => {
+        const row = `#s3-r${i + 1}`;
+        tl.fromTo(row, { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.14, ease: "power4.out" }, at(t - 0.04));
+        tl.fromTo(`${row} .s3-strike`, { clipPath: "inset(0 100% 0 0)" }, { clipPath: "inset(0 0% 0 0)", duration: 0.16, ease: "power2.out" }, at(t + 0.42));
+        tl.fromTo(`${row} .s3-old`, { color: "#1b1814" }, { color: "#8a7f72", duration: 0.16 }, at(t + 0.42));
+        tl.fromTo(`${row} .s3-arrow`, { opacity: 0 }, { opacity: 1, duration: 0.1 }, at(t + 0.5));
+        tl.fromTo(`${row} .s3-new`, { opacity: 0, x: 36, filter: "blur(6px)" }, { opacity: 1, x: 0, filter: "blur(0px)", duration: 0.28, ease: "expo.out" }, at(t + 0.52));
+      });
+
+      // "rebuilt from scratch in Rust": stamped over the file.
+      tl.fromTo("#s3-stamp", { opacity: 0, scale: 1.5, rotation: -14 }, { opacity: 1, scale: 1, rotation: -7, duration: 0.12, ease: "power4.in" }, at(23.38));
+
+      // "with Claude as his co-pilot"
+      tl.fromTo("#s3-tag", { opacity: 0, x: -240, filter: "blur(10px)" }, { opacity: 1, x: 0, filter: "blur(0px)", duration: 0.4, ease: "expo.out" }, at(24.55));
+
+      // Mustard floods out from the stamp: the next world.
+      tl.fromTo("#s3-flood", { clipPath: "circle(0% at 540px 720px)" }, { clipPath: "circle(150% at 540px 720px)", duration: 0.45, ease: "power2.inOut" }, at(25.85));
+
+      window.__timelines["s3"] = tl;
+    })();
+  </script>
+</template>

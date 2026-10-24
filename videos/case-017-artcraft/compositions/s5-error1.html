@@ -1,0 +1,59 @@
+<template>
+  <style>
+    @font-face { font-family: "Bricolage Grotesque"; font-weight: 200 800; font-stretch: 75% 100%; font-display: block; src: url("assets/fonts/BricolageGrotesque.woff2") format("woff2"); }
+    @font-face { font-family: "Instrument Serif"; font-style: italic; font-weight: 400; font-display: block; src: url("assets/fonts/InstrumentSerif-Italic.woff2") format("woff2"); }
+    #root { position: absolute; inset: 0; overflow: hidden; background: var(--color-rust, #c2502a); color: #1b1814; font-family: "Bricolage Grotesque", sans-serif; }
+    #s5-stage { position: absolute; inset: 0; }
+    .s5-mono { font-family: "JetBrains Mono", monospace; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; }
+    #s5-head { position: absolute; left: 80px; top: 220px; font-weight: 800; font-stretch: 75%; font-size: 260px; line-height: 0.84; text-transform: uppercase; }
+    #s5-aside { position: absolute; left: 520px; top: 470px; font-family: "Instrument Serif", serif; font-style: italic; font-size: 132px; line-height: 1; color: #f2e8d5; }
+    #s5-board { position: absolute; left: 90px; top: 630px; width: 900px; height: 520px; background: #fbf6ec; border: 4px solid #1b1814; border-radius: 16px; box-shadow: 10px 10px 0 #1b1814; overflow: hidden; }
+    #s5-board-top { height: 66px; background: #1b1814; color: #f2e8d5; display: flex; align-items: center; justify-content: space-between; padding: 0 26px; font-size: 28px; }
+    .s5-row { height: 64px; display: flex; align-items: center; justify-content: space-between; padding: 0 26px; border-bottom: 2px solid #d9cbb1; }
+    .s5-row:last-child { border-bottom: 0; }
+    .s5-app { font-weight: 800; font-stretch: 75%; font-size: 50px; text-transform: uppercase; }
+    .s5-tag { font-size: 28px; padding: 6px 14px; border-radius: 8px; }
+    .s5-alpha { background: var(--color-mustard, #e2a72e); }
+    .s5-dev { background: #1b1814; color: #f2e8d5; }
+    /* Hidden until their entrance (the timeline animates them in). */
+    .s5-tag, #s5-board { opacity: 0; }
+  </style>
+  <div id="root" data-composition-id="s5" data-width="1080" data-height="1920">
+    <div id="s5-stage">
+      <h2 id="s5-head">Error<br />01</h2>
+      <div id="s5-aside">“cloned?”</div>
+
+      <!-- Status labels as listed on getartcraft.com/apps (Oct 2026). -->
+      <div id="s5-board">
+        <div id="s5-board-top" class="s5-mono"><span>getartcraft.com/apps</span><span>status</span></div>
+        <div class="s5-row"><span class="s5-app">PhotoCraft</span><span class="s5-tag s5-mono s5-alpha">Early alpha</span></div>
+        <div class="s5-row"><span class="s5-app">VectorCraft</span><span class="s5-tag s5-mono s5-dev">In development</span></div>
+        <div class="s5-row"><span class="s5-app">FilmCraft</span><span class="s5-tag s5-mono s5-dev">In development</span></div>
+        <div class="s5-row"><span class="s5-app">EffectCraft</span><span class="s5-tag s5-mono s5-dev">In development</span></div>
+        <div class="s5-row"><span class="s5-app">LightCraft</span><span class="s5-tag s5-mono s5-dev">In development</span></div>
+        <div class="s5-row"><span class="s5-app">DesignCraft</span><span class="s5-tag s5-mono s5-dev">In development</span></div>
+        <div class="s5-row"><span class="s5-app">PdfCraft</span><span class="s5-tag s5-mono s5-alpha">Early alpha</span></div>
+      </div>
+    </div>
+  </div>
+  <script>
+    (() => {
+      const tl = gsap.timeline({ paused: true });
+      const at = (abs) => abs - 32.1;
+
+      // "Error one": stamped hard on the cut.
+      tl.fromTo("#s5-head", { opacity: 0, scale: 1.45, rotation: -4 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.12, ease: "power4.in", transformOrigin: "0% 50%" }, at(32.22));
+      tl.fromTo("#s5-aside", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.18, ease: "power4.out" }, at(33.2));
+
+      // "Only two of the seven…": the board slides in, then the labels land.
+      tl.fromTo("#s5-board", { opacity: 1, y: 900, rotation: 4 }, { opacity: 1, y: 0, rotation: -1, immediateRender: false, duration: 0.5, ease: "expo.out" }, at(34.15));
+      tl.fromTo(".s5-alpha", { opacity: 0, scale: 1.4 }, { opacity: 1, scale: 1, duration: 0.12, ease: "power4.in", stagger: 0.12 }, at(35.7));
+      tl.fromTo(".s5-dev", { opacity: 0, x: 30 }, { opacity: 1, x: 0, duration: 0.18, ease: "expo.out", stagger: 0.07 }, at(36.95));
+
+      // Whip left into the next error.
+      tl.to("#s5-stage", { x: -700, filter: "blur(16px)", duration: 0.3, ease: "power3.in" }, at(38.3));
+
+      window.__timelines["s5"] = tl;
+    })();
+  </script>
+</template>
