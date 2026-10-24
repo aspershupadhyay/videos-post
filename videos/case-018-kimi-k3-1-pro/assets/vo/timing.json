@@ -1,0 +1,1291 @@
+{
+ "film": 74.0,
+ "lines": [
+  {
+   "id": "vo-01",
+   "start": 0.15,
+   "duration": 2.964,
+   "end": 3.114
+  },
+  {
+   "id": "vo-02",
+   "start": 3.35,
+   "duration": 3.692,
+   "end": 7.042
+  },
+  {
+   "id": "vo-03",
+   "start": 7.3,
+   "duration": 5.58,
+   "end": 12.88
+  },
+  {
+   "id": "vo-04",
+   "start": 13.1,
+   "duration": 3.234,
+   "end": 16.334
+  },
+  {
+   "id": "vo-05",
+   "start": 17.3,
+   "duration": 4.381,
+   "end": 21.681
+  },
+  {
+   "id": "vo-06",
+   "start": 21.9,
+   "duration": 6.125,
+   "end": 28.025
+  },
+  {
+   "id": "vo-07",
+   "start": 28.4,
+   "duration": 7.845,
+   "end": 36.245
+  },
+  {
+   "id": "vo-08",
+   "start": 36.45,
+   "duration": 2.589,
+   "end": 39.039
+  },
+  {
+   "id": "vo-09",
+   "start": 39.75,
+   "duration": 1.843,
+   "end": 41.593
+  },
+  {
+   "id": "vo-10",
+   "start": 41.85,
+   "duration": 8.478,
+   "end": 50.328
+  },
+  {
+   "id": "vo-11",
+   "start": 50.6,
+   "duration": 3.159,
+   "end": 53.759
+  },
+  {
+   "id": "vo-12",
+   "start": 54.15,
+   "duration": 8.39,
+   "end": 62.54
+  },
+  {
+   "id": "vo-13",
+   "start": 62.8,
+   "duration": 4.725,
+   "end": 67.525
+  },
+  {
+   "id": "vo-14",
+   "start": 67.95,
+   "duration": 3.96,
+   "end": 71.91
+  }
+ ],
+ "words": [
+  {
+   "line": "vo-01",
+   "text": "This",
+   "start": 0.15,
+   "end": 0.39
+  },
+  {
+   "line": "vo-01",
+   "text": "simulated",
+   "start": 0.39,
+   "end": 0.85
+  },
+  {
+   "line": "vo-01",
+   "text": "human",
+   "start": 0.85,
+   "end": 1.25
+  },
+  {
+   "line": "vo-01",
+   "text": "couldn't",
+   "start": 1.25,
+   "end": 1.73
+  },
+  {
+   "line": "vo-01",
+   "text": "take",
+   "start": 1.73,
+   "end": 1.93
+  },
+  {
+   "line": "vo-01",
+   "text": "a",
+   "start": 1.93,
+   "end": 2.09
+  },
+  {
+   "line": "vo-01",
+   "text": "single",
+   "start": 2.09,
+   "end": 2.51
+  },
+  {
+   "line": "vo-01",
+   "text": "step.",
+   "start": 2.51,
+   "end": 3.09
+  },
+  {
+   "line": "vo-02",
+   "text": "So",
+   "start": 3.35,
+   "end": 3.55
+  },
+  {
+   "line": "vo-02",
+   "text": "an",
+   "start": 3.55,
+   "end": 3.69
+  },
+  {
+   "line": "vo-02",
+   "text": "AI",
+   "start": 3.69,
+   "end": 3.91
+  },
+  {
+   "line": "vo-02",
+   "text": "took",
+   "start": 3.91,
+   "end": 4.19
+  },
+  {
+   "line": "vo-02",
+   "text": "over",
+   "start": 4.19,
+   "end": 4.41
+  },
+  {
+   "line": "vo-02",
+   "text": "its",
+   "start": 4.41,
+   "end": 4.61
+  },
+  {
+   "line": "vo-02",
+   "text": "training.",
+   "start": 4.61,
+   "end": 5.09
+  },
+  {
+   "line": "vo-02",
+   "text": "167",
+   "start": 5.09,
+   "end": 6.39
+  },
+  {
+   "line": "vo-02",
+   "text": "missions.",
+   "start": 6.39,
+   "end": 7.03
+  },
+  {
+   "line": "vo-03",
+   "text": "It",
+   "start": 7.3,
+   "end": 7.46
+  },
+  {
+   "line": "vo-03",
+   "text": "kept",
+   "start": 7.46,
+   "end": 7.72
+  },
+  {
+   "line": "vo-03",
+   "text": "falling,",
+   "start": 7.72,
+   "end": 8.24
+  },
+  {
+   "line": "vo-03",
+   "text": "so",
+   "start": 8.24,
+   "end": 8.56
+  },
+  {
+   "line": "vo-03",
+   "text": "the",
+   "start": 8.56,
+   "end": 8.82
+  },
+  {
+   "line": "vo-03",
+   "text": "AI",
+   "start": 8.82,
+   "end": 9.04
+  },
+  {
+   "line": "vo-03",
+   "text": "checked",
+   "start": 9.04,
+   "end": 9.3
+  },
+  {
+   "line": "vo-03",
+   "text": "the",
+   "start": 9.3,
+   "end": 9.44
+  },
+  {
+   "line": "vo-03",
+   "text": "simulator",
+   "start": 9.44,
+   "end": 9.84
+  },
+  {
+   "line": "vo-03",
+   "text": "itself",
+   "start": 9.84,
+   "end": 10.3
+  },
+  {
+   "line": "vo-03",
+   "text": "and",
+   "start": 10.3,
+   "end": 10.64
+  },
+  {
+   "line": "vo-03",
+   "text": "found",
+   "start": 10.64,
+   "end": 10.9
+  },
+  {
+   "line": "vo-03",
+   "text": "36",
+   "start": 10.9,
+   "end": 11.4
+  },
+  {
+   "line": "vo-03",
+   "text": "bugs",
+   "start": 11.4,
+   "end": 11.9
+  },
+  {
+   "line": "vo-03",
+   "text": "in",
+   "start": 11.9,
+   "end": 12.06
+  },
+  {
+   "line": "vo-03",
+   "text": "its",
+   "start": 12.06,
+   "end": 12.18
+  },
+  {
+   "line": "vo-03",
+   "text": "muscle",
+   "start": 12.18,
+   "end": 12.46
+  },
+  {
+   "line": "vo-03",
+   "text": "math.",
+   "start": 12.46,
+   "end": 12.86
+  },
+  {
+   "line": "vo-04",
+   "text": "Fixed",
+   "start": 13.1,
+   "end": 13.5
+  },
+  {
+   "line": "vo-04",
+   "text": "them,",
+   "start": 13.5,
+   "end": 13.98
+  },
+  {
+   "line": "vo-04",
+   "text": "retrained,",
+   "start": 13.98,
+   "end": 14.66
+  },
+  {
+   "line": "vo-04",
+   "text": "and",
+   "start": 14.66,
+   "end": 14.9
+  },
+  {
+   "line": "vo-04",
+   "text": "now",
+   "start": 14.9,
+   "end": 15.24
+  },
+  {
+   "line": "vo-04",
+   "text": "it",
+   "start": 15.24,
+   "end": 15.74
+  },
+  {
+   "line": "vo-04",
+   "text": "walks.",
+   "start": 15.74,
+   "end": 16.32
+  },
+  {
+   "line": "vo-05",
+   "text": "That",
+   "start": 17.3,
+   "end": 17.62
+  },
+  {
+   "line": "vo-05",
+   "text": "AI",
+   "start": 17.62,
+   "end": 17.9
+  },
+  {
+   "line": "vo-05",
+   "text": "is",
+   "start": 17.9,
+   "end": 18.18
+  },
+  {
+   "line": "vo-05",
+   "text": "Kimi",
+   "start": 18.18,
+   "end": 18.58
+  },
+  {
+   "line": "vo-05",
+   "text": "K",
+   "start": 18.58,
+   "end": 18.76
+  },
+  {
+   "line": "vo-05",
+   "text": "3",
+   "start": 18.76,
+   "end": 19.12
+  },
+  {
+   "line": "vo-05",
+   "text": ".1",
+   "start": 19.12,
+   "end": 19.6
+  },
+  {
+   "line": "vo-05",
+   "text": "Pro.",
+   "start": 19.6,
+   "end": 20.14
+  },
+  {
+   "line": "vo-05",
+   "text": "Moonshot",
+   "start": 20.4,
+   "end": 20.86
+  },
+  {
+   "line": "vo-05",
+   "text": "dropped",
+   "start": 20.86,
+   "end": 21.08
+  },
+  {
+   "line": "vo-05",
+   "text": "it",
+   "start": 21.08,
+   "end": 21.22
+  },
+  {
+   "line": "vo-05",
+   "text": "this",
+   "start": 21.22,
+   "end": 21.38
+  },
+  {
+   "line": "vo-05",
+   "text": "week.",
+   "start": 21.38,
+   "end": 21.66
+  },
+  {
+   "line": "vo-06",
+   "text": "It",
+   "start": 21.9,
+   "end": 22.04
+  },
+  {
+   "line": "vo-06",
+   "text": "builds",
+   "start": 22.04,
+   "end": 22.34
+  },
+  {
+   "line": "vo-06",
+   "text": "3D",
+   "start": 22.34,
+   "end": 22.72
+  },
+  {
+   "line": "vo-06",
+   "text": "worlds,",
+   "start": 22.72,
+   "end": 23.38
+  },
+  {
+   "line": "vo-06",
+   "text": "games,",
+   "start": 23.38,
+   "end": 24.14
+  },
+  {
+   "line": "vo-06",
+   "text": "even",
+   "start": 24.14,
+   "end": 24.44
+  },
+  {
+   "line": "vo-06",
+   "text": "a",
+   "start": 24.44,
+   "end": 24.6
+  },
+  {
+   "line": "vo-06",
+   "text": "lamp",
+   "start": 24.6,
+   "end": 24.82
+  },
+  {
+   "line": "vo-06",
+   "text": "you",
+   "start": 24.82,
+   "end": 24.96
+  },
+  {
+   "line": "vo-06",
+   "text": "can",
+   "start": 24.96,
+   "end": 25.08
+  },
+  {
+   "line": "vo-06",
+   "text": "actually",
+   "start": 25.08,
+   "end": 25.42
+  },
+  {
+   "line": "vo-06",
+   "text": "print.",
+   "start": 25.42,
+   "end": 25.94
+  },
+  {
+   "line": "vo-06",
+   "text": "And",
+   "start": 26.32,
+   "end": 26.46
+  },
+  {
+   "line": "vo-06",
+   "text": "the",
+   "start": 26.46,
+   "end": 26.56
+  },
+  {
+   "line": "vo-06",
+   "text": "weights",
+   "start": 26.56,
+   "end": 26.8
+  },
+  {
+   "line": "vo-06",
+   "text": "are",
+   "start": 26.8,
+   "end": 27.34
+  },
+  {
+   "line": "vo-06",
+   "text": "going",
+   "start": 27.34,
+   "end": 27.54
+  },
+  {
+   "line": "vo-06",
+   "text": "free.",
+   "start": 27.54,
+   "end": 28.0
+  },
+  {
+   "line": "vo-07",
+   "text": "On",
+   "start": 28.4,
+   "end": 28.58
+  },
+  {
+   "line": "vo-07",
+   "text": "TerminalBench,",
+   "start": 28.58,
+   "end": 29.18
+  },
+  {
+   "line": "vo-07",
+   "text": "the",
+   "start": 29.18,
+   "end": 29.34
+  },
+  {
+   "line": "vo-07",
+   "text": "test",
+   "start": 29.34,
+   "end": 29.54
+  },
+  {
+   "line": "vo-07",
+   "text": "for",
+   "start": 29.54,
+   "end": 29.72
+  },
+  {
+   "line": "vo-07",
+   "text": "AI",
+   "start": 29.72,
+   "end": 29.98
+  },
+  {
+   "line": "vo-07",
+   "text": "coding",
+   "start": 29.98,
+   "end": 30.3
+  },
+  {
+   "line": "vo-07",
+   "text": "agents,",
+   "start": 30.3,
+   "end": 30.88
+  },
+  {
+   "line": "vo-07",
+   "text": "it",
+   "start": 30.88,
+   "end": 31.02
+  },
+  {
+   "line": "vo-07",
+   "text": "scores",
+   "start": 31.02,
+   "end": 31.28
+  },
+  {
+   "line": "vo-07",
+   "text": "65",
+   "start": 31.28,
+   "end": 31.88
+  },
+  {
+   "line": "vo-07",
+   "text": ".7,",
+   "start": 31.88,
+   "end": 33.08
+  },
+  {
+   "line": "vo-07",
+   "text": "Claude",
+   "start": 33.08,
+   "end": 33.38
+  },
+  {
+   "line": "vo-07",
+   "text": "Opus",
+   "start": 33.38,
+   "end": 33.74
+  },
+  {
+   "line": "vo-07",
+   "text": "5",
+   "start": 33.74,
+   "end": 34.08
+  },
+  {
+   "line": "vo-07",
+   "text": ".5,",
+   "start": 34.08,
+   "end": 34.8
+  },
+  {
+   "line": "vo-07",
+   "text": "66",
+   "start": 34.8,
+   "end": 35.36
+  },
+  {
+   "line": "vo-07",
+   "text": ".4.",
+   "start": 35.36,
+   "end": 36.22
+  },
+  {
+   "line": "vo-08",
+   "text": "Less",
+   "start": 36.45,
+   "end": 36.71
+  },
+  {
+   "line": "vo-08",
+   "text": "than",
+   "start": 36.71,
+   "end": 36.87
+  },
+  {
+   "line": "vo-08",
+   "text": "a",
+   "start": 36.87,
+   "end": 37.01
+  },
+  {
+   "line": "vo-08",
+   "text": "point",
+   "start": 37.01,
+   "end": 37.25
+  },
+  {
+   "line": "vo-08",
+   "text": "behind",
+   "start": 37.25,
+   "end": 37.55
+  },
+  {
+   "line": "vo-08",
+   "text": "the",
+   "start": 37.55,
+   "end": 37.71
+  },
+  {
+   "line": "vo-08",
+   "text": "model",
+   "start": 37.71,
+   "end": 37.97
+  },
+  {
+   "line": "vo-08",
+   "text": "ranked",
+   "start": 37.97,
+   "end": 38.29
+  },
+  {
+   "line": "vo-08",
+   "text": "number",
+   "start": 38.29,
+   "end": 38.53
+  },
+  {
+   "line": "vo-08",
+   "text": "one.",
+   "start": 38.53,
+   "end": 39.01
+  },
+  {
+   "line": "vo-09",
+   "text": "But",
+   "start": 39.75,
+   "end": 39.89
+  },
+  {
+   "line": "vo-09",
+   "text": "here's",
+   "start": 39.89,
+   "end": 40.21
+  },
+  {
+   "line": "vo-09",
+   "text": "the",
+   "start": 40.21,
+   "end": 40.31
+  },
+  {
+   "line": "vo-09",
+   "text": "part",
+   "start": 40.31,
+   "end": 40.51
+  },
+  {
+   "line": "vo-09",
+   "text": "nobody's",
+   "start": 40.51,
+   "end": 40.87
+  },
+  {
+   "line": "vo-09",
+   "text": "talking",
+   "start": 40.87,
+   "end": 41.15
+  },
+  {
+   "line": "vo-09",
+   "text": "about.",
+   "start": 41.15,
+   "end": 41.57
+  },
+  {
+   "line": "vo-10",
+   "text": "Moonshot",
+   "start": 41.85,
+   "end": 42.41
+  },
+  {
+   "line": "vo-10",
+   "text": "made",
+   "start": 42.41,
+   "end": 42.57
+  },
+  {
+   "line": "vo-10",
+   "text": "it",
+   "start": 42.57,
+   "end": 42.69
+  },
+  {
+   "line": "vo-10",
+   "text": "worse,",
+   "start": 42.69,
+   "end": 43.27
+  },
+  {
+   "line": "vo-10",
+   "text": "on",
+   "start": 43.27,
+   "end": 43.57
+  },
+  {
+   "line": "vo-10",
+   "text": "purpose.",
+   "start": 43.57,
+   "end": 44.19
+  },
+  {
+   "line": "vo-10",
+   "text": "The",
+   "start": 44.33,
+   "end": 44.43
+  },
+  {
+   "line": "vo-10",
+   "text": "uncut",
+   "start": 44.43,
+   "end": 44.83
+  },
+  {
+   "line": "vo-10",
+   "text": "version",
+   "start": 44.83,
+   "end": 45.15
+  },
+  {
+   "line": "vo-10",
+   "text": "solved",
+   "start": 45.15,
+   "end": 45.57
+  },
+  {
+   "line": "vo-10",
+   "text": "90",
+   "start": 45.57,
+   "end": 45.99
+  },
+  {
+   "line": "vo-10",
+   "text": "%",
+   "start": 45.99,
+   "end": 46.29
+  },
+  {
+   "line": "vo-10",
+   "text": "of",
+   "start": 46.29,
+   "end": 46.45
+  },
+  {
+   "line": "vo-10",
+   "text": "their",
+   "start": 46.45,
+   "end": 46.59
+  },
+  {
+   "line": "vo-10",
+   "text": "hardest",
+   "start": 46.59,
+   "end": 46.95
+  },
+  {
+   "line": "vo-10",
+   "text": "hacking",
+   "start": 46.95,
+   "end": 47.25
+  },
+  {
+   "line": "vo-10",
+   "text": "tests.",
+   "start": 47.25,
+   "end": 47.83
+  },
+  {
+   "line": "vo-10",
+   "text": "They",
+   "start": 47.91,
+   "end": 48.07
+  },
+  {
+   "line": "vo-10",
+   "text": "stripped",
+   "start": 48.07,
+   "end": 48.39
+  },
+  {
+   "line": "vo-10",
+   "text": "the",
+   "start": 48.39,
+   "end": 48.55
+  },
+  {
+   "line": "vo-10",
+   "text": "training",
+   "start": 48.55,
+   "end": 48.85
+  },
+  {
+   "line": "vo-10",
+   "text": "data",
+   "start": 48.85,
+   "end": 49.15
+  },
+  {
+   "line": "vo-10",
+   "text": "until",
+   "start": 49.15,
+   "end": 49.37
+  },
+  {
+   "line": "vo-10",
+   "text": "it",
+   "start": 49.37,
+   "end": 49.53
+  },
+  {
+   "line": "vo-10",
+   "text": "hit",
+   "start": 49.53,
+   "end": 49.71
+  },
+  {
+   "line": "vo-10",
+   "text": "81.",
+   "start": 49.71,
+   "end": 50.31
+  },
+  {
+   "line": "vo-11",
+   "text": "Because",
+   "start": 50.6,
+   "end": 50.82
+  },
+  {
+   "line": "vo-11",
+   "text": "once",
+   "start": 50.82,
+   "end": 51.1
+  },
+  {
+   "line": "vo-11",
+   "text": "you",
+   "start": 51.1,
+   "end": 51.22
+  },
+  {
+   "line": "vo-11",
+   "text": "release",
+   "start": 51.22,
+   "end": 51.52
+  },
+  {
+   "line": "vo-11",
+   "text": "open",
+   "start": 51.52,
+   "end": 51.76
+  },
+  {
+   "line": "vo-11",
+   "text": "weights,",
+   "start": 51.76,
+   "end": 52.32
+  },
+  {
+   "line": "vo-11",
+   "text": "you",
+   "start": 52.32,
+   "end": 52.54
+  },
+  {
+   "line": "vo-11",
+   "text": "can",
+   "start": 52.54,
+   "end": 52.7
+  },
+  {
+   "line": "vo-11",
+   "text": "never",
+   "start": 52.7,
+   "end": 52.98
+  },
+  {
+   "line": "vo-11",
+   "text": "take",
+   "start": 52.98,
+   "end": 53.2
+  },
+  {
+   "line": "vo-11",
+   "text": "them",
+   "start": 53.2,
+   "end": 53.34
+  },
+  {
+   "line": "vo-11",
+   "text": "back.",
+   "start": 53.34,
+   "end": 53.74
+  },
+  {
+   "line": "vo-12",
+   "text": "Now,",
+   "start": 54.15,
+   "end": 54.73
+  },
+  {
+   "line": "vo-12",
+   "text": "the",
+   "start": 54.73,
+   "end": 54.95
+  },
+  {
+   "line": "vo-12",
+   "text": "catch.",
+   "start": 54.95,
+   "end": 55.55
+  },
+  {
+   "line": "vo-12",
+   "text": "Most",
+   "start": 56.07,
+   "end": 56.15
+  },
+  {
+   "line": "vo-12",
+   "text": "of",
+   "start": 56.15,
+   "end": 56.23
+  },
+  {
+   "line": "vo-12",
+   "text": "these",
+   "start": 56.23,
+   "end": 56.39
+  },
+  {
+   "line": "vo-12",
+   "text": "scores",
+   "start": 56.39,
+   "end": 56.69
+  },
+  {
+   "line": "vo-12",
+   "text": "are",
+   "start": 56.69,
+   "end": 56.95
+  },
+  {
+   "line": "vo-12",
+   "text": "Moonshot's",
+   "start": 56.95,
+   "end": 57.65
+  },
+  {
+   "line": "vo-12",
+   "text": "own.",
+   "start": 57.65,
+   "end": 58.05
+  },
+  {
+   "line": "vo-12",
+   "text": "Independent",
+   "start": 58.67,
+   "end": 58.72
+  },
+  {
+   "line": "vo-12",
+   "text": "testers",
+   "start": 58.67,
+   "end": 59.13
+  },
+  {
+   "line": "vo-12",
+   "text": "rank",
+   "start": 59.13,
+   "end": 59.45
+  },
+  {
+   "line": "vo-12",
+   "text": "it",
+   "start": 59.45,
+   "end": 59.57
+  },
+  {
+   "line": "vo-12",
+   "text": "fourth,",
+   "start": 59.57,
+   "end": 60.13
+  },
+  {
+   "line": "vo-12",
+   "text": "and",
+   "start": 60.25,
+   "end": 60.35
+  },
+  {
+   "line": "vo-12",
+   "text": "the",
+   "start": 60.35,
+   "end": 60.43
+  },
+  {
+   "line": "vo-12",
+   "text": "weights",
+   "start": 60.43,
+   "end": 60.65
+  },
+  {
+   "line": "vo-12",
+   "text": "don't",
+   "start": 60.65,
+   "end": 60.93
+  },
+  {
+   "line": "vo-12",
+   "text": "drop",
+   "start": 60.93,
+   "end": 61.21
+  },
+  {
+   "line": "vo-12",
+   "text": "until",
+   "start": 61.21,
+   "end": 61.45
+  },
+  {
+   "line": "vo-12",
+   "text": "November",
+   "start": 61.45,
+   "end": 61.85
+  },
+  {
+   "line": "vo-12",
+   "text": "4th.",
+   "start": 61.85,
+   "end": 62.51
+  },
+  {
+   "line": "vo-13",
+   "text": "But",
+   "start": 62.8,
+   "end": 62.9
+  },
+  {
+   "line": "vo-13",
+   "text": "when",
+   "start": 62.9,
+   "end": 63.04
+  },
+  {
+   "line": "vo-13",
+   "text": "they",
+   "start": 63.04,
+   "end": 63.16
+  },
+  {
+   "line": "vo-13",
+   "text": "do,",
+   "start": 63.16,
+   "end": 63.66
+  },
+  {
+   "line": "vo-13",
+   "text": "the",
+   "start": 63.66,
+   "end": 63.82
+  },
+  {
+   "line": "vo-13",
+   "text": "gap",
+   "start": 63.82,
+   "end": 64.06
+  },
+  {
+   "line": "vo-13",
+   "text": "between",
+   "start": 64.06,
+   "end": 64.32
+  },
+  {
+   "line": "vo-13",
+   "text": "open",
+   "start": 64.32,
+   "end": 64.7
+  },
+  {
+   "line": "vo-13",
+   "text": "and",
+   "start": 64.7,
+   "end": 64.88
+  },
+  {
+   "line": "vo-13",
+   "text": "closed",
+   "start": 64.88,
+   "end": 65.24
+  },
+  {
+   "line": "vo-13",
+   "text": "AI",
+   "start": 65.24,
+   "end": 65.52
+  },
+  {
+   "line": "vo-13",
+   "text": "shrinks",
+   "start": 65.52,
+   "end": 66.04
+  },
+  {
+   "line": "vo-13",
+   "text": "from",
+   "start": 66.04,
+   "end": 66.22
+  },
+  {
+   "line": "vo-13",
+   "text": "12",
+   "start": 66.22,
+   "end": 66.54
+  },
+  {
+   "line": "vo-13",
+   "text": "points",
+   "start": 66.54,
+   "end": 66.88
+  },
+  {
+   "line": "vo-13",
+   "text": "to",
+   "start": 66.88,
+   "end": 67.1
+  },
+  {
+   "line": "vo-13",
+   "text": "3.",
+   "start": 67.1,
+   "end": 67.5
+  },
+  {
+   "line": "vo-14",
+   "text": "Follow",
+   "start": 67.95,
+   "end": 68.37
+  },
+  {
+   "line": "vo-14",
+   "text": "Catch",
+   "start": 68.37,
+   "end": 68.69
+  },
+  {
+   "line": "vo-14",
+   "text": "the",
+   "start": 68.69,
+   "end": 68.87
+  },
+  {
+   "line": "vo-14",
+   "text": "Error,",
+   "start": 68.87,
+   "end": 69.45
+  },
+  {
+   "line": "vo-14",
+   "text": "we",
+   "start": 69.45,
+   "end": 69.81
+  },
+  {
+   "line": "vo-14",
+   "text": "read",
+   "start": 69.81,
+   "end": 69.99
+  },
+  {
+   "line": "vo-14",
+   "text": "the",
+   "start": 69.99,
+   "end": 70.17
+  },
+  {
+   "line": "vo-14",
+   "text": "fine",
+   "start": 70.17,
+   "end": 70.39
+  },
+  {
+   "line": "vo-14",
+   "text": "print,",
+   "start": 70.39,
+   "end": 70.87
+  },
+  {
+   "line": "vo-14",
+   "text": "so",
+   "start": 70.87,
+   "end": 71.11
+  },
+  {
+   "line": "vo-14",
+   "text": "you",
+   "start": 71.11,
+   "end": 71.25
+  },
+  {
+   "line": "vo-14",
+   "text": "don't",
+   "start": 71.25,
+   "end": 71.41
+  },
+  {
+   "line": "vo-14",
+   "text": "have",
+   "start": 71.41,
+   "end": 71.61
+  },
+  {
+   "line": "vo-14",
+   "text": "to.",
+   "start": 71.61,
+   "end": 71.89
+  }
+ ]
+}

@@ -1,0 +1,134 @@
+<!doctype html>
+<html
+  lang="en"
+  data-resolution="portrait"
+  data-composition-variables='[
+    {"id":"color-ground","type":"color","label":"Ground","default":"#0A0A0A"},
+    {"id":"color-ink","type":"color","label":"Text","default":"#F4F2EE"},
+    {"id":"color-signature","type":"color","label":"Red pen (signature)","default":"#E0502B"}
+  ]'
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>CatchTheError — Case 018: Kimi K3.1 Pro</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      :root {
+        --color-ground: #0a0a0a;
+        --color-ink: #f4f2ee;
+        --color-signature: #e0502b;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        background: var(--color-ground);
+      }
+      #root {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="74"
+      data-width="1080"
+      data-height="1920"
+      data-motion-blur="on"
+    >
+      <!-- Scenes, cut to the narration (SPEC.md). -->
+      <div id="s1" data-composition-id="s1" data-composition-src="compositions/s1-walk.html" data-start="0" data-duration="17.3" data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index: 1"></div>
+      <div id="s2" data-composition-id="s2" data-composition-src="compositions/s2-reveal.html" data-start="17.3" data-duration="4.6" data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index: 2"></div>
+      <div id="s3" data-composition-id="s3" data-composition-src="compositions/s3-montage.html" data-start="21.9" data-duration="6.4" data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index: 3"></div>
+      <div id="s4" data-composition-id="s4" data-composition-src="compositions/s4-bench.html" data-start="28.3" data-duration="10.85" data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index: 4"></div>
+      <div id="s5" data-composition-id="s5" data-composition-src="compositions/s5-rehook.html" data-start="39.15" data-duration="2.65" data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index: 5"></div>
+      <div id="s6" data-composition-id="s6" data-composition-src="compositions/s6-cyber.html" data-start="41.8" data-duration="12.25" data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index: 6"></div>
+      <div id="s7" data-composition-id="s7" data-composition-src="compositions/s7-catch.html" data-start="54.05" data-duration="8.7" data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index: 7"></div>
+      <div id="s8" data-composition-id="s8" data-composition-src="compositions/s8-gap.html" data-start="62.75" data-duration="5.1" data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index: 8"></div>
+      <div id="s9" data-composition-id="s9" data-composition-src="compositions/s9-end.html" data-start="67.85" data-duration="6.15" data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index: 9"></div>
+
+      <!-- Captions for every line that isn't carried by big on-screen type. -->
+      <div id="captions" data-composition-id="captions" data-composition-src="compositions/captions.html" data-start="0" data-duration="74" data-track-index="2" data-track-kind="captions" data-width="1080" data-height="1920" style="z-index: 40"></div>
+
+      <!-- Voiceover: VoiceBox, trained voice "sparsh" (myvoice engine), mastered to -14 LUFS. -->
+      <audio id="vo-01" class="clip" src="assets/vo/vo-01.wav" data-start="0.15" data-duration="2.964" data-track-index="10" data-volume="1" data-audio-group="voiceover"></audio>
+      <audio id="vo-02" class="clip" src="assets/vo/vo-02.wav" data-start="3.35" data-duration="3.692" data-track-index="10" data-volume="1" data-audio-group="voiceover"></audio>
+      <audio id="vo-03" class="clip" src="assets/vo/vo-03.wav" data-start="7.3" data-duration="5.58" data-track-index="10" data-volume="1" data-audio-group="voiceover"></audio>
+      <audio id="vo-04" class="clip" src="assets/vo/vo-04.wav" data-start="13.1" data-duration="3.234" data-track-index="10" data-volume="1" data-audio-group="voiceover"></audio>
+      <audio id="vo-05" class="clip" src="assets/vo/vo-05.wav" data-start="17.3" data-duration="4.381" data-track-index="10" data-volume="1" data-audio-group="voiceover"></audio>
+      <audio id="vo-06" class="clip" src="assets/vo/vo-06.wav" data-start="21.9" data-duration="6.125" data-track-index="10" data-volume="1" data-audio-group="voiceover"></audio>
+      <audio id="vo-07" class="clip" src="assets/vo/vo-07.wav" data-start="28.4" data-duration="7.845" data-track-index="10" data-volume="1" data-audio-group="voiceover"></audio>
+      <audio id="vo-08" class="clip" src="assets/vo/vo-08.wav" data-start="36.45" data-duration="2.589" data-track-index="10" data-volume="1" data-audio-group="voiceover"></audio>
+      <audio id="vo-09" class="clip" src="assets/vo/vo-09.wav" data-start="39.75" data-duration="1.843" data-track-index="10" data-volume="1" data-audio-group="voiceover"></audio>
+      <audio id="vo-10" class="clip" src="assets/vo/vo-10.wav" data-start="41.85" data-duration="8.478" data-track-index="10" data-volume="1" data-audio-group="voiceover"></audio>
+      <audio id="vo-11" class="clip" src="assets/vo/vo-11.wav" data-start="50.6" data-duration="3.159" data-track-index="10" data-volume="1" data-audio-group="voiceover"></audio>
+      <audio id="vo-12" class="clip" src="assets/vo/vo-12.wav" data-start="54.15" data-duration="8.39" data-track-index="10" data-volume="1" data-audio-group="voiceover"></audio>
+      <audio id="vo-13" class="clip" src="assets/vo/vo-13.wav" data-start="62.8" data-duration="4.725" data-track-index="10" data-volume="1" data-audio-group="voiceover"></audio>
+      <audio id="vo-14" class="clip" src="assets/vo/vo-14.wav" data-start="67.95" data-duration="3.96" data-track-index="10" data-volume="1" data-audio-group="voiceover"></audio>
+
+      <!-- Music bed: "Ethernight Club", Kevin MacLeod (incompetech.com), CC BY 4.0. Pre-mastered to -26 LUFS with its
+           envelope baked in (scripts/prep_audio.py): silent for the re-hook, +5 dB after the last word. -->
+      <audio id="music" class="clip" src="assets/music/bed.wav" data-start="0" data-duration="74" data-track-index="11" data-volume="1" data-audio-group="music"></audio>
+
+      <!-- SFX:BEGIN (generated by scripts/build_sfx.py from scripts/sfx_cues.json) -->
+      <audio id="sfx-01" class="clip" src="assets/sfx/impact-bass-2.mp3" data-start="2.072" data-duration="2.592" data-track-index="12" data-volume="0.22" data-audio-group="sfx"></audio><!-- the body hits the floor -->
+      <audio id="sfx-02" class="clip" src="assets/sfx/thud-wood.mp3" data-start="2.432" data-duration="0.263" data-track-index="13" data-volume="0.35" data-audio-group="sfx"></audio><!-- the body hits the floor (contact) -->
+      <audio id="sfx-03" class="clip" src="assets/sfx/tick-a.mp3" data-start="5.133" data-duration="0.045" data-track-index="12" data-volume="0.18" data-audio-group="sfx"></audio><!-- mission counter -->
+      <audio id="sfx-04" class="clip" src="assets/sfx/tick-b.mp3" data-start="5.283" data-duration="0.020" data-track-index="12" data-volume="0.18" data-audio-group="sfx"></audio><!-- mission counter -->
+      <audio id="sfx-05" class="clip" src="assets/sfx/tick-a.mp3" data-start="5.483" data-duration="0.045" data-track-index="12" data-volume="0.18" data-audio-group="sfx"></audio><!-- mission counter -->
+      <audio id="sfx-06" class="clip" src="assets/sfx/tick-b.mp3" data-start="5.733" data-duration="0.020" data-track-index="12" data-volume="0.18" data-audio-group="sfx"></audio><!-- mission counter -->
+      <audio id="sfx-07" class="clip" src="assets/sfx/tick-a.mp3" data-start="6.083" data-duration="0.045" data-track-index="12" data-volume="0.18" data-audio-group="sfx"></audio><!-- mission counter -->
+      <audio id="sfx-08" class="clip" src="assets/sfx/select.mp3" data-start="6.309" data-duration="0.380" data-track-index="12" data-volume="0.2" data-audio-group="sfx"></audio><!-- counter lands on 167 -->
+      <audio id="sfx-09" class="clip" src="assets/sfx/whoosh-short.mp3" data-start="9.272" data-duration="0.575" data-track-index="12" data-volume="0.16" data-audio-group="sfx"></audio><!-- hard cut to black -->
+      <audio id="sfx-10" class="clip" src="assets/sfx/punch.mp3" data-start="10.903" data-duration="0.402" data-track-index="12" data-volume="0.3" data-audio-group="sfx"></audio><!-- 36 appears -->
+      <audio id="sfx-11" class="clip" src="assets/sfx/scratch-c.mp3" data-start="11.419" data-duration="0.325" data-track-index="12" data-volume="0.45" data-audio-group="sfx"></audio><!-- red pen circles 36 -->
+      <audio id="sfx-12" class="clip" src="assets/sfx/whoosh-short.mp3" data-start="12.972" data-duration="0.575" data-track-index="12" data-volume="0.16" data-audio-group="sfx"></audio><!-- cut back to the walk -->
+      <audio id="sfx-13" class="clip" src="assets/sfx/thud-wood.mp3" data-start="18.232" data-duration="0.263" data-track-index="12" data-volume="0.25" data-audio-group="sfx"></audio><!-- Kimi -->
+      <audio id="sfx-14" class="clip" src="assets/sfx/thud-wood.mp3" data-start="18.632" data-duration="0.263" data-track-index="12" data-volume="0.2" data-audio-group="sfx"></audio><!-- K3.1 -->
+      <audio id="sfx-15" class="clip" src="assets/sfx/thud-wood.mp3" data-start="19.652" data-duration="0.263" data-track-index="12" data-volume="0.25" data-audio-group="sfx"></audio><!-- Pro -->
+      <audio id="sfx-16" class="clip" src="assets/sfx/whoosh-cinematic.mp3" data-start="21.831" data-duration="3.194" data-media-start="2.35" data-track-index="12" data-volume="0.22" data-audio-group="sfx"></audio><!-- into the montage -->
+      <audio id="sfx-17" class="clip" src="assets/sfx/tick-a.mp3" data-start="22.393" data-duration="0.045" data-track-index="13" data-volume="0.2" data-audio-group="sfx"></audio><!-- cut -->
+      <audio id="sfx-18" class="clip" src="assets/sfx/tick-b.mp3" data-start="23.433" data-duration="0.020" data-track-index="13" data-volume="0.2" data-audio-group="sfx"></audio><!-- cut -->
+      <audio id="sfx-19" class="clip" src="assets/sfx/tick-a.mp3" data-start="24.193" data-duration="0.045" data-track-index="13" data-volume="0.2" data-audio-group="sfx"></audio><!-- cut -->
+      <audio id="sfx-20" class="clip" src="assets/sfx/tick-b.mp3" data-start="25.133" data-duration="0.020" data-track-index="12" data-volume="0.2" data-audio-group="sfx"></audio><!-- cut -->
+      <audio id="sfx-21" class="clip" src="assets/sfx/impact-bass-1.mp3" data-start="26.300" data-duration="2.116" data-track-index="12" data-volume="0.2" data-audio-group="sfx"></audio><!-- the dragon -->
+      <audio id="sfx-22" class="clip" src="assets/sfx/whoosh-short.mp3" data-start="28.322" data-duration="0.575" data-track-index="13" data-volume="0.16" data-audio-group="sfx"></audio><!-- chart arrives -->
+      <audio id="sfx-23" class="clip" src="assets/sfx/whoosh.mp3" data-start="31.272" data-duration="0.575" data-track-index="12" data-volume="0.14" data-audio-group="sfx"></audio><!-- push into the top rows -->
+      <audio id="sfx-24" class="clip" src="assets/sfx/scratch-a.mp3" data-start="35.416" data-duration="0.139" data-track-index="12" data-volume="0.45" data-audio-group="sfx"></audio><!-- red pen bracket -->
+      <audio id="sfx-25" class="clip" src="assets/sfx/pop.mp3" data-start="36.535" data-duration="0.720" data-track-index="12" data-volume="0.2" data-audio-group="sfx"></audio><!-- 0.7 -->
+      <audio id="sfx-26" class="clip" src="assets/sfx/impact-bass-2.mp3" data-start="38.872" data-duration="2.592" data-track-index="12" data-volume="0.28" data-audio-group="sfx"></audio><!-- music cuts out -->
+      <audio id="sfx-27" class="clip" src="assets/sfx/impact-bass-1.mp3" data-start="41.820" data-duration="2.116" data-track-index="12" data-volume="0.25" data-audio-group="sfx"></audio><!-- music returns -->
+      <audio id="sfx-28" class="clip" src="assets/sfx/whoosh-short.mp3" data-start="44.272" data-duration="0.575" data-track-index="12" data-volume="0.16" data-audio-group="sfx"></audio><!-- table arrives -->
+      <audio id="sfx-29" class="clip" src="assets/sfx/scratch-c.mp3" data-start="45.549" data-duration="0.325" data-track-index="12" data-volume="0.45" data-audio-group="sfx"></audio><!-- red pen: 90.5 -->
+      <audio id="sfx-30" class="clip" src="assets/sfx/scratch-b.mp3" data-start="49.631" data-duration="0.123" data-track-index="12" data-volume="0.45" data-audio-group="sfx"></audio><!-- red pen: 81.0 -->
+      <audio id="sfx-31" class="clip" src="assets/sfx/whoosh-short.mp3" data-start="50.492" data-duration="0.575" data-track-index="12" data-volume="0.14" data-audio-group="sfx"></audio><!-- to the open-weights line -->
+      <audio id="sfx-32" class="clip" src="assets/sfx/tick-a.mp3" data-start="56.103" data-duration="0.045" data-track-index="12" data-volume="0.3" data-audio-group="sfx"></audio><!-- fact cut -->
+      <audio id="sfx-33" class="clip" src="assets/sfx/tick-b.mp3" data-start="58.703" data-duration="0.020" data-track-index="12" data-volume="0.3" data-audio-group="sfx"></audio><!-- fact cut -->
+      <audio id="sfx-34" class="clip" src="assets/sfx/scratch-a.mp3" data-start="59.566" data-duration="0.139" data-track-index="12" data-volume="0.4" data-audio-group="sfx"></audio><!-- red pen underline #4 -->
+      <audio id="sfx-35" class="clip" src="assets/sfx/tick-a.mp3" data-start="60.283" data-duration="0.045" data-track-index="12" data-volume="0.3" data-audio-group="sfx"></audio><!-- fact cut -->
+      <audio id="sfx-36" class="clip" src="assets/sfx/thud-wood.mp3" data-start="64.112" data-duration="0.263" data-track-index="12" data-volume="0.3" data-audio-group="sfx"></audio><!-- 12 -->
+      <audio id="sfx-37" class="clip" src="assets/sfx/scratch-c.mp3" data-start="66.249" data-duration="0.325" data-track-index="12" data-volume="0.5" data-audio-group="sfx"></audio><!-- red pen strikes 12 -->
+      <audio id="sfx-38" class="clip" src="assets/sfx/pop.mp3" data-start="66.795" data-duration="0.720" data-track-index="12" data-volume="0.28" data-audio-group="sfx"></audio><!-- 3 -->
+      <audio id="sfx-39" class="clip" src="assets/sfx/whoosh-short.mp3" data-start="68.072" data-duration="0.575" data-track-index="12" data-volume="0.16" data-audio-group="sfx"></audio><!-- the mark builds -->
+      <audio id="sfx-40" class="clip" src="assets/sfx/stamp-c.mp3" data-start="68.507" data-duration="0.498" data-track-index="13" data-volume="0.3" data-audio-group="sfx"></audio><!-- the bug lands in the lens -->      <!-- SFX:END -->
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = gsap.timeline({ paused: true });
+    </script>
+  </body>
+</html>

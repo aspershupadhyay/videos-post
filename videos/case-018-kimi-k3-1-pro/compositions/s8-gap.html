@@ -1,0 +1,33 @@
+<template>
+  <style>
+    @font-face { font-family: "Bricolage Grotesque"; font-weight: 200 800; font-stretch: 75% 100%; font-display: block; src: url("assets/fonts/BricolageGrotesque.woff2") format("woff2"); }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0a0a0a; color: #f4f2ee; font-family: "Bricolage Grotesque", sans-serif; }
+    #s8-label { position: absolute; left: 80px; top: 440px; width: 920px; text-align: center; font-weight: 500; font-size: 44px; line-height: 1.2; letter-spacing: -0.01em; color: #8c8a86; }
+    #s8-nums { position: absolute; left: 0; top: 600px; width: 1080px; display: flex; justify-content: center; align-items: baseline; gap: 90px; font-weight: 650; font-stretch: 92%; font-size: 330px; line-height: 1; letter-spacing: -0.045em; }
+    #s8-twelve { position: relative; color: #8c8a86; }
+    #s8-strike { position: absolute; left: -24px; top: 0; width: 440px; height: 330px; overflow: visible; }
+    #s8-st { stroke-dasharray: 600; stroke-dashoffset: 600; }
+    #s8-note { position: absolute; left: 80px; top: 1000px; width: 920px; text-align: center; font-family: "JetBrains Mono", monospace; font-weight: 500; font-size: 28px; letter-spacing: 0.06em; text-transform: uppercase; color: #8c8a86; }
+    #s8-label, #s8-twelve, #s8-three, #s8-note { opacity: 0; }
+  </style>
+  <div id="root" data-composition-id="s8" data-width="1080" data-height="1920">
+    <div id="s8-label">Gap: best closed vs. best open model</div>
+    <div id="s8-nums">
+      <span id="s8-twelve">12<svg id="s8-strike" viewBox="0 0 440 330" aria-hidden="true"><path id="s8-st" d="M10 210 C 140 170, 300 150, 430 110" fill="none" stroke="#e0502b" stroke-width="16" stroke-linecap="round" /></svg></span>
+      <span id="s8-three">3</span>
+    </div>
+    <div id="s8-note">Artificial Analysis Intelligence Index · once the weights are out</div>
+  </div>
+  <script>
+    (() => {
+      const tl = gsap.timeline({ paused: true });
+      const at = (abs) => abs - 62.75;
+      tl.fromTo("#s8-label", { opacity: 0 }, { opacity: 1, duration: 0.3, immediateRender: false }, at(63.66));
+      tl.fromTo("#s8-twelve", { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.18, ease: "power4.out", immediateRender: false }, at(64.06));
+      tl.fromTo("#s8-note", { opacity: 0 }, { opacity: 1, duration: 0.3, immediateRender: false }, at(64.4));
+      tl.to("#s8-st", { strokeDashoffset: 0, duration: 0.3, ease: "power2.inOut" }, at(66.2));
+      tl.fromTo("#s8-three", { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.18, ease: "power4.out", immediateRender: false }, at(66.86));
+      window.__timelines["s8"] = tl;
+    })();
+  </script>
+</template>

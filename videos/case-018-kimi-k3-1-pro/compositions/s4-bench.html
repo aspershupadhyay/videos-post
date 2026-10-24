@@ -1,0 +1,47 @@
+<template>
+  <style>
+    @font-face { font-family: "Bricolage Grotesque"; font-weight: 200 800; font-stretch: 75% 100%; font-display: block; src: url("assets/fonts/BricolageGrotesque.woff2") format("woff2"); }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0a0a0a; color: #f4f2ee; font-family: "Bricolage Grotesque", sans-serif; }
+    #s4-card { position: absolute; left: 40px; top: 640px; width: 1000px; height: 368px; border-radius: 20px; overflow: hidden; }
+    #s4-card img { position: absolute; left: 0; top: 0; width: 1000px; height: 368px; }
+    #s4-pen { position: absolute; left: 0; top: 0; width: 1000px; height: 368px; overflow: visible; }
+    #s4-credit { position: absolute; left: 60px; top: 1036px; font-family: "JetBrains Mono", monospace; font-weight: 500; font-size: 28px; letter-spacing: 0.06em; text-transform: uppercase; color: #8c8a86; }
+    #s4-gap { position: absolute; left: 0; top: 400px; width: 1080px; text-align: center; font-weight: 650; font-stretch: 92%; font-size: 150px; line-height: 1; letter-spacing: -0.035em; }
+    #s4-gap small { display: block; margin-top: 18px; font-size: 40px; font-weight: 500; letter-spacing: -0.01em; color: #8c8a86; }
+    #s4-card, #s4-gap, #s4-credit { opacity: 0; }
+    #s4-bracket { stroke-dasharray: 600; stroke-dashoffset: 600; }
+  </style>
+  <div id="root" data-composition-id="s4" data-width="1080" data-height="1920">
+    <!-- Moonshot's own Terminal-Bench 4.0 chart (kimi.ai blog), shown as published. -->
+    <div id="s4-card">
+      <img src="assets/charts/terminal-bench-4.png" alt="Terminal-Bench 4.0: Opus 5.5 66.4, Kimi K3.1 Pro 65.7, GPT-6 Astra 58.2" />
+      <svg id="s4-pen" viewBox="0 0 1000 368" aria-hidden="true">
+        <rect id="s4-dim" x="0" y="168" width="1000" height="200" fill="#0a0a0a" opacity="0" />
+        <path id="s4-bracket" d="M905 86 C 940 92, 952 118, 950 128 C 948 140, 936 160, 905 168" fill="none" stroke="#e0502b" stroke-width="10" stroke-linecap="round" />
+      </svg>
+    </div>
+    <div id="s4-credit">Chart: Moonshot AI · vendor-reported</div>
+    <div id="s4-gap">0.7<small>points behind the #1 model</small></div>
+  </div>
+  <script>
+    (() => {
+      const tl = gsap.timeline({ paused: true });
+      const at = (abs) => abs - 28.3;
+
+      // "On Terminal-Bench…" — the real chart arrives.
+      tl.fromTo("#s4-card", { opacity: 0, y: 40, filter: "blur(10px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.45, ease: "expo.out" }, at(28.4));
+      tl.fromTo("#s4-credit", { opacity: 0 }, { opacity: 1, duration: 0.3 }, at(28.8));
+
+      // "…sixty-five point seven": everything but the top two rows falls back.
+      tl.to("#s4-dim", { opacity: 0.72, duration: 0.5, ease: "power2.inOut" }, at(31.1));
+
+      // "Sixty-six point four" → the red pen brackets the two numbers.
+      tl.to("#s4-bracket", { strokeDashoffset: 0, duration: 0.35, ease: "power2.inOut" }, at(35.3));
+
+      // "Less than a point behind the model ranked number one."
+      tl.fromTo("#s4-gap", { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.2, ease: "power4.out" }, at(36.6));
+
+      window.__timelines["s4"] = tl;
+    })();
+  </script>
+</template>

@@ -1,0 +1,42 @@
+<template>
+  <style>
+    @font-face { font-family: "Bricolage Grotesque"; font-weight: 200 800; font-stretch: 75% 100%; font-display: block; src: url("assets/fonts/BricolageGrotesque.woff2") format("woff2"); }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0a0a0a; color: #f4f2ee; font-family: "Bricolage Grotesque", sans-serif; }
+    .s7-frame { position: absolute; inset: 0; }
+    .s7-big { position: absolute; left: 0; top: 560px; width: 1080px; text-align: center; font-weight: 650; font-stretch: 92%; font-size: 300px; line-height: 1; letter-spacing: -0.045em; }
+    .s7-mid { position: absolute; left: 80px; top: 640px; width: 920px; font-weight: 650; font-stretch: 92%; font-size: 132px; line-height: 1; letter-spacing: -0.035em; }
+    .s7-note { position: absolute; left: 80px; width: 920px; text-align: center; top: 920px; font-family: "JetBrains Mono", monospace; font-weight: 500; font-size: 28px; letter-spacing: 0.06em; text-transform: uppercase; color: #8c8a86; }
+    #s7-f1 .s7-mid { color: #8c8a86; }
+    #s7-f2 .s7-mid { text-align: center; }
+    #s7-pen { position: absolute; left: 340px; top: 850px; width: 400px; height: 60px; overflow: visible; }
+    #s7-u { stroke-dasharray: 500; stroke-dashoffset: 500; }
+  </style>
+  <div id="root" data-composition-id="s7" data-width="1080" data-height="1920">
+    <div id="s7-f1" class="s7-frame clip" data-start="0" data-duration="2.02"><div class="s7-mid">The catch.</div></div>
+
+    <div id="s7-f2" class="s7-frame clip" data-start="2.02" data-duration="2.6">
+      <div class="s7-mid">Vendor&#8209;reported</div>
+      <div class="s7-note" style="top: 800px">Most scores: Moonshot's own tests</div>
+    </div>
+
+    <div id="s7-f3" class="s7-frame clip" data-start="4.62" data-duration="1.58">
+      <div class="s7-big">#4</div>
+      <svg id="s7-pen" viewBox="0 0 400 60" aria-hidden="true"><path id="s7-u" d="M14 34 C 120 22, 260 26, 386 30" fill="none" stroke="#e0502b" stroke-width="12" stroke-linecap="round" /></svg>
+      <div class="s7-note">Artificial Analysis index · 55</div>
+    </div>
+
+    <div id="s7-f4" class="s7-frame clip" data-start="6.2" data-duration="2.5">
+      <div class="s7-big">Nov 4</div>
+      <div class="s7-note">When the open weights are due</div>
+    </div>
+  </div>
+  <script>
+    (() => {
+      const tl = gsap.timeline({ paused: true });
+      const at = (abs) => abs - 54.05;
+      tl.fromTo("#s7-f1 .s7-mid", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, ease: "power4.out" }, at(54.73));
+      tl.to("#s7-u", { strokeDashoffset: 0, duration: 0.3, ease: "power2.inOut" }, at(59.5));
+      window.__timelines["s7"] = tl;
+    })();
+  </script>
+</template>
