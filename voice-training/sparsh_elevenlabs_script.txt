@@ -64,6 +64,12 @@ And if you ever see a claim that sounds too good to be true, you know what to do
 
 Nine times out of ten, you'll find the error. And when you do, send it to me, because that's exactly what we do here.
 
+Quick question for you. Have you ever trusted an answer just because it sounded smart? I have. Plenty of times. And that's not stupid, that's human. We're wired to trust confidence. A clear voice, a calm tone, a few big words, and our brain just relaxes and says, yeah, that sounds right.
+
+And that's exactly why this matters so much right now. For the first time, we have machines that can sound confident about absolutely anything, all day, for almost no cost. So the skill that matters most isn't knowing every answer. It's knowing when to ask, wait, how do you know that?
+
+Look, I'm not trying to make you paranoid. I love this stuff. Genuinely. Some of the things these models can do still make me stop and go, no way, that's incredible. But I'd rather be excited and careful than excited and wrong.
+
 Oh, and one quick thing before I go. A lot of you have been asking how I find these stories. Honestly? I just read. Papers, release notes, long boring documentation that nobody else wants to read. It's not glamorous. But that's where the interesting stuff is.
 
 So, if you made it this far, thank you. Seriously. It means a lot. If this helped you see AI a little more clearly, follow along, because there's a new case every week, and some of them are going to surprise you.
