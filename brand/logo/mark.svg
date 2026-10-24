@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <g id="mark">
+    
+    <path d="M318 318 L446 446" stroke="#1B1814" stroke-width="62" stroke-linecap="round"/>
+    <path d="M300 300 L334 334" stroke="#1B1814" stroke-width="82" stroke-linecap="butt"/>
+    <circle cx="214" cy="214" r="150" fill="none" stroke="#1B1814" stroke-width="34"/>
+    <path d="M110 170 A112 112 0 0 1 170 110" fill="none" stroke="#E2A72E" stroke-width="12" stroke-linecap="round"/>
+    <g stroke="#1B1814" stroke-width="11" stroke-linecap="round" fill="none">
+      <path d="M168 196 L124 172"/><path d="M260 196 L304 172"/><path d="M164 228 L112 228"/><path d="M264 228 L316 228"/><path d="M170 262 L128 292"/><path d="M258 262 L300 292"/>
+      <path d="M204 150 L186 116"/>
+      <path d="M224 150 L242 116"/>
+    </g>
+    <ellipse cx="214" cy="236" rx="52" ry="66" fill="#C2502A"/>
+    <path d="M214 178 L214 298" stroke="#F2E8D5" stroke-width="7" stroke-linecap="round"/>
+    <circle cx="214" cy="166" r="22" fill="#1B1814"/>
+  </g></svg>

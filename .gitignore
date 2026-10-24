@@ -1,0 +1,7 @@
+node_modules/
+.hyperframes/
+**/.hyperframes/
+__pycache__/
+.DS_Store
+videos/*/renders/*
+!videos/*/renders/*.mp4

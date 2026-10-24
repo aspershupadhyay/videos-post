@@ -1,0 +1,1051 @@
+{
+ "film": 69.7,
+ "lines": [
+  {
+   "id": "vo-01",
+   "start": 0.1,
+   "duration": 5.158,
+   "end": 5.258
+  },
+  {
+   "id": "vo-02",
+   "start": 5.5,
+   "duration": 3.453,
+   "end": 8.953
+  },
+  {
+   "id": "vo-03",
+   "start": 9.45,
+   "duration": 5.675,
+   "end": 15.125
+  },
+  {
+   "id": "vo-04",
+   "start": 15.45,
+   "duration": 10.689,
+   "end": 26.139
+  },
+  {
+   "id": "vo-05",
+   "start": 26.45,
+   "duration": 5.271,
+   "end": 31.721
+  },
+  {
+   "id": "vo-06",
+   "start": 32.3,
+   "duration": 6.022,
+   "end": 38.322
+  },
+  {
+   "id": "vo-07",
+   "start": 38.8,
+   "duration": 7.553,
+   "end": 46.353
+  },
+  {
+   "id": "vo-08",
+   "start": 46.85,
+   "duration": 9.648,
+   "end": 56.498
+  },
+  {
+   "id": "vo-09",
+   "start": 57.1,
+   "duration": 5.648,
+   "end": 62.748
+  },
+  {
+   "id": "vo-10",
+   "start": 63.85,
+   "duration": 3.235,
+   "end": 67.085
+  }
+ ],
+ "words": [
+  {
+   "line": "vo-01",
+   "text": "One",
+   "start": 0.1,
+   "end": 0.38
+  },
+  {
+   "line": "vo-01",
+   "text": "guy",
+   "start": 0.38,
+   "end": 0.58
+  },
+  {
+   "line": "vo-01",
+   "text": "cloned",
+   "start": 0.58,
+   "end": 0.98
+  },
+  {
+   "line": "vo-01",
+   "text": "$100",
+   "start": 0.98,
+   "end": 1.46
+  },
+  {
+   "line": "vo-01",
+   "text": "billion",
+   "start": 1.46,
+   "end": 1.88
+  },
+  {
+   "line": "vo-01",
+   "text": "of",
+   "start": 1.88,
+   "end": 2.42
+  },
+  {
+   "line": "vo-01",
+   "text": "Adobe",
+   "start": 2.42,
+   "end": 2.7
+  },
+  {
+   "line": "vo-01",
+   "text": "software",
+   "start": 2.7,
+   "end": 3.26
+  },
+  {
+   "line": "vo-01",
+   "text": "in",
+   "start": 3.26,
+   "end": 3.76
+  },
+  {
+   "line": "vo-01",
+   "text": "a",
+   "start": 3.76,
+   "end": 3.88
+  },
+  {
+   "line": "vo-01",
+   "text": "week",
+   "start": 3.88,
+   "end": 4.2
+  },
+  {
+   "line": "vo-01",
+   "text": "for",
+   "start": 4.2,
+   "end": 4.76
+  },
+  {
+   "line": "vo-01",
+   "text": "free.",
+   "start": 4.76,
+   "end": 5.24
+  },
+  {
+   "line": "vo-02",
+   "text": "That's",
+   "start": 5.5,
+   "end": 5.86
+  },
+  {
+   "line": "vo-02",
+   "text": "the",
+   "start": 5.86,
+   "end": 5.98
+  },
+  {
+   "line": "vo-02",
+   "text": "post",
+   "start": 5.98,
+   "end": 6.26
+  },
+  {
+   "line": "vo-02",
+   "text": "going",
+   "start": 6.26,
+   "end": 6.48
+  },
+  {
+   "line": "vo-02",
+   "text": "viral",
+   "start": 6.48,
+   "end": 6.84
+  },
+  {
+   "line": "vo-02",
+   "text": "right",
+   "start": 6.84,
+   "end": 7.04
+  },
+  {
+   "line": "vo-02",
+   "text": "now,",
+   "start": 7.04,
+   "end": 7.44
+  },
+  {
+   "line": "vo-02",
+   "text": "so",
+   "start": 7.44,
+   "end": 7.84
+  },
+  {
+   "line": "vo-02",
+   "text": "let's",
+   "start": 7.84,
+   "end": 8.22
+  },
+  {
+   "line": "vo-02",
+   "text": "catch",
+   "start": 8.22,
+   "end": 8.4
+  },
+  {
+   "line": "vo-02",
+   "text": "the",
+   "start": 8.4,
+   "end": 8.56
+  },
+  {
+   "line": "vo-02",
+   "text": "error.",
+   "start": 8.56,
+   "end": 8.94
+  },
+  {
+   "line": "vo-03",
+   "text": "Here's",
+   "start": 9.45,
+   "end": 9.77
+  },
+  {
+   "line": "vo-03",
+   "text": "what's",
+   "start": 9.77,
+   "end": 9.95
+  },
+  {
+   "line": "vo-03",
+   "text": "real.",
+   "start": 9.95,
+   "end": 10.37
+  },
+  {
+   "line": "vo-03",
+   "text": "On",
+   "start": 10.67,
+   "end": 10.72
+  },
+  {
+   "line": "vo-03",
+   "text": "September",
+   "start": 10.69,
+   "end": 11.01
+  },
+  {
+   "line": "vo-03",
+   "text": "30th,",
+   "start": 11.01,
+   "end": 11.83
+  },
+  {
+   "line": "vo-03",
+   "text": "developer",
+   "start": 11.83,
+   "end": 12.27
+  },
+  {
+   "line": "vo-03",
+   "text": "Brandon",
+   "start": 12.27,
+   "end": 12.63
+  },
+  {
+   "line": "vo-03",
+   "text": "Thomas",
+   "start": 12.63,
+   "end": 13.11
+  },
+  {
+   "line": "vo-03",
+   "text": "pushed",
+   "start": 13.11,
+   "end": 13.47
+  },
+  {
+   "line": "vo-03",
+   "text": "the",
+   "start": 13.47,
+   "end": 13.63
+  },
+  {
+   "line": "vo-03",
+   "text": "first",
+   "start": 13.63,
+   "end": 13.95
+  },
+  {
+   "line": "vo-03",
+   "text": "commit",
+   "start": 13.95,
+   "end": 14.25
+  },
+  {
+   "line": "vo-03",
+   "text": "of",
+   "start": 14.25,
+   "end": 14.43
+  },
+  {
+   "line": "vo-03",
+   "text": "Artcraft.",
+   "start": 14.43,
+   "end": 15.11
+  },
+  {
+   "line": "vo-04",
+   "text": "seven",
+   "start": 15.45,
+   "end": 15.93
+  },
+  {
+   "line": "vo-04",
+   "text": "apps,",
+   "start": 15.93,
+   "end": 16.51
+  },
+  {
+   "line": "vo-04",
+   "text": "Photoshop,",
+   "start": 16.51,
+   "end": 17.43
+  },
+  {
+   "line": "vo-04",
+   "text": "Illustrator,",
+   "start": 17.43,
+   "end": 18.29
+  },
+  {
+   "line": "vo-04",
+   "text": "Premiere,",
+   "start": 18.29,
+   "end": 19.07
+  },
+  {
+   "line": "vo-04",
+   "text": "After",
+   "start": 19.07,
+   "end": 19.31
+  },
+  {
+   "line": "vo-04",
+   "text": "Effects,",
+   "start": 19.31,
+   "end": 20.13
+  },
+  {
+   "line": "vo-04",
+   "text": "Lightroom,",
+   "start": 20.13,
+   "end": 20.83
+  },
+  {
+   "line": "vo-04",
+   "text": "InDesign,",
+   "start": 20.83,
+   "end": 21.45
+  },
+  {
+   "line": "vo-04",
+   "text": "and",
+   "start": 21.45,
+   "end": 21.53
+  },
+  {
+   "line": "vo-04",
+   "text": "Acrobat.",
+   "start": 21.53,
+   "end": 22.11
+  },
+  {
+   "line": "vo-04",
+   "text": "Each",
+   "start": 22.33,
+   "end": 22.55
+  },
+  {
+   "line": "vo-04",
+   "text": "one",
+   "start": 22.55,
+   "end": 22.81
+  },
+  {
+   "line": "vo-04",
+   "text": "rebuilt",
+   "start": 22.81,
+   "end": 23.25
+  },
+  {
+   "line": "vo-04",
+   "text": "from",
+   "start": 23.25,
+   "end": 23.45
+  },
+  {
+   "line": "vo-04",
+   "text": "scratch",
+   "start": 23.45,
+   "end": 23.85
+  },
+  {
+   "line": "vo-04",
+   "text": "in",
+   "start": 23.85,
+   "end": 24.11
+  },
+  {
+   "line": "vo-04",
+   "text": "Rust,",
+   "start": 24.11,
+   "end": 24.61
+  },
+  {
+   "line": "vo-04",
+   "text": "with",
+   "start": 24.61,
+   "end": 24.87
+  },
+  {
+   "line": "vo-04",
+   "text": "Claude",
+   "start": 24.87,
+   "end": 25.25
+  },
+  {
+   "line": "vo-04",
+   "text": "as",
+   "start": 25.25,
+   "end": 25.41
+  },
+  {
+   "line": "vo-04",
+   "text": "his",
+   "start": 25.41,
+   "end": 25.55
+  },
+  {
+   "line": "vo-04",
+   "text": "co",
+   "start": 25.55,
+   "end": 25.73
+  },
+  {
+   "line": "vo-04",
+   "text": "-pilot.",
+   "start": 25.73,
+   "end": 26.09
+  },
+  {
+   "line": "vo-05",
+   "text": "And",
+   "start": 26.45,
+   "end": 26.63
+  },
+  {
+   "line": "vo-05",
+   "text": "people",
+   "start": 26.63,
+   "end": 26.91
+  },
+  {
+   "line": "vo-05",
+   "text": "noticed.",
+   "start": 26.91,
+   "end": 27.55
+  },
+  {
+   "line": "vo-05",
+   "text": "Photocraft",
+   "start": 27.97,
+   "end": 28.45
+  },
+  {
+   "line": "vo-05",
+   "text": "hit",
+   "start": 28.45,
+   "end": 28.63
+  },
+  {
+   "line": "vo-05",
+   "text": "43",
+   "start": 28.63,
+   "end": 29.19
+  },
+  {
+   "line": "vo-05",
+   "text": ",000",
+   "start": 29.19,
+   "end": 29.77
+  },
+  {
+   "line": "vo-05",
+   "text": "GitHub",
+   "start": 29.77,
+   "end": 30.01
+  },
+  {
+   "line": "vo-05",
+   "text": "stars",
+   "start": 30.01,
+   "end": 30.39
+  },
+  {
+   "line": "vo-05",
+   "text": "in",
+   "start": 30.39,
+   "end": 30.63
+  },
+  {
+   "line": "vo-05",
+   "text": "under",
+   "start": 30.63,
+   "end": 30.83
+  },
+  {
+   "line": "vo-05",
+   "text": "two",
+   "start": 30.83,
+   "end": 31.13
+  },
+  {
+   "line": "vo-05",
+   "text": "weeks.",
+   "start": 31.13,
+   "end": 31.71
+  },
+  {
+   "line": "vo-06",
+   "text": "Error",
+   "start": 32.3,
+   "end": 32.68
+  },
+  {
+   "line": "vo-06",
+   "text": "1.",
+   "start": 32.68,
+   "end": 33.22
+  },
+  {
+   "line": "vo-06",
+   "text": "Cloned?",
+   "start": 33.24,
+   "end": 33.96
+  },
+  {
+   "line": "vo-06",
+   "text": "Only",
+   "start": 34.28,
+   "end": 34.5
+  },
+  {
+   "line": "vo-06",
+   "text": "two",
+   "start": 34.5,
+   "end": 34.72
+  },
+  {
+   "line": "vo-06",
+   "text": "of",
+   "start": 34.72,
+   "end": 34.88
+  },
+  {
+   "line": "vo-06",
+   "text": "the",
+   "start": 34.88,
+   "end": 35.0
+  },
+  {
+   "line": "vo-06",
+   "text": "seven",
+   "start": 35.0,
+   "end": 35.24
+  },
+  {
+   "line": "vo-06",
+   "text": "are",
+   "start": 35.24,
+   "end": 35.4
+  },
+  {
+   "line": "vo-06",
+   "text": "labeled",
+   "start": 35.4,
+   "end": 35.72
+  },
+  {
+   "line": "vo-06",
+   "text": "Early",
+   "start": 35.72,
+   "end": 35.96
+  },
+  {
+   "line": "vo-06",
+   "text": "Alpha.",
+   "start": 35.96,
+   "end": 36.52
+  },
+  {
+   "line": "vo-06",
+   "text": "The",
+   "start": 36.72,
+   "end": 36.82
+  },
+  {
+   "line": "vo-06",
+   "text": "other",
+   "start": 36.82,
+   "end": 36.98
+  },
+  {
+   "line": "vo-06",
+   "text": "five",
+   "start": 36.98,
+   "end": 37.22
+  },
+  {
+   "line": "vo-06",
+   "text": "are",
+   "start": 37.22,
+   "end": 37.4
+  },
+  {
+   "line": "vo-06",
+   "text": "still",
+   "start": 37.4,
+   "end": 37.6
+  },
+  {
+   "line": "vo-06",
+   "text": "in",
+   "start": 37.6,
+   "end": 37.76
+  },
+  {
+   "line": "vo-06",
+   "text": "development.",
+   "start": 37.76,
+   "end": 38.3
+  },
+  {
+   "line": "vo-07",
+   "text": "Error",
+   "start": 38.8,
+   "end": 39.18
+  },
+  {
+   "line": "vo-07",
+   "text": "2.",
+   "start": 39.18,
+   "end": 39.68
+  },
+  {
+   "line": "vo-07",
+   "text": "In",
+   "start": 39.92,
+   "end": 39.98
+  },
+  {
+   "line": "vo-07",
+   "text": "a",
+   "start": 39.98,
+   "end": 40.1
+  },
+  {
+   "line": "vo-07",
+   "text": "week,",
+   "start": 40.1,
+   "end": 40.5
+  },
+  {
+   "line": "vo-07",
+   "text": "he",
+   "start": 40.5,
+   "end": 40.8
+  },
+  {
+   "line": "vo-07",
+   "text": "first",
+   "start": 40.8,
+   "end": 41.08
+  },
+  {
+   "line": "vo-07",
+   "text": "promised",
+   "start": 41.08,
+   "end": 41.5
+  },
+  {
+   "line": "vo-07",
+   "text": "full",
+   "start": 41.5,
+   "end": 41.82
+  },
+  {
+   "line": "vo-07",
+   "text": "feature",
+   "start": 41.82,
+   "end": 42.14
+  },
+  {
+   "line": "vo-07",
+   "text": "parody",
+   "start": 42.14,
+   "end": 42.52
+  },
+  {
+   "line": "vo-07",
+   "text": "within",
+   "start": 42.52,
+   "end": 42.76
+  },
+  {
+   "line": "vo-07",
+   "text": "a",
+   "start": 42.76,
+   "end": 42.92
+  },
+  {
+   "line": "vo-07",
+   "text": "month.",
+   "start": 42.92,
+   "end": 43.46
+  },
+  {
+   "line": "vo-07",
+   "text": "Days",
+   "start": 43.9,
+   "end": 43.95
+  },
+  {
+   "line": "vo-07",
+   "text": "later,",
+   "start": 43.9,
+   "end": 44.36
+  },
+  {
+   "line": "vo-07",
+   "text": "it",
+   "start": 44.36,
+   "end": 44.52
+  },
+  {
+   "line": "vo-07",
+   "text": "became",
+   "start": 44.52,
+   "end": 44.8
+  },
+  {
+   "line": "vo-07",
+   "text": "months,",
+   "start": 44.8,
+   "end": 45.48
+  },
+  {
+   "line": "vo-07",
+   "text": "not",
+   "start": 45.48,
+   "end": 45.78
+  },
+  {
+   "line": "vo-07",
+   "text": "years.",
+   "start": 45.78,
+   "end": 46.34
+  },
+  {
+   "line": "vo-08",
+   "text": "Error",
+   "start": 46.85,
+   "end": 47.23
+  },
+  {
+   "line": "vo-08",
+   "text": "3.",
+   "start": 47.23,
+   "end": 47.77
+  },
+  {
+   "line": "vo-08",
+   "text": "Free,",
+   "start": 47.77,
+   "end": 48.51
+  },
+  {
+   "line": "vo-08",
+   "text": "sure.",
+   "start": 48.51,
+   "end": 48.99
+  },
+  {
+   "line": "vo-08",
+   "text": "Free",
+   "start": 48.99,
+   "end": 49.37
+  },
+  {
+   "line": "vo-08",
+   "text": "of",
+   "start": 49.37,
+   "end": 49.53
+  },
+  {
+   "line": "vo-08",
+   "text": "risk?",
+   "start": 49.53,
+   "end": 49.99
+  },
+  {
+   "line": "vo-08",
+   "text": "No.",
+   "start": 49.99,
+   "end": 50.57
+  },
+  {
+   "line": "vo-08",
+   "text": "A",
+   "start": 50.57,
+   "end": 50.87
+  },
+  {
+   "line": "vo-08",
+   "text": "clean",
+   "start": 50.87,
+   "end": 51.15
+  },
+  {
+   "line": "vo-08",
+   "text": "room",
+   "start": 51.15,
+   "end": 51.45
+  },
+  {
+   "line": "vo-08",
+   "text": "avoids",
+   "start": 51.45,
+   "end": 51.87
+  },
+  {
+   "line": "vo-08",
+   "text": "copied",
+   "start": 51.87,
+   "end": 52.23
+  },
+  {
+   "line": "vo-08",
+   "text": "code.",
+   "start": 52.23,
+   "end": 52.75
+  },
+  {
+   "line": "vo-08",
+   "text": "It",
+   "start": 52.75,
+   "end": 53.05
+  },
+  {
+   "line": "vo-08",
+   "text": "doesn't",
+   "start": 53.05,
+   "end": 53.39
+  },
+  {
+   "line": "vo-08",
+   "text": "avoid",
+   "start": 53.39,
+   "end": 53.65
+  },
+  {
+   "line": "vo-08",
+   "text": "patents.",
+   "start": 53.65,
+   "end": 54.29
+  },
+  {
+   "line": "vo-08",
+   "text": "And",
+   "start": 54.29,
+   "end": 54.69
+  },
+  {
+   "line": "vo-08",
+   "text": "Adobe",
+   "start": 54.69,
+   "end": 55.19
+  },
+  {
+   "line": "vo-08",
+   "text": "holds",
+   "start": 55.19,
+   "end": 55.67
+  },
+  {
+   "line": "vo-08",
+   "text": "thousands.",
+   "start": 55.67,
+   "end": 56.47
+  },
+  {
+   "line": "vo-09",
+   "text": "The",
+   "start": 57.1,
+   "end": 57.26
+  },
+  {
+   "line": "vo-09",
+   "text": "verdict.",
+   "start": 57.26,
+   "end": 57.82
+  },
+  {
+   "line": "vo-09",
+   "text": "Real,",
+   "start": 57.82,
+   "end": 58.5
+  },
+  {
+   "line": "vo-09",
+   "text": "impressive,",
+   "start": 58.5,
+   "end": 59.28
+  },
+  {
+   "line": "vo-09",
+   "text": "and",
+   "start": 59.28,
+   "end": 59.5
+  },
+  {
+   "line": "vo-09",
+   "text": "early.",
+   "start": 59.5,
+   "end": 60.0
+  },
+  {
+   "line": "vo-09",
+   "text": "Not",
+   "start": 60.28,
+   "end": 60.38
+  },
+  {
+   "line": "vo-09",
+   "text": "a",
+   "start": 60.38,
+   "end": 60.5
+  },
+  {
+   "line": "vo-09",
+   "text": "$100",
+   "start": 60.5,
+   "end": 60.84
+  },
+  {
+   "line": "vo-09",
+   "text": "billion",
+   "start": 60.84,
+   "end": 61.14
+  },
+  {
+   "line": "vo-09",
+   "text": "clone.",
+   "start": 61.14,
+   "end": 62.02
+  },
+  {
+   "line": "vo-09",
+   "text": "Not",
+   "start": 62.02,
+   "end": 62.4
+  },
+  {
+   "line": "vo-09",
+   "text": "yet.",
+   "start": 62.4,
+   "end": 62.68
+  },
+  {
+   "line": "vo-10",
+   "text": "Follow",
+   "start": 63.85,
+   "end": 64.29
+  },
+  {
+   "line": "vo-10",
+   "text": "Catch",
+   "start": 64.29,
+   "end": 64.61
+  },
+  {
+   "line": "vo-10",
+   "text": "the",
+   "start": 64.61,
+   "end": 64.85
+  },
+  {
+   "line": "vo-10",
+   "text": "Error.",
+   "start": 64.85,
+   "end": 65.29
+  },
+  {
+   "line": "vo-10",
+   "text": "We",
+   "start": 65.29,
+   "end": 65.57
+  },
+  {
+   "line": "vo-10",
+   "text": "check",
+   "start": 65.57,
+   "end": 65.77
+  },
+  {
+   "line": "vo-10",
+   "text": "the",
+   "start": 65.77,
+   "end": 65.91
+  },
+  {
+   "line": "vo-10",
+   "text": "post",
+   "start": 65.91,
+   "end": 66.19
+  },
+  {
+   "line": "vo-10",
+   "text": "before",
+   "start": 66.19,
+   "end": 66.41
+  },
+  {
+   "line": "vo-10",
+   "text": "you",
+   "start": 66.41,
+   "end": 66.59
+  },
+  {
+   "line": "vo-10",
+   "text": "share",
+   "start": 66.59,
+   "end": 66.85
+  },
+  {
+   "line": "vo-10",
+   "text": "it.",
+   "start": 66.85,
+   "end": 67.07
+  }
+ ]
+}

@@ -1,0 +1,138 @@
+<template>
+  <style>
+    @font-face { font-family: "Bricolage Grotesque"; font-weight: 200 800; font-stretch: 75% 100%; font-display: block; src: url("assets/fonts/BricolageGrotesque.woff2") format("woff2"); }
+    #root { position: absolute; inset: 0; overflow: hidden; background: var(--color-teal, #0e4a4a); color: #f2e8d5; font-family: "Bricolage Grotesque", sans-serif; }
+    #s7-stage { position: absolute; inset: 0; background: var(--color-teal, #0e4a4a); }
+    .s7-mono { font-family: "JetBrains Mono", monospace; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; }
+    .s7-d { font-weight: 800; font-stretch: 75%; text-transform: uppercase; line-height: 0.86; }
+    #s7-head { position: absolute; left: 80px; top: 220px; font-size: 200px; }
+    #s7-head span { color: var(--color-mustard, #e2a72e); }
+    .s7-tag { position: absolute; top: 450px; width: 410px; height: 230px; background: #fbf6ec; color: #1b1814; border: 4px solid #1b1814; border-radius: 16px 60px 60px 16px; box-shadow: 10px 10px 0 #0a3b3b; padding: 26px 30px 0 88px; }
+    .s7-tag::before { content: ""; position: absolute; left: 30px; top: 92px; width: 30px; height: 30px; border-radius: 50%; border: 4px solid #1b1814; background: var(--color-teal, #0e4a4a); }
+    .s7-tag .s7-mono { font-size: 28px; color: #6a6056; }
+    .s7-tag .s7-d { margin-top: 18px; }
+    #s7-t1 { left: 90px; }
+    #s7-t1 .s7-d { font-size: 130px; }
+    #s7-t2 { left: 580px; }
+    #s7-t2 .s7-d { font-size: 88px; }
+    #s7-tick { position: absolute; left: 330px; top: 470px; width: 170px; height: 150px; overflow: visible; }
+    #s7-no { position: absolute; left: 650px; top: 470px; padding: 0 30px; border: 10px solid var(--color-rust, #c2502a); border-radius: 18px; color: var(--color-rust, #c2502a); background: rgba(251, 246, 236, 0.9); font-size: 170px; }
+    #s7-room { position: absolute; left: 380px; top: 770px; width: 610px; height: 380px; border: 6px dashed #f2e8d5; border-radius: 10px; }
+    #s7-room .s7-mono { position: absolute; left: 22px; top: 16px; font-size: 28px; }
+    #s7-code { position: absolute; left: 90px; top: 830px; width: 220px; height: 270px; background: #1b1814; border: 4px solid #f2e8d5; border-radius: 14px; text-align: center; padding-top: 34px; }
+    #s7-code .s7-d { font-size: 110px; font-stretch: 100%; color: var(--color-mustard, #e2a72e); }
+    #s7-code .s7-mono { font-size: 28px; margin-top: 22px; line-height: 1.3; }
+    #s7-x { position: absolute; left: 70px; top: 820px; width: 260px; height: 290px; overflow: visible; }
+    .s7-sheet { position: absolute; width: 160px; height: 210px; background: #fbf6ec; border: 3px solid #1b1814; border-radius: 6px; padding: 14px; color: #1b1814; box-shadow: 6px 6px 0 #0a3b3b; }
+    .s7-sheet b { display: block; font-size: 26px; color: var(--color-rust, #c2502a); }
+    .s7-sheet i { display: block; height: 8px; margin-top: 14px; background: #d9cbb1; border-radius: 4px; }
+    .s7-sheet u { position: absolute; right: 14px; bottom: 14px; width: 40px; height: 40px; border-radius: 50%; border: 4px solid var(--color-rust, #c2502a); }
+    .s7-pile { width: 340px; height: 440px; padding: 26px; box-shadow: 8px 8px 0 #1b1814; }
+    .s7-pile b { font-size: 40px; }
+    .s7-pile i { height: 14px; margin-top: 26px; }
+    .s7-pile u { width: 80px; height: 80px; right: 26px; bottom: 26px; border-width: 6px; }
+    #s7-band { position: absolute; left: -40px; top: 600px; width: 1160px; padding: 30px 0 34px; background: var(--color-mustard, #e2a72e); color: #1b1814; text-align: center; border-top: 6px solid #1b1814; border-bottom: 6px solid #1b1814; }
+    #s7-band .s7-d { font-size: 150px; }
+    #s7-band .s7-mono { font-size: 28px; margin-top: 14px; }
+    #s7-cover { position: absolute; inset: 0; background: var(--color-paper, #f2e8d5); }
+    /* Hidden until their entrance (the timeline animates them in). */
+    #s7-t1, #s7-t2, #s7-no, #s7-room, #s7-code, #s7-band, #s7-p1, #s7-p2, #s7-p3, .s7-pile { opacity: 0; }
+    #s7-x1, #s7-x2, #s7-tick-p { stroke-dasharray: 400; stroke-dashoffset: 400; }
+    #s7-cover { clip-path: inset(100% 0 0 0); opacity: 0; }
+  </style>
+  <div id="root" data-composition-id="s7" data-width="1080" data-height="1920">
+    <div id="s7-stage">
+      <h2 id="s7-head" class="s7-d">Error <span>03</span></h2>
+
+      <div id="s7-t1" class="s7-tag"><div class="s7-mono">Price</div><div class="s7-d">Free</div></div>
+      <div id="s7-t2" class="s7-tag"><div class="s7-mono">Legal</div><div class="s7-d">Risk-free?</div></div>
+      <svg id="s7-tick" viewBox="0 0 170 150" aria-hidden="true"><path id="s7-tick-p" d="M14 80 L62 130 L156 16" fill="none" stroke="#0e4a4a" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" /></svg>
+      <div id="s7-no" class="s7-d">No</div>
+
+      <div id="s7-room"><div class="s7-mono">Clean room</div></div>
+      <div id="s7-code"><div class="s7-d">&lt;/&gt;</div><div class="s7-mono">Copied<br />code</div></div>
+      <svg id="s7-x" viewBox="0 0 260 290" aria-hidden="true"><path id="s7-x1" d="M30 30 L230 260" stroke="#c2502a" stroke-width="22" stroke-linecap="round" /><path id="s7-x2" d="M230 30 L30 260" stroke="#c2502a" stroke-width="22" stroke-linecap="round" /></svg>
+
+      <!-- Patents walk straight through the clean room's wall. -->
+      <div id="s7-p1" class="s7-sheet" style="left: 430px; top: 880px"><b class="s7-mono">Patent</b><i></i><i></i><i></i><u></u></div>
+      <div id="s7-p2" class="s7-sheet" style="left: 610px; top: 900px"><b class="s7-mono">Patent</b><i></i><i></i><i></i><u></u></div>
+      <div id="s7-p3" class="s7-sheet" style="left: 790px; top: 880px"><b class="s7-mono">Patent</b><i></i><i></i><i></i><u></u></div>
+
+      <!-- "And Adobe holds thousands": the pile (positions from a seeded RNG, seed 17). -->
+      <div id="s7-pile">
+        <div class="s7-sheet s7-pile" data-r="14.7" style="left: 454px; top: 968px"><b class="s7-mono">Patent</b><i></i><i></i><i></i><u></u></div>
+        <div class="s7-sheet s7-pile" data-r="-15.6" style="left: 294px; top: 713px"><b class="s7-mono">Patent</b><i></i><i></i><i></i><u></u></div>
+        <div class="s7-sheet s7-pile" data-r="7.7" style="left: 642px; top: 1226px"><b class="s7-mono">Patent</b><i></i><i></i><i></i><u></u></div>
+        <div class="s7-sheet s7-pile" data-r="-12.1" style="left: 32px; top: 175px"><b class="s7-mono">Patent</b><i></i><i></i><i></i><u></u></div>
+        <div class="s7-sheet s7-pile" data-r="-11.9" style="left: 754px; top: 979px"><b class="s7-mono">Patent</b><i></i><i></i><i></i><u></u></div>
+        <div class="s7-sheet s7-pile" data-r="6.7" style="left: 433px; top: 770px"><b class="s7-mono">Patent</b><i></i><i></i><i></i><u></u></div>
+        <div class="s7-sheet s7-pile" data-r="-17.4" style="left: 620px; top: 942px"><b class="s7-mono">Patent</b><i></i><i></i><i></i><u></u></div>
+        <div class="s7-sheet s7-pile" data-r="-17.3" style="left: 484px; top: 247px"><b class="s7-mono">Patent</b><i></i><i></i><i></i><u></u></div>
+        <div class="s7-sheet s7-pile" data-r="-16.8" style="left: 730px; top: 522px"><b class="s7-mono">Patent</b><i></i><i></i><i></i><u></u></div>
+        <div class="s7-sheet s7-pile" data-r="2.8" style="left: 642px; top: 1211px"><b class="s7-mono">Patent</b><i></i><i></i><i></i><u></u></div>
+        <div class="s7-sheet s7-pile" data-r="-8.1" style="left: 622px; top: 550px"><b class="s7-mono">Patent</b><i></i><i></i><i></i><u></u></div>
+        <div class="s7-sheet s7-pile" data-r="-20.7" style="left: 46px; top: 1428px"><b class="s7-mono">Patent</b><i></i><i></i><i></i><u></u></div>
+        <div class="s7-sheet s7-pile" data-r="0.3" style="left: 339px; top: 287px"><b class="s7-mono">Patent</b><i></i><i></i><i></i><u></u></div>
+        <div class="s7-sheet s7-pile" data-r="23.8" style="left: 405px; top: 1431px"><b class="s7-mono">Patent</b><i></i><i></i><i></i><u></u></div>
+        <div class="s7-sheet s7-pile" data-r="15.0" style="left: 65px; top: 956px"><b class="s7-mono">Patent</b><i></i><i></i><i></i><u></u></div>
+        <div class="s7-sheet s7-pile" data-r="-3.2" style="left: 264px; top: 156px"><b class="s7-mono">Patent</b><i></i><i></i><i></i><u></u></div>
+        <div class="s7-sheet s7-pile" data-r="19.1" style="left: 505px; top: 225px"><b class="s7-mono">Patent</b><i></i><i></i><i></i><u></u></div>
+        <div class="s7-sheet s7-pile" data-r="-21.6" style="left: 676px; top: 846px"><b class="s7-mono">Patent</b><i></i><i></i><i></i><u></u></div>
+        <div class="s7-sheet s7-pile" data-r="3.8" style="left: 408px; top: 887px"><b class="s7-mono">Patent</b><i></i><i></i><i></i><u></u></div>
+        <div class="s7-sheet s7-pile" data-r="-12.5" style="left: -75px; top: 950px"><b class="s7-mono">Patent</b><i></i><i></i><i></i><u></u></div>
+        <div class="s7-sheet s7-pile" data-r="22.0" style="left: 490px; top: 557px"><b class="s7-mono">Patent</b><i></i><i></i><i></i><u></u></div>
+        <div class="s7-sheet s7-pile" data-r="-21.2" style="left: 459px; top: 856px"><b class="s7-mono">Patent</b><i></i><i></i><i></i><u></u></div>
+        <div class="s7-sheet s7-pile" data-r="-14.7" style="left: -15px; top: 684px"><b class="s7-mono">Patent</b><i></i><i></i><i></i><u></u></div>
+        <div class="s7-sheet s7-pile" data-r="1.6" style="left: 538px; top: 1257px"><b class="s7-mono">Patent</b><i></i><i></i><i></i><u></u></div>
+        <div class="s7-sheet s7-pile" data-r="7.6" style="left: 52px; top: 632px"><b class="s7-mono">Patent</b><i></i><i></i><i></i><u></u></div>
+        <div class="s7-sheet s7-pile" data-r="-15.8" style="left: 276px; top: 773px"><b class="s7-mono">Patent</b><i></i><i></i><i></i><u></u></div>
+      </div>
+
+      <div id="s7-band" data-layout-allow-occlusion><div class="s7-d">Thousands of patents</div><div class="s7-mono">Held by Adobe · per legal experts via LinuxCompatible</div></div>
+    </div>
+    <div id="s7-cover"></div>
+  </div>
+  <script>
+    (() => {
+      const tl = gsap.timeline({ paused: true });
+      const at = (abs) => abs - 46.6;
+
+      // Iris in from the last frame's centre.
+      tl.fromTo("#s7-stage", { clipPath: "circle(0% at 540px 860px)" }, { clipPath: "circle(130% at 540px 860px)", duration: 0.38, ease: "power3.out" }, 0);
+      tl.fromTo("#s7-head", { opacity: 0, scale: 1.45 }, { opacity: 1, scale: 1, duration: 0.12, ease: "power4.in", transformOrigin: "0% 50%" }, at(46.82));
+
+      // "Free, sure." — tagged and ticked.
+      tl.fromTo("#s7-t1", { opacity: 0, y: -260, rotation: -14 }, { opacity: 1, y: 0, rotation: -3, duration: 0.45, ease: "expo.out" }, at(47.7));
+      tl.to("#s7-tick-p", { strokeDashoffset: 0, duration: 0.22, ease: "power2.out" }, at(48.45));
+
+      // "Free of risk? No."
+      tl.fromTo("#s7-t2", { opacity: 0, y: -260, rotation: 14 }, { opacity: 1, y: 0, rotation: 3, duration: 0.45, ease: "expo.out" }, at(48.95));
+      tl.fromTo("#s7-no", { opacity: 0, scale: 1.6, rotation: 2 }, { opacity: 1, scale: 1, rotation: 12, duration: 0.12, ease: "power4.in" }, at(49.92));
+
+      // "A clean room avoids copied code." — the code hits the wall and is turned back.
+      tl.fromTo("#s7-room", { opacity: 0, scale: 0.92 }, { opacity: 1, scale: 1, duration: 0.35, ease: "expo.out" }, at(50.75));
+      tl.fromTo("#s7-code", { opacity: 0, x: -280 }, { opacity: 1, x: 0, duration: 0.35, ease: "expo.out" }, at(51.0));
+      tl.to("#s7-code", { x: 64, duration: 0.18, ease: "power3.in" }, at(51.8));
+      tl.to("#s7-code", { x: -10, rotation: -6, duration: 0.4, ease: "expo.out" }, at(51.98));
+      tl.to("#s7-x1", { strokeDashoffset: 0, duration: 0.14, ease: "power2.out" }, at(52.12));
+      tl.to("#s7-x2", { strokeDashoffset: 0, duration: 0.14, ease: "power2.out" }, at(52.26));
+
+      // "It doesn't avoid patents." — they pass straight through.
+      ["#s7-p1", "#s7-p2", "#s7-p3"].forEach((sel, i) => {
+        tl.fromTo(sel, { opacity: 1, x: -760 - i * 160, rotation: -10 }, { opacity: 1, x: 0, rotation: [-4, 3, -2][i], immediateRender: false, duration: 0.5, ease: "expo.out" }, at(53.5 + i * 0.13));
+      });
+
+      // "And Adobe holds thousands." — the pile buries the frame.
+      document.querySelectorAll(".s7-pile").forEach((el, i) => {
+        const r = parseFloat(el.dataset.r);
+        tl.fromTo(el, { opacity: 1, y: -1500, rotation: r - 30 }, { opacity: 1, y: 0, rotation: r, immediateRender: false, duration: 0.42, ease: "power3.out" }, at(54.3 + i * 0.045));
+      });
+      tl.fromTo("#s7-band", { opacity: 0, scale: 1.3, rotation: 0 }, { opacity: 1, scale: 1, rotation: -4, duration: 0.13, ease: "power4.in" }, at(55.6));
+
+      // One last sheet covers everything: the verdict happens on paper.
+      tl.fromTo("#s7-cover", { clipPath: "inset(100% 0 0 0)", opacity: 1 }, { clipPath: "inset(0% 0 0 0)", opacity: 1, immediateRender: false, duration: 0.42, ease: "power3.inOut" }, at(56.38));
+
+      window.__timelines["s7"] = tl;
+    })();
+  </script>
+</template>

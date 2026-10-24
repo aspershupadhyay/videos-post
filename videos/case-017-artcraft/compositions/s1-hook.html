@@ -1,0 +1,98 @@
+<template>
+  <style>
+    @font-face { font-family: "Bricolage Grotesque"; font-weight: 200 800; font-stretch: 75% 100%; font-display: block; src: url("assets/fonts/BricolageGrotesque.woff2") format("woff2"); }
+    @font-face { font-family: "Instrument Serif"; font-style: italic; font-weight: 400; font-display: block; src: url("assets/fonts/InstrumentSerif-Italic.woff2") format("woff2"); }
+    #root { position: absolute; inset: 0; overflow: hidden; background: var(--color-paper, #f2e8d5); color: #1b1814; font-family: "Bricolage Grotesque", sans-serif; }
+    #s1-stage { position: absolute; inset: 0; }
+    .s1-mono { font-family: "JetBrains Mono", monospace; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; }
+    #s1-kicker { position: absolute; left: 90px; top: 250px; font-size: 32px; display: flex; gap: 18px; align-items: center; }
+    #s1-kicker b { background: #1b1814; color: #f2e8d5; padding: 8px 14px; }
+    #s1-head { position: absolute; left: 84px; top: 304px; font-weight: 800; font-stretch: 75%; font-size: 150px; line-height: 0.86; text-transform: uppercase; }
+    #s1-head span { color: var(--color-rust, #c2502a); }
+    .s1-card { position: absolute; left: 90px; top: 560px; width: 900px; height: 590px; background: #fbf6ec; border: 4px solid #1b1814; border-radius: 16px; box-shadow: 10px 10px 0 #1b1814; }
+    .s1-ghost { background: #e9dcc3; }
+    #s1-post { padding: 40px 48px; }
+    #s1-post-top { display: flex; align-items: center; gap: 22px; }
+    #s1-avatar { width: 84px; height: 84px; border-radius: 50%; background: #d9cbb1; border: 4px solid #1b1814; display: flex; align-items: flex-end; justify-content: center; overflow: hidden; }
+    #s1-post-name { font-size: 40px; font-weight: 700; line-height: 1.05; }
+    #s1-post-name small { display: block; font-size: 28px; color: #6a6056; }
+    #s1-post-body { margin-top: 30px; font-size: 72px; font-weight: 700; font-stretch: 82%; line-height: 1.1; letter-spacing: -0.01em; }
+    .s1-hl { --hl: 0%; background-image: linear-gradient(#e2a72e, #e2a72e); background-repeat: no-repeat; background-size: var(--hl) 92%; background-position: 0 60%; -webkit-box-decoration-break: clone; box-decoration-break: clone; padding: 0 6px; margin: 0 -6px; }
+    #s1-lens { position: absolute; left: 76px; top: 599px; width: 560px; height: 560px; }
+    #s1-lens svg { position: absolute; inset: 0; width: 560px; height: 560px; overflow: visible; }
+    #s1-mag { position: absolute; left: 88px; top: 88px; width: 292px; height: 292px; border-radius: 50%; background: #fbf6ec; overflow: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center; text-transform: uppercase; font-weight: 800; font-stretch: 75%; line-height: 0.84; color: var(--color-rust, #c2502a); }
+    #s1-mag div:first-child { font-size: 132px; }
+    #s1-mag div:last-child { font-size: 92px; }
+    #s1-flood { position: absolute; left: 88px; top: 88px; width: 292px; height: 292px; border-radius: 50%; background: var(--color-teal, #0e4a4a); opacity: 0; }
+    /* Hidden until their entrance (the timeline animates them in). */
+    #s1-r1, #s1-r2, #s1-r3, #s1-lens, #s1-mag { opacity: 0; }
+  </style>
+  <div id="root" data-composition-id="s1" data-width="1080" data-height="1920">
+    <div id="s1-stage" data-hold="the claim is read while the voice says it; highlights land on the words">
+      <div id="s1-kicker" class="s1-mono"><b>Case 017</b><span>Fact check</span></div>
+      <h1 id="s1-head">Cloned in <span>a week?</span></h1>
+
+      <!-- Reposts fanned out behind the post on "going viral". -->
+      <div id="s1-r1" class="s1-card s1-ghost"></div>
+      <div id="s1-r2" class="s1-card s1-ghost"></div>
+      <div id="s1-r3" class="s1-card s1-ghost"></div>
+
+      <!-- The claim, verbatim from the viral post (source: X, Oct 2026). No account is shown. -->
+      <div id="s1-post" class="s1-card">
+        <div id="s1-post-top">
+          <div id="s1-avatar"><svg width="64" height="64" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="24" r="13" fill="#6a6056" /><path d="M6 64c2-16 13-24 26-24s24 8 26 24z" fill="#6a6056" /></svg></div>
+          <div id="s1-post-name">A post going viral<small class="s1-mono">Oct 2026</small></div>
+        </div>
+        <div id="s1-post-body">
+          One guy just cloned<br /><span id="s1-hl1" class="s1-hl">$100 billion</span> worth of Adobe software
+          <span id="s1-hl2" class="s1-hl">in about a week.</span> Then he put it on GitHub <span id="s1-hl3" class="s1-hl">for free.</span>
+        </div>
+      </div>
+
+      <!-- The lens from the CatchTheError mark: magnifies the number, then the camera goes through it. -->
+      <div id="s1-lens" data-layout-allow-occlusion data-layout-allow-overlap>
+        <div id="s1-mag"><div>$100</div><div>billion</div></div>
+        <div id="s1-flood"></div>
+        <svg viewBox="0 0 512 512" aria-hidden="true">
+          <path d="M318 318 L446 446" stroke="#1b1814" stroke-width="62" stroke-linecap="round" />
+          <path d="M300 300 L334 334" stroke="#1b1814" stroke-width="82" />
+          <circle cx="214" cy="214" r="150" fill="none" stroke="#1b1814" stroke-width="34" />
+          <path d="M110 170 A112 112 0 0 1 170 110" fill="none" stroke="#e2a72e" stroke-width="12" stroke-linecap="round" />
+        </svg>
+      </div>
+    </div>
+  </div>
+  <script>
+    (() => {
+      const tl = gsap.timeline({ paused: true });
+      const at = (s) => s; // scene-local seconds (scene starts at film 0)
+
+      // Highlighter lands on the spoken words.
+      tl.fromTo("#s1-hl1", { "--hl": "0%" }, { "--hl": "100%", duration: 0.32, ease: "power2.out" }, at(0.98));
+      tl.fromTo("#s1-hl2", { "--hl": "0%" }, { "--hl": "100%", duration: 0.4, ease: "power2.out" }, at(3.7));
+      tl.fromTo("#s1-hl3", { "--hl": "0%" }, { "--hl": "100%", duration: 0.3, ease: "power2.out" }, at(4.74));
+
+      // "going viral": copies of the post fan out behind it, one after another.
+      const fan = [
+        ["#s1-r1", -70, -46, -7],
+        ["#s1-r2", 64, 34, 6],
+        ["#s1-r3", -26, 92, -2.5],
+      ];
+      fan.forEach(([sel, x, y, r], i) => {
+        tl.fromTo(sel, { opacity: 1, x: 0, y: 0, rotation: 0 }, { opacity: 1, x, y, rotation: r, immediateRender: false, duration: 0.42, ease: "expo.out" }, at(6.3 + i * 0.16));
+      });
+      tl.to("#s1-post", { rotation: -1.2, duration: 0.5, ease: "power2.inOut" }, at(6.3));
+
+      // "let's catch the error": the lens arrives fast from bottom right and lands on the number.
+      tl.fromTo("#s1-lens", { opacity: 1, x: 620, y: 900, rotation: 24, scale: 1.25 }, { opacity: 1, x: 0, y: 0, rotation: 0, scale: 1, immediateRender: false, duration: 0.55, ease: "expo.out" }, at(7.78));
+      tl.fromTo("#s1-mag", { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.18, ease: "power3.out" }, at(8.2));
+
+      // Zoom through the glass: it floods teal (the next world) as the lens fills the frame.
+      tl.to("#s1-flood", { opacity: 1, duration: 0.2, ease: "power2.inOut" }, at(8.66));
+      tl.to("#s1-lens", { scale: 12, duration: 0.42, ease: "power3.in", transformOrigin: "234px 234px" }, at(8.76));
+      tl.to(["#s1-post", "#s1-r1", "#s1-r2", "#s1-r3", "#s1-head", "#s1-kicker"], { filter: "blur(10px)", duration: 0.3, ease: "power2.in" }, at(8.82));
+
+      window.__timelines["s1"] = tl;
+    })();
+  </script>
+</template>

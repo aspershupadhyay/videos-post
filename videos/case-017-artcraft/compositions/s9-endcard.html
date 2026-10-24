@@ -1,0 +1,70 @@
+<template>
+  <style>
+    @font-face { font-family: "Bricolage Grotesque"; font-weight: 200 800; font-stretch: 75% 100%; font-display: block; src: url("assets/fonts/BricolageGrotesque.woff2") format("woff2"); }
+    @font-face { font-family: "Instrument Serif"; font-style: italic; font-weight: 400; font-display: block; src: url("assets/fonts/InstrumentSerif-Italic.woff2") format("woff2"); }
+    #root { position: absolute; inset: 0; overflow: hidden; color: #f2e8d5; font-family: "Bricolage Grotesque", sans-serif; }
+    #s9-stage { position: absolute; inset: 0; background: var(--color-teal, #0e4a4a); }
+    #s9-mark { position: absolute; left: 222px; top: 280px; width: 600px; height: 600px; overflow: visible; }
+    #s9-word { position: absolute; left: 0; top: 930px; width: 1080px; text-align: center; font-weight: 800; font-stretch: 75%; font-size: 176px; line-height: 0.9; text-transform: uppercase; letter-spacing: -0.01em; }
+    #s9-word span { color: var(--color-mustard, #e2a72e); }
+    #s9-line { position: absolute; left: 0; top: 1104px; width: 1080px; text-align: center; font-family: "Instrument Serif", serif; font-style: italic; font-size: 66px; line-height: 1.1; }
+    #s9-line span { display: inline-block; }
+    #s9-handle { position: absolute; left: 0; top: 1214px; width: 1080px; text-align: center; font-family: "JetBrains Mono", monospace; font-weight: 800; letter-spacing: 0.1em; font-size: 40px; color: var(--color-mustard, #e2a72e); }
+    /* Hidden until their entrance (the timeline animates them in). */
+    #s9-glint, #s9-bug, #s9-handle-g, #s9-line span, #s9-handle { opacity: 0; }
+    #s9-ring { stroke-dasharray: 942.48; stroke-dashoffset: 942.48; }
+  </style>
+  <div id="root" data-composition-id="s9" data-width="1080" data-height="1920">
+    <div id="s9-stage">
+      <!-- The CatchTheError mark (brand/logo/mark-reversed.svg), built in parts. -->
+      <svg id="s9-mark" viewBox="0 0 512 512" aria-hidden="true">
+        <g id="s9-handle-g">
+          <path d="M318 318 L446 446" stroke="#f2e8d5" stroke-width="62" stroke-linecap="round" />
+          <path d="M300 300 L334 334" stroke="#f2e8d5" stroke-width="82" />
+        </g>
+        <circle id="s9-ring" cx="214" cy="214" r="150" fill="none" stroke="#f2e8d5" stroke-width="34" transform="rotate(-90 214 214)" />
+        <path id="s9-glint" d="M110 170 A112 112 0 0 1 170 110" fill="none" stroke="#e2a72e" stroke-width="12" stroke-linecap="round" />
+        <g id="s9-bug">
+          <g stroke="#f2e8d5" stroke-width="11" stroke-linecap="round" fill="none">
+            <path d="M168 196 L124 172" /><path d="M260 196 L304 172" />
+            <path d="M164 228 L112 228" /><path d="M264 228 L316 228" />
+            <path d="M170 262 L128 292" /><path d="M258 262 L300 292" />
+            <path d="M204 150 L186 116" /><path d="M224 150 L242 116" />
+          </g>
+          <ellipse cx="214" cy="236" rx="52" ry="66" fill="#c2502a" />
+          <path d="M214 178 L214 298" stroke="#0e4a4a" stroke-width="7" stroke-linecap="round" />
+          <circle cx="214" cy="166" r="22" fill="#f2e8d5" />
+        </g>
+      </svg>
+
+      <div id="s9-word">Catchthe<span>error</span></div>
+      <div id="s9-line"><span>We check the post</span> <span>before you share it.</span></div>
+      <div id="s9-handle">@catchtheerror</div>
+    </div>
+  </div>
+  <script>
+    (() => {
+      const tl = gsap.timeline({ paused: true });
+      const at = (abs) => abs - 63.7;
+
+      // Teal opens out of the stamp.
+      tl.fromTo("#s9-stage", { clipPath: "circle(0% at 540px 760px)" }, { clipPath: "circle(130% at 540px 760px)", duration: 0.42, ease: "power2.inOut" }, 0);
+
+      // "Follow CatchTheError": the mark builds — ring, bug, handle.
+      tl.to("#s9-ring", { strokeDashoffset: 0, duration: 0.55, ease: "power2.inOut" }, at(63.95));
+      tl.fromTo("#s9-bug", { opacity: 1, y: -420 }, { opacity: 1, y: 0, duration: 0.3, ease: "power4.in", immediateRender: false }, at(64.25));
+      tl.fromTo("#s9-handle-g", { opacity: 1, rotation: -150, svgOrigin: "214 214" }, { opacity: 1, rotation: 0, duration: 0.55, ease: "expo.out", svgOrigin: "214 214", immediateRender: false }, at(64.50));
+      tl.fromTo("#s9-glint", { opacity: 0 }, { opacity: 1, duration: 0.12 }, at(64.80));
+
+      // The name wipes in as it is said.
+      tl.fromTo("#s9-word", { clipPath: "inset(0 100% 0 0)" }, { clipPath: "inset(0 0% 0 0)", duration: 0.5, ease: "power3.out" }, at(64.30));
+
+      // "We check the post before you share it." — then everything holds.
+      tl.fromTo("#s9-line span:nth-child(1)", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.18, ease: "power4.out" }, at(65.29));
+      tl.fromTo("#s9-line span:nth-child(2)", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.18, ease: "power4.out" }, at(66.19));
+      tl.fromTo("#s9-handle", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.3, ease: "expo.out" }, at(66.90));
+
+      window.__timelines["s9"] = tl;
+    })();
+  </script>
+</template>

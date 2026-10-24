@@ -1,0 +1,72 @@
+<template>
+  <style>
+    @font-face { font-family: "Bricolage Grotesque"; font-weight: 200 800; font-stretch: 75% 100%; font-display: block; src: url("assets/fonts/BricolageGrotesque.woff2") format("woff2"); }
+    #root { position: absolute; inset: 0; overflow: hidden; background: var(--color-mustard, #e2a72e); color: #1b1814; font-family: "Bricolage Grotesque", sans-serif; }
+    #s4-stage { position: absolute; inset: 0; }
+    .s4-mono { font-family: "JetBrains Mono", monospace; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; }
+    #s4-kicker { position: absolute; left: 90px; top: 236px; font-weight: 800; font-stretch: 75%; font-size: 130px; line-height: 0.86; text-transform: uppercase; }
+    #s4-star { position: absolute; left: 90px; top: 470px; width: 150px; height: 150px; }
+    #s4-label { position: absolute; left: 270px; top: 500px; font-size: 34px; line-height: 1.4; }
+    #s4-count { position: absolute; left: 70px; top: 650px; font-weight: 800; font-stretch: 75%; font-size: 330px; line-height: 0.9; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+    #s4-bar { position: absolute; left: 90px; top: 950px; width: 900px; }
+    #s4-bar-ends { display: flex; justify-content: space-between; font-size: 32px; }
+    #s4-track { position: relative; margin-top: 16px; height: 18px; background: rgba(27, 24, 20, 0.18); border-radius: 9px; }
+    #s4-fill { position: absolute; inset: 0; background: #1b1814; border-radius: 9px; transform-origin: 0 50%; }
+    #s4-bar-note { margin-top: 18px; font-size: 40px; font-weight: 700; }
+    #s4-src { position: absolute; left: 90px; top: 1116px; font-size: 28px; color: #3d362f; }
+    #s4-dip { position: absolute; inset: 0; background: #1b1814; opacity: 0; }
+  </style>
+  <div id="root" data-composition-id="s4" data-width="1080" data-height="1920">
+    <div id="s4-stage">
+      <div id="s4-kicker">People<br />noticed</div>
+      <svg id="s4-star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.5l-5.9 3.1 1.2-6.5-4.8-4.6 6.6-.9z" fill="#fbf6ec" stroke="#1b1814" stroke-width="1.6" stroke-linejoin="round" /></svg>
+      <div id="s4-label" class="s4-mono">PhotoCraft<br />GitHub stars</div>
+      <div id="s4-count">0</div>
+      <div id="s4-bar">
+        <div id="s4-bar-ends" class="s4-mono"><span>Sep 30</span><span>Oct 11</span></div>
+        <div id="s4-track"><div id="s4-fill"></div></div>
+        <div id="s4-bar-note">Under two weeks.</div>
+      </div>
+      <div id="s4-src" class="s4-mono">Source: LinuxCompatible, Oct 11 2026</div>
+    </div>
+    <div id="s4-dip"></div>
+  </div>
+  <script>
+    (() => {
+      const tl = gsap.timeline({ paused: true });
+      const at = (abs) => abs - 26.3;
+
+      tl.fromTo("#s4-kicker", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.18, ease: "power4.out" }, at(26.45));
+      tl.fromTo("#s4-star", { opacity: 0, scale: 0.4, rotation: -40 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.45, ease: "back.out(1.6)" }, at(26.9));
+      tl.fromTo("#s4-label", { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, ease: "power4.out" }, at(27.95));
+
+      // "forty-three thousand": counts up in 1.3 s, lands on a hard stop.
+      const counter = { v: 0 };
+      const el = document.querySelector("#s4-count");
+      tl.fromTo(
+        counter,
+        { v: 0 },
+        {
+          v: 43000,
+          duration: 1.3,
+          ease: "power3.out",
+          onUpdate: () => {
+            el.textContent = Math.round(counter.v / 100) * 100 >= 43000 ? "43,000" : Math.round(counter.v).toLocaleString("en-US");
+          },
+        },
+        at(28.6),
+      );
+      tl.fromTo("#s4-count", { scale: 1.06 }, { scale: 1, duration: 0.2, ease: "power4.out", transformOrigin: "0% 50%" }, at(29.9));
+
+      // "in under two weeks": Sep 30 → Oct 11 fills.
+      tl.fromTo("#s4-bar", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.3, ease: "expo.out" }, at(30.3));
+      tl.fromTo("#s4-fill", { scaleX: 0 }, { scaleX: 1, duration: 0.7, ease: "power2.inOut" }, at(30.55));
+      tl.fromTo("#s4-src", { opacity: 0 }, { opacity: 1, duration: 0.2 }, at(30.3));
+
+      // Dip before the hard cut into the errors.
+      tl.to("#s4-dip", { opacity: 0.4, duration: 0.1, ease: "none" }, at(32.0));
+
+      window.__timelines["s4"] = tl;
+    })();
+  </script>
+</template>
