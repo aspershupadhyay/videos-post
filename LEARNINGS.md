@@ -2,6 +2,15 @@
 
 Newest first. Each entry: what happened, what we learned, the rule it became (in `CLAUDE.md`).
 
+## 2026-10-27 — /cte-explainer + /cte-demo skills; Tabloid + Zine lab tests
+- Built 10 s lab tests (`videos/_lab/`): Tabloid explainer (OpenAI agents story, Tech Times clipping, Courbet PD
+  reaction) and Zine demo (real Content Credentials Verify recording, zoom-follow, step cards). Both PASS qa_frames.
+- Facts: AFP/Tech Xplore had no severity rating → dropped that claim; used OpenAI's own quote instead.
+- Memes: public-domain art only (Courbet, *Le Désespéré*, PD-Art), treated offline (halftone/photocopy, torn edge).
+- Could've done better: headline wrapped and a stat overflowed on first snapshot; two pen marks missed until I computed
+  them from the camera formula. → The kit README now states the formula; measure every mark, every time.
+  Tech Xplore blocks bots — keep a list of outlets that allow screenshots.
+
 ## 2026-10-27 — Creator rejected Newsroom/Broadsheet type + 3 logo concepts; shortlisted Tabloid + Zine
 - Feedback: "neither looks good, think outside the box, don't stay biased to what we already did".
   → Inspiration comes from real outside work first (Fonts In Use, Dribbble, foundries), shown as a curated board,
