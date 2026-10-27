@@ -2,6 +2,13 @@
 
 Newest first. Each entry: what happened, what we learned, the rule it became (in `CLAUDE.md`).
 
+## 2026-10-27 — Type, logo and editing taste (creator: fonts and logo look like AI slop)
+- **Confirmed:** Geist + Instrument Serif is the AI-startup default (named in a 2026 "design slop" round-up), so it
+  signals "AI product". Proposed newsroom type (Schibsted Grotesk / Newsreader / IBM Plex Mono) and 3 logo concepts
+  built from editing marks (circle, [sic], strike) instead of a magnifier + bug icon. `EDITING.md` holds the cutting rules.
+- Could've done better: two specimen frames wrapped on the first render, and the logo circle sat off-centre;
+  measure text boxes before placing hand-drawn marks (same lesson as Case 020; make it a habit, not a fix).
+
 ## 2026-10-27 — Visual language v1 (creator asked for creative visuals that don't look like AI hype)
 - Proposed 4 looks built only from real evidence + our marks: Forensic, Paper trail, Split verdict, Screen proof
   (`VISUALS.md`, style frames in `brand/lookbook/`). Not yet tested in a video — judge on Case 021.
