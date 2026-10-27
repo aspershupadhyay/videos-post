@@ -19,7 +19,13 @@ caught. Tagline `CATCH · THE · ERROR` in bold typewriter caps. Ground is light
 | `MOTION.md` | Transitions and moves learned from reference films (OpenAI's Terra film first). |
 
 **Colours:** paper `#E7E7E5` · ink `#161616` · pen red `#DD483F` · rule grey `#80807E` · tagline grey `#585856`.
-**Type that matches:** Courier Prime Bold (OFL) for headlines and credits; it is the logo's tagline face.
+**Type (look v5, from the creator's cover reference):** Inter 800 for headlines (−0.055em), Instrument Serif Italic in red
+for the one word that matters (with the pen underline), Courier Prime Bold only for the `CASE 0NN / topic` kicker, the
+wordmark `CATCH · THE · (E)RROR` and the end card.
+
+**Safe zones (1080×1920, Shorts + Reels):** key content in y 240–1480; nothing to read under the right rail
+(x > 940, y > 950). Overlay check on any frame:
+`ffmpeg -i f.png -vf "drawbox=0:0:1080:240:blue@0.25:t=fill,drawbox=0:1480:1080:440:blue@0.25:t=fill,drawbox=940:950:140:530:red@0.25:t=fill" out.png`
 
 ### Using the logo in a video
 1. `cp brand/logo-v3/layers/*.png brand/logo-v3/paper-1080x1920.png videos/<case>/assets/logo/`
