@@ -2,6 +2,20 @@
 
 Newest first. Each entry: what happened, what we learned, the rule it became (in `CLAUDE.md`).
 
+## 2026-10-27 — Case 018 (Kimi K3.1 Pro): post-mortem, first numbers
+- **Numbers:** account at 3,253 views and 12 followers after Case 018. Growing, but strategy has to change.
+- **Story:** three videos glued together (walking sim → spec sheet → "worse on purpose"); the shareable angle came at
+  0:42 and the 17–39 s spec-sheet middle sagged. ~11 numbers in 74 s. → Rule 7 + `STRATEGY.md` §2–4.
+- **Re-hook:** "here's the part nobody's talking about" is a cliché → banned (`STRATEGY.md` §3).
+- **Cover:** "It couldn't walk. Then the AI fixed the physics." answered its own question; 16:9 strip on black wastes the
+  hook frame. → Cover template, `STRATEGY.md` §5, rule 9.
+- **Blank visuals** (creator noticed): measured 6 empty gaps of 0.6–1.1 s at scene starts (9.8, 17.3, 39.2, 41.8,
+  54.1, 62.8 s) where type faded in from 0 on black, plus a 2.2 s frozen end card. → `tools/qa_frames.py`, rule 8.
+- **Ending:** CTA instead of a repeatable line; end card ~2 s. → structure in `STRATEGY.md` §4.
+- **Asked for:** best fonts, a consistent thumbnail theme on the profile, optimised use of resources, self-improving
+  process. → Type v3 trial (Geist / Instrument Serif Italic / Geist Mono), covers, rules 10–11.
+- Redo storyboard: `videos/case-018-kimi-k3-1-pro/STORYBOARD-v2.md`.
+
 ## 2026-10-24 — Case 018 (Kimi K3.1 Pro): voice lessons
 - The `sparsh` model's learned temperature drifted to 1.0 between sessions. At 1.0 it said the brand as
   "Catch the Air/Ur" three times. At **0.5–0.7** with the name written as plain words ("Catch the Error",
