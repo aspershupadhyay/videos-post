@@ -36,3 +36,6 @@ Log every new piece of feedback in `LEARNINGS.md` with the date, and promote it 
     case's scripts, SFX and fonts.
 11. **Learn every video.** Log the creator's numbers and feedback in `LEARNINGS.md` + the `STRATEGY.md` scoreboard; promote
     what holds twice into a rule here; refresh `TOPICS.md` each session.
+12. **Review after every task.** End each task (a video, research, a fix) with a short "Could've done better" note in
+    `LEARNINGS.md` (dated): what slowed us, what was weak, what to do differently. Don't redo the finished task for it;
+    it's for the next one, so we never repeat a mistake.
