@@ -8,7 +8,9 @@ the brand in `brand/`, and what worked on Case 017. Start a new video with:
 cd videos && npx hyperframes@0.8.192 init case-0NN-<slug> --example blank --resolution portrait --non-interactive
 ```
 
-Then copy `DESIGN.md`, `assets/fonts/`, `assets/sfx/` and `scripts/` from `videos/case-018-kimi-k3-1-pro` (the current template).
+Then copy `assets/fonts/`, `assets/sfx/` and `scripts/` from `videos/case-021-gpt-6-1-terra` (the current template, look v4
+"paper"), and the logo layers + sting per `brand/README.md`. `scripts/build_scenes.py` derives every cut from the voice;
+`scripts/make_cues.py` derives every SFX cue from it too.
 
 ## 1. Research (the brand is the fact-check)
 

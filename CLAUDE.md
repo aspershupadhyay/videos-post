@@ -7,7 +7,8 @@ Short-form research videos for **CatchTheError** (Instagram Reels, YouTube Short
   scoreboard) and `TOPICS.md` (the scored topic bank). Then `PLAYBOOK.md` for production: research, voice, sound, motion.
 - `LEARNINGS.md` is the dated feedback log; `tools/qa_frames.py <render>` is the blank/frozen-frame gate.
 - HyperFrames skills are vendored in `.claude/skills/` (`/hyperframes` first). Pinned CLI: `npx hyperframes@0.8.192`.
-- Brand: `brand/` (logo SVGs from `brand/build_logo.py`) and each video's `DESIGN.md`.
+- Brand: **logo v3 "ct(e)"** — read `brand/README.md` (layers, paper ground, colours) and `brand/MOTION.md` (transitions
+  learned from reference films). Every end card uses the reusable sting `brand/motion/logo-sting.html`. Logo 2.0 is retired.
 - One folder per video in `videos/`; each has `SPEC.md`, `scripts/` (audio prep, captions, SFX cues) and `renders/`.
 
 ## Taste rules — from the creator's feedback (read before every video; these override the playbook)
@@ -15,7 +16,7 @@ Short-form research videos for **CatchTheError** (Instagram Reels, YouTube Short
 Log every new piece of feedback in `LEARNINGS.md` with the date, and promote it here once it's a rule.
 
 1. **Restraint over palette.** Case 017 used every brand colour as a whole-frame world (teal, mustard, rust) — too much,
-   it reads as a template. Default ground is **black (#0A0A0A) or white (#FAFAFA)**. The brand appears as **one signature
+   it reads as a template. Default ground is **black (#0A0A0A) or white (#FAFAFA)** (since Case 021: the logo's paper, rule 15). The brand appears as **one signature
    element** only (e.g. the red-pen mark / rust accent on the single word that matters, and the logo on the end card).
    The palette is for consistency, not decoration.
 2. **It must look real, not generated.** Real footage, real screenshots and real UI from the source beat drawn
@@ -44,3 +45,14 @@ Log every new piece of feedback in `LEARNINGS.md` with the date, and promote it 
 14. **A passing check is not quality.** Whisper match can't hear a stretched word and qa_frames can't see a boring stretch.
     Before delivery: A/B any acronym or name in the first voice job, re-watch the 25–40 s middle for retention, and ask the
     creator to listen once.
+15. **Match the logo (creator, 2026-10-27).** Paper ground (`brand/logo-v3/paper-1080x1920.png`); red #DD483F only for the
+    pen, the logo's pen ring and the one italic word. Use the logo creatively; every end card is `brand/motion/logo-sting.html`
+    ("amazing" — keep it). Template: `videos/case-021-gpt-6-1-terra` (look v5 below).
+16. **No subtitles, no on-screen credits (creator, 2026-10-27).** Never put the voice on screen as text, and no source /
+    credit lines in the frame (sources go in `POST.md`). Text appears only as one short expressive line on some beats:
+    Inter 800 + one red Instrument Serif italic word underlined by the pen. Show it, don't read it: turn each claim into a
+    visual (the pen slices the tram = half price; the pen cuts the demo = "slow parts cut out"; an AD stamp on the demo).
+    Real footage big, in "printed photo" frames (6 px #1B1B1B border, offset shadow). Cover = the creator's template
+    (`STRATEGY.md` §5).
+17. **Safe zones (Shorts + Reels).** Key content lives in y 240–1480 on 1080×1920; no text under the right button rail
+    (x > 940) below y 950. Rearrange to fit, never shrink. Check with the overlay in `brand/README.md` before delivery.

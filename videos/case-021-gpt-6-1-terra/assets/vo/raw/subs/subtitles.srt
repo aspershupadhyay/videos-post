@@ -1,0 +1,111 @@
+1
+00:00:00,000 --> 00:00:02,060
+One photo, one sentence,
+
+2
+00:00:02,140 --> 00:00:04,060
+and an AI designed this toy.
+
+3
+00:00:04,074 --> 00:00:06,834
+An AI looked at one photo and designed this toy.
+
+4
+00:00:06,861 --> 00:00:09,721
+This toy was designed by an AI that saw one photo.
+
+5
+00:00:09,743 --> 00:00:12,663
+But OpenAI put one tiny line under this demo.
+
+6
+00:00:13,123 --> 00:00:13,803
+Keep your eye on it.
+
+7
+00:00:13,827 --> 00:00:16,107
+This is GPT 6.1 Tera.
+
+8
+00:00:16,327 --> 00:00:17,347
+It's not built to chat,
+
+9
+00:00:17,427 --> 00:00:19,007
+it's built to use your computer.
+
+10
+00:00:19,018 --> 00:00:21,178
+This is GPT 6.1 Tera.
+
+11
+00:00:21,438 --> 00:00:22,498
+It's not built to chat.
+
+12
+00:00:22,678 --> 00:00:24,118
+It's built to use your computer.
+
+13
+00:00:24,146 --> 00:00:26,126
+Here, it opens a 3D app and
+
+14
+00:00:26,206 --> 00:00:28,306
+builds the tram piece by piece.
+
+15
+00:00:28,333 --> 00:00:30,033
+It's half the price of the last Terra,
+
+16
+00:00:30,113 --> 00:00:32,873
+and OpenAI says it finishes tasks three
+
+17
+00:00:32,953 --> 00:00:35,073
+times faster than its bigger models.
+
+18
+00:00:35,100 --> 00:00:38,220
+Now, that tiny line, shown at actual speed,
+
+19
+00:00:38,300 --> 00:00:39,540
+some sections omitted,
+
+20
+00:00:39,568 --> 00:00:42,248
+Actual speed, with the slow parts cut out.
+
+21
+00:00:42,266 --> 00:00:43,746
+And three times faster?
+
+22
+00:00:44,106 --> 00:00:45,846
+That's OpenAI's own test.
+
+23
+00:00:46,106 --> 00:00:48,266
+No one outside OpenAI has confirmed it yet.
+
+24
+00:00:48,278 --> 00:00:49,658
+A demo is an ad.
+
+25
+00:00:49,738 --> 00:00:50,858
+Read the line under it.
+
+26
+00:00:50,886 --> 00:00:51,966
+Seen a demo like this?
+
+27
+00:00:52,046 --> 00:00:53,006
+Send it our way.
+
+28
+00:00:53,086 --> 00:00:53,806
+We'll check it.

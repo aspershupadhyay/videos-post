@@ -2,6 +2,35 @@
 
 Newest first. Each entry: what happened, what we learned, the rule it became (in `CLAUDE.md`).
 
+## 2026-10-27 — Case 021 v2: creator feedback on v1
+- **Disliked:** the aesthetic (typewriter text everywhere), the subtitle-like headlines repeating the voice, the source
+  credits on screen, the cover ("pretty shit"). **Liked:** the script, the logo CTA sting ("amazing").
+- **Asked for:** cover like their reference (paper, big Inter headline with a red serif-italic word + pen, real still in a
+  frame, CATCH · THE · (E)RROR), `CASE 0NN / topic` on top, no subtitles, clean and visually expressive, everything inside
+  the Shorts/Reels safe zone without shrinking. → Rules 15–17, `STRATEGY.md` §5.
+- My own review of v1: footage small in cards with the lower 40% of the frame empty; every line typed on screen; 3 scenes
+  of type only; cover was just frame 0. v2: footage 1000 px wide or full-bleed, one line of type per beat at most, the
+  numbers become objects (the pen slices the tram; the pen cuts the demo; AD stamp; the 3× fades to a ghost when "no one
+  has confirmed it").
+- Checked before claiming: the demo looked like it had 4 jump cuts (frame-diff spikes) — the frames show camera moves, not
+  edits, so we didn't say it.
+- Could've done better: I treated "match the logo" as "use the logo's font for everything". → Match the logo's *feel*
+  (paper, red pen, restraint), take type from the creator's references; show one style frame before building 10 scenes.
+
+## 2026-10-27 — Case 021 (GPT-6.1 Terra) + new logo v3 "ct(e)"
+- **Creator:** new logo (red "ct" on a rule, the "e" dropped below and circled in red pen, CATCH · THE · ERROR, paper
+  ground). Asked to save it for future sessions, match the video's look to it, use it creatively in motion, and learn the
+  zooms and transitions of OpenAI's Terra film. → `brand/README.md`, `brand/MOTION.md`, `brand/motion/logo-sting.html`,
+  rule 15 (look v4 "paper").
+- Logo layers were cut from the PNG by colour (red = R−G), an opening (min/max filter) to split letters from the thin pen
+  stroke, and largest-blob per letter; checked side by side against the source.
+- The story came from the source's own fine print: "Shown at actual speed. Some sections omitted." under the demo.
+  → Always read every caption/footnote in a launch film frame by frame; that's where our beat is.
+- One voice job (13 takes incl. 3 hooks + 2 GPT spellings, ~1 min on L4) + one transcribe for word times; 0 re-voices.
+- Could've done better: the first draft failed the STATIC gate twice because pen marks and mono text don't count as
+  motion. → Plan one beat that moves a real area every ~2 s *in the storyboard*, before building. Also: BleepingComputer
+  and openai.com block our fetcher (403 / Cloudflare); dev.to and simonwillison.net work for screenshots.
+
 
 ## 2026-10-27 — Creator: undo the format/look experiments; stick to the Case 020 routine
 - Removed `/cte-explainer`, `/cte-demo`, `cte-kit`, `videos/_lab`, `VISUALS.md`, `EDITING.md`, `brand/lookbook`,
