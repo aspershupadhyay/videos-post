@@ -1,0 +1,51 @@
+<template>
+  <style>
+    @font-face { font-family: "Geist"; font-weight: 100 900; font-display: block; src: url("assets/fonts/Geist.woff2") format("woff2"); }
+    @font-face { font-family: "Geist Mono"; font-weight: 100 900; font-display: block; src: url("assets/fonts/GeistMono.woff2") format("woff2"); }
+    @font-face { font-family: "Instrument Serif"; font-style: italic; font-weight: 400; font-display: block; src: url("assets/fonts/InstrumentSerif-Italic.woff2") format("woff2"); }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0a0a0a; color: #f4f2ee; font-family: "Geist", sans-serif; }
+    .disp { font-weight: 800; letter-spacing: -0.045em; line-height: 0.96; }
+    .it { font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400; letter-spacing: -0.01em; }
+    .mono { font-family: "Geist Mono", monospace; font-weight: 500; font-size: 28px; letter-spacing: 0.05em; text-transform: uppercase; color: #8c8a86; }
+    .panel { position: absolute; left: 0; top: 1480px; width: 1080px; height: 440px; background: #0a0a0a; }
+    .head { position: absolute; left: 64px; top: 1528px; width: 952px; font-size: 84px; }
+    .credit { position: absolute; left: 64px; top: 1836px; width: 952px; }
+    .full { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
+    .full video, .full img { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; object-fit: cover; }
+    .pen path { fill: none; stroke: #e0502b; stroke-width: 8; stroke-linecap: round; stroke-linejoin: round; }
+    .card { position: absolute; border-radius: 18px; overflow: hidden; background: #fff; }
+    .card img { display: block; width: 100%; height: auto; }
+    .ic { vertical-align: -6px; margin-right: 14px; }
+
+    .s9-box { position: absolute; left: 40px; width: 1000px; height: 700px; border-radius: 20px; overflow: hidden; background: #fff; }
+    #s9-b1 { top: 110px; background: #000; }
+    #s9-b1 video { position: absolute; left: 0; top: -350px; width: 1000px; height: 1778px; }
+    #s9-b2 { top: 980px; }
+    #s9-b2 img { position: absolute; left: 75px; top: 0; height: 700px; width: auto; }
+    .s9-l { position: absolute; left: 40px; font-size: 64px; }
+    #s9-l1 { top: 830px; } #s9-l2 { top: 1700px; }
+    #s9-l2 { opacity: 0; } #s9-b2 { opacity: 0.25; }
+  </style>
+  <div id="root" data-composition-id="s9" data-width="1080" data-height="1920">
+
+    <div id="s9-b1" class="s9-box"><video id="s9-v" class="clip" src="assets/footage/walk.mp4" data-start="0" data-duration="2.350" muted playsinline></video></div>
+    <div id="s9-l1" class="s9-l disp">Less cinematic</div>
+    <div id="s9-b2" class="s9-box"><img src="assets/shots/p9.png" alt="Fig. 9 from Huang et al. 2026" /></div>
+    <div id="s9-l2" class="s9-l disp"><span class="it">Actually real.</span></div>
+  </div>
+  <script>
+    (() => {
+      const tl = gsap.timeline({ paused: true });
+      const at = (abs) => Math.max(0, abs - 37.6);
+      const blurIn = (sel, t, d = 0.18) => tl.fromTo(sel, { opacity: 0, filter: "blur(10px)", y: 14 }, { opacity: 1, filter: "blur(0px)", y: 0, duration: d, ease: "power4.out", immediateRender: false }, at(t));
+      const out = (sel, t) => tl.to(sel, { opacity: 0, filter: "blur(8px)", duration: 0.14, ease: "power2.in" }, at(t));
+      const pen = (sel, t, d = 0.38) => tl.to(sel, { strokeDashoffset: 0, duration: d, ease: "power2.inOut" }, at(t));
+
+      tl.to("#s9-b1", { opacity: 0.35, duration: 0.3 }, at(38.816));
+      tl.to("#s9-b2", { opacity: 1, duration: 0.3 }, at(38.816));
+      blurIn("#s9-l2", 38.866);
+      tl.set({}, {}, 2.35);
+      window.__timelines["s9"] = tl;
+    })();
+  </script>
+</template>

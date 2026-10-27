@@ -2,6 +2,19 @@
 
 Newest first. Each entry: what happened, what we learned, the rule it became (in `CLAUDE.md`).
 
+## 2026-10-27 — Review: Case 020 (viral cliff "AI" HUD) — could've done better
+- **Worked:** blank-frame gate PASS first try (rule 8 paid off); voice with subtitles/polish OFF took ~2 min on an L4
+  and 0 re-voices; GPU stopped right after (≈0.15 units). Phrase cues from the voice's own pauses replaced Whisper.
+- I deleted the full Apple screenshot before the crop was verified and had to re-shoot it. → Keep raw captures in the
+  scratchpad until the frame is checked by snapshot.
+- PubMed Central served a captcha; nature.com worked after rejecting cookies. → For Springer Nature papers, shoot
+  nature.com and pull figures from media.springernature.com/lw1200/... directly.
+- The source clip opens on a 0.8 s white fade; frame 0 came out white. → Always measure a source's first second
+  (signalstats YAVG) before cutting the hook.
+- Pen positions guessed from thumbnails missed twice (Apple underline, "edit."). → Measure text boxes from a
+  full-res snapshot before placing the pen; one snapshot per pen.
+- Cover still lacks the `CASE 0NN` tag from the template. → Build the cover as its own layer next time.
+
 ## 2026-10-27 — Review: strategy setup + Case 019 topic pick (could've done better)
 - I wrote "Kimi redo" as the top pick without asking whether the creator wanted to revisit a posted topic; they didn't.
   → Next time: offer new topics first; a redo only if asked.

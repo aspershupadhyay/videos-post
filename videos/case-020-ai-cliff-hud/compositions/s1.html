@@ -1,0 +1,53 @@
+<template>
+  <style>
+    @font-face { font-family: "Geist"; font-weight: 100 900; font-display: block; src: url("assets/fonts/Geist.woff2") format("woff2"); }
+    @font-face { font-family: "Geist Mono"; font-weight: 100 900; font-display: block; src: url("assets/fonts/GeistMono.woff2") format("woff2"); }
+    @font-face { font-family: "Instrument Serif"; font-style: italic; font-weight: 400; font-display: block; src: url("assets/fonts/InstrumentSerif-Italic.woff2") format("woff2"); }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0a0a0a; color: #f4f2ee; font-family: "Geist", sans-serif; }
+    .disp { font-weight: 800; letter-spacing: -0.045em; line-height: 0.96; }
+    .it { font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400; letter-spacing: -0.01em; }
+    .mono { font-family: "Geist Mono", monospace; font-weight: 500; font-size: 28px; letter-spacing: 0.05em; text-transform: uppercase; color: #8c8a86; }
+    .panel { position: absolute; left: 0; top: 1480px; width: 1080px; height: 440px; background: #0a0a0a; }
+    .head { position: absolute; left: 64px; top: 1528px; width: 952px; font-size: 84px; }
+    .credit { position: absolute; left: 64px; top: 1836px; width: 952px; }
+    .full { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
+    .full video, .full img { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; object-fit: cover; }
+    .pen path { fill: none; stroke: #e0502b; stroke-width: 8; stroke-linecap: round; stroke-linejoin: round; }
+    .card { position: absolute; border-radius: 18px; overflow: hidden; background: #fff; }
+    .card img { display: block; width: 100%; height: auto; }
+    .ic { vertical-align: -6px; margin-right: 14px; }
+
+    #s1-t1 { top: 1500px; }
+    #s1-t2, #s1-t3, #s1-c2 { opacity: 0; }
+    #s1-n { font-variant-numeric: tabular-nums; }
+  </style>
+  <div id="root" data-composition-id="s1" data-width="1080" data-height="1920">
+
+    <div id="s1-wrap" class="full"><video id="s1-v" class="clip" src="assets/footage/hook.mp4" data-start="0" data-duration="7.400" muted playsinline></video></div>
+    <div class="panel"></div>
+    <div id="s1-t1" class="head disp">AI picks every <span class="it">safe</span> step down a cliff.</div>
+    <div id="s1-c1" class="credit mono">The viral clip · as posted on X</div>
+    <div id="s1-t2" class="head disp"><span id="s1-n">568,000</span> views.</div>
+    <div id="s1-c2" class="credit mono">X post by @CodeByPoonam · 5.2K likes · 637 reposts</div>
+    <div id="s1-t3" class="head disp">Nobody checked the <span class="it">readout.</span></div>
+  </div>
+  <script>
+    (() => {
+      const tl = gsap.timeline({ paused: true });
+      const at = (abs) => Math.max(0, abs - 0.0);
+      const blurIn = (sel, t, d = 0.18) => tl.fromTo(sel, { opacity: 0, filter: "blur(10px)", y: 14 }, { opacity: 1, filter: "blur(0px)", y: 0, duration: d, ease: "power4.out", immediateRender: false }, at(t));
+      const out = (sel, t) => tl.to(sel, { opacity: 0, filter: "blur(8px)", duration: 0.14, ease: "power2.in" }, at(t));
+      const pen = (sel, t, d = 0.38) => tl.to(sel, { strokeDashoffset: 0, duration: d, ease: "power2.inOut" }, at(t));
+
+      tl.fromTo("#s1-wrap", { scale: 1 }, { scale: 1.07, duration: 7.40, ease: "none", transformOrigin: "540px 700px" }, 0);
+      out(["#s1-t1", "#s1-c1"], 3.246);
+      blurIn(["#s1-t2", "#s1-c2"], 3.366);
+      const n = { v: 0 };
+      tl.fromTo(n, { v: 0 }, { v: 568000, duration: 1.1, ease: "power3.out", immediateRender: false, onUpdate: () => { document.querySelector("#s1-n").textContent = Math.round(n.v).toLocaleString("en-US"); } }, at(3.366));
+      out(["#s1-t2", "#s1-c2"], 5.8709999999999996);
+      blurIn("#s1-t3", 5.991);
+      tl.set({}, {}, 7.4);
+      window.__timelines["s1"] = tl;
+    })();
+  </script>
+</template>
