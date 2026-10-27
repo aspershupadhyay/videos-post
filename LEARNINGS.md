@@ -2,6 +2,17 @@
 
 Newest first. Each entry: what happened, what we learned, the rule it became (in `CLAUDE.md`).
 
+## 2026-10-27 — Self-review of Case 020 (after the creator's fix request)
+- **Whisper "match" is not a pronunciation check.** "ay-eye" scored 0.995 and still sounded like "AAAI". → For any
+  acronym or name, voice 2–3 spellings in the *first* job and compare word length; never trust match alone.
+- **I broke my own rule 3** with a slogan CTA. → Read the CTA aloud against rule 13 before voicing.
+- **One GPU session, not two.** The A/B spelling test belonged in the first voice job (cost: one extra boot + load).
+- **27–37 s is the weakest stretch:** two research scenes of paper headers + still figures read academic. → Next time
+  use moving real media there (the papers' supplementary videos, a drone clip) and keep a paper header ≤ 1 s.
+- **Hook could be sharper:** frame 0 restates the viral claim; the doubt ("nobody checked the readout") arrives at 6 s.
+  → Put a hint of the catch on frame 0 (e.g. the red pen already on ">300 m").
+- Smaller: X post screenshot low-res; cover lacks `CASE 020`; first-pass pen positions guessed from thumbnails.
+
 ## 2026-10-27 — Case 020 fix: "AI" pronunciation + a natural CTA (creator feedback)
 - **Heard by the creator:** "AI" came out stretched ("AAAI ai ai") with `pronounce {"AI": "ay-eye"}`.
   Tested three spellings on 3 lines (myvoice `sparsh`, lexicon off): **"A.I." → clean "AI" in all 3, word 0.26–0.34 s**;
