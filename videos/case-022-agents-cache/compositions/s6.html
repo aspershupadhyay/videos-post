@@ -21,14 +21,17 @@
     .dot { position: absolute; border-radius: 50%; background: #dd483f; }
 
     .bar { position: absolute; background: #0a0a0a; border-radius: 6px; transform-origin: 0 50%; }
+    .lbl { left: 40px; color: #c9c9c5; opacity: 0; }
+    #s6-l1 { top: 336px; } #s6-l2 { top: 576px; } #s6-l3 { top: 596px; }
   </style>
   <div id="root" data-composition-id="s6" data-width="1080" data-height="1920">
 
-    <div id="s6-cam" style="position:absolute;inset:0">
-      <div id="s6-c1" class="card" style="left:60px;top:250px;width:960px;height:567px;"><img src="assets/shots/r-head.png" alt="" style="left:34px;top:34px;width:892px;height:499px" /><div id="s6-bar" class="bar" style="left:45px;top:44px;width:826px;height:169px"></div><svg id="s6-ul1" class="pen" style="left:192px;top:392px;width:195px;height:20px" viewBox="0 0 195 20" aria-hidden="true"><path pathLength="1" style="stroke-width:7" d="M4 12 C 60 7, 121 11, 191 6" /></svg></div>
-      <div id="s6-c2" class="card" style="left:60px;top:841px;width:960px;height:298px;opacity:0"><img src="assets/shots/r-blocked.png" alt="" style="left:34px;top:34px;width:892px;height:230px" /><div id="s6-r2" style="position:absolute;left:560px;top:160px;width:233px;height:75px;--p:0;-webkit-mask-image:conic-gradient(from 340deg at 50% 50%, #000 calc(var(--p) * 1deg), transparent calc(var(--p) * 1deg));mask-image:conic-gradient(from 340deg at 50% 50%, #000 calc(var(--p) * 1deg), transparent calc(var(--p) * 1deg))"><img src="assets/logo/circle-crop.png" alt="" style="position:absolute;left:0;top:0;width:100%;height:100%" /></div></div>
-      <div id="s6-c3" class="card" style="left:60px;top:1163px;width:960px;height:249px;opacity:0"><img src="assets/shots/r-cot.png" alt="" style="left:34px;top:34px;width:892px;height:181px" /><svg id="s6-ul3" class="pen" style="left:72px;top:133px;width:646px;height:20px" viewBox="0 0 646 20" aria-hidden="true"><path pathLength="1" style="stroke-width:7" d="M4 12 C 209 7, 419 11, 642 6" /></svg><svg id="s6-ul4" class="pen" style="left:72px;top:178px;width:211px;height:20px" viewBox="0 0 211 20" aria-hidden="true"><path pathLength="1" style="stroke-width:7" d="M4 12 C 66 7, 132 11, 207 6" /></svg></div>
-    </div>
+    <div id="s6-l1" class="mono lbl">OpenAI's own incident report</div>
+    <div id="s6-c1" class="card" style="left:40px;top:400px;width:1000px;height:590px;"><img src="assets/shots/r-head.png" alt="" data-text-px="45" style="left:34px;top:34px;width:932px;height:522px" /><div id="s6-bar" class="bar" style="left:45px;top:45px;width:862px;height:176px"></div><svg id="s6-ul1" class="pen" style="left:199px;top:408px;width:203px;height:20px" viewBox="0 0 203 20" aria-hidden="true"><path pathLength="1" style="stroke-width:7" d="M4 12 C 63 7, 126 11, 199 6" /></svg></div>
+    <div id="s6-l2" class="mono lbl">Its web request: blocked</div>
+    <div id="s6-c2" class="card" style="left:40px;top:640px;width:1000px;height:291px;opacity:0"><img src="assets/shots/r-blocked.png" alt="" data-text-px="45" style="left:34px;top:34px;width:932px;height:223px" /><div id="s6-r2" style="position:absolute;left:580px;top:145px;width:249px;height:84px;--p:0;-webkit-mask-image:conic-gradient(from 340deg at 50% 50%, #000 calc(var(--p) * 1deg), transparent calc(var(--p) * 1deg));mask-image:conic-gradient(from 340deg at 50% 50%, #000 calc(var(--p) * 1deg), transparent calc(var(--p) * 1deg))"><img src="assets/logo/circle-crop.png" alt="" style="position:absolute;left:0;top:0;width:100%;height:100%" /></div></div>
+    <div id="s6-l3" class="mono lbl">The model's own reasoning</div>
+    <div id="s6-c3" class="card" style="left:40px;top:660px;width:1000px;height:257px;opacity:0"><img src="assets/shots/r-cot.png" alt="" data-text-px="45" style="left:34px;top:34px;width:932px;height:189px" /><svg id="s6-ul3" class="pen" style="left:74px;top:137px;width:675px;height:20px" viewBox="0 0 675 20" aria-hidden="true"><path pathLength="1" style="stroke-width:7" d="M4 12 C 219 7, 437 11, 671 6" /></svg><svg id="s6-ul4" class="pen" style="left:74px;top:184px;width:220px;height:20px" viewBox="0 0 220 20" aria-hidden="true"><path pathLength="1" style="stroke-width:7" d="M4 12 C 69 7, 137 11, 216 6" /></svg></div>
   </div>
   <script>
     (() => {
@@ -39,17 +42,25 @@
       const type = (sel, t, cps = 34) => tl.to(sel + " .ch", { opacity: 1, duration: 0.001, stagger: 1 / cps, immediateRender: false }, at(t));
       const ring = (sel, t, d = 0.5) => tl.to(sel, { "--p": 360, duration: d, ease: "power2.inOut" }, at(t));
 
+      // 1) the report again; the redaction tears away: the title was the real story
       tl.fromTo("#s6-c1", { y: 380, scale: 1.04 }, { y: 0, scale: 1, duration: 0.5, ease: "expo.out" }, 0);
-      // the redaction tears away: the title was the real story
+      tl.fromTo("#s6-l1", { opacity: 0 }, { opacity: 1, duration: 0.2, immediateRender: false }, 0.15);
       tl.to("#s6-bar", { x: 1100, rotation: 8, duration: 0.45, ease: "power3.in" }, at(38.51));
       pen("#s6-ul1 path", 39.95, 0.4);
-      tl.fromTo("#s6-c2", { opacity: 1, x: -1100, rotation: -5 }, { opacity: 1, x: 0, rotation: 0, duration: 0.45, ease: "expo.out", immediateRender: false }, at(41.80));
+      tl.to("#s6-c1", { scale: 1.04, duration: 3.14, ease: "none" }, at(38.51));
+      tl.to(["#s6-c1", "#s6-l1"], { y: -900, opacity: 0, duration: 0.35, ease: "power3.in" }, at(41.65));
+      // 2) the proxy said no
+      tl.fromTo("#s6-c2", { opacity: 1, y: 900 }, { opacity: 1, y: 0, duration: 0.45, ease: "expo.out", immediateRender: false }, at(41.85));
+      tl.fromTo("#s6-l2", { opacity: 0 }, { opacity: 1, duration: 0.2, immediateRender: false }, at(42.05));
       ring("#s6-r2", 42.63, 0.45);
-      tl.fromTo("#s6-c3", { opacity: 1, y: 700, rotation: 3 }, { opacity: 1, y: 0, rotation: 0, duration: 0.5, ease: "expo.out", immediateRender: false }, at(43.55));
-      pen("#s6-ul3 path", 44.75, 0.4);
-      pen("#s6-ul4 path", 45.20, 0.25);
-      tl.to(["#s6-c1", "#s6-c2"], { opacity: 0.45, duration: 0.3 }, at(44.05));
-      tl.fromTo("#s6-cam", { y: 0 }, { y: -60, duration: 1.70, ease: "power1.inOut", immediateRender: false }, at(44.05));
+      tl.to("#s6-c2", { scale: 1.05, duration: 1.50, ease: "none" }, at(42.30));
+      tl.to(["#s6-c2", "#s6-l2"], { y: -900, opacity: 0, duration: 0.35, ease: "power3.in" }, at(43.45));
+      // 3) the model talks itself into it
+      tl.fromTo("#s6-c3", { opacity: 1, y: 900 }, { opacity: 1, y: 0, duration: 0.45, ease: "expo.out", immediateRender: false }, at(43.65));
+      tl.fromTo("#s6-l3", { opacity: 0 }, { opacity: 1, duration: 0.2, immediateRender: false }, at(43.85));
+      pen("#s6-ul3 path", 44.65, 0.4);
+      pen("#s6-ul4 path", 45.10, 0.25);
+      tl.to("#s6-c3", { scale: 1.06, duration: 1.70, ease: "none" }, at(44.05));
       tl.set({}, {}, 7.98);
       window.__timelines["s6"] = tl;
     })();
