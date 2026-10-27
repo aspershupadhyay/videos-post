@@ -1,1 +1,0 @@
-courbet-desespere.jpg — Gustave Courbet, "Le Désespéré" (1843). Public domain (PD-Art, PD Mark 1.0). Source: https://commons.wikimedia.org/wiki/File:Gustave_Courbet_-_Le_D%C3%A9sesp%C3%A9r%C3%A9_(1843).jpg
