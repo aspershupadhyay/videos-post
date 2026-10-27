@@ -20,27 +20,54 @@
     .cell.on { background: #f4f2ee; }
     .dot { position: absolute; border-radius: 50%; background: #dd483f; }
 
-    #s4-cam { position: absolute; inset: 0; }
-    #s4-g .cell { border-radius: 16px; }
-    #s4-row { position: absolute; left: 69px; top: 798px; width: 942px; height: 182px; border-radius: 30px; border: 3px solid #3a3a38; }
-    #s4-probe { position: absolute; left: 85px; top: 814px; width: 150px; height: 150px; border-radius: 22px; border: 5px solid #f4f2ee; opacity: 0; }
-    #s4-A, #s4-B { top: 390px; display: flex; align-items: center; gap: 18px; }
-    #s4-A { left: 95px; } #s4-B { right: 95px; }
-    #s4-A i, #s4-B i { display: inline-block; width: 30px; height: 30px; border-radius: 50%; background: #f4f2ee; }
-    #s4-bits { position: absolute; left: 95px; top: 1150px; font-family: "Courier Prime", monospace; font-weight: 700; font-size: 110px; text-align: center; }
-    #s4-bits span { text-align: center; margin-left: -11px; }
+    #x-cam { position: absolute; inset: 0; }
+    #x-cpu { left: 430px; top: 280px; width: 220px; height: 220px; border-color: #f4f2ee; display: flex; align-items: center; justify-content: center;
+      font-family: "Courier Prime", monospace; font-weight: 700; font-size: 52px; letter-spacing: 0.1em; }
+    #x-A, #x-B { top: 372px; display: flex; align-items: center; gap: 16px; font-size: 30px; }
+    #x-A { left: 84px; } #x-B { right: 84px; }
+    #x-A b, #x-B b { display: inline-block; width: 28px; height: 28px; border-radius: 50%; background: #f4f2ee; }
+    #x-lc { left: 114px; top: 504px; color: #c9c9c5; }
+    .slot { position: absolute; top: 600px; width: 96px; height: 96px; border-radius: 18px; border: 3px solid #3a3a38; }
+    .blk { position: absolute; top: 612px; width: 72px; height: 72px; border-radius: 12px; background: #f4f2ee; }
+    #x-plank { position: absolute; left: 100px; top: 706px; width: 880px; height: 10px; border-radius: 5px; background: #f4f2ee; transform-origin: 0 50%; }
+    .bit { position: absolute; top: 730px; width: 96px; text-align: center; font-family: "Courier Prime", monospace; font-weight: 700; font-size: 64px; opacity: 0; }
+    .cur { position: absolute; top: 586px; width: 124px; height: 124px; border-radius: 24px; opacity: 0; }
+    .cur span { position: absolute; left: 0; top: -44px; width: 100%; text-align: center; font-family: "Courier Prime", monospace; font-weight: 700; font-size: 28px; }
+    #x-ca { left: 100px; border: 5px solid #f4f2ee; }
+    #x-cb { left: 100px; border: 5px dashed #f4f2ee; }
+    .tw { position: absolute; left: 0; top: 860px; width: 1080px; text-align: center; font-weight: 800; font-size: 104px; letter-spacing: -0.05em; opacity: 0; }
+    #x-track { position: absolute; left: 190px; top: 1000px; width: 700px; height: 16px; border-radius: 8px; background: #222221; overflow: hidden; opacity: 0; }
+    #x-bf, #x-bs { position: absolute; left: 0; top: 0; width: 100%; height: 100%; transform-origin: 0 50%; }
+    #x-bf { background: #f4f2ee; } #x-bs { background: #dd483f; }
+    #x-mem { position: absolute; left: 114px; top: 1110px; width: 852px; height: 110px; border-radius: 22px; border: 3px solid #3a3a38; background: #121211;
+      display: grid; grid-template-columns: repeat(14, 1fr); gap: 10px; padding: 16px; opacity: 0; }
+    #x-mem i { border-radius: 8px; background: #1e1e1d; }
+    #x-ml { left: 114px; top: 1240px; opacity: 0; }
+    #x-msg { top: 880px; color: #dd483f; font-size: 44px; opacity: 0; }
+    #x-ul { position: absolute; left: 104px; top: 808px; width: 872px; height: 20px; }
   </style>
   <div id="root" data-composition-id="s4" data-width="1080" data-height="1920">
 
-    <div id="s4-cam">
-      <div id="s4-A" class="mono"><i></i>Agent A</div>
-      <div id="s4-B" class="mono">Agent B<i id="s4-Bdot"></i></div>
-      <div id="s4-g" class="grid" style="grid-template-columns:repeat(6,130px);grid-auto-rows:130px;gap:22px;left:95px;top:520px"><span id="s4-g-0" class="cell on"></span><span id="s4-g-1" class="cell"></span><span id="s4-g-2" class="cell on"></span><span id="s4-g-3" class="cell"></span><span id="s4-g-4" class="cell"></span><span id="s4-g-5" class="cell on"></span><span id="s4-g-6" class="cell"></span><span id="s4-g-7" class="cell on"></span><span id="s4-g-8" class="cell"></span><span id="s4-g-9" class="cell on"></span><span id="s4-g-10" class="cell"></span><span id="s4-g-11" class="cell"></span><span id="s4-g-12" class="cell on"></span><span id="s4-g-13" class="cell on"></span><span id="s4-g-14" class="cell on"></span><span id="s4-g-15" class="cell on"></span><span id="s4-g-16" class="cell on"></span><span id="s4-g-17" class="cell on"></span><span id="s4-g-18" class="cell"></span><span id="s4-g-19" class="cell on"></span><span id="s4-g-20" class="cell on"></span><span id="s4-g-21" class="cell"></span><span id="s4-g-22" class="cell on"></span><span id="s4-g-23" class="cell"></span></div>
-      <div id="s4-row"></div>
-      <div id="s4-t0" style="position:absolute;left:109px;top:930px;width:29px;height:12px;border-radius:6px;background:#0a0a0a;transform-origin:0 50%;transform:scaleX(0)"></div><div id="s4-t1" style="position:absolute;left:261px;top:930px;width:94px;height:12px;border-radius:6px;background:#dd483f;transform-origin:0 50%;transform:scaleX(0)"></div><div id="s4-t2" style="position:absolute;left:413px;top:930px;width:29px;height:12px;border-radius:6px;background:#0a0a0a;transform-origin:0 50%;transform:scaleX(0)"></div><div id="s4-t3" style="position:absolute;left:565px;top:930px;width:94px;height:12px;border-radius:6px;background:#dd483f;transform-origin:0 50%;transform:scaleX(0)"></div><div id="s4-t4" style="position:absolute;left:717px;top:930px;width:94px;height:12px;border-radius:6px;background:#dd483f;transform-origin:0 50%;transform:scaleX(0)"></div><div id="s4-t5" style="position:absolute;left:869px;top:930px;width:29px;height:12px;border-radius:6px;background:#0a0a0a;transform-origin:0 50%;transform:scaleX(0)"></div>
-      <div id="s4-probe"></div>
-      <div id="s4-l0" class="mono" style="left:75px;top:980px;width:170px;text-align:center;color:#f4f2ee;opacity:0">fast</div><div id="s4-l1" class="mono" style="left:227px;top:980px;width:170px;text-align:center;color:#dd483f;opacity:0">slow</div><div id="s4-l2" class="mono" style="left:379px;top:980px;width:170px;text-align:center;color:#f4f2ee;opacity:0">fast</div>
-      <div id="s4-bits"><span id="s4-b0" style="display:inline-block;width:152px;opacity:0;color:#f4f2ee">0</span><span id="s4-b1" style="display:inline-block;width:152px;opacity:0;color:#dd483f">1</span><span id="s4-b2" style="display:inline-block;width:152px;opacity:0;color:#f4f2ee">0</span><span id="s4-b3" style="display:inline-block;width:152px;opacity:0;color:#dd483f">1</span><span id="s4-b4" style="display:inline-block;width:152px;opacity:0;color:#dd483f">1</span><span id="s4-b5" style="display:inline-block;width:152px;opacity:0;color:#f4f2ee">0</span></div>
+    <div id="x-cam">
+      <div id="x-cpu" class="box">CPU</div>
+      <div id="x-A" class="mono"><b></b>Agent A</div>
+      <div id="x-B" class="mono">Agent B<b id="x-Bdot"></b></div>
+      <div id="x-lc" class="mono"><span class="ch" style="opacity:0">C</span><span class="ch" style="opacity:0">a</span><span class="ch" style="opacity:0">c</span><span class="ch" style="opacity:0">h</span><span class="ch" style="opacity:0">e</span> <span class="ch" style="opacity:0">·</span> <span class="ch" style="opacity:0">f</span><span class="ch" style="opacity:0">a</span><span class="ch" style="opacity:0">s</span><span class="ch" style="opacity:0">t</span> <span class="ch" style="opacity:0">m</span><span class="ch" style="opacity:0">e</span><span class="ch" style="opacity:0">m</span><span class="ch" style="opacity:0">o</span><span class="ch" style="opacity:0">r</span><span class="ch" style="opacity:0">y</span><span class="ch" style="opacity:0">,</span> <span class="ch" style="opacity:0">r</span><span class="ch" style="opacity:0">i</span><span class="ch" style="opacity:0">g</span><span class="ch" style="opacity:0">h</span><span class="ch" style="opacity:0">t</span> <span class="ch" style="opacity:0">b</span><span class="ch" style="opacity:0">y</span> <span class="ch" style="opacity:0">t</span><span class="ch" style="opacity:0">h</span><span class="ch" style="opacity:0">e</span> <span class="ch" style="opacity:0">C</span><span class="ch" style="opacity:0">P</span><span class="ch" style="opacity:0">U</span></div>
+      <div id="x-s0" class="slot" style="left:114px"></div><div id="x-s1" class="slot" style="left:222px"></div><div id="x-s2" class="slot" style="left:330px"></div><div id="x-s3" class="slot" style="left:438px"></div><div id="x-s4" class="slot" style="left:546px"></div><div id="x-s5" class="slot" style="left:654px"></div><div id="x-s6" class="slot" style="left:762px"></div><div id="x-s7" class="slot" style="left:870px"></div>
+      <div id="x-plank"></div>
+      <div id="x-d0" class="blk" style="left:126px"></div><div id="x-d1" class="blk" style="left:234px"></div><div id="x-d2" class="blk" style="left:342px"></div><div id="x-d3" class="blk" style="left:450px"></div><div id="x-d4" class="blk" style="left:558px"></div><div id="x-d5" class="blk" style="left:666px"></div><div id="x-d6" class="blk" style="left:774px"></div><div id="x-d7" class="blk" style="left:882px"></div>
+      <div id="x-b0" class="bit" style="left:114px;color:#dd483f">1</div><div id="x-b1" class="bit" style="left:222px;color:#f4f2ee">0</div><div id="x-b2" class="bit" style="left:330px;color:#dd483f">1</div><div id="x-b3" class="bit" style="left:438px;color:#dd483f">1</div><div id="x-b4" class="bit" style="left:546px;color:#f4f2ee">0</div><div id="x-b5" class="bit" style="left:654px;color:#dd483f">1</div><div id="x-b6" class="bit" style="left:762px;color:#f4f2ee">0</div><div id="x-b7" class="bit" style="left:870px;color:#f4f2ee">0</div>
+      <div id="x-ca" class="cur"><span>A</span></div>
+      <div id="x-cb" class="cur"><span>B</span></div>
+      <div id="x-wf" class="tw">Fast</div>
+      <div id="x-ws" class="tw" style="color:#dd483f">Slow</div>
+      <div id="x-ws1" class="tw"><span style="color:#dd483f">Slow</span> = 1</div>
+      <div id="x-wf0" class="tw">Fast = 0</div>
+      <div id="x-track"><div id="x-bf"></div><div id="x-bs"></div></div>
+      <div id="x-msg" class="mono row">Message received</div>
+      <svg id="x-ul" class="pen" viewBox="0 0 872 20" aria-hidden="true"><path pathLength="1" d="M6 12 C 300 6, 600 12, 866 6" /></svg>
+      <div id="x-mem"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <div id="x-ml" class="mono">Main memory · far away</div>
     </div>
   </div>
   <script>
@@ -50,38 +77,77 @@
       const rise = (sel, t, d = 0.45) => tl.fromTo(sel, { opacity: 0, y: 60, filter: "blur(10px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: d, ease: "expo.out", immediateRender: false }, at(t));
       const pen = (sel, t, d = 0.36) => tl.to(sel, { strokeDashoffset: 0, duration: d, ease: "power2.inOut" }, at(t));
       const type = (sel, t, cps = 34) => tl.to(sel + " .ch", { opacity: 1, duration: 0.001, stagger: 1 / cps, immediateRender: false }, at(t));
+      const ring = (sel, t, d = 0.5) => tl.to(sel, { "--p": 360, duration: d, ease: "power2.inOut" }, at(t));
 
-      // zoom in from the chip: the grid arrives big
-      tl.fromTo("#s4-cam", { scale: 0.55, y: 140 }, { scale: 1, y: 0, duration: 0.6, ease: "expo.out" }, 0);
-      // the other rows step back so the one being used reads
-      tl.to("#s4-g-0, #s4-g-1, #s4-g-2, #s4-g-3, #s4-g-4, #s4-g-5, #s4-g-6, #s4-g-7, #s4-g-8, #s4-g-9, #s4-g-10, #s4-g-11, #s4-g-18, #s4-g-19, #s4-g-20, #s4-g-21, #s4-g-22, #s4-g-23", { opacity: 0.3, duration: 0.3 }, at(15.037));
-      // A kicks data out: the '1' cells go dark
-      tl.to("#s4-A", { color: "#f4f2ee", scale: 1.15, duration: 0.15 }, at(15.237));
-      tl.to(["#s4-g-13", "#s4-g-15", "#s4-g-16"], { backgroundColor: "#1e1e1d", scale: 0.8, duration: 0.18, stagger: 0.12, ease: "power3.in" }, at(15.337));
-      tl.to("#s4-A", { color: "#8c8c88", scale: 1, duration: 0.2 }, at(16.936999999999998));
-      // B times its reads: a probe walks the row; fast reads get a short bar, slow (evicted) ones a long red bar
-      tl.to("#s4-B", { color: "#f4f2ee", scale: 1.15, duration: 0.15, transformOrigin: "100% 50%" }, at(17.237));
-      tl.fromTo("#s4-probe", { opacity: 0, scale: 1.3 }, { opacity: 1, scale: 1, duration: 0.2, immediateRender: false }, at(17.337));
-            tl.to("#s4-probe", { x: 0, duration: 0.12, ease: "power2.out" }, at(18.46));tl.to("#s4-t0", { scaleX: 1, duration: 0.1, ease: "power1.out" }, at(18.46));
-      tl.to("#s4-probe", { x: 152, duration: 0.12, ease: "power2.out" }, at(19.14));tl.to("#s4-t1", { scaleX: 1, duration: 0.35, ease: "power1.out" }, at(19.14));
-      tl.to("#s4-probe", { x: 304, duration: 0.12, ease: "power2.out" }, at(19.74));tl.to("#s4-t2", { scaleX: 1, duration: 0.1, ease: "power1.out" }, at(19.74));
-      tl.to("#s4-probe", { x: 456, duration: 0.12, ease: "power2.out" }, at(20.09));tl.to("#s4-t3", { scaleX: 1, duration: 0.35, ease: "power1.out" }, at(20.09));
-      tl.to("#s4-probe", { x: 608, duration: 0.12, ease: "power2.out" }, at(20.34));tl.to("#s4-t4", { scaleX: 1, duration: 0.35, ease: "power1.out" }, at(20.34));
-      tl.to("#s4-probe", { x: 760, duration: 0.12, ease: "power2.out" }, at(20.59));tl.to("#s4-t5", { scaleX: 1, duration: 0.1, ease: "power1.out" }, at(20.59));
-      tl.fromTo("#s4-l0", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.2, ease: "power3.out", immediateRender: false }, at(18.46));
-      tl.fromTo("#s4-l1", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.2, ease: "power3.out", immediateRender: false }, at(19.14));
-      tl.fromTo("#s4-l2", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.2, ease: "power3.out", immediateRender: false }, at(19.74));
-      tl.fromTo("#s4-b0", { opacity: 0, y: -60 }, { opacity: 1, y: 0, duration: 0.3, ease: "back.out(2)", immediateRender: false }, at(20.68));
-      tl.fromTo("#s4-b1", { opacity: 0, y: -60 }, { opacity: 1, y: 0, duration: 0.3, ease: "back.out(2)", immediateRender: false }, at(20.73));
-      tl.fromTo("#s4-b2", { opacity: 0, y: -60 }, { opacity: 1, y: 0, duration: 0.3, ease: "back.out(2)", immediateRender: false }, at(20.78));
-      tl.fromTo("#s4-b3", { opacity: 0, y: -60 }, { opacity: 1, y: 0, duration: 0.3, ease: "back.out(2)", immediateRender: false }, at(20.83));
-      tl.fromTo("#s4-b4", { opacity: 0, y: -60 }, { opacity: 1, y: 0, duration: 0.3, ease: "back.out(2)", immediateRender: false }, at(20.88));
-      tl.fromTo("#s4-b5", { opacity: 0, y: -60 }, { opacity: 1, y: 0, duration: 0.3, ease: "back.out(2)", immediateRender: false }, at(20.93));
-      // that's a message
-      tl.to("#s4-probe", { opacity: 0, duration: 0.2 }, at(20.627));
-      tl.to("#s4-Bdot", { backgroundColor: "#dd483f", scale: 1.5, duration: 0.2, ease: "back.out(3)" }, at(20.977));
-      tl.to("#s4-cam", { scale: 1.06, duration: 6.57, ease: "none", transformOrigin: "540px 900px" }, at(15.237));
-      tl.set({}, {}, 7.35);
+      tl.set(["#x-bf", "#x-bs"], { scaleX: 0 }, 0);
+      tl.fromTo("#x-cpu", { y: 520, scale: 1.9 }, { y: 0, scale: 1, duration: 0.6, ease: "expo.out" }, 0);
+      tl.fromTo(["#x-A", "#x-B"], { opacity: 0.85, y: 20 }, { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }, 0.1);
+      tl.fromTo(".slot", { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2)", stagger: 0.04, immediateRender: false }, at(15.61));
+      tl.fromTo(".blk", { opacity: 0, y: -60 }, { opacity: 1, y: 0, duration: 0.3, ease: "power3.out", stagger: 0.04, immediateRender: false }, at(15.81));
+      type("#x-lc", 15.76, 30);
+      tl.fromTo("#x-plank", { scaleX: 0 }, { scaleX: 1, duration: 0.4, ease: "power3.inOut", immediateRender: false }, at(16.94));
+      tl.fromTo("#x-cpu", { scale: 1 }, { scale: 1.06, duration: 0.25, yoyo: true, repeat: 1, immediateRender: false }, at(17.62));
+      tl.fromTo(["#x-mem", "#x-ml"], { opacity: 0, y: 160 }, { opacity: 1, y: 0, duration: 0.5, ease: "expo.out", immediateRender: false }, at(17.96));
+      tl.fromTo("#x-track", { opacity: 0 }, { opacity: 1, duration: 0.2, immediateRender: false }, at(19.26));
+      tl.set(["#x-bf", "#x-bs"], { scaleX: 0 }, at(19.46));
+      tl.to("#x-d0", { keyframes: [{ x: 378, y: -258, duration: 0.16, ease: "power2.in" }, { x: 0, y: 0, duration: 0.2, ease: "power2.out" }] }, at(19.46));
+      tl.to("#x-bf", { scaleX: 0.16, duration: 0.16, ease: "none" }, at(19.46));
+      tl.set(".tw", { opacity: 0 }, at(19.46)); tl.set("#x-wf", { opacity: 1 }, at(19.62));
+      tl.to("#x-d1", { y: 517, opacity: 0.35, duration: 0.35, ease: "power2.in" }, at(21.02));
+      tl.set(["#x-bf", "#x-bs"], { scaleX: 0 }, at(21.72));
+      tl.set(".tw", { opacity: 0 }, at(21.72));
+      tl.to("#x-d1", { x: 270, y: -258, opacity: 1, duration: 0.9, ease: "power1.inOut" }, at(21.72));
+      tl.to("#x-bs", { scaleX: 1, duration: 0.9, ease: "none" }, at(21.72));
+      tl.set("#x-ws", { opacity: 1 }, at(22.62));
+      tl.to("#x-d1", { x: 0, y: 0, duration: 0.3, ease: "power2.inOut" }, at(22.77));
+      tl.set(".tw", { opacity: 0 }, at(22.78));
+      tl.set(["#x-bf", "#x-bs"], { scaleX: 0 }, at(22.78));
+      tl.fromTo("#x-ca", { opacity: 0, scale: 1.5 }, { opacity: 1, scale: 1, duration: 0.25, ease: "back.out(2)", immediateRender: false }, at(23.34));
+      tl.to("#x-A", { color: "#f4f2ee", duration: 0.1 }, at(23.34));
+      tl.to("#x-ca", { y: 18, duration: 0.12, yoyo: true, repeat: 1 }, at(23.80));
+      tl.to("#x-d0", { y: 517, opacity: 0.35, duration: 0.35, ease: "power2.in" }, at(23.90));
+      tl.fromTo("#x-b0", { opacity: 0, y: -30, scale: 1.4 }, { opacity: 1, y: 0, scale: 1, duration: 0.25, ease: "back.out(2.4)", immediateRender: false }, at(25.50));
+      tl.to("#x-ca", { x: 108, duration: 0.3, ease: "power3.inOut" }, at(26.20));
+      tl.to("#x-ca", { rotation: 8, duration: 0.1, yoyo: true, repeat: 3 }, at(26.54));
+      tl.fromTo("#x-b1", { opacity: 0, y: -30, scale: 1.4 }, { opacity: 1, y: 0, scale: 1, duration: 0.25, ease: "back.out(2.4)", immediateRender: false }, at(27.28));
+      tl.to("#x-ca", { opacity: 0, duration: 0.2 }, at(27.83));
+      tl.to("#x-A", { color: "#8c8c88", duration: 0.2 }, at(27.83));
+      tl.fromTo("#x-cb", { opacity: 0, scale: 1.5 }, { opacity: 1, scale: 1, duration: 0.25, ease: "back.out(2)", immediateRender: false }, at(28.03));
+      tl.to("#x-B", { color: "#f4f2ee", duration: 0.1 }, at(28.03));
+      tl.set(["#x-bf", "#x-bs"], { scaleX: 0 }, at(28.62));
+      tl.set(".tw", { opacity: 0 }, at(28.62));
+      tl.to("#x-d0", { x: 378, y: -258, opacity: 1, duration: 0.9, ease: "power1.inOut" }, at(28.62));
+      tl.to("#x-bs", { scaleX: 1, duration: 0.9, ease: "none" }, at(28.62));
+      tl.set("#x-ws1", { opacity: 1 }, at(29.52));
+      tl.to("#x-d0", { x: 0, y: 0, duration: 0.25, ease: "power2.inOut" }, at(30.74));
+      tl.to("#x-cb", { x: 108, duration: 0.2, ease: "power3.inOut" }, at(30.89));
+      tl.set(["#x-bf", "#x-bs"], { scaleX: 0 }, at(31.09));
+      tl.to("#x-d1", { keyframes: [{ x: 270, y: -258, duration: 0.16, ease: "power2.in" }, { x: 0, y: 0, duration: 0.2, ease: "power2.out" }] }, at(31.09));
+      tl.to("#x-bf", { scaleX: 0.16, duration: 0.16, ease: "none" }, at(31.09));
+      tl.set(".tw", { opacity: 0 }, at(31.09)); tl.set("#x-wf0", { opacity: 1 }, at(31.25));
+      tl.to("#x-cb", { x: 216, duration: 0.10, ease: "power2.inOut" }, at(32.67));
+      tl.to("#x-d2", { y: 517, opacity: 0.35, duration: 0.18, ease: "power2.in" }, at(32.67));
+      tl.fromTo("#x-b2", { opacity: 0, y: -30, scale: 1.4 }, { opacity: 1, y: 0, scale: 1, duration: 0.25, ease: "back.out(2.4)", immediateRender: false }, at(32.75));
+      tl.to("#x-cb", { x: 324, duration: 0.10, ease: "power2.inOut" }, at(32.84));
+      tl.to("#x-d3", { y: 517, opacity: 0.35, duration: 0.18, ease: "power2.in" }, at(32.84));
+      tl.fromTo("#x-b3", { opacity: 0, y: -30, scale: 1.4 }, { opacity: 1, y: 0, scale: 1, duration: 0.25, ease: "back.out(2.4)", immediateRender: false }, at(32.92));
+      tl.to("#x-cb", { x: 432, duration: 0.10, ease: "power2.inOut" }, at(33.00));
+      tl.fromTo("#x-b4", { opacity: 0, y: -30, scale: 1.4 }, { opacity: 1, y: 0, scale: 1, duration: 0.25, ease: "back.out(2.4)", immediateRender: false }, at(33.08));
+      tl.to("#x-cb", { x: 540, duration: 0.10, ease: "power2.inOut" }, at(33.16));
+      tl.to("#x-d5", { y: 517, opacity: 0.35, duration: 0.18, ease: "power2.in" }, at(33.16));
+      tl.fromTo("#x-b5", { opacity: 0, y: -30, scale: 1.4 }, { opacity: 1, y: 0, scale: 1, duration: 0.25, ease: "back.out(2.4)", immediateRender: false }, at(33.24));
+      tl.to("#x-cb", { x: 648, duration: 0.10, ease: "power2.inOut" }, at(33.33));
+      tl.fromTo("#x-b6", { opacity: 0, y: -30, scale: 1.4 }, { opacity: 1, y: 0, scale: 1, duration: 0.25, ease: "back.out(2.4)", immediateRender: false }, at(33.41));
+      tl.to("#x-cb", { x: 756, duration: 0.10, ease: "power2.inOut" }, at(33.49));
+      tl.fromTo("#x-b7", { opacity: 0, y: -30, scale: 1.4 }, { opacity: 1, y: 0, scale: 1, duration: 0.25, ease: "back.out(2.4)", immediateRender: false }, at(33.57));
+      tl.set(".tw", { opacity: 0 }, at(32.67));
+      tl.to("#x-track", { opacity: 0, duration: 0.2 }, at(32.67));
+      tl.to("#x-cb", { opacity: 0, duration: 0.2 }, at(33.65));
+      tl.fromTo("#x-msg", { opacity: 0, scale: 1.3 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2)", immediateRender: false }, at(33.75));
+      pen("#x-ul path", 33.85, 0.35);
+      tl.to("#x-Bdot", { backgroundColor: "#dd483f", scale: 1.5, duration: 0.2, ease: "back.out(3)" }, at(33.75));
+      tl.fromTo("#x-cam", { scale: 1 }, { scale: 1.05, duration: 20.15, ease: "none", transformOrigin: "540px 760px", immediateRender: false }, 0);
+      tl.set({}, {}, 20.15);
       window.__timelines["s4"] = tl;
     })();
   </script>
