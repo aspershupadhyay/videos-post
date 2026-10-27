@@ -1,5 +1,10 @@
 # CatchTheError visual language v1 — "the evidence look"
 
+> **2026-10-27 — creator's shortlist for the next look (review later):** from `brand/lookbook/inspo-board-v1.jpg`,
+> keep **1 Tabloid / Newsprint** and **2 Zine / Photocopy collage**. The v1 "evidence look" below and the
+> Newsroom/Broadsheet fonts + 3 logo concepts in `EDITING.md` were rejected as "not good enough". Tutorial formats:
+> `brand/lookbook/inspo-board-tutorials-v1.jpg` (zoom-follow screen demo, meme-paced explainer, step cards, before→after).
+
 Style frames: `brand/lookbook/` (`lookbook.html` → `frame-a..d.png`, `lookbook-sheet.jpg`), built from Case 020 assets.
 We look like an investigation desk, not an AI product launch. Every visual is either **real evidence** or **a mark we
 made on it** (the red pen, a measurement line, a number). Nothing decorative.

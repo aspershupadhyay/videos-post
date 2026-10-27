@@ -15,6 +15,10 @@ Last refresh: 2026-10-27 (Kimi redo dropped by the creator).
 | 7 | **Viral-claim check series** ("the headline vs the paper") | One viral AI headline per week, checked against its source in 40 s. | per episode | format; repeatable |
 
 ## Series ideas (consistency builds followers)
+- **"Catch it yourself"** (tool tutorials, 30–45 s, screen-recorded): how to check a viral image/clip yourself.
+  Episodes: Gemini app SynthID check (Google images/video/audio only) · contentcredentials.org/verify (C2PA history;
+  missing ≠ fake) · InVID/WeVerify keyframes + reverse search · Google Fact Check Explorer · reverse video search.
+  Always say each tool's limit (no public detector reliably catches state-of-the-art AI video, early 2026).
 - **"Benchmark fine print"**: who ran the test, on what, and what got left out. One chart per episode.
 - **"Read the terms"**: what free AI products do with your data, your images or your ads.
 - **"Patch this now"**: AI-found security bugs that affect ordinary people's sites and apps.

@@ -2,6 +2,13 @@
 
 Newest first. Each entry: what happened, what we learned, the rule it became (in `CLAUDE.md`).
 
+## 2026-10-27 — Creator rejected Newsroom/Broadsheet type + 3 logo concepts; shortlisted Tabloid + Zine
+- Feedback: "neither looks good, think outside the box, don't stay biased to what we already did".
+  → Inspiration comes from real outside work first (Fonts In Use, Dribbble, foundries), shown as a curated board,
+  *before* I build anything of my own. Shortlist kept: Tabloid/Newsprint, Zine/Photocopy (review later).
+- Could've done better: I iterated inside our own style instead of looking outward; the first raw board was noisy
+  site screenshots — curate 4 directions × 4 real works from the start.
+
 ## 2026-10-27 — Type, logo and editing taste (creator: fonts and logo look like AI slop)
 - **Confirmed:** Geist + Instrument Serif is the AI-startup default (named in a 2026 "design slop" round-up), so it
   signals "AI product". Proposed newsroom type (Schibsted Grotesk / Newsreader / IBM Plex Mono) and 3 logo concepts
