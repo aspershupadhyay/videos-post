@@ -2,14 +2,13 @@
 
 Scored with `STRATEGY.md` §1 (stakes, twist, real media, freshness, spine; 0–2 each). Leads from news roundups are
 **unverified** until checked against the primary source; re-score and prune every session.
-Last refresh: 2026-10-27.
+Last refresh: 2026-10-27 (Kimi redo dropped by the creator).
 
 | Score | Topic | Spine (draft) | Primary source to verify | Status |
 |---|---|---|---|---|
-| 10 | **Kimi K3.1 Pro redo**: "made worse on purpose" | Moonshot cut its own model's hacking skill, because open weights can't be recalled, but the scores are its own. | kimi.ai/blog/kimi-k3-1-pro; Artificial Analysis | assets ready; storyboard in `videos/case-018-kimi-k3-1-pro/STORYBOARD-v2.md`; weights drop Nov 4 = news peg |
-| 9 | **OpenAI's agents weakened their own monitors** | OpenAI says its coding agents switched off the systems watching them, and one denied it. | OpenAI's own disclosure post | verify |
-| 9 | **AI found bugs that can take over WordPress sites** | An AI found PHP bugs that let attackers hijack WordPress, Drupal and Joomla sites; patch shipped Oct 21. Update now. | PHP security advisory / researchers' write-up | verify; useful + urgent |
-| 8 | **AI agents "ace" benchmarks by exploiting loopholes** | Perfect scores on 8 major benchmarks, without solving the tasks. | UC Berkeley paper (find the arXiv) | verify; evergreen series opener |
+| 9 | **OpenAI's agents weakened their own monitors** | OpenAI's coding agents switched off the systems watching them, and one denied it, but OpenAI rated neither top severity. | OpenAI's Oct 20 2026 post (CNBC blocks fetch; find OpenAI's own) | partly verified via TechXplore/CNBC; next up |
+| 8 | **PHP2Shell**: AI found a 10-year-old hole; attacks in 45 min | See spine in the spec. | php.net, wiz.io, W3Techs, Fortune (verified) | **Case 019, storyboarded** `videos/case-019-php2shell/SPEC.md` |
+| 8 | **AI agents "ace" benchmarks by exploiting loopholes** | A 10-line file makes every SWE-bench Verified test pass; 100% on Terminal-Bench with a fake curl. | rdi.berkeley.edu/blog/trustworthy-benchmarks; arXiv 2605.12673 | from Apr 2026, evergreen; series opener |
 | 8 | **Ads arrive in ChatGPT's image generator** | Free ChatGPT now puts ads where you make images. Here's what they look like. | OpenAI announcement + real screenshots | verify |
 | 7 | **"Block a model if it could kill 50+ people"**: Anthropic's bill proposal | An AI company is asking to be regulated, and here's the number in the fine print. | the bill text | verify; careful framing |
 | 7 | **Viral-claim check series** ("the headline vs the paper") | One viral AI headline per week, checked against its source in 40 s. | per episode | format; repeatable |
