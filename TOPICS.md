@@ -11,6 +11,7 @@ Last refresh: 2026-10-27 (Kimi redo dropped by the creator).
 | 8 | **AI agents "ace" benchmarks by exploiting loopholes** | A 10-line file makes every SWE-bench Verified test pass; 100% on Terminal-Bench with a fake curl. | rdi.berkeley.edu/blog/trustworthy-benchmarks; arXiv 2605.12673 | from Apr 2026, evergreen; series opener |
 | 8 | **Ads arrive in ChatGPT's image generator** | Free ChatGPT now puts ads where you make images. Here's what they look like. | OpenAI announcement + real screenshots | verify |
 | 7 | **"Block a model if it could kill 50+ people"**: Anthropic's bill proposal | An AI company is asking to be regulated, and here's the number in the fine print. | the bill text | verify; careful framing |
+| 9 | **GPT-6.1 Terra launch: "Shown at actual speed. Some sections omitted."** | Half price, 3× faster (OpenAI's own), the demo footnote. | OpenAI film; BleepingComputer; dev.to; Simon Willison | **Case 021, delivered** |
 | 9 | **Viral cliff "AI" HUD clip** (568K views on X) | Readout claims 300 m; Apple LiDAR reaches 5 m; no source named; real slope AI is cameras + drones. | Apple Newsroom; Sci. Rep. 2026; Nat. Commun. 2025 | **Case 020, delivered** |
 | 7 | **Viral-claim check series** ("the headline vs the paper") | One viral AI headline per week, checked against its source in 40 s. | per episode | format; repeatable |
 

@@ -1,0 +1,55 @@
+<template>
+  <style>
+    @font-face { font-family: "Courier Prime"; font-weight: 700; font-display: block; src: url("assets/fonts/CourierPrime-Bold.ttf") format("truetype"); }
+    @font-face { font-family: "Courier Prime"; font-weight: 400; font-display: block; src: url("assets/fonts/CourierPrime-Regular.ttf") format("truetype"); }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #e7e7e5 url("assets/logo/paper-1080x1920.png") 0 0 / 1080px 1920px; color: #161616; font-family: "Courier Prime", monospace; font-weight: 700; }
+    .head { position: absolute; left: 60px; top: 1150px; width: 960px; font-size: 84px; line-height: 1.0; letter-spacing: -0.03em; }
+    .big { font-size: 108px; line-height: 0.98; letter-spacing: -0.04em; }
+    .mono { position: absolute; font-size: 28px; letter-spacing: 0.08em; text-transform: uppercase; color: #6b6b68; font-weight: 700; }
+    .credit { left: 60px; top: 192px; width: 960px; }
+    .red { color: #dd483f; }
+    .card { position: absolute; border-radius: 30px; overflow: hidden; background: #fff; box-shadow: 0 24px 60px rgba(20, 20, 18, 0.13); }
+    .card video, .card img.fill { position: absolute; }
+    .pen { position: absolute; overflow: visible; }
+    .pen path { fill: none; stroke: #dd483f; stroke-width: 9; stroke-linecap: round; stroke-linejoin: round; }
+    .ch { opacity: 0; }
+    .pill { position: absolute; background: #fff; border-radius: 80px; padding: 26px 46px; font-size: 60px; letter-spacing: -0.02em; white-space: nowrap; box-shadow: 0 18px 50px rgba(0, 0, 0, 0.18); }
+
+    #s2-cam { position: absolute; inset: 0; }
+    #s2-card { left: 40px; top: 330px; width: 1000px; height: 592px; }
+    #s2-card video, #s2-card img.fill { left:-131.6px;top:-59.2px;width:1263.2px;height:710.5px }
+    #s2-h2 { opacity: 0; }
+  </style>
+  <div id="root" data-composition-id="s2" data-width="1080" data-height="1920">
+
+    <div class="mono credit">OpenAI's demo: GPT-6.1 Terra driving a 3D app</div>
+    <div id="s2-cam">
+      <div id="s2-card" class="card">
+        <img class="fill" src="assets/shots/build-end.png" alt="" />
+        <video id="s2-v" class="clip" src="assets/footage/build.mp4" data-start="0" data-duration="4.440" muted playsinline></video>
+      </div>
+      <div id="s2-ring" style="position:absolute;left:332px;top:852px;width:372px;height:80px;--p:0;-webkit-mask-image:conic-gradient(from 340deg at 50% 50%, #000 calc(var(--p) * 1deg), transparent calc(var(--p) * 1deg));mask-image:conic-gradient(from 340deg at 50% 50%, #000 calc(var(--p) * 1deg), transparent calc(var(--p) * 1deg))"><img src="assets/logo/circle-crop.png" alt="" style="position:absolute;left:0;top:0;width:100%;height:100%" /></div>
+    </div>
+    <div id="s2-h1" class="head">One tiny line under this demo.</div>
+    <div id="s2-h2" class="head">Keep your eye on it.</div>
+  </div>
+  <script>
+    (() => {
+      const tl = gsap.timeline({ paused: true });
+      const at = (abs) => Math.max(0, abs - 4.27);
+      const blurIn = (sel, t, d = 0.18) => tl.fromTo(sel, { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: d, ease: "power4.out", immediateRender: false }, at(t));
+      const out = (sel, t, d = 0.14) => tl.to(sel, { opacity: 0, filter: "blur(8px)", duration: d, ease: "power2.in" }, at(t));
+      const pen = (sel, t, d = 0.36) => tl.to(sel, { strokeDashoffset: 0, duration: d, ease: "power2.inOut" }, at(t));
+      const type = (sel, t, cps = 34) => { const n = document.querySelectorAll(sel + " .ch").length; tl.to(sel + " .ch", { opacity: 1, duration: 0.001, stagger: 1 / cps, immediateRender: false }, at(t)); return n / cps; };
+      const ring = (sel, t, d = 0.5) => tl.to(sel, { "--p": 360, duration: d, ease: "power2.inOut" }, at(t));
+
+      tl.fromTo("#s2-card", { scale: 1.06, filter: "blur(8px)" }, { scale: 1, filter: "blur(0px)", duration: 0.4, ease: "expo.out" }, 0);
+      tl.fromTo("#s2-cam", { scale: 1 }, { scale: 1.07, duration: 4.44, ease: "none", transformOrigin: "540px 892px" }, 0);
+      ring("#s2-ring", 5.753, 0.55);
+      out("#s2-h1", 7.753, 0.1);
+      blurIn("#s2-h2", 7.853);
+      tl.set({}, {}, 4.44);
+      window.__timelines["s2"] = tl;
+    })();
+  </script>
+</template>

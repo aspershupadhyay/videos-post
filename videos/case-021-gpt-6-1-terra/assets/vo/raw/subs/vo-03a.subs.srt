@@ -1,0 +1,11 @@
+1
+00:00:00,000 --> 00:00:02,280
+This is GPT 6.1 Tera.
+
+2
+00:00:02,500 --> 00:00:03,520
+It's not built to chat,
+
+3
+00:00:03,600 --> 00:00:05,180
+it's built to use your computer.

@@ -1,0 +1,11 @@
+1
+00:00:00,000 --> 00:00:01,700
+It's half the price of the last Terra,
+
+2
+00:00:01,780 --> 00:00:04,540
+and OpenAI says it finishes tasks three
+
+3
+00:00:04,620 --> 00:00:06,740
+times faster than its bigger models.

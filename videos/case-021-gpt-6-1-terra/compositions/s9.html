@@ -1,0 +1,46 @@
+<template>
+  <style>
+    @font-face { font-family: "Courier Prime"; font-weight: 700; font-display: block; src: url("assets/fonts/CourierPrime-Bold.ttf") format("truetype"); }
+    @font-face { font-family: "Courier Prime"; font-weight: 400; font-display: block; src: url("assets/fonts/CourierPrime-Regular.ttf") format("truetype"); }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #e7e7e5 url("assets/logo/paper-1080x1920.png") 0 0 / 1080px 1920px; color: #161616; font-family: "Courier Prime", monospace; font-weight: 700; }
+    .head { position: absolute; left: 60px; top: 1150px; width: 960px; font-size: 84px; line-height: 1.0; letter-spacing: -0.03em; }
+    .big { font-size: 108px; line-height: 0.98; letter-spacing: -0.04em; }
+    .mono { position: absolute; font-size: 28px; letter-spacing: 0.08em; text-transform: uppercase; color: #6b6b68; font-weight: 700; }
+    .credit { left: 60px; top: 192px; width: 960px; }
+    .red { color: #dd483f; }
+    .card { position: absolute; border-radius: 30px; overflow: hidden; background: #fff; box-shadow: 0 24px 60px rgba(20, 20, 18, 0.13); }
+    .card video, .card img.fill { position: absolute; }
+    .pen { position: absolute; overflow: visible; }
+    .pen path { fill: none; stroke: #dd483f; stroke-width: 9; stroke-linecap: round; stroke-linejoin: round; }
+    .ch { opacity: 0; }
+    .pill { position: absolute; background: #fff; border-radius: 80px; padding: 26px 46px; font-size: 60px; letter-spacing: -0.02em; white-space: nowrap; box-shadow: 0 18px 50px rgba(0, 0, 0, 0.18); }
+
+    #s9-a { position: absolute; left: 60px; top: 620px; width: 960px; font-size: 96px; white-space: nowrap; letter-spacing: -0.04em; }
+    #s9-b { position: absolute; left: 60px; top: 780px; width: 960px; font-size: 66px; white-space: nowrap; letter-spacing: -0.03em; opacity: 0; }
+    #s9-pen { position: absolute; left: 56px; top: 858px; width: 920px; height: 60px; }
+    #s9-pen path { stroke-dasharray: 1000; stroke-dashoffset: 1000; stroke-width: 11; }
+  </style>
+  <div id="root" data-composition-id="s9" data-width="1080" data-height="1920">
+
+    <div id="s9-a">A demo is an ad.</div>
+    <div id="s9-b">Read the line under it.</div>
+    <svg id="s9-pen" class="pen" viewBox="0 0 920 60" aria-hidden="true"><path d="M8 30 C 240 22, 600 30, 900 20" /></svg>
+  </div>
+  <script>
+    (() => {
+      const tl = gsap.timeline({ paused: true });
+      const at = (abs) => Math.max(0, abs - 40.57);
+      const blurIn = (sel, t, d = 0.18) => tl.fromTo(sel, { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: d, ease: "power4.out", immediateRender: false }, at(t));
+      const out = (sel, t, d = 0.14) => tl.to(sel, { opacity: 0, filter: "blur(8px)", duration: d, ease: "power2.in" }, at(t));
+      const pen = (sel, t, d = 0.36) => tl.to(sel, { strokeDashoffset: 0, duration: d, ease: "power2.inOut" }, at(t));
+      const type = (sel, t, cps = 34) => { const n = document.querySelectorAll(sel + " .ch").length; tl.to(sel + " .ch", { opacity: 1, duration: 0.001, stagger: 1 / cps, immediateRender: false }, at(t)); return n / cps; };
+      const ring = (sel, t, d = 0.5) => tl.to(sel, { "--p": 360, duration: d, ease: "power2.inOut" }, at(t));
+
+      tl.fromTo("#s9-a", { opacity: 0.85, filter: "blur(4px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.25, ease: "power3.out" }, 0);
+      blurIn("#s9-b", 42.227);
+      pen("#s9-pen path", 42.867, 0.4);
+      tl.set({}, {}, 3.1);
+      window.__timelines["s9"] = tl;
+    })();
+  </script>
+</template>

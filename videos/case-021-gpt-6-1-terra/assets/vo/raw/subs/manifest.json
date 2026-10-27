@@ -1,0 +1,1079 @@
+{
+  "id": "f6fdb4c57a37",
+  "kind": "transcribe",
+  "engine": "whisper",
+  "voice": "",
+  "style": null,
+  "status": "running",
+  "error": null,
+  "label": "Subtitles \u00b7 case-021 GPT-6.1 Terra",
+  "language": "en",
+  "warnings": [],
+  "subs": {
+    "cues": 28,
+    "timeline": "sequential"
+  },
+  "match": 1.0,
+  "attach_to": "13a650d0e05d",
+  "video": null,
+  "version": null,
+  "platform": null,
+  "captions": null,
+  "takes": null,
+  "mode": null,
+  "similarity": null,
+  "scenes": null,
+  "review": null,
+  "trials": null,
+  "profile": null,
+  "cleanup": null,
+  "decode": null,
+  "dataset": null,
+  "benchmark": null,
+  "train": null,
+  "kvoice": null,
+  "walk": null,
+  "auto_train": null,
+  "train_engine": null,
+  "timings": {
+    "loading": 0.0,
+    "transcribing": 32.15
+  },
+  "pairs": null,
+  "method": null,
+  "lane": "gpu",
+  "review_batch": null,
+  "stream": null,
+  "eagle": null,
+  "polish_engine": null,
+  "polish": null,
+  "resources": {
+    "gpu_util": 8,
+    "cpu_util": 6,
+    "power_w": 34,
+    "vram_peak_gb": 6.8,
+    "ram_peak_gb": 19.5,
+    "gpu_name": "NVIDIA L4",
+    "lane": "gpu"
+  },
+  "progress": {
+    "done": 13,
+    "total": 13,
+    "fraction": 0.99,
+    "eta_s": 0,
+    "stage": "packaging",
+    "detail": "",
+    "fetch": null,
+    "elapsed_s": 47.5
+  },
+  "results": [
+    {
+      "id": "vo-01a",
+      "name": "vo-01a",
+      "text": "One photo. One sentence. And an A.I. designed this toy.",
+      "heard": "One photo, one sentence, and an AI designed this toy.",
+      "duration": 4.074,
+      "cues": 2,
+      "words": [
+        {
+          "w": "One",
+          "s": 0.0,
+          "e": 0.36
+        },
+        {
+          "w": "photo,",
+          "s": 0.36,
+          "e": 1.06
+        },
+        {
+          "w": "one",
+          "s": 1.06,
+          "e": 1.48
+        },
+        {
+          "w": "sentence,",
+          "s": 1.48,
+          "e": 2.14
+        },
+        {
+          "w": "and",
+          "s": 2.14,
+          "e": 2.44
+        },
+        {
+          "w": "an",
+          "s": 2.44,
+          "e": 2.58
+        },
+        {
+          "w": "AI",
+          "s": 2.58,
+          "e": 2.9
+        },
+        {
+          "w": "designed",
+          "s": 2.9,
+          "e": 3.44
+        },
+        {
+          "w": "this",
+          "s": 3.44,
+          "e": 3.66
+        },
+        {
+          "w": "toy.",
+          "s": 3.66,
+          "e": 4.06
+        }
+      ],
+      "subs": true,
+      "match": 1.0
+    },
+    {
+      "id": "vo-01b",
+      "name": "vo-01b",
+      "text": "An A.I. looked at one photo, and designed this toy.",
+      "heard": "An AI looked at one photo and designed this toy.",
+      "duration": 2.787,
+      "cues": 1,
+      "words": [
+        {
+          "w": "An",
+          "s": 0.0,
+          "e": 0.16
+        },
+        {
+          "w": "AI",
+          "s": 0.16,
+          "e": 0.36
+        },
+        {
+          "w": "looked",
+          "s": 0.36,
+          "e": 0.66
+        },
+        {
+          "w": "at",
+          "s": 0.66,
+          "e": 0.78
+        },
+        {
+          "w": "one",
+          "s": 0.78,
+          "e": 0.98
+        },
+        {
+          "w": "photo",
+          "s": 0.98,
+          "e": 1.38
+        },
+        {
+          "w": "and",
+          "s": 1.38,
+          "e": 1.66
+        },
+        {
+          "w": "designed",
+          "s": 1.66,
+          "e": 2.04
+        },
+        {
+          "w": "this",
+          "s": 2.04,
+          "e": 2.34
+        },
+        {
+          "w": "toy.",
+          "s": 2.34,
+          "e": 2.76
+        }
+      ],
+      "subs": true,
+      "match": 1.0
+    },
+    {
+      "id": "vo-01c",
+      "name": "vo-01c",
+      "text": "This toy was designed by an A.I. that saw one photo.",
+      "heard": "This toy was designed by an AI that saw one photo.",
+      "duration": 2.882,
+      "cues": 1,
+      "words": [
+        {
+          "w": "This",
+          "s": 0.0,
+          "e": 0.2
+        },
+        {
+          "w": "toy",
+          "s": 0.2,
+          "e": 0.46
+        },
+        {
+          "w": "was",
+          "s": 0.46,
+          "e": 0.64
+        },
+        {
+          "w": "designed",
+          "s": 0.64,
+          "e": 1.0
+        },
+        {
+          "w": "by",
+          "s": 1.0,
+          "e": 1.16
+        },
+        {
+          "w": "an",
+          "s": 1.16,
+          "e": 1.3
+        },
+        {
+          "w": "AI",
+          "s": 1.3,
+          "e": 1.56
+        },
+        {
+          "w": "that",
+          "s": 1.56,
+          "e": 1.84
+        },
+        {
+          "w": "saw",
+          "s": 1.84,
+          "e": 2.06
+        },
+        {
+          "w": "one",
+          "s": 2.06,
+          "e": 2.38
+        },
+        {
+          "w": "photo.",
+          "s": 2.38,
+          "e": 2.86
+        }
+      ],
+      "subs": true,
+      "match": 1.0
+    },
+    {
+      "id": "vo-02",
+      "name": "vo-02",
+      "text": "But OpenAI put one tiny line under this demo. Keep your eye on it.",
+      "heard": "but OpenAI put one tiny line under this demo. Keep your eye on it.",
+      "duration": 4.084,
+      "cues": 2,
+      "words": [
+        {
+          "w": "but",
+          "s": 0.0,
+          "e": 0.16
+        },
+        {
+          "w": "OpenAI",
+          "s": 0.16,
+          "e": 0.64
+        },
+        {
+          "w": "put",
+          "s": 0.64,
+          "e": 0.94
+        },
+        {
+          "w": "one",
+          "s": 0.94,
+          "e": 1.28
+        },
+        {
+          "w": "tiny",
+          "s": 1.28,
+          "e": 1.66
+        },
+        {
+          "w": "line",
+          "s": 1.66,
+          "e": 2.02
+        },
+        {
+          "w": "under",
+          "s": 2.02,
+          "e": 2.26
+        },
+        {
+          "w": "this",
+          "s": 2.26,
+          "e": 2.48
+        },
+        {
+          "w": "demo.",
+          "s": 2.48,
+          "e": 2.92
+        },
+        {
+          "w": "Keep",
+          "s": 3.38,
+          "e": 3.5
+        },
+        {
+          "w": "your",
+          "s": 3.5,
+          "e": 3.64
+        },
+        {
+          "w": "eye",
+          "s": 3.64,
+          "e": 3.78
+        },
+        {
+          "w": "on",
+          "s": 3.78,
+          "e": 3.96
+        },
+        {
+          "w": "it.",
+          "s": 3.96,
+          "e": 4.06
+        }
+      ],
+      "subs": true,
+      "match": 1.0
+    },
+    {
+      "id": "vo-03a",
+      "name": "vo-03a",
+      "text": "This is G.P.T. six point one Terra. It's not built to chat. It's built to use your computer.",
+      "heard": "This is GPT 6.1 Tera. It's not built to chat, it's built to use your computer.",
+      "duration": 5.191,
+      "cues": 3,
+      "words": [
+        {
+          "w": "This",
+          "s": 0.0,
+          "e": 0.2
+        },
+        {
+          "w": "is",
+          "s": 0.2,
+          "e": 0.38
+        },
+        {
+          "w": "GPT",
+          "s": 0.38,
+          "e": 0.96
+        },
+        {
+          "w": "6",
+          "s": 0.96,
+          "e": 1.36
+        },
+        {
+          "w": ".1",
+          "s": 1.36,
+          "e": 1.8
+        },
+        {
+          "w": "Tera.",
+          "s": 1.8,
+          "e": 2.28
+        },
+        {
+          "w": "It's",
+          "s": 2.5,
+          "e": 2.64
+        },
+        {
+          "w": "not",
+          "s": 2.64,
+          "e": 2.78
+        },
+        {
+          "w": "built",
+          "s": 2.78,
+          "e": 3.0
+        },
+        {
+          "w": "to",
+          "s": 3.0,
+          "e": 3.16
+        },
+        {
+          "w": "chat,",
+          "s": 3.16,
+          "e": 3.6
+        },
+        {
+          "w": "it's",
+          "s": 3.6,
+          "e": 3.92
+        },
+        {
+          "w": "built",
+          "s": 3.92,
+          "e": 4.08
+        },
+        {
+          "w": "to",
+          "s": 4.08,
+          "e": 4.24
+        },
+        {
+          "w": "use",
+          "s": 4.24,
+          "e": 4.48
+        },
+        {
+          "w": "your",
+          "s": 4.48,
+          "e": 4.62
+        },
+        {
+          "w": "computer.",
+          "s": 4.62,
+          "e": 5.18
+        }
+      ],
+      "subs": true,
+      "match": 0.997
+    },
+    {
+      "id": "vo-03b",
+      "name": "vo-03b",
+      "text": "This is GPT six point one Terra. It's not built to chat. It's built to use your computer.",
+      "heard": "This is GPT 6.1 Tera. It's not built to chat. It's built to use your computer.",
+      "duration": 5.128,
+      "cues": 3,
+      "words": [
+        {
+          "w": "This",
+          "s": 0.0,
+          "e": 0.2
+        },
+        {
+          "w": "is",
+          "s": 0.2,
+          "e": 0.36
+        },
+        {
+          "w": "GPT",
+          "s": 0.36,
+          "e": 0.88
+        },
+        {
+          "w": "6",
+          "s": 0.88,
+          "e": 1.22
+        },
+        {
+          "w": ".1",
+          "s": 1.22,
+          "e": 1.7
+        },
+        {
+          "w": "Tera.",
+          "s": 1.7,
+          "e": 2.16
+        },
+        {
+          "w": "It's",
+          "s": 2.42,
+          "e": 2.54
+        },
+        {
+          "w": "not",
+          "s": 2.54,
+          "e": 2.7
+        },
+        {
+          "w": "built",
+          "s": 2.7,
+          "e": 2.88
+        },
+        {
+          "w": "to",
+          "s": 2.88,
+          "e": 3.02
+        },
+        {
+          "w": "chat.",
+          "s": 3.02,
+          "e": 3.48
+        },
+        {
+          "w": "It's",
+          "s": 3.66,
+          "e": 3.8
+        },
+        {
+          "w": "built",
+          "s": 3.8,
+          "e": 4.0
+        },
+        {
+          "w": "to",
+          "s": 4.0,
+          "e": 4.14
+        },
+        {
+          "w": "use",
+          "s": 4.14,
+          "e": 4.36
+        },
+        {
+          "w": "your",
+          "s": 4.36,
+          "e": 4.5
+        },
+        {
+          "w": "computer.",
+          "s": 4.5,
+          "e": 5.1
+        }
+      ],
+      "subs": true,
+      "match": 0.997
+    },
+    {
+      "id": "vo-04",
+      "name": "vo-04",
+      "text": "Here it opens a three D app, and builds the tram, piece by piece.",
+      "heard": "Here, it opens a 3D app and builds the tram piece by piece.",
+      "duration": 4.187,
+      "cues": 2,
+      "words": [
+        {
+          "w": "Here,",
+          "s": 0.0,
+          "e": 0.38
+        },
+        {
+          "w": "it",
+          "s": 0.38,
+          "e": 0.43
+        },
+        {
+          "w": "opens",
+          "s": 0.42,
+          "e": 0.64
+        },
+        {
+          "w": "a",
+          "s": 0.64,
+          "e": 0.8
+        },
+        {
+          "w": "3D",
+          "s": 0.8,
+          "e": 1.24
+        },
+        {
+          "w": "app",
+          "s": 1.24,
+          "e": 1.64
+        },
+        {
+          "w": "and",
+          "s": 1.64,
+          "e": 2.06
+        },
+        {
+          "w": "builds",
+          "s": 2.06,
+          "e": 2.36
+        },
+        {
+          "w": "the",
+          "s": 2.36,
+          "e": 2.52
+        },
+        {
+          "w": "tram",
+          "s": 2.52,
+          "e": 2.84
+        },
+        {
+          "w": "piece",
+          "s": 2.84,
+          "e": 3.42
+        },
+        {
+          "w": "by",
+          "s": 3.42,
+          "e": 3.62
+        },
+        {
+          "w": "piece.",
+          "s": 3.62,
+          "e": 4.16
+        }
+      ],
+      "subs": true,
+      "match": 1.0
+    },
+    {
+      "id": "vo-05",
+      "name": "vo-05",
+      "text": "It's half the price of the last Terra. And OpenAI says it finishes tasks three times faster than its bigger models.",
+      "heard": "It's half the price of the last Terra, and OpenAI says it finishes tasks three times faster than its bigger models.",
+      "duration": 6.767,
+      "cues": 3,
+      "words": [
+        {
+          "w": "It's",
+          "s": 0.0,
+          "e": 0.22
+        },
+        {
+          "w": "half",
+          "s": 0.22,
+          "e": 0.44
+        },
+        {
+          "w": "the",
+          "s": 0.44,
+          "e": 0.6
+        },
+        {
+          "w": "price",
+          "s": 0.6,
+          "e": 0.86
+        },
+        {
+          "w": "of",
+          "s": 0.86,
+          "e": 1.0
+        },
+        {
+          "w": "the",
+          "s": 1.0,
+          "e": 1.08
+        },
+        {
+          "w": "last",
+          "s": 1.08,
+          "e": 1.34
+        },
+        {
+          "w": "Terra,",
+          "s": 1.34,
+          "e": 1.78
+        },
+        {
+          "w": "and",
+          "s": 1.78,
+          "e": 2.24
+        },
+        {
+          "w": "OpenAI",
+          "s": 2.24,
+          "e": 2.7
+        },
+        {
+          "w": "says",
+          "s": 2.7,
+          "e": 3.08
+        },
+        {
+          "w": "it",
+          "s": 3.08,
+          "e": 3.24
+        },
+        {
+          "w": "finishes",
+          "s": 3.24,
+          "e": 3.58
+        },
+        {
+          "w": "tasks",
+          "s": 3.58,
+          "e": 4.12
+        },
+        {
+          "w": "three",
+          "s": 4.12,
+          "e": 4.62
+        },
+        {
+          "w": "times",
+          "s": 4.62,
+          "e": 5.04
+        },
+        {
+          "w": "faster",
+          "s": 5.04,
+          "e": 5.56
+        },
+        {
+          "w": "than",
+          "s": 5.56,
+          "e": 5.76
+        },
+        {
+          "w": "its",
+          "s": 5.76,
+          "e": 5.94
+        },
+        {
+          "w": "bigger",
+          "s": 5.94,
+          "e": 6.18
+        },
+        {
+          "w": "models.",
+          "s": 6.18,
+          "e": 6.74
+        }
+      ],
+      "subs": true,
+      "match": 1.0
+    },
+    {
+      "id": "vo-06",
+      "name": "vo-06",
+      "text": "Now, that tiny line. Shown at actual speed. Some sections omitted.",
+      "heard": "Now, that tiny line, shown at actual speed, some sections omitted,",
+      "duration": 4.468,
+      "cues": 2,
+      "words": [
+        {
+          "w": "Now,",
+          "s": 0.0,
+          "e": 0.52
+        },
+        {
+          "w": "that",
+          "s": 0.52,
+          "e": 0.84
+        },
+        {
+          "w": "tiny",
+          "s": 0.84,
+          "e": 1.12
+        },
+        {
+          "w": "line,",
+          "s": 1.12,
+          "e": 1.58
+        },
+        {
+          "w": "shown",
+          "s": 1.58,
+          "e": 2.0
+        },
+        {
+          "w": "at",
+          "s": 2.0,
+          "e": 2.26
+        },
+        {
+          "w": "actual",
+          "s": 2.26,
+          "e": 2.64
+        },
+        {
+          "w": "speed,",
+          "s": 2.64,
+          "e": 3.2
+        },
+        {
+          "w": "some",
+          "s": 3.2,
+          "e": 3.54
+        },
+        {
+          "w": "sections",
+          "s": 3.54,
+          "e": 3.94
+        },
+        {
+          "w": "omitted,",
+          "s": 3.94,
+          "e": 4.44
+        }
+      ],
+      "subs": true,
+      "match": 1.0
+    },
+    {
+      "id": "vo-07",
+      "name": "vo-07",
+      "text": "Actual speed. With the slow parts cut out.",
+      "heard": "Actual speed, with the slow parts cut out.",
+      "duration": 2.698,
+      "cues": 1,
+      "words": [
+        {
+          "w": "Actual",
+          "s": 0.0,
+          "e": 0.46
+        },
+        {
+          "w": "speed,",
+          "s": 0.46,
+          "e": 0.98
+        },
+        {
+          "w": "with",
+          "s": 0.98,
+          "e": 1.48
+        },
+        {
+          "w": "the",
+          "s": 1.48,
+          "e": 1.6
+        },
+        {
+          "w": "slow",
+          "s": 1.6,
+          "e": 1.84
+        },
+        {
+          "w": "parts",
+          "s": 1.84,
+          "e": 2.18
+        },
+        {
+          "w": "cut",
+          "s": 2.18,
+          "e": 2.34
+        },
+        {
+          "w": "out.",
+          "s": 2.34,
+          "e": 2.68
+        }
+      ],
+      "subs": true,
+      "match": 1.0
+    },
+    {
+      "id": "vo-08",
+      "name": "vo-08",
+      "text": "And three times faster? That's OpenAI's own test. No one outside OpenAI has confirmed it yet.",
+      "heard": "And three times faster? That's OpenAI's own test. No one outside OpenAI has confirmed it yet.",
+      "duration": 6.012,
+      "cues": 3,
+      "words": [
+        {
+          "w": "And",
+          "s": 0.0,
+          "e": 0.22
+        },
+        {
+          "w": "three",
+          "s": 0.22,
+          "e": 0.54
+        },
+        {
+          "w": "times",
+          "s": 0.54,
+          "e": 0.84
+        },
+        {
+          "w": "faster?",
+          "s": 0.84,
+          "e": 1.48
+        },
+        {
+          "w": "That's",
+          "s": 1.84,
+          "e": 2.12
+        },
+        {
+          "w": "OpenAI's",
+          "s": 2.12,
+          "e": 2.82
+        },
+        {
+          "w": "own",
+          "s": 2.82,
+          "e": 3.04
+        },
+        {
+          "w": "test.",
+          "s": 3.04,
+          "e": 3.58
+        },
+        {
+          "w": "No",
+          "s": 3.84,
+          "e": 3.96
+        },
+        {
+          "w": "one",
+          "s": 3.96,
+          "e": 4.08
+        },
+        {
+          "w": "outside",
+          "s": 4.08,
+          "e": 4.38
+        },
+        {
+          "w": "OpenAI",
+          "s": 4.38,
+          "e": 4.88
+        },
+        {
+          "w": "has",
+          "s": 4.88,
+          "e": 5.18
+        },
+        {
+          "w": "confirmed",
+          "s": 5.18,
+          "e": 5.54
+        },
+        {
+          "w": "it",
+          "s": 5.54,
+          "e": 5.7
+        },
+        {
+          "w": "yet.",
+          "s": 5.7,
+          "e": 6.0
+        }
+      ],
+      "subs": true,
+      "match": 1.0
+    },
+    {
+      "id": "vo-09",
+      "name": "vo-09",
+      "text": "A demo is an ad. Read the line under it.",
+      "heard": "A demo is an ad. Read the line under it.",
+      "duration": 2.608,
+      "cues": 2,
+      "words": [
+        {
+          "w": "A",
+          "s": 0.0,
+          "e": 0.18
+        },
+        {
+          "w": "demo",
+          "s": 0.18,
+          "e": 0.48
+        },
+        {
+          "w": "is",
+          "s": 0.48,
+          "e": 0.78
+        },
+        {
+          "w": "an",
+          "s": 0.78,
+          "e": 0.92
+        },
+        {
+          "w": "ad.",
+          "s": 0.92,
+          "e": 1.46
+        },
+        {
+          "w": "Read",
+          "s": 1.46,
+          "e": 1.78
+        },
+        {
+          "w": "the",
+          "s": 1.78,
+          "e": 1.9
+        },
+        {
+          "w": "line",
+          "s": 1.9,
+          "e": 2.1
+        },
+        {
+          "w": "under",
+          "s": 2.1,
+          "e": 2.34
+        },
+        {
+          "w": "it.",
+          "s": 2.34,
+          "e": 2.58
+        }
+      ],
+      "subs": true,
+      "match": 1.0
+    },
+    {
+      "id": "vo-10",
+      "name": "vo-10",
+      "text": "Seen a demo like this? Send it our way. We'll check it.",
+      "heard": "Seen a demo like this? Send it our way. We'll check it.",
+      "duration": 2.936,
+      "cues": 3,
+      "words": [
+        {
+          "w": "Seen",
+          "s": 0.0,
+          "e": 0.28
+        },
+        {
+          "w": "a",
+          "s": 0.28,
+          "e": 0.4
+        },
+        {
+          "w": "demo",
+          "s": 0.4,
+          "e": 0.54
+        },
+        {
+          "w": "like",
+          "s": 0.54,
+          "e": 0.74
+        },
+        {
+          "w": "this?",
+          "s": 0.74,
+          "e": 1.16
+        },
+        {
+          "w": "Send",
+          "s": 1.16,
+          "e": 1.54
+        },
+        {
+          "w": "it",
+          "s": 1.54,
+          "e": 1.66
+        },
+        {
+          "w": "our",
+          "s": 1.66,
+          "e": 1.8
+        },
+        {
+          "w": "way.",
+          "s": 1.8,
+          "e": 2.2
+        },
+        {
+          "w": "We'll",
+          "s": 2.2,
+          "e": 2.56
+        },
+        {
+          "w": "check",
+          "s": 2.56,
+          "e": 2.78
+        },
+        {
+          "w": "it.",
+          "s": 2.78,
+          "e": 2.92
+        }
+      ],
+      "subs": true,
+      "match": 1.0
+    }
+  ],
+  "created": 1793122378.3,
+  "started": 1793122378.3
+}

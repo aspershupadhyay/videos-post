@@ -1,0 +1,64 @@
+<template>
+  <style>
+    @font-face { font-family: "Courier Prime"; font-weight: 700; font-display: block; src: url("assets/fonts/CourierPrime-Bold.ttf") format("truetype"); }
+    @font-face { font-family: "Courier Prime"; font-weight: 400; font-display: block; src: url("assets/fonts/CourierPrime-Regular.ttf") format("truetype"); }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #e7e7e5 url("assets/logo/paper-1080x1920.png") 0 0 / 1080px 1920px; color: #161616; font-family: "Courier Prime", monospace; font-weight: 700; }
+    .head { position: absolute; left: 60px; top: 1150px; width: 960px; font-size: 84px; line-height: 1.0; letter-spacing: -0.03em; }
+    .big { font-size: 108px; line-height: 0.98; letter-spacing: -0.04em; }
+    .mono { position: absolute; font-size: 28px; letter-spacing: 0.08em; text-transform: uppercase; color: #6b6b68; font-weight: 700; }
+    .credit { left: 60px; top: 192px; width: 960px; }
+    .red { color: #dd483f; }
+    .card { position: absolute; border-radius: 30px; overflow: hidden; background: #fff; box-shadow: 0 24px 60px rgba(20, 20, 18, 0.13); }
+    .card video, .card img.fill { position: absolute; }
+    .pen { position: absolute; overflow: visible; }
+    .pen path { fill: none; stroke: #dd483f; stroke-width: 9; stroke-linecap: round; stroke-linejoin: round; }
+    .ch { opacity: 0; }
+    .pill { position: absolute; background: #fff; border-radius: 80px; padding: 26px 46px; font-size: 60px; letter-spacing: -0.02em; white-space: nowrap; box-shadow: 0 18px 50px rgba(0, 0, 0, 0.18); }
+
+    #s3-world { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; overflow: hidden; }
+    #s3-world video, #s3-world img { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
+    .row { position: absolute; left: 0; width: 1080px; text-align: center; }
+    .row .pill { position: relative; display: inline-block; }
+    #s3-r1 { top: 700px; } #s3-r1 .pill { font-size: 76px; }
+    #s3-r2, #s3-r3 { top: 880px; }
+    #s3-r2, #s3-r3 { opacity: 0; }
+    #s3-strike { position: absolute; left: 0; top: 0; width: 100%; height: 100%; }
+    #s3-strike path { stroke-dasharray: 700; stroke-dashoffset: 700; }
+    #s3-cr { left: 60px; top: 1290px; color: #f4f2ee; opacity: 0.85; }
+  </style>
+  <div id="root" data-composition-id="s3" data-width="1080" data-height="1920">
+
+    <div id="s3-world">
+      <img src="assets/shots/earth-end.png" alt="" />
+      <video id="s3-v" class="clip" src="assets/footage/earth.mp4" data-start="0" data-duration="5.120" muted playsinline></video>
+      <div id="s3-cr" class="mono">OpenAI · GPT-6.1 Terra launch film</div>
+    </div>
+    <div id="s3-r1" class="row"><div id="s3-p1" class="pill"><span class="ch">G</span><span class="ch">P</span><span class="ch">T</span><span class="ch">-</span><span class="ch">6</span><span class="ch">.</span><span class="ch">1</span> <span class="ch">T</span><span class="ch">e</span><span class="ch">r</span><span class="ch">r</span><span class="ch">a</span></div></div>
+    <div id="s3-r2" class="row"><div id="s3-p2" class="pill">built to chat<svg id="s3-strike" class="pen" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M4 56 C 30 50, 70 52, 96 46" vector-effect="non-scaling-stroke" /></svg></div></div>
+    <div id="s3-r3" class="row"><div id="s3-p3" class="pill"><span class="ch">b</span><span class="ch">u</span><span class="ch">i</span><span class="ch">l</span><span class="ch">t</span> <span class="ch">t</span><span class="ch">o</span> <span class="ch">u</span><span class="ch">s</span><span class="ch">e</span> <span class="ch">y</span><span class="ch">o</span><span class="ch">u</span><span class="ch">r</span> <span class="ch">c</span><span class="ch">o</span><span class="ch">m</span><span class="ch">p</span><span class="ch">u</span><span class="ch">t</span><span class="ch">e</span><span class="ch">r</span></div></div>
+  </div>
+  <script>
+    (() => {
+      const tl = gsap.timeline({ paused: true });
+      const at = (abs) => Math.max(0, abs - 8.71);
+      const blurIn = (sel, t, d = 0.18) => tl.fromTo(sel, { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: d, ease: "power4.out", immediateRender: false }, at(t));
+      const out = (sel, t, d = 0.14) => tl.to(sel, { opacity: 0, filter: "blur(8px)", duration: d, ease: "power2.in" }, at(t));
+      const pen = (sel, t, d = 0.36) => tl.to(sel, { strokeDashoffset: 0, duration: d, ease: "power2.inOut" }, at(t));
+      const type = (sel, t, cps = 34) => { const n = document.querySelectorAll(sel + " .ch").length; tl.to(sel + " .ch", { opacity: 1, duration: 0.001, stagger: 1 / cps, immediateRender: false }, at(t)); return n / cps; };
+      const ring = (sel, t, d = 0.5) => tl.to(sel, { "--p": 360, duration: d, ease: "power2.inOut" }, at(t));
+
+      type("#s3-p1", 9.167, 26);
+      tl.fromTo("#s3-p1", { scale: 0.9 }, { scale: 1, duration: 0.35, ease: "back.out(1.6)", immediateRender: false }, at(9.167));
+      tl.fromTo("#s3-r2", { opacity: 0, scaleX: 0.4, filter: "blur(12px)" }, { opacity: 1, scaleX: 1, filter: "blur(0px)", duration: 0.22, ease: "power3.out", immediateRender: false }, at(11.447));
+      pen("#s3-strike path", 11.927, 0.3);
+      out("#s3-r2", 12.607000000000001, 0.1);
+      tl.fromTo("#s3-r3", { opacity: 1 }, { opacity: 1, duration: 0.01, immediateRender: false }, at(12.707));
+      type("#s3-p3", 12.707, 40);
+      // the world shrinks into a card (OpenAI's own move)
+      tl.to("#s3-world", { scale: 0.62, borderRadius: 48, y: -140, duration: 0.6, ease: "power2.inOut", transformOrigin: "540px 960px" }, at(13.257));
+      tl.to(["#s3-r1", "#s3-r3"], { y: -150, scale: 0.8, duration: 0.6, ease: "power2.inOut" }, at(13.257));
+      tl.set({}, {}, 5.43);
+      window.__timelines["s3"] = tl;
+    })();
+  </script>
+</template>
