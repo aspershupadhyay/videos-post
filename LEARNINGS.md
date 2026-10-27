@@ -2,6 +2,20 @@
 
 Newest first. Each entry: what happened, what we learned, the rule it became (in `CLAUDE.md`).
 
+## 2026-10-27 — Case 022 v3: creator review of the full cut → a layout gate
+- **Creator:** keep the captions; fix 0:38–0:46 (three report cards stacked, too dense); the "CPU" text sat cramped in its
+  box and a data block flew over it; the cache label touched the CPU box. **Make a sanity check part of the repo: spacing,
+  text overlapping, nothing covering text, screenshots clearly visible, before every render.** → Rules 16 (captions) + 18.
+- Built `tools/qa_layout.mjs`: seeks the live preview (`window.__player.renderSeek`) every 0.2 s and checks the DOM for
+  OVERLAP / COVERED / CROWDED (< 16 px) / SAFE / OFFFRAME / SMALL (screenshot text < 26 px via `data-text-px`). Verified it
+  fails on the old layout (label 4 px from the CPU box, block over "CPU", "Agent B" pushed under the right rail) and
+  passes the fix. HyperFrames' own `check` only catches text-on-text overlap.
+- Fixes: CPU box 270 px with its label at the top, blocks land under it; the cache label on a dark backing so blocks pass
+  behind it; s6 = one full-width card per beat with a mono label; VGTimes cropped to its headline; short agent labels.
+- The gate also caught my own fix (a camera pan pushed labels off-frame) before the render. That's the point of it.
+- Could've done better: every one of these was visible in my own contact sheets; I looked for "does it work", not for
+  spacing. → The gate now does the looking; still eyeball one frame per scene for taste.
+
 ## 2026-10-27 — Case 022 v2: creator feedback on the style demo
 - **Creator:** make it ~1 minute; explain the mechanism the exact way the reference does; the screenshots had visual
   issues; the visual explanation wasn't good.

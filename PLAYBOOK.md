@@ -104,7 +104,10 @@ Template: `videos/case-018-kimi-k3-1-pro/DESIGN.md`.
 
 ```bash
 npx hyperframes check --json
-npx hyperframes snapshot --at 0,5,10,...
+npx hyperframes preview --background                       # then, from the repo root:
+NODE_PATH=$(npm root -g) node tools/qa_layout.mjs <project-id>   # must PASS: no covered/overlapping/crowded text,
+                                                           # safe zones, screenshots readable (rule 18)
+npx hyperframes snapshot --at 0,5,10,...                   # and look at every scene
 npx hyperframes render -q draft -o renders/draft.mp4
 python3 ../../tools/qa_frames.py renders/draft.mp4        # must PASS: no empty or frozen stretches
 npx hyperframes render -q delivery -o renders/<name>-9x16.mp4

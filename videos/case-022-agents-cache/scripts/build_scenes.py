@@ -131,8 +131,8 @@ def agents(pfx):
     <div id="{pfx}-b" class="box" style="left:610px;top:700px;width:360px;height:360px">
       {grid(f"{pfx}-gb", 4, 4, 62, 14, B_ON, "left:35px;top:35px")}
     </div>
-    <div id="{pfx}-la" class="mono" style="left:110px;top:1086px;width:360px;text-align:center">Agent A · VM 1</div>
-    <div id="{pfx}-lb" class="mono" style="left:610px;top:1086px;width:360px;text-align:center">Agent B · VM 2</div>"""
+    <div id="{pfx}-la" class="mono" style="left:110px;top:1086px;width:360px;text-align:center">Agent A</div>
+    <div id="{pfx}-lb" class="mono" style="left:610px;top:1086px;width:360px;text-align:center">Agent B</div>"""
 
 
 # S1 hook. Frame 0 = the cover (paper). It lifts off; two sealed boxes; a red dot (the secret) crosses the wall. -----
@@ -187,14 +187,14 @@ S.append(scene("s1", s, e, f"""
 PAD = 34
 
 
-def card(id_, src, cw, x, y, style="", alt=""):
+def card(id_, src, cw, x, y, style="", alt="", text_px=45):
     """Returns (html, card height, image scale). The image sits PAD inside the card; its size is read from the file."""
     from PIL import Image
     iw, ih = Image.open(P / "assets/shots" / src).size
     k = (cw - 2 * PAD) / iw
     ch = round(ih * k) + 2 * PAD
     return (f'<div id="{id_}" class="card" style="left:{x}px;top:{y}px;width:{cw}px;height:{ch}px;{style}">'
-            f'<img src="assets/shots/{src}" alt="{alt}" style="left:{PAD}px;top:{PAD}px;width:{cw - 2 * PAD}px;height:{round(ih * k)}px" /></div>'), ch, k
+            f'<img src="assets/shots/{src}" alt="{alt}" data-text-px="{text_px}" style="left:{PAD}px;top:{PAD}px;width:{cw - 2 * PAD}px;height:{round(ih * k)}px" /></div>'), ch, k
 
 
 def underline(id_, x, y, wdt, sw=7):
@@ -222,8 +222,8 @@ def union(shot, phrase):
 # S2 the loop: two real headlines; then OpenAI's own report, its title redacted (paid off in s6) -----------------------
 s, e = b[1], b[2]
 t_read, t_scary = w("vo-02", "read"), w("vo-02", "scary")
-h1, h1h, _ = card("s2-h1", "cover-still.png", 960, 60, 290, "opacity:0", "OfficeChai: OpenAI says its AI agents found a way to talk through the processor's cache")
-h2, h2h, _ = card("s2-h2", "head-vgtimes-hero.png", 960, 60, 290 + h1h + 40, "opacity:0", "VGTimes: OpenAI AI agents found a covert channel through processor cache timing")
+h1, h1h, _ = card("s2-h1", "cover-still.png", 960, 60, 290, "opacity:0", "OfficeChai: OpenAI says its AI agents found a way to talk through the processor's cache", 52)
+h2, h2h, _ = card("s2-h2", "head-vgtimes-hero.png", 1000, 40, 290 + h1h + 60, "opacity:0", "VGTimes: OpenAI AI agents found a covert channel through processor cache timing", 50)
 rep, reph, rk = card("s2-rep", "r-head.png", 960, 60, 640, "opacity:0", "OpenAI misalignment report")
 tx, ty, tw_, th = union("r-head", "An agent used DNS to reach an external chatbot")
 BAR = f'left:{PAD + tx * rk - 8:.0f}px;top:{PAD + ty * rk - 6:.0f}px;width:{tw_ * rk + 16:.0f}px;height:{th * rk + 12:.0f}px'
@@ -274,11 +274,11 @@ S.append(scene("s3", s, e, f"""
 # S4 the explainer (vo-03b..vo-04c): the cache is a shelf next to the CPU; memory is far away. -------------------------
 # On the shelf = fast read; off the shelf = slow read. A kicks a block off = 1, leaves it = 0. B times reads. Bit by bit.
 s, e = b[3], b[4]
-N, SW, SG, SX, SY = 8, 96, 12, 114, 600
+N, SW, SG, SX, SY = 8, 96, 12, 114, 650
 BITS = [1, 0, 1, 1, 0, 1, 0, 0]
 sx = lambda i: SX + i * (SW + SG)
 scx = lambda i: sx(i) + SW / 2
-CPU_C, MEM_Y = (540, 390), 1165          # CPU centre; a block "in memory" sits at this y (centre)
+CPU_C, MEM_Y = (540, 438), 1155          # where a read block lands inside the CPU (under its label); a block "in memory" (centre)
 dy_mem, dy_cpu = MEM_Y - (SY + SW / 2), CPU_C[1] - (SY + SW / 2)
 dx_cpu = lambda i: CPU_C[0] - scx(i)
 q = lambda v: f"{v:.0f}"
@@ -353,6 +353,11 @@ js.append(f"""
       tl.fromTo("#x-ca", {{ opacity: 0, scale: 1.5 }}, {{ opacity: 1, scale: 1, duration: 0.25, ease: "back.out(2)", immediateRender: false }}, at({w(v4, 'agent'):.2f}));
       tl.to("#x-A", {{ color: "#f4f2ee", duration: 0.1 }}, at({w(v4, 'agent'):.2f}));
       tl.to("#x-ca", {{ y: 18, duration: 0.12, yoyo: true, repeat: 1 }}, at({t_kick:.2f}));""")
+# the camera follows A's cursor along the shelf (a real move every ~2 s; qa_frames failed 24.3-26.3 s without it)
+js.append(f"""
+      tl.to("#x-cam", {{ x: 70, duration: 0.6, ease: "power2.inOut" }}, at({t_kick - 0.3:.2f}));
+      tl.to("#x-cam", {{ x: -40, duration: 0.6, ease: "power2.inOut" }}, at({t_leave - 0.1:.2f}));
+      tl.to("#x-cam", {{ x: 0, y: 0, duration: 0.6, ease: "power2.inOut" }}, at({L[v4]['end'] + 0.05:.2f}));""")
 js.append(kick(0, t_kick + 0.1))
 js.append(bit(0, t_one))
 js.append(f"""
@@ -389,30 +394,30 @@ js.append(f"""
       tl.fromTo("#x-cam", {{ scale: 1 }}, {{ scale: 1.05, duration: {e - s:.2f}, ease: "none", transformOrigin: "540px 760px", immediateRender: false }}, 0);""")
 S.append(scene("s4", s, e, f"""
     #x-cam {{ position: absolute; inset: 0; }}
-    #x-cpu {{ left: 430px; top: 280px; width: 220px; height: 220px; border-color: #f4f2ee; display: flex; align-items: center; justify-content: center;
-      font-family: "Courier Prime", monospace; font-weight: 700; font-size: 52px; letter-spacing: 0.1em; }}
-    #x-A, #x-B {{ top: 372px; display: flex; align-items: center; gap: 16px; font-size: 30px; }}
+    #x-cpu {{ left: 405px; top: 250px; width: 270px; height: 270px; border-color: #f4f2ee; text-align: center; padding-top: 30px;
+      font-family: "Courier Prime", monospace; font-weight: 700; font-size: 46px; letter-spacing: 0.1em; }}
+    #x-A, #x-B {{ top: 370px; display: flex; align-items: center; gap: 16px; font-size: 30px; }}
     #x-A {{ left: 84px; }} #x-B {{ right: 84px; }}
     #x-A b, #x-B b {{ display: inline-block; width: 28px; height: 28px; border-radius: 50%; background: #f4f2ee; }}
-    #x-lc {{ left: {SX}px; top: 504px; color: #c9c9c5; }}
+    #x-lc {{ left: {SX - 10}px; top: 550px; padding: 6px 10px; background: #0a0a0a; color: #c9c9c5; z-index: 3; }}   /* blocks pass behind it */
     .slot {{ position: absolute; top: {SY}px; width: {SW}px; height: {SW}px; border-radius: 18px; border: 3px solid #3a3a38; }}
     .blk {{ position: absolute; top: {SY + 12}px; width: {SW - 24}px; height: {SW - 24}px; border-radius: 12px; background: #f4f2ee; }}
     #x-plank {{ position: absolute; left: {SX - 14}px; top: {SY + SW + 10}px; width: {N * SW + (N - 1) * SG + 28}px; height: 10px; border-radius: 5px; background: #f4f2ee; transform-origin: 0 50%; }}
-    .bit {{ position: absolute; top: {SY + SW + 34}px; width: {SW}px; text-align: center; font-family: "Courier Prime", monospace; font-weight: 700; font-size: 64px; opacity: 0; }}
+    .bit {{ position: absolute; top: {SY + SW + 40}px; width: {SW}px; text-align: center; font-family: "Courier Prime", monospace; font-weight: 700; font-size: 64px; opacity: 0; }}
     .cur {{ position: absolute; top: {SY - 14}px; width: {SW + 28}px; height: {SW + 28}px; border-radius: 24px; opacity: 0; }}
     .cur span {{ position: absolute; left: 0; top: -44px; width: 100%; text-align: center; font-family: "Courier Prime", monospace; font-weight: 700; font-size: 28px; }}
     #x-ca {{ left: {sx(0) - 14}px; border: 5px solid #f4f2ee; }}
     #x-cb {{ left: {sx(0) - 14}px; border: 5px dashed #f4f2ee; }}
-    .tw {{ position: absolute; left: 0; top: 860px; width: 1080px; text-align: center; font-weight: 800; font-size: 104px; letter-spacing: -0.05em; opacity: 0; }}
-    #x-track {{ position: absolute; left: 190px; top: 1000px; width: 700px; height: 16px; border-radius: 8px; background: #222221; overflow: hidden; opacity: 0; }}
+    .tw {{ position: absolute; left: 0; top: 905px; width: 1080px; text-align: center; font-weight: 800; font-size: 104px; letter-spacing: -0.05em; opacity: 0; }}
+    #x-track {{ position: absolute; left: 190px; top: 1040px; width: 700px; height: 16px; border-radius: 8px; background: #222221; overflow: hidden; opacity: 0; }}
     #x-bf, #x-bs {{ position: absolute; left: 0; top: 0; width: 100%; height: 100%; transform-origin: 0 50%; }}
     #x-bf {{ background: #f4f2ee; }} #x-bs {{ background: #dd483f; }}
-    #x-mem {{ position: absolute; left: {SX}px; top: 1110px; width: {N * SW + (N - 1) * SG}px; height: 110px; border-radius: 22px; border: 3px solid #3a3a38; background: #121211;
+    #x-mem {{ position: absolute; left: {SX}px; top: 1100px; width: {N * SW + (N - 1) * SG}px; height: 110px; border-radius: 22px; border: 3px solid #3a3a38; background: #121211;
       display: grid; grid-template-columns: repeat(14, 1fr); gap: 10px; padding: 16px; opacity: 0; }}
     #x-mem i {{ border-radius: 8px; background: #1e1e1d; }}
-    #x-ml {{ left: {SX}px; top: 1240px; opacity: 0; }}
-    #x-msg {{ top: 880px; color: #dd483f; font-size: 44px; opacity: 0; }}
-    #x-ul {{ position: absolute; left: {SX - 10}px; top: {SY + SW + 112}px; width: {N * SW + (N - 1) * SG + 20}px; height: 20px; }}""", f"""
+    #x-ml {{ left: {SX}px; top: 1236px; opacity: 0; }}
+    #x-msg {{ top: 935px; color: #dd483f; font-size: 44px; opacity: 0; }}
+    #x-ul {{ position: absolute; left: {SX - 10}px; top: {SY + SW + 120}px; width: {N * SW + (N - 1) * SG + 20}px; height: 20px; }}""", f"""
     <div id="x-cam">
       <div id="x-cpu" class="box">CPU</div>
       <div id="x-A" class="mono"><b></b>Agent A</div>
@@ -459,37 +464,54 @@ S.append(scene("s5", s, e, f"""
       tl.to("#s5-card", {{ scale: 1.05, duration: {e - t_told:.2f}, ease: "power1.inOut", transformOrigin: "50% 50%" }}, at({t_told}));
       pen("#s5-it path", {t_test + 0.1}, 0.3);"""))
 
-# S6 the real breakout: the redaction tears off; the proxy block; the model's own reasoning --------------------------
+# S6 the real breakout, one card at a time (v3: the creator found three stacked cards too dense):
+#   1) the redaction tears off the report title, pen under Sep 20  2) the proxy said no: 502 / CACHE_MISS ringed
+#   3) the model's own reasoning, underlined. Each card full width, alone, with a one-line mono label above it.
 s, e = b[5], b[6]
 t_nobody, t_sept, t_blk, t_q, t_dns = w("vo-06", "nobody"), w("vo-06", "september"), w("vo-06", "blocked"), w("vo-06", "questions"), w("vo-06", "dns")
-c1, c1h, k1 = card("s6-c1", "r-head.png", 960, 60, 250)
-c2, c2h, k2 = card("s6-c2", "r-blocked.png", 960, 60, 250 + c1h + 24, "opacity:0")
-c3, c3h, k3 = card("s6-c3", "r-cot.png", 960, 60, 250 + c1h + 24 + c2h + 24, "opacity:0")
+CW, CX = 1000, 40
+c1, c1h, k1 = card("s6-c1", "r-head.png", CW, CX, 0)
+c2, c2h, k2 = card("s6-c2", "r-blocked.png", CW, CX, 0, "opacity:0")
+c3, c3h, k3 = card("s6-c3", "r-cot.png", CW, CX, 0, "opacity:0")
+Y1, Y2, Y3 = 400, 640, 660                        # card tops (each card is alone on screen)
+c1 = c1.replace("top:0px", f"top:{Y1}px"); c2 = c2.replace("top:0px", f"top:{Y2}px"); c3 = c3.replace("top:0px", f"top:{Y3}px")
+BAR6 = f'left:{PAD + tx * k1 - 8:.0f}px;top:{PAD + ty * k1 - 6:.0f}px;width:{tw_ * k1 + 16:.0f}px;height:{th * k1 + 12:.0f}px'
 sx_, sy_, sw_, sh_ = box("r-head", "Sep 20, 2026")
 sep_ul = underline("s6-ul1", PAD + sx_ * k1, PAD + (sy_ + sh_) * k1, sw_ * k1)
 mx, my, mw, mh = box("r-blocked", "CACHE_MISS")
-miss_ring = ring_img("s6-r2", round(PAD + mx * k2 - 26), round(PAD + my * k2 - 20), round(mw * k2 + 52), round(mh * k2 + 40))
+miss_ring = ring_img("s6-r2", round(PAD + mx * k2 - 30), round(PAD + my * k2 - 24), round(mw * k2 + 60), round(mh * k2 + 48))
 ux, uy, uw, uh = box("r-cot", "using publicly offered DNS services")
 ax, ay, aw, ah = box("r-cot", "acceptable.")
 cot_ul = underline("s6-ul3", PAD + ux * k3, PAD + (uy + uh) * k3, uw * k3) + underline("s6-ul4", PAD + ax * k3, PAD + (ay + ah) * k3, aw * k3)
 S.append(scene("s6", s, e, f"""
-    .bar {{ position: absolute; background: #0a0a0a; border-radius: 6px; transform-origin: 0 50%; }}""", f"""
-    <div id="s6-cam" style="position:absolute;inset:0">
-      {c1[:-6]}<div id="s6-bar" class="bar" style="{BAR}"></div>{sep_ul}</div>
-      {c2[:-6]}{miss_ring}</div>
-      {c3[:-6]}{cot_ul}</div>
-    </div>""", f"""
+    .bar {{ position: absolute; background: #0a0a0a; border-radius: 6px; transform-origin: 0 50%; }}
+    .lbl {{ left: {CX}px; color: #c9c9c5; opacity: 0; }}
+    #s6-l1 {{ top: {Y1 - 64}px; }} #s6-l2 {{ top: {Y2 - 64}px; }} #s6-l3 {{ top: {Y3 - 64}px; }}""", f"""
+    <div id="s6-l1" class="mono lbl">OpenAI's own incident report</div>
+    {c1[:-6]}<div id="s6-bar" class="bar" style="{BAR6}"></div>{sep_ul}</div>
+    <div id="s6-l2" class="mono lbl">Its web request: blocked</div>
+    {c2[:-6]}{miss_ring}</div>
+    <div id="s6-l3" class="mono lbl">The model's own reasoning</div>
+    {c3[:-6]}{cot_ul}</div>""", f"""
+      // 1) the report again; the redaction tears away: the title was the real story
       tl.fromTo("#s6-c1", {{ y: 380, scale: 1.04 }}, {{ y: 0, scale: 1, duration: 0.5, ease: "expo.out" }}, 0);
-      // the redaction tears away: the title was the real story
+      tl.fromTo("#s6-l1", {{ opacity: 0 }}, {{ opacity: 1, duration: 0.2, immediateRender: false }}, 0.15);
       tl.to("#s6-bar", {{ x: 1100, rotation: 8, duration: 0.45, ease: "power3.in" }}, at({t_nobody:.2f}));
       pen("#s6-ul1 path", {t_sept:.2f}, 0.4);
-      tl.fromTo("#s6-c2", {{ opacity: 1, x: -1100, rotation: -5 }}, {{ opacity: 1, x: 0, rotation: 0, duration: 0.45, ease: "expo.out", immediateRender: false }}, at({t_blk - 0.15:.2f}));
+      tl.to("#s6-c1", {{ scale: 1.04, duration: {t_blk - 0.3 - t_nobody:.2f}, ease: "none" }}, at({t_nobody:.2f}));
+      tl.to(["#s6-c1", "#s6-l1"], {{ y: -900, opacity: 0, duration: 0.35, ease: "power3.in" }}, at({t_blk - 0.3:.2f}));
+      // 2) the proxy said no
+      tl.fromTo("#s6-c2", {{ opacity: 1, y: 900 }}, {{ opacity: 1, y: 0, duration: 0.45, ease: "expo.out", immediateRender: false }}, at({t_blk - 0.1:.2f}));
+      tl.fromTo("#s6-l2", {{ opacity: 0 }}, {{ opacity: 1, duration: 0.2, immediateRender: false }}, at({t_blk + 0.1:.2f}));
       ring("#s6-r2", {w('vo-06', 'live'):.2f}, 0.45);
-      tl.fromTo("#s6-c3", {{ opacity: 1, y: 700, rotation: 3 }}, {{ opacity: 1, y: 0, rotation: 0, duration: 0.5, ease: "expo.out", immediateRender: false }}, at({t_q - 0.5:.2f}));
-      pen("#s6-ul3 path", {t_dns - 0.2:.2f}, 0.4);
-      pen("#s6-ul4 path", {t_dns + 0.25:.2f}, 0.25);
-      tl.to(["#s6-c1", "#s6-c2"], {{ opacity: 0.45, duration: 0.3 }}, at({t_q:.2f}));
-      tl.fromTo("#s6-cam", {{ y: 0 }}, {{ y: -60, duration: {e - t_q:.2f}, ease: "power1.inOut", immediateRender: false }}, at({t_q:.2f}));"""))
+      tl.to("#s6-c2", {{ scale: 1.05, duration: {t_q - 0.6 - t_blk:.2f}, ease: "none" }}, at({t_blk + 0.35:.2f}));
+      tl.to(["#s6-c2", "#s6-l2"], {{ y: -900, opacity: 0, duration: 0.35, ease: "power3.in" }}, at({t_q - 0.6:.2f}));
+      // 3) the model talks itself into it
+      tl.fromTo("#s6-c3", {{ opacity: 1, y: 900 }}, {{ opacity: 1, y: 0, duration: 0.45, ease: "expo.out", immediateRender: false }}, at({t_q - 0.4:.2f}));
+      tl.fromTo("#s6-l3", {{ opacity: 0 }}, {{ opacity: 1, duration: 0.2, immediateRender: false }}, at({t_q - 0.2:.2f}));
+      pen("#s6-ul3 path", {t_dns - 0.3:.2f}, 0.4);
+      pen("#s6-ul4 path", {t_dns + 0.15:.2f}, 0.25);
+      tl.to("#s6-c3", {{ scale: 1.06, duration: {e - t_q:.2f}, ease: "none" }}, at({t_q:.2f}));"""))
 
 # S7 the test question: its DNS query goes out; the answer comes back -------------------------------------------------
 s, e = b[6], b[7]
