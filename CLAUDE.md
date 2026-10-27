@@ -5,6 +5,7 @@ Short-form research videos for **CatchTheError** (Instagram Reels, YouTube Short
 
 - **Start every session by reading `STRATEGY.md`** (topic scoring, hook method, structure, covers, no-dead-frames gate,
   scoreboard) and `TOPICS.md` (the scored topic bank). Then `PLAYBOOK.md` for production: research, voice, sound, motion.
+- `VISUALS.md` is the visual language (Exhibit → Source → Verdict → Proof; style frames in `brand/lookbook/`).
 - `LEARNINGS.md` is the dated feedback log; `tools/qa_frames.py <render>` is the blank/frozen-frame gate.
 - HyperFrames skills are vendored in `.claude/skills/` (`/hyperframes` first). Pinned CLI: `npx hyperframes@0.8.192`.
 - Brand: `brand/` (logo SVGs from `brand/build_logo.py`) and each video's `DESIGN.md`.
@@ -41,3 +42,6 @@ Log every new piece of feedback in `LEARNINGS.md` with the date, and promote it 
     it's for the next one, so we never repeat a mistake.
 13. **Voice: write "A.I." in the script** (`lexicon: false`, no pronounce rule for it); "ay-eye" stretches into "AAAI".
     The CTA is a natural ask said like a person ("Seen a clip like this? Send it our way. We'll check it."), never a slogan.
+14. **A passing check is not quality.** Whisper match can't hear a stretched word and qa_frames can't see a boring stretch.
+    Before delivery: A/B any acronym or name in the first voice job, re-watch the 25–40 s middle for retention, and ask the
+    creator to listen once.

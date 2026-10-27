@@ -2,6 +2,12 @@
 
 Newest first. Each entry: what happened, what we learned, the rule it became (in `CLAUDE.md`).
 
+## 2026-10-27 — Visual language v1 (creator asked for creative visuals that don't look like AI hype)
+- Proposed 4 looks built only from real evidence + our marks: Forensic, Paper trail, Split verdict, Screen proof
+  (`VISUALS.md`, style frames in `brand/lookbook/`). Not yet tested in a video — judge on Case 021.
+- Could've done better: the first Split-verdict frame had "300 m" wrapping at 380 px; check every style frame at
+  full size before showing it.
+
 ## 2026-10-27 — Self-review of Case 020 (after the creator's fix request)
 - **Whisper "match" is not a pronunciation check.** "ay-eye" scored 0.995 and still sounded like "AAAI". → For any
   acronym or name, voice 2–3 spellings in the *first* job and compare word length; never trust match alone.
