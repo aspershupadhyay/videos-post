@@ -1,0 +1,47 @@
+<template>
+  <style>
+    @font-face { font-family: "Geist"; font-weight: 100 900; font-display: block; src: url("assets/fonts/Geist.woff2") format("woff2"); }
+    @font-face { font-family: "Geist Mono"; font-weight: 100 900; font-display: block; src: url("assets/fonts/GeistMono.woff2") format("woff2"); }
+    @font-face { font-family: "Instrument Serif"; font-style: italic; font-weight: 400; font-display: block; src: url("assets/fonts/InstrumentSerif-Italic.woff2") format("woff2"); }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0a0a0a; color: #f4f2ee; font-family: "Geist", sans-serif; }
+    .disp { font-weight: 800; letter-spacing: -0.045em; line-height: 0.96; }
+    .it { font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400; letter-spacing: -0.01em; }
+    .mono { font-family: "Geist Mono", monospace; font-weight: 500; font-size: 28px; letter-spacing: 0.05em; text-transform: uppercase; color: #8c8a86; }
+    .panel { position: absolute; left: 0; top: 1480px; width: 1080px; height: 440px; background: #0a0a0a; }
+    .head { position: absolute; left: 64px; top: 1528px; width: 952px; font-size: 84px; }
+    .credit { position: absolute; left: 64px; top: 1836px; width: 952px; }
+    .full { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
+    .full video, .full img { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; object-fit: cover; }
+    .pen path { fill: none; stroke: #e0502b; stroke-width: 8; stroke-linecap: round; stroke-linejoin: round; }
+    .card { position: absolute; border-radius: 18px; overflow: hidden; background: #fff; }
+    .card img { display: block; width: 100%; height: auto; }
+    .ic { vertical-align: -6px; margin-right: 14px; }
+
+    #root { background: #fafafa; color: #0a0a0a; }
+    #s10-a { position: absolute; left: 80px; top: 620px; width: 920px; font-size: 120px; }
+    #s10-b { position: absolute; left: 80px; top: 1010px; width: 920px; font-size: 120px; opacity: 0; }
+    #s10-pen { position: absolute; left: 76px; top: 1196px; width: 260px; height: 60px; overflow: visible; }
+    #s10-pen path { stroke-dasharray: 500; stroke-dashoffset: 500; }
+  </style>
+  <div id="root" data-composition-id="s10" data-width="1080" data-height="1920">
+
+    <div id="s10-a" class="disp">If the AI looks like a movie,</div>
+    <div id="s10-b" class="disp">it's probably an<br /><span class="it">edit.</span></div>
+    <svg id="s10-pen" class="pen" viewBox="0 0 400 60" aria-hidden="true"><path d="M6 30 C 80 24, 170 27, 252 20" /></svg>
+  </div>
+  <script>
+    (() => {
+      const tl = gsap.timeline({ paused: true });
+      const at = (abs) => Math.max(0, abs - 39.95);
+      const blurIn = (sel, t, d = 0.18) => tl.fromTo(sel, { opacity: 0, filter: "blur(10px)", y: 14 }, { opacity: 1, filter: "blur(0px)", y: 0, duration: d, ease: "power4.out", immediateRender: false }, at(t));
+      const out = (sel, t) => tl.to(sel, { opacity: 0, filter: "blur(8px)", duration: 0.14, ease: "power2.in" }, at(t));
+      const pen = (sel, t, d = 0.38) => tl.to(sel, { strokeDashoffset: 0, duration: d, ease: "power2.inOut" }, at(t));
+
+      tl.fromTo("#s10-a", { opacity: 0.4 }, { opacity: 1, duration: 0.25, immediateRender: false }, at(40.257));
+      blurIn("#s10-b", 42.028);
+      pen("#s10-pen path", 42.577999999999996, 0.3);
+      tl.set({}, {}, 3.5);
+      window.__timelines["s10"] = tl;
+    })();
+  </script>
+</template>

@@ -1,0 +1,54 @@
+<template>
+  <style>
+    @font-face { font-family: "Geist"; font-weight: 100 900; font-display: block; src: url("assets/fonts/Geist.woff2") format("woff2"); }
+    @font-face { font-family: "Geist Mono"; font-weight: 100 900; font-display: block; src: url("assets/fonts/GeistMono.woff2") format("woff2"); }
+    @font-face { font-family: "Instrument Serif"; font-style: italic; font-weight: 400; font-display: block; src: url("assets/fonts/InstrumentSerif-Italic.woff2") format("woff2"); }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0a0a0a; color: #f4f2ee; font-family: "Geist", sans-serif; }
+    .disp { font-weight: 800; letter-spacing: -0.045em; line-height: 0.96; }
+    .it { font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400; letter-spacing: -0.01em; }
+    .mono { font-family: "Geist Mono", monospace; font-weight: 500; font-size: 28px; letter-spacing: 0.05em; text-transform: uppercase; color: #8c8a86; }
+    .panel { position: absolute; left: 0; top: 1480px; width: 1080px; height: 440px; background: #0a0a0a; }
+    .head { position: absolute; left: 64px; top: 1528px; width: 952px; font-size: 84px; }
+    .credit { position: absolute; left: 64px; top: 1836px; width: 952px; }
+    .full { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
+    .full video, .full img { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; object-fit: cover; }
+    .pen path { fill: none; stroke: #e0502b; stroke-width: 8; stroke-linecap: round; stroke-linejoin: round; }
+    .card { position: absolute; border-radius: 18px; overflow: hidden; background: #fff; }
+    .card img { display: block; width: 100%; height: auto; }
+    .ic { vertical-align: -6px; margin-right: 14px; }
+
+    #s5-post { position: absolute; left: 150px; top: 150px; width: 780px; border-radius: 22px; overflow: hidden; border: 1px solid #2a2a2a; }
+    #s5-post img { display: block; width: 780px; }
+    .s5-row { position: absolute; left: 150px; width: 780px; height: 100px; border-top: 1px solid #2a2a2a; display: flex; align-items: center; justify-content: space-between; opacity: 0; }
+    .s5-k { font-size: 28px; }
+    .s5-v { font-size: 58px; }
+    #s5-pen { position: absolute; left: 600px; top: 1505px; width: 360px; height: 120px; overflow: visible; }
+    #s5-pen path { stroke-dasharray: 900; stroke-dashoffset: 900; }
+  </style>
+  <div id="root" data-composition-id="s5" data-width="1080" data-height="1920">
+
+    <div id="s5-post"><img src="assets/shots/x-post.png" alt="X post by Poonam Soni: AI uses Cameras and Lidars to spot dangerous rock slopes. 568K views" /></div>
+    <div id="s5-r-company" class="s5-row" style="top:1170px"><span class="mono s5-k">Company</span><span class="disp s5-v">not named</span></div>
+    <div id="s5-r-paper" class="s5-row" style="top:1290px"><span class="mono s5-k">Paper</span><span class="disp s5-v">none cited</span></div>
+    <div id="s5-r-device" class="s5-row" style="top:1410px"><span class="mono s5-k">Device</span><span class="disp s5-v">none shown</span></div>
+    <div id="s5-r-search" class="s5-row" style="top:1530px"><span class="mono s5-k">Our search</span><span class="disp s5-v">nothing</span></div>
+    <svg id="s5-pen" class="pen" viewBox="0 0 360 120" aria-hidden="true"><path d="M190 14 C 300 8, 352 40, 344 66 C 334 104, 200 112, 110 104 C 40 98, 14 72, 30 44 C 50 16, 140 10, 230 16" /></svg>
+  </div>
+  <script>
+    (() => {
+      const tl = gsap.timeline({ paused: true });
+      const at = (abs) => Math.max(0, abs - 16.7);
+      const blurIn = (sel, t, d = 0.18) => tl.fromTo(sel, { opacity: 0, filter: "blur(10px)", y: 14 }, { opacity: 1, filter: "blur(0px)", y: 0, duration: d, ease: "power4.out", immediateRender: false }, at(t));
+      const out = (sel, t) => tl.to(sel, { opacity: 0, filter: "blur(8px)", duration: 0.14, ease: "power2.in" }, at(t));
+      const pen = (sel, t, d = 0.38) => tl.to(sel, { strokeDashoffset: 0, duration: d, ease: "power2.inOut" }, at(t));
+      blurIn("#s5-r-company", 17.810);
+      blurIn("#s5-r-paper", 18.646);
+      blurIn("#s5-r-device", 19.525);
+      blurIn("#s5-r-search", 20.484);
+      tl.fromTo("#s5-post", { scale: 1 }, { scale: 1.04, duration: 5.40, ease: "none", transformOrigin: "540px 600px" }, 0);
+      pen("#s5-pen path", 21.315);
+      tl.set({}, {}, 5.4);
+      window.__timelines["s5"] = tl;
+    })();
+  </script>
+</template>
