@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>Lab — /cte-demo, Zine look</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; background: #f2f0eb; }
+      #root { position: relative; width: 100%; height: 100%; overflow: hidden; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="10" data-width="1080" data-height="1920">
+      <div id="zine" data-composition-id="zine" data-composition-src="compositions/zine.html" data-start="0" data-duration="10" data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index: 1"></div>
+      <audio id="music" class="clip" src="assets/music/bed.wav" data-start="0" data-duration="10" data-track-index="11" data-volume="1" data-audio-group="music"></audio>
+      <audio id="sfx-1" class="clip" src="assets/sfx/scratch-c.mp3" data-start="0.55" data-duration="0.33" data-track-index="12" data-volume="0.5" data-audio-group="sfx"></audio>
+      <audio id="sfx-2" class="clip" src="assets/sfx/whoosh-short.mp3" data-start="1.95" data-duration="0.57" data-track-index="12" data-volume="0.2" data-audio-group="sfx"></audio>
+      <audio id="sfx-3" class="clip" src="assets/sfx/pop.mp3" data-start="2.1" data-duration="0.72" data-track-index="13" data-volume="0.3" data-audio-group="sfx"></audio>
+      <audio id="sfx-4" class="clip" src="assets/sfx/click-soft.mp3" data-start="3.62" data-duration="0.30" data-track-index="12" data-volume="0.5" data-audio-group="sfx"></audio>
+      <audio id="sfx-5" class="clip" src="assets/sfx/pop.mp3" data-start="3.75" data-duration="0.72" data-track-index="13" data-volume="0.3" data-audio-group="sfx"></audio>
+      <audio id="sfx-6" class="clip" src="assets/sfx/stamp-b.mp3" data-start="5.7" data-duration="0.50" data-track-index="12" data-volume="0.45" data-audio-group="sfx"></audio>
+      <audio id="sfx-7" class="clip" src="assets/sfx/pop.mp3" data-start="6.6" data-duration="0.72" data-track-index="13" data-volume="0.3" data-audio-group="sfx"></audio>
+      <audio id="sfx-8" class="clip" src="assets/sfx/scratch-a.mp3" data-start="8.0" data-duration="0.14" data-track-index="12" data-volume="0.5" data-audio-group="sfx"></audio>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = gsap.timeline({ paused: true });
+    </script>
+  </body>
+</html>
