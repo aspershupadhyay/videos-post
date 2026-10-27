@@ -104,7 +104,10 @@ Template: `videos/case-018-kimi-k3-1-pro/DESIGN.md`.
 
 ```bash
 npx hyperframes check --json
-npx hyperframes snapshot --at 0,5,10,...
+npx hyperframes preview --background                       # then, from the repo root:
+NODE_PATH=$(npm root -g) node tools/qa_layout.mjs <project-id>   # must PASS: no covered/overlapping/crowded text,
+                                                           # safe zones, screenshots readable (rule 18)
+npx hyperframes snapshot --at 0,5,10,...                   # and look at every scene
 npx hyperframes render -q draft -o renders/draft.mp4
 python3 ../../tools/qa_frames.py renders/draft.mp4        # must PASS: no empty or frozen stretches
 npx hyperframes render -q delivery -o renders/<name>-9x16.mp4
@@ -112,3 +115,5 @@ npx hyperframes audio renders/<name>-9x16.mp4 --json   # loudness and hits, meas
 ```
 
 Export `renders/cover.png` (template: `STRATEGY.md` §5). Post copy goes in the video folder's `POST.md`: a hook caption, three hashtags at most, and the music credit.
+Deliver the MP4 + cover to VoiceBox only (CLAUDE.md rule 20): `add_media` into Videos / Images as
+`case-0NN-<slug>-9x16.mp4` / `case-0NN-<slug>-cover.png`, check md5, then `git rm --cached` them.

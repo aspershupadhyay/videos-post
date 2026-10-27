@@ -1,0 +1,90 @@
+<template>
+  <style>
+    @font-face { font-family: "Inter"; font-weight: 100 900; font-display: block; src: url("assets/fonts/Inter.ttf") format("truetype"); }
+    @font-face { font-family: "Instrument Serif"; font-style: italic; font-weight: 400; font-display: block; src: url("assets/fonts/InstrumentSerif-Italic.woff2") format("woff2"); }
+    @font-face { font-family: "Courier Prime"; font-weight: 700; font-display: block; src: url("assets/fonts/CourierPrime-Bold.ttf") format("truetype"); }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0a0a0a; color: #f4f2ee; font-family: "Inter", sans-serif; }
+    .h { position: absolute; left: 76px; width: 930px; font-weight: 800; font-size: 118px; letter-spacing: -0.055em; line-height: 0.93; }
+    .it { position: relative; display: inline-block; font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400; color: #dd483f; letter-spacing: -0.01em; font-size: 1.12em; line-height: 0.8; padding-right: 0.06em; }
+    .ul { position: absolute; left: -2%; bottom: -0.16em; width: 104%; height: 0.3em; overflow: visible; }
+    .ul path { fill: none; stroke: #dd483f; stroke-width: 7; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; }
+    .mono { position: absolute; font-family: "Courier Prime", monospace; font-weight: 700; font-size: 28px; letter-spacing: 0.14em; text-transform: uppercase; color: #8c8c88; white-space: nowrap; }
+    .row { position: absolute; left: 0; width: 1080px; text-align: center; }
+    .card { position: absolute; overflow: hidden; background: #fff; border-radius: 22px; box-shadow: 0 40px 90px rgba(0, 0, 0, 0.55); }
+    .card img { position: absolute; left: 0; top: 0; display: block; }
+    .pen { position: absolute; overflow: visible; }
+    .pen path { fill: none; stroke: #dd483f; stroke-width: 8; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1; stroke-dashoffset: 1; }
+    .box { position: absolute; border-radius: 34px; background: #121211; border: 3px solid #2e2e2c; }
+    .grid { position: absolute; display: grid; }
+    .cell { border-radius: 10px; background: #1e1e1d; }
+    .cell.on { background: #f4f2ee; }
+    .dot { position: absolute; border-radius: 50%; background: #dd483f; }
+
+    #s1-cover { position: absolute; inset: 0; background: #e7e7e5 url("assets/logo/paper-1080x1920.png") 0 0 / 1080px 1920px; color: #141414; z-index: 5; }
+    #s1-k { position: absolute; left: 76px; top: 262px; font-family: "Courier Prime", monospace; font-weight: 700; font-size: 30px; letter-spacing: 0.12em; text-transform: uppercase; color: #5f5f5c; }
+    #s1-g { position: absolute; left: 76px; top: 318px; font-weight: 600; font-size: 46px; letter-spacing: -0.025em; color: #7b7b77; }
+    #s1-h { top: 392px; font-size: 150px; width: 960px; }
+    #s1-sub { position: absolute; left: 76px; top: 852px; font-weight: 700; font-size: 52px; letter-spacing: -0.025em; color: #3a3a38; }
+    #s1-cov { left: 90px; top: 1075px; width: 900px; height: 369px; border: 6px solid #1b1b1b; border-radius: 26px; box-shadow: 14px 16px 0 rgba(20, 20, 18, 0.10), 0 34px 70px rgba(20, 20, 18, 0.12); }
+    #s1-cov img { width: 888px; height: 357px; }   /* headline + date only: no half-cut lines (rule 18) */
+    #s1-wall { position: absolute; left: 524px; top: 680px; width: 32px; height: 400px; border-radius: 6px;
+      background: repeating-linear-gradient(-45deg, #3a3a38 0 6px, #161615 6px 14px); }
+    #s1-seal { top: 1170px; color: #c9c9c5; opacity: 0; }
+    #s1-dot { left: 272px; top: 862px; width: 36px; height: 36px; opacity: 0; }
+  </style>
+  <div data-hf-id="hf-qmpn" id="root" data-composition-id="s1" data-width="1080" data-height="1920">
+
+    <div data-hf-id="hf-e9qo" id="s1-world" style="position:absolute;inset:0">
+    
+    <div data-hf-id="hf-93ju" id="s1-a" class="box" style="left:110px;top:700px;width:360px;height:360px">
+      <div data-hf-id="hf-lwpb" id="s1-ga" class="grid" style="grid-template-columns:repeat(4,62px);grid-auto-rows:62px;gap:14px;left:35px;top:35px"><span data-hf-id="hf-nqgg" id="s1-ga-0" class="cell on"></span><span data-hf-id="hf-zms2" id="s1-ga-1" class="cell"></span><span data-hf-id="hf-voo1" id="s1-ga-2" class="cell"></span><span data-hf-id="hf-yly3" id="s1-ga-3" class="cell on"></span><span data-hf-id="hf-oraf" id="s1-ga-4" class="cell"></span><span data-hf-id="hf-bw4d" id="s1-ga-5" class="cell on"></span><span data-hf-id="hf-fu8e" id="s1-ga-6" class="cell on"></span><span data-hf-id="hf-g3ek" id="s1-ga-7" class="cell"></span><span data-hf-id="hf-c5aj" id="s1-ga-8" class="cell"></span><span data-hf-id="hf-i5bl" id="s1-ga-9" class="cell on"></span><span data-hf-id="hf-pubq" id="s1-ga-10" class="cell"></span><span data-hf-id="hf-tsfr" id="s1-ga-11" class="cell"></span><span data-hf-id="hf-iwy4" id="s1-ga-12" class="cell"></span><span data-hf-id="hf-lw7p" id="s1-ga-13" class="cell"></span><span data-hf-id="hf-2gbm" id="s1-ga-14" class="cell"></span><span data-hf-id="hf-anmu" id="s1-ga-15" class="cell on"></span></div>
+    </div>
+    <div data-hf-id="hf-3on0" id="s1-b" class="box" style="left:610px;top:700px;width:360px;height:360px">
+      <div data-hf-id="hf-04yu" id="s1-gb" class="grid" style="grid-template-columns:repeat(4,62px);grid-auto-rows:62px;gap:14px;left:35px;top:35px"><span data-hf-id="hf-y7g0" id="s1-gb-0" class="cell"></span><span data-hf-id="hf-p5si" id="s1-gb-1" class="cell on"></span><span data-hf-id="hf-l7oh" id="s1-gb-2" class="cell on"></span><span data-hf-id="hf-92xn" id="s1-gb-3" class="cell"></span><span data-hf-id="hf-llg4" id="s1-gb-4" class="cell"></span><span data-hf-id="hf-md3x" id="s1-gb-5" class="cell"></span><span data-hf-id="hf-qb7y" id="s1-gb-6" class="cell"></span><span data-hf-id="hf-5mf0" id="s1-gb-7" class="cell on"></span><span data-hf-id="hf-1oaz" id="s1-gb-8" class="cell on"></span><span data-hf-id="hf-smb5" id="s1-gb-9" class="cell"></span><span data-hf-id="hf-elpv" id="s1-gb-10" class="cell"></span><span data-hf-id="hf-anlu" id="s1-gb-11" class="cell"></span><span data-hf-id="hf-xqks" id="s1-gb-12" class="cell on"></span><span data-hf-id="hf-5xu0" id="s1-gb-13" class="cell"></span><span data-hf-id="hf-h9ya" id="s1-gb-14" class="cell on"></span><span data-hf-id="hf-vu06" id="s1-gb-15" class="cell"></span></div>
+    </div>
+    <div data-hf-id="hf-vr5w" id="s1-la" class="mono" style="left:110px;top:1086px;width:360px;text-align:center">Agent A</div>
+    <div data-hf-id="hf-m9in" id="s1-lb" class="mono" style="left:610px;top:1086px;width:360px;text-align:center">Agent B</div>
+    <div data-hf-id="hf-ua7e" id="s1-wall"></div>
+    <div data-hf-id="hf-7x4f" id="s1-seal" class="mono row">No network · No shared file</div>
+    <div data-hf-id="hf-4mqh" id="s1-dot" class="dot"></div>
+    </div>
+    <div data-hf-id="hf-ohhr" id="s1-cover">
+      <div data-hf-id="hf-4bmm" id="s1-k">Case 022 / A.I. agents</div>
+      <div data-hf-id="hf-85kr" id="s1-g">Fact check · OpenAI's agent report</div>
+      <div data-hf-id="hf-rg1h" id="s1-h" class="h" style="color:#141414">A.I. agents broke <span data-hf-id="hf-u2s3" class="it" id="s1-it">out?<svg data-hf-id="hf-90sv" class="ul" viewBox="0 0 100 20" preserveAspectRatio="none" aria-hidden="true"><path data-hf-id="hf-5rgq" pathLength="1" vector-effect="non-scaling-stroke" d="M2 12 C 30 7, 66 11, 98 5" /></svg></span></div>
+      <div data-hf-id="hf-o6dx" id="s1-sub">Sealed off. Still talking. Really?</div>
+      <div data-hf-id="hf-0ri3" id="s1-cov" class="card" style="transform: rotate(-2.5deg)"><img data-hf-id="hf-lnhc" src="assets/shots/cover-still.png" data-text-px="50" alt="OfficeChai headline: OpenAI says its AI agents found a way to talk through the processor's cache" /></div>
+      <div data-hf-id="hf-ebwj" id="s1-wm" style="position:absolute;left:0;top:1530px;width:1080px;text-align:center;font-family:'Courier Prime',monospace;font-weight:700;font-size:46px;letter-spacing:0.3em;color:#3f3f3d">CATCH · THE · <span data-hf-id="hf-5jso" style="position:relative;display:inline-block;color:#dd483f">E<img data-hf-id="hf-2hk4" src="assets/logo/circle-crop.png" alt="" style="position:absolute;left:-0.44em;top:-0.36em;width:1.75em;height:1.6em" /></span>RROR</div>
+    </div>
+  </div>
+  <script>
+    (() => {
+      const tl = gsap.timeline({ paused: true });
+      const at = (abs) => Math.max(0, abs - 0.0);
+      const rise = (sel, t, d = 0.45) => tl.fromTo(sel, { opacity: 0, y: 60, filter: "blur(10px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: d, ease: "expo.out", immediateRender: false }, at(t));
+      const pen = (sel, t, d = 0.36) => tl.to(sel, { strokeDashoffset: 0, duration: d, ease: "power2.inOut" }, at(t));
+      const type = (sel, t, cps = 34) => tl.to(sel + " .ch", { opacity: 1, duration: 0.001, stagger: 1 / cps, immediateRender: false }, at(t));
+      const ring = (sel, t, d = 0.5) => tl.to(sel, { "--p": 360, duration: d, ease: "power2.inOut" }, at(t));
+
+      tl.set("#s1-it path", { strokeDashoffset: 0 }, 0);
+      // the cover lifts off the black world underneath
+      tl.to("#s1-cover", { y: -1920, duration: 0.5, ease: "power3.inOut" }, at(0.32));
+      tl.fromTo(["#s1-a", "#s1-b"], { scale: 0.86, y: 80 }, { scale: 1, y: 0, duration: 0.7, ease: "expo.out", stagger: 0.08 }, at(0.47));
+      // two sealed machines: the borders lock white, the seal line lands
+      tl.to(["#s1-a", "#s1-b"], { borderColor: "#f4f2ee", duration: 0.12, stagger: 0.1 }, at(1.84));
+      tl.fromTo(["#s1-a", "#s1-b"], { scale: 1.04 }, { scale: 1, duration: 0.35, ease: "back.out(2)", stagger: 0.1, immediateRender: false }, at(1.84));
+      rise("#s1-seal", 2.09);
+      // the wall slams down between them, and the camera keeps leaning in
+      tl.fromTo("#s1-wall", { y: -1500 }, { y: 0, duration: 0.35, ease: "power4.in" }, at(2.19));
+      tl.fromTo("#s1-world", { scale: 1 }, { scale: 1.14, duration: 2.90, ease: "sine.inOut", transformOrigin: "540px 880px", immediateRender: false }, at(1.84));
+      // ...and they still passed a secret: the red dot hops the wall
+      tl.fromTo("#s1-dot", { opacity: 0, scale: 0 }, { opacity: 1, scale: 1, duration: 0.2, ease: "back.out(3)", immediateRender: false }, at(3.3));
+      tl.to("#s1-dot", { keyframes: [{ x: 250, y: -260, duration: 0.3, ease: "power2.out" }, { x: 500, y: 0, duration: 0.3, ease: "power2.in" }] }, at(3.81));
+      tl.to("#s1-gb-5", { backgroundColor: "#dd483f", duration: 0.08 }, at(4.41));
+      tl.to("#s1-dot", { opacity: 0, duration: 0.08 }, at(4.41));
+      tl.fromTo("#s1-b", { x: 0 }, { keyframes: [{ x: 10, duration: 0.05 }, { x: -8, duration: 0.05 }, { x: 0, duration: 0.08 }], immediateRender: false }, at(4.41));
+      tl.set({}, {}, 4.74);
+      window.__timelines["s1"] = tl;
+    })();
+  </script>
+</template>

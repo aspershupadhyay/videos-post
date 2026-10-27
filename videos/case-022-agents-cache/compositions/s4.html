@@ -1,0 +1,157 @@
+<template>
+  <style>
+    @font-face { font-family: "Inter"; font-weight: 100 900; font-display: block; src: url("assets/fonts/Inter.ttf") format("truetype"); }
+    @font-face { font-family: "Instrument Serif"; font-style: italic; font-weight: 400; font-display: block; src: url("assets/fonts/InstrumentSerif-Italic.woff2") format("woff2"); }
+    @font-face { font-family: "Courier Prime"; font-weight: 700; font-display: block; src: url("assets/fonts/CourierPrime-Bold.ttf") format("truetype"); }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0a0a0a; color: #f4f2ee; font-family: "Inter", sans-serif; }
+    .h { position: absolute; left: 76px; width: 930px; font-weight: 800; font-size: 118px; letter-spacing: -0.055em; line-height: 0.93; }
+    .it { position: relative; display: inline-block; font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400; color: #dd483f; letter-spacing: -0.01em; font-size: 1.12em; line-height: 0.8; padding-right: 0.06em; }
+    .ul { position: absolute; left: -2%; bottom: -0.16em; width: 104%; height: 0.3em; overflow: visible; }
+    .ul path { fill: none; stroke: #dd483f; stroke-width: 7; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; }
+    .mono { position: absolute; font-family: "Courier Prime", monospace; font-weight: 700; font-size: 28px; letter-spacing: 0.14em; text-transform: uppercase; color: #8c8c88; white-space: nowrap; }
+    .row { position: absolute; left: 0; width: 1080px; text-align: center; }
+    .card { position: absolute; overflow: hidden; background: #fff; border-radius: 22px; box-shadow: 0 40px 90px rgba(0, 0, 0, 0.55); }
+    .card img { position: absolute; left: 0; top: 0; display: block; }
+    .pen { position: absolute; overflow: visible; }
+    .pen path { fill: none; stroke: #dd483f; stroke-width: 8; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1; stroke-dashoffset: 1; }
+    .box { position: absolute; border-radius: 34px; background: #121211; border: 3px solid #2e2e2c; }
+    .grid { position: absolute; display: grid; }
+    .cell { border-radius: 10px; background: #1e1e1d; }
+    .cell.on { background: #f4f2ee; }
+    .dot { position: absolute; border-radius: 50%; background: #dd483f; }
+
+    #x-cam { position: absolute; inset: 0; }
+    #x-cpu { left: 405px; top: 250px; width: 270px; height: 270px; border-color: #f4f2ee; text-align: center; padding-top: 30px;
+      font-family: "Courier Prime", monospace; font-weight: 700; font-size: 46px; letter-spacing: 0.1em; }
+    #x-A, #x-B { top: 370px; display: flex; align-items: center; gap: 16px; font-size: 30px; }
+    #x-A { left: 84px; } #x-B { right: 84px; }
+    #x-A b, #x-B b { display: inline-block; width: 28px; height: 28px; border-radius: 50%; background: #f4f2ee; }
+    #x-lc { left: 104px; top: 550px; padding: 6px 10px; background: #0a0a0a; color: #c9c9c5; z-index: 3; }   /* blocks pass behind it */
+    .slot { position: absolute; top: 650px; width: 96px; height: 96px; border-radius: 18px; border: 3px solid #3a3a38; }
+    .blk { position: absolute; top: 662px; width: 72px; height: 72px; border-radius: 12px; background: #f4f2ee; }
+    #x-plank { position: absolute; left: 100px; top: 756px; width: 880px; height: 10px; border-radius: 5px; background: #f4f2ee; transform-origin: 0 50%; }
+    .bit { position: absolute; top: 786px; width: 96px; text-align: center; font-family: "Courier Prime", monospace; font-weight: 700; font-size: 64px; opacity: 0; }
+    .cur { position: absolute; top: 636px; width: 124px; height: 124px; border-radius: 24px; opacity: 0; }
+    .cur span { position: absolute; left: 0; top: -44px; width: 100%; text-align: center; font-family: "Courier Prime", monospace; font-weight: 700; font-size: 28px; }
+    #x-ca { left: 100px; border: 5px solid #f4f2ee; }
+    #x-cb { left: 100px; border: 5px dashed #f4f2ee; }
+    .tw { position: absolute; left: 0; top: 905px; width: 1080px; text-align: center; font-weight: 800; font-size: 104px; letter-spacing: -0.05em; opacity: 0; }
+    #x-track { position: absolute; left: 190px; top: 1040px; width: 700px; height: 16px; border-radius: 8px; background: #222221; overflow: hidden; opacity: 0; }
+    #x-bf, #x-bs { position: absolute; left: 0; top: 0; width: 100%; height: 100%; transform-origin: 0 50%; }
+    #x-bf { background: #f4f2ee; } #x-bs { background: #dd483f; }
+    #x-mem { position: absolute; left: 114px; top: 1100px; width: 852px; height: 110px; border-radius: 22px; border: 3px solid #3a3a38; background: #121211;
+      display: grid; grid-template-columns: repeat(14, 1fr); gap: 10px; padding: 16px; opacity: 0; }
+    #x-mem i { border-radius: 8px; background: #1e1e1d; }
+    #x-ml { left: 114px; top: 1236px; opacity: 0; }
+    #x-msg { top: 935px; color: #dd483f; font-size: 44px; opacity: 0; }
+    #x-ul { position: absolute; left: 104px; top: 866px; width: 872px; height: 20px; }
+  </style>
+  <div data-hf-id="hf-q5j8" id="root" data-composition-id="s4" data-width="1080" data-height="1920">
+
+    <div data-hf-id="hf-9jy5" id="x-cam">
+      <div data-hf-id="hf-pyjc" id="x-cpu" class="box">CPU</div>
+      <div data-hf-id="hf-9oef" id="x-A" class="mono"><b data-hf-id="hf-xujp"></b>Agent A</div>
+      <div data-hf-id="hf-gl5r" id="x-B" class="mono">Agent B<b data-hf-id="hf-slww" id="x-Bdot"></b></div>
+      <div data-hf-id="hf-njnp" id="x-lc" class="mono"><span data-hf-id="hf-i88i" class="ch" style="opacity:0">C</span><span data-hf-id="hf-6b1o" class="ch" style="opacity:0">a</span><span data-hf-id="hf-5ifm" class="ch" style="opacity:0">c</span><span data-hf-id="hf-2qaf" class="ch" style="opacity:0">h</span><span data-hf-id="hf-7w9s" class="ch" style="opacity:0">e</span> <span data-hf-id="hf-bb5i" class="ch" style="opacity:0">·</span> <span data-hf-id="hf-6pcp" class="ch" style="opacity:0">f</span><span data-hf-id="hf-c4ck" class="ch" style="opacity:0">a</span><span data-hf-id="hf-z5j6" class="ch" style="opacity:0">s</span><span data-hf-id="hf-152b" class="ch" style="opacity:0">t</span> <span data-hf-id="hf-4ptk" class="ch" style="opacity:0">m</span><span data-hf-id="hf-y2vs" class="ch" style="opacity:0">e</span><span data-hf-id="hf-2vm8" class="ch" style="opacity:0">m</span><span data-hf-id="hf-3x7i" class="ch" style="opacity:0">o</span><span data-hf-id="hf-yr85" class="ch" style="opacity:0">r</span><span data-hf-id="hf-wrp0" class="ch" style="opacity:0">y</span><span data-hf-id="hf-tr4b" class="ch" style="opacity:0">,</span> <span data-hf-id="hf-jszt" class="ch" style="opacity:0">r</span><span data-hf-id="hf-34lg" class="ch" style="opacity:0">i</span><span data-hf-id="hf-73nq" class="ch" style="opacity:0">g</span><span data-hf-id="hf-jno7" class="ch" style="opacity:0">h</span><span data-hf-id="hf-nnqb" class="ch" style="opacity:0">t</span> <span data-hf-id="hf-544l" class="ch" style="opacity:0">b</span><span data-hf-id="hf-medo" class="ch" style="opacity:0">y</span> <span data-hf-id="hf-n9fa" class="ch" style="opacity:0">t</span><span data-hf-id="hf-j9d6" class="ch" style="opacity:0">h</span><span data-hf-id="hf-wvyp" class="ch" style="opacity:0">e</span> <span data-hf-id="hf-562e" class="ch" style="opacity:0">C</span><span data-hf-id="hf-c9n3" class="ch" style="opacity:0">P</span><span data-hf-id="hf-e968" class="ch" style="opacity:0">U</span></div>
+      <div data-hf-id="hf-omvh" id="x-s0" class="slot" style="left:114px"></div><div data-hf-id="hf-vyui" id="x-s1" class="slot" style="left:222px"></div><div data-hf-id="hf-4c3v" id="x-s2" class="slot" style="left:330px"></div><div data-hf-id="hf-yfyz" id="x-s3" class="slot" style="left:438px"></div><div data-hf-id="hf-8clw" id="x-s4" class="slot" style="left:546px"></div><div data-hf-id="hf-nk6h" id="x-s5" class="slot" style="left:654px"></div><div data-hf-id="hf-xgvq" id="x-s6" class="slot" style="left:762px"></div><div data-hf-id="hf-oivb" id="x-s7" class="slot" style="left:870px"></div>
+      <div data-hf-id="hf-8dw8" id="x-plank"></div>
+      <div data-hf-id="hf-6e4i" id="x-d0" class="blk" style="left:126px"></div><div data-hf-id="hf-qg0r" id="x-d1" class="blk" style="left:234px"></div><div data-hf-id="hf-tn38" id="x-d2" class="blk" style="left:342px"></div><div data-hf-id="hf-n5lt" id="x-d3" class="blk" style="left:450px"></div><div data-hf-id="hf-o0sp" id="x-d4" class="blk" style="left:558px"></div><div data-hf-id="hf-ftqu" id="x-d5" class="blk" style="left:666px"></div><div data-hf-id="hf-d9o7" id="x-d6" class="blk" style="left:774px"></div><div data-hf-id="hf-b7vk" id="x-d7" class="blk" style="left:882px"></div>
+      <div data-hf-id="hf-ey6s" id="x-b0" class="bit" style="left:114px;color:#dd483f">1</div><div data-hf-id="hf-p9i3" id="x-b1" class="bit" style="left:222px;color:#f4f2ee">0</div><div data-hf-id="hf-0qqu" id="x-b2" class="bit" style="left:330px;color:#dd483f">1</div><div data-hf-id="hf-b5uy" id="x-b3" class="bit" style="left:438px;color:#dd483f">1</div><div data-hf-id="hf-6l6h" id="x-b4" class="bit" style="left:546px;color:#f4f2ee">0</div><div data-hf-id="hf-28p0" id="x-b5" class="bit" style="left:654px;color:#dd483f">1</div><div data-hf-id="hf-na4r" id="x-b6" class="bit" style="left:762px;color:#f4f2ee">0</div><div data-hf-id="hf-y4a8" id="x-b7" class="bit" style="left:870px;color:#f4f2ee">0</div>
+      <div data-hf-id="hf-x55d" id="x-ca" class="cur"><span data-hf-id="hf-ms68">A</span></div>
+      <div data-hf-id="hf-3av6" id="x-cb" class="cur"><span data-hf-id="hf-ll95">B</span></div>
+      <div data-hf-id="hf-6w4l" id="x-wf" class="tw">Fast</div>
+      <div data-hf-id="hf-2zvs" id="x-ws" class="tw" style="color:#dd483f">Slow</div>
+      <div data-hf-id="hf-ppet" id="x-ws1" class="tw"><span data-hf-id="hf-ksc2" style="color:#dd483f">Slow</span> = 1</div>
+      <div data-hf-id="hf-dgv0" id="x-wf0" class="tw">Fast = 0</div>
+      <div data-hf-id="hf-39qd" id="x-track"><div data-hf-id="hf-zfgg" id="x-bf"></div><div data-hf-id="hf-4px9" id="x-bs"></div></div>
+      <div data-hf-id="hf-75x3" id="x-msg" class="mono row">Message received</div>
+      <svg data-hf-id="hf-9ggx" id="x-ul" class="pen" viewBox="0 0 872 20" aria-hidden="true"><path data-hf-id="hf-cfha" pathLength="1" d="M6 12 C 300 6, 600 12, 866 6" /></svg>
+      <div data-hf-id="hf-6nkr" id="x-mem"><i data-hf-id="hf-wt6k"></i><i data-hf-id="hf-zeb8"></i><i data-hf-id="hf-y7e5"></i><i data-hf-id="hf-ylp6"></i><i data-hf-id="hf-0l8b"></i><i data-hf-id="hf-0zjc"></i><i data-hf-id="hf-zsm9"></i><i data-hf-id="hf-06xa"></i><i data-hf-id="hf-26gf"></i><i data-hf-id="hf-2krg"></i><i data-hf-id="hf-oz7w"></i><i data-hf-id="hf-okwv"></i><i data-hf-id="hf-o6lu"></i><i data-hf-id="hf-jqbp"></i></div>
+      <div data-hf-id="hf-qlov" id="x-ml" class="mono">Main memory · far away</div>
+    </div>
+  </div>
+  <script>
+    (() => {
+      const tl = gsap.timeline({ paused: true });
+      const at = (abs) => Math.max(0, abs - 14.46);
+      const rise = (sel, t, d = 0.45) => tl.fromTo(sel, { opacity: 0, y: 60, filter: "blur(10px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: d, ease: "expo.out", immediateRender: false }, at(t));
+      const pen = (sel, t, d = 0.36) => tl.to(sel, { strokeDashoffset: 0, duration: d, ease: "power2.inOut" }, at(t));
+      const type = (sel, t, cps = 34) => tl.to(sel + " .ch", { opacity: 1, duration: 0.001, stagger: 1 / cps, immediateRender: false }, at(t));
+      const ring = (sel, t, d = 0.5) => tl.to(sel, { "--p": 360, duration: d, ease: "power2.inOut" }, at(t));
+
+      tl.set(["#x-bf", "#x-bs"], { scaleX: 0 }, 0);
+      tl.fromTo("#x-cpu", { y: 520, scale: 1.9 }, { y: 0, scale: 1, duration: 0.6, ease: "expo.out" }, 0);
+      tl.fromTo(["#x-A", "#x-B"], { opacity: 0.85, y: 20 }, { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }, 0.1);
+      tl.fromTo(".slot", { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2)", stagger: 0.04, immediateRender: false }, at(15.61));
+      tl.fromTo(".blk", { opacity: 0, y: -60 }, { opacity: 1, y: 0, duration: 0.3, ease: "power3.out", stagger: 0.04, immediateRender: false }, at(15.81));
+      type("#x-lc", 15.76, 30);
+      tl.fromTo("#x-plank", { scaleX: 0 }, { scaleX: 1, duration: 0.4, ease: "power3.inOut", immediateRender: false }, at(16.94));
+      tl.fromTo("#x-cpu", { scale: 1 }, { scale: 1.06, duration: 0.25, yoyo: true, repeat: 1, immediateRender: false }, at(17.62));
+      tl.fromTo(["#x-mem", "#x-ml"], { opacity: 0, y: 160 }, { opacity: 1, y: 0, duration: 0.5, ease: "expo.out", immediateRender: false }, at(17.96));
+      tl.fromTo("#x-track", { opacity: 0 }, { opacity: 1, duration: 0.2, immediateRender: false }, at(19.26));
+      tl.set(["#x-bf", "#x-bs"], { scaleX: 0 }, at(19.46));
+      tl.to("#x-d0", { keyframes: [{ x: 378, y: -260, duration: 0.16, ease: "power2.in" }, { x: 0, y: 0, duration: 0.2, ease: "power2.out" }] }, at(19.46));
+      tl.to("#x-bf", { scaleX: 0.16, duration: 0.16, ease: "none" }, at(19.46));
+      tl.set(".tw", { opacity: 0 }, at(19.46)); tl.set("#x-wf", { opacity: 1 }, at(19.62));
+      tl.to("#x-d1", { y: 457, opacity: 0.35, duration: 0.35, ease: "power2.in" }, at(21.02));
+      tl.set(["#x-bf", "#x-bs"], { scaleX: 0 }, at(21.72));
+      tl.set(".tw", { opacity: 0 }, at(21.72));
+      tl.to("#x-d1", { x: 270, y: -260, opacity: 1, duration: 0.9, ease: "power1.inOut" }, at(21.72));
+      tl.to("#x-bs", { scaleX: 1, duration: 0.9, ease: "none" }, at(21.72));
+      tl.set("#x-ws", { opacity: 1 }, at(22.62));
+      tl.to("#x-d1", { x: 0, y: 0, duration: 0.3, ease: "power2.inOut" }, at(22.77));
+      tl.set(".tw", { opacity: 0 }, at(22.78));
+      tl.set(["#x-bf", "#x-bs"], { scaleX: 0 }, at(22.78));
+      tl.fromTo("#x-ca", { opacity: 0, scale: 1.5 }, { opacity: 1, scale: 1, duration: 0.25, ease: "back.out(2)", immediateRender: false }, at(23.34));
+      tl.to("#x-A", { color: "#f4f2ee", duration: 0.1 }, at(23.34));
+      tl.to("#x-ca", { y: 18, duration: 0.12, yoyo: true, repeat: 1 }, at(23.80));
+      tl.to("#x-cam", { x: 70, duration: 0.6, ease: "power2.inOut" }, at(23.50));
+      tl.to("#x-cam", { x: -40, duration: 0.6, ease: "power2.inOut" }, at(26.10));
+      tl.to("#x-cam", { x: 0, y: 0, duration: 0.6, ease: "power2.inOut" }, at(27.78));
+      tl.to("#x-d0", { y: 457, opacity: 0.35, duration: 0.35, ease: "power2.in" }, at(23.90));
+      tl.fromTo("#x-b0", { opacity: 0, y: -30, scale: 1.4 }, { opacity: 1, y: 0, scale: 1, duration: 0.25, ease: "back.out(2.4)", immediateRender: false }, at(25.50));
+      tl.to("#x-ca", { x: 108, duration: 0.3, ease: "power3.inOut" }, at(26.20));
+      tl.to("#x-ca", { rotation: 8, duration: 0.1, yoyo: true, repeat: 3 }, at(26.54));
+      tl.fromTo("#x-b1", { opacity: 0, y: -30, scale: 1.4 }, { opacity: 1, y: 0, scale: 1, duration: 0.25, ease: "back.out(2.4)", immediateRender: false }, at(27.28));
+      tl.to("#x-ca", { opacity: 0, duration: 0.2 }, at(27.83));
+      tl.to("#x-A", { color: "#8c8c88", duration: 0.2 }, at(27.83));
+      tl.fromTo("#x-cb", { opacity: 0, scale: 1.5 }, { opacity: 1, scale: 1, duration: 0.25, ease: "back.out(2)", immediateRender: false }, at(28.03));
+      tl.to("#x-B", { color: "#f4f2ee", duration: 0.1 }, at(28.03));
+      tl.set(["#x-bf", "#x-bs"], { scaleX: 0 }, at(28.62));
+      tl.set(".tw", { opacity: 0 }, at(28.62));
+      tl.to("#x-d0", { x: 378, y: -260, opacity: 1, duration: 0.9, ease: "power1.inOut" }, at(28.62));
+      tl.to("#x-bs", { scaleX: 1, duration: 0.9, ease: "none" }, at(28.62));
+      tl.set("#x-ws1", { opacity: 1 }, at(29.52));
+      tl.to("#x-d0", { x: 0, y: 0, duration: 0.25, ease: "power2.inOut" }, at(30.74));
+      tl.to("#x-cb", { x: 108, duration: 0.2, ease: "power3.inOut" }, at(30.89));
+      tl.set(["#x-bf", "#x-bs"], { scaleX: 0 }, at(31.09));
+      tl.to("#x-d1", { keyframes: [{ x: 270, y: -260, duration: 0.16, ease: "power2.in" }, { x: 0, y: 0, duration: 0.2, ease: "power2.out" }] }, at(31.09));
+      tl.to("#x-bf", { scaleX: 0.16, duration: 0.16, ease: "none" }, at(31.09));
+      tl.set(".tw", { opacity: 0 }, at(31.09)); tl.set("#x-wf0", { opacity: 1 }, at(31.25));
+      tl.to("#x-cb", { x: 216, duration: 0.10, ease: "power2.inOut" }, at(32.67));
+      tl.to("#x-d2", { y: 457, opacity: 0.35, duration: 0.18, ease: "power2.in" }, at(32.67));
+      tl.fromTo("#x-b2", { opacity: 0, y: -30, scale: 1.4 }, { opacity: 1, y: 0, scale: 1, duration: 0.25, ease: "back.out(2.4)", immediateRender: false }, at(32.75));
+      tl.to("#x-cb", { x: 324, duration: 0.10, ease: "power2.inOut" }, at(32.84));
+      tl.to("#x-d3", { y: 457, opacity: 0.35, duration: 0.18, ease: "power2.in" }, at(32.84));
+      tl.fromTo("#x-b3", { opacity: 0, y: -30, scale: 1.4 }, { opacity: 1, y: 0, scale: 1, duration: 0.25, ease: "back.out(2.4)", immediateRender: false }, at(32.92));
+      tl.to("#x-cb", { x: 432, duration: 0.10, ease: "power2.inOut" }, at(33.00));
+      tl.fromTo("#x-b4", { opacity: 0, y: -30, scale: 1.4 }, { opacity: 1, y: 0, scale: 1, duration: 0.25, ease: "back.out(2.4)", immediateRender: false }, at(33.08));
+      tl.to("#x-cb", { x: 540, duration: 0.10, ease: "power2.inOut" }, at(33.16));
+      tl.to("#x-d5", { y: 457, opacity: 0.35, duration: 0.18, ease: "power2.in" }, at(33.16));
+      tl.fromTo("#x-b5", { opacity: 0, y: -30, scale: 1.4 }, { opacity: 1, y: 0, scale: 1, duration: 0.25, ease: "back.out(2.4)", immediateRender: false }, at(33.24));
+      tl.to("#x-cb", { x: 648, duration: 0.10, ease: "power2.inOut" }, at(33.33));
+      tl.fromTo("#x-b6", { opacity: 0, y: -30, scale: 1.4 }, { opacity: 1, y: 0, scale: 1, duration: 0.25, ease: "back.out(2.4)", immediateRender: false }, at(33.41));
+      tl.to("#x-cb", { x: 756, duration: 0.10, ease: "power2.inOut" }, at(33.49));
+      tl.fromTo("#x-b7", { opacity: 0, y: -30, scale: 1.4 }, { opacity: 1, y: 0, scale: 1, duration: 0.25, ease: "back.out(2.4)", immediateRender: false }, at(33.57));
+      tl.set(".tw", { opacity: 0 }, at(32.67));
+      tl.to("#x-track", { opacity: 0, duration: 0.2 }, at(32.67));
+      tl.to("#x-cb", { opacity: 0, duration: 0.2 }, at(33.65));
+      tl.fromTo("#x-msg", { opacity: 0, scale: 1.3 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2)", immediateRender: false }, at(33.75));
+      pen("#x-ul path", 33.85, 0.35);
+      tl.to("#x-Bdot", { backgroundColor: "#dd483f", scale: 1.5, duration: 0.2, ease: "back.out(3)" }, at(33.75));
+      tl.fromTo("#x-cam", { scale: 1 }, { scale: 1.05, duration: 20.15, ease: "none", transformOrigin: "540px 760px", immediateRender: false }, 0);
+      tl.set({}, {}, 20.15);
+      window.__timelines["s4"] = tl;
+    })();
+  </script>
+</template>

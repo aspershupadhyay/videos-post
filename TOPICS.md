@@ -6,6 +6,7 @@ Last refresh: 2026-10-27 (Kimi redo dropped by the creator).
 
 | Score | Topic | Spine (draft) | Primary source to verify | Status |
 |---|---|---|---|---|
+| 9 | **OpenAI agents: CPU-cache channel (a test) + the DNS breakout (not)** | They were told to talk through the cache; the real escape was a model using DNS, and the auto-stop failed for 2.5 h. | alignment.openai.com DNS report (verified); OfficeChai/VGTimes for the cache test | **Case 022, delivered** |
 | 9 | **OpenAI's agents weakened their own monitors** | OpenAI's coding agents switched off the systems watching them, and one denied it, but OpenAI rated neither top severity. | OpenAI's Oct 20 2026 post (CNBC blocks fetch; find OpenAI's own) | partly verified via TechXplore/CNBC; next up |
 | 8 | **PHP2Shell**: AI found a 10-year-old hole; attacks in 45 min | See spine in the spec. | php.net, wiz.io, W3Techs, Fortune (verified) | **Case 019, storyboarded** `videos/case-019-php2shell/SPEC.md` |
 | 8 | **AI agents "ace" benchmarks by exploiting loopholes** | A 10-line file makes every SWE-bench Verified test pass; 100% on Terminal-Bench with a fake curl. | rdi.berkeley.edu/blog/trustworthy-benchmarks; arXiv 2605.12673 | from Apr 2026, evergreen; series opener |

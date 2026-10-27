@@ -1,0 +1,51 @@
+<template>
+  <style>
+    @font-face { font-family: "Inter"; font-weight: 100 900; font-display: block; src: url("assets/fonts/Inter.ttf") format("truetype"); }
+    @font-face { font-family: "Instrument Serif"; font-style: italic; font-weight: 400; font-display: block; src: url("assets/fonts/InstrumentSerif-Italic.woff2") format("woff2"); }
+    @font-face { font-family: "Courier Prime"; font-weight: 700; font-display: block; src: url("assets/fonts/CourierPrime-Bold.ttf") format("truetype"); }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0a0a0a; color: #f4f2ee; font-family: "Inter", sans-serif; }
+    .h { position: absolute; left: 76px; width: 930px; font-weight: 800; font-size: 118px; letter-spacing: -0.055em; line-height: 0.93; }
+    .it { position: relative; display: inline-block; font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400; color: #dd483f; letter-spacing: -0.01em; font-size: 1.12em; line-height: 0.8; padding-right: 0.06em; }
+    .ul { position: absolute; left: -2%; bottom: -0.16em; width: 104%; height: 0.3em; overflow: visible; }
+    .ul path { fill: none; stroke: #dd483f; stroke-width: 7; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; }
+    .mono { position: absolute; font-family: "Courier Prime", monospace; font-weight: 700; font-size: 28px; letter-spacing: 0.14em; text-transform: uppercase; color: #8c8c88; white-space: nowrap; }
+    .row { position: absolute; left: 0; width: 1080px; text-align: center; }
+    .card { position: absolute; overflow: hidden; background: #fff; border-radius: 22px; box-shadow: 0 40px 90px rgba(0, 0, 0, 0.55); }
+    .card img { position: absolute; left: 0; top: 0; display: block; }
+    .pen { position: absolute; overflow: visible; }
+    .pen path { fill: none; stroke: #dd483f; stroke-width: 8; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1; stroke-dashoffset: 1; }
+    .box { position: absolute; border-radius: 34px; background: #121211; border: 3px solid #2e2e2c; }
+    .grid { position: absolute; display: grid; }
+    .cell { border-radius: 10px; background: #1e1e1d; }
+    .cell.on { background: #f4f2ee; }
+    .dot { position: absolute; border-radius: 50%; background: #dd483f; }
+
+    #root { background: #e7e7e5 url("assets/logo/paper-1080x1920.png") 0 0 / 1080px 1920px; color: #141414; }
+    #s10-a, #s10-c { position: absolute; left: 0; top: 330px; width: 1080px; text-align: center; font-family: "Courier Prime", monospace; font-weight: 700; font-size: 72px; letter-spacing: -0.03em; }
+    #s10-c { opacity: 0; }
+    #s10-b { left: 0; top: 1290px; width: 1080px; text-align: center; opacity: 0; font-size: 28px; letter-spacing: 0.08em; color: #5f5f5c; }
+  </style>
+  <div data-hf-id="hf-k4dx" id="root" data-composition-id="s10" data-width="1080" data-height="1920">
+
+    <div data-hf-id="hf-tgul" id="s10-a">Seen a clip like this?</div>
+    <div data-hf-id="hf-vzyt" id="s10-c">We'll check it.</div>
+    <div data-hf-id="hf-fcd4" id="s10-b" class="mono">Send it to @catchtheerror</div>
+  </div>
+  <script>
+    (() => {
+      const tl = gsap.timeline({ paused: true });
+      const at = (abs) => Math.max(0, abs - 57.88);
+      const rise = (sel, t, d = 0.45) => tl.fromTo(sel, { opacity: 0, y: 60, filter: "blur(10px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: d, ease: "expo.out", immediateRender: false }, at(t));
+      const pen = (sel, t, d = 0.36) => tl.to(sel, { strokeDashoffset: 0, duration: d, ease: "power2.inOut" }, at(t));
+      const type = (sel, t, cps = 34) => tl.to(sel + " .ch", { opacity: 1, duration: 0.001, stagger: 1 / cps, immediateRender: false }, at(t));
+      const ring = (sel, t, d = 0.5) => tl.to(sel, { "--p": 360, duration: d, ease: "power2.inOut" }, at(t));
+
+      tl.fromTo("#s10-a", { opacity: 0.85, y: -30 }, { opacity: 1, y: 0, duration: 0.3 }, 0);
+      tl.fromTo("#s10-b", { opacity: 0 }, { opacity: 1, duration: 0.2, immediateRender: false }, at(59.22));
+      tl.to("#s10-a", { opacity: 0, duration: 0.12 }, at(60.18));
+      tl.fromTo("#s10-c", { opacity: 0 }, { opacity: 1, duration: 0.2, immediateRender: false }, at(60.28));
+      tl.set({}, {}, 6.7);
+      window.__timelines["s10"] = tl;
+    })();
+  </script>
+</template>

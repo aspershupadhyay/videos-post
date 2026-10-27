@@ -2,6 +2,56 @@
 
 Newest first. Each entry: what happened, what we learned, the rule it became (in `CLAUDE.md`).
 
+## 2026-10-27 — Case 022 delivered: cover + VoiceBox-only delivery
+- Cover: frame 0 per the template; my own rule 18 caught a half-cut text line at the bottom of the printed photo →
+  cropped to headline + date. Passes the 3:4 grid crop and the 120 px test. → Rule 9 now says "whole lines only".
+- Creator: deliver the video and cover to VoiceBox, renamed, and keep them only there. → Rule 20; `renders/` ignored.
+  The old commits on this public branch still hold earlier renders in history (purging needs a force-push; not done).
+- Promoted from this case: rule 18 (layout gate), rule 19 (one cause per line for a mechanism), rule 20 (VoiceBox only).
+- Could've done better: I exported the cover from frame 0 without applying the same legibility check to it as to the
+  scenes. → The cover is a scene too: it goes through qa_layout (the gate checks t = 0 with the cover exempt only from
+  safe-zone/crowding, not from SMALL/COVERED).
+
+## 2026-10-27 — Case 022 v3: creator review of the full cut → a layout gate
+- **Creator:** keep the captions; fix 0:38–0:46 (three report cards stacked, too dense); the "CPU" text sat cramped in its
+  box and a data block flew over it; the cache label touched the CPU box. **Make a sanity check part of the repo: spacing,
+  text overlapping, nothing covering text, screenshots clearly visible, before every render.** → Rules 16 (captions) + 18.
+- Built `tools/qa_layout.mjs`: seeks the live preview (`window.__player.renderSeek`) every 0.2 s and checks the DOM for
+  OVERLAP / COVERED / CROWDED (< 16 px) / SAFE / OFFFRAME / SMALL (screenshot text < 26 px via `data-text-px`). Verified it
+  fails on the old layout (label 4 px from the CPU box, block over "CPU", "Agent B" pushed under the right rail) and
+  passes the fix. HyperFrames' own `check` only catches text-on-text overlap.
+- Fixes: CPU box 270 px with its label at the top, blocks land under it; the cache label on a dark backing so blocks pass
+  behind it; s6 = one full-width card per beat with a mono label; VGTimes cropped to its headline; short agent labels.
+- The gate also caught my own fix (a camera pan pushed labels off-frame) before the render. That's the point of it.
+- Could've done better: every one of these was visible in my own contact sheets; I looked for "does it work", not for
+  spacing. → The gate now does the looking; still eyeball one frame per scene for taste.
+
+## 2026-10-27 — Case 022 v2: creator feedback on the style demo
+- **Creator:** make it ~1 minute; explain the mechanism the exact way the reference does; the screenshots had visual
+  issues; the visual explanation wasn't good.
+- My read of what failed: the abstract cell grid showed *that* bits move, not *why* (no cache vs memory, no notion of a
+  slow read), and one 7 s line carried the whole mechanism. Report screenshots were shot at 668 css px wide, so text was
+  ~20 px on a phone; the VGTimes crop carried the site's nav bar; the redaction bar overhung its card.
+- Fixed: one idea per line (cache = a shelf by the CPU → on-shelf fast / off-shelf slow → A kicks = 1, leaves = 0 →
+  B times reads → bit by bit), each line its own visible action; screenshots re-shot at 400 css px ×3 with measured
+  phrase boxes driving every pen mark; padded cards. → Rule candidate: **explain a mechanism one cause per line, each with
+  its own on-screen action; shoot any text screenshot at the width it'll be read at (≥ 32 px text in the frame).**
+- Could've done better: I should have checked screenshot text size at phone scale before the demo (it was visible in the
+  first contact sheet), and storyboarded the explainer as steps before drawing a diagram.
+
+## 2026-10-27 — Case 022: learning from a reference Short (Varun Mayya, OpenAI agents + CPU cache)
+- **Creator asked:** make a video on the same story, our way, and learn how they explain visuals and use subtitles.
+- **What they do better:** the mechanism as a clean black motion graphic (cell grid = bits, dot = agent, mono labels);
+  a face + authority open (Altman footage split with their face-cam, giant condensed headline ghosted behind); 16:9 footage
+  filled with a blurred copy of itself, never letterboxed; tiny 2–3 word bold captions mid-frame, on a dark chip over
+  footage. → Case 022 uses the grid idea in our language; captions built as an opt-in layer for the creator to judge.
+- **Our edge:** they told the headline; OpenAI's own report says the agents were *asked* to, and has a better story (Sep 20:
+  a model sent questions out through DNS; the auto-stop failed for 2.5 h). The fine print beat the reference's whole video.
+- Could've done better: yt-dlp is bot-blocked from the cloud; I tried it twice before falling back to oEmbed + the public
+  storyboard stills (hq1–3). → For a YouTube reference, start with oEmbed + `i.ytimg.com/vi/<id>/hq{1,2,3}.jpg`, and ask the
+  creator to drop the MP4 in the repo if we need the full cut. First demo render failed STATIC once (2.3–4.4 s, boxes
+  holding still) — rule 8's lesson again: plan a moving real area every 2 s in the storyboard, not after the render.
+
 ## 2026-10-27 — Case 021: v3 "dense" look demo rejected, v2 stays
 - The creator said v2 "feels empty" and asked what Varun Mayya's AEOS would do better. I demoed the first 19 s in a
   dense, AEOS-style look: footage full-bleed in every shot, a cut every 1.5–2 s, paper-strip keyword labels, the red pen
