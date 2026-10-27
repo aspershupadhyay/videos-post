@@ -1,0 +1,66 @@
+<!--
+  CatchTheError logo sting (logo v3, "ct(e)") — reusable HyperFrames scene. Created for Case 021, 2026-10-27.
+
+  Use: copy this file to <video>/compositions/logo-sting.html and brand/logo-v3/layers/*.png to <video>/assets/logo/,
+  then mount it over the end card (transparent ground, z-index above the scene under it):
+
+    <div id="sting" data-composition-id="logo-sting" data-composition-src="compositions/logo-sting.html"
+         data-start="<end card start>" data-duration="<to the end>" data-track-index="2" data-track-kind="graphics"
+         data-width="1080" data-height="1920" style="z-index: 50"></div>
+
+  Beats (local seconds): 0.00 a red dot (the error) falls onto the line · 0.10 the rule wipes in · 0.30 / 0.42 "c" and
+  "t" drop and bounce · 0.62 the dot falls through the line and becomes the "e" · 1.10 the red pen circles it ·
+  1.75 CATCH · THE · ERROR types on. Everything lands by 2.3 s; hold at least 2 s after.
+  Move the whole mark with #cte-logo's top (default 330 px: letters at y 706-1100, tagline at 1180-1250 on 1080x1920).
+  SFX that fit (case-021 sfx_cues.json): drop on 0.32, thud-wood on 0.85 / 0.97, pop on 0.8, scratch on 1.1, typing on 1.75.
+-->
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; background: transparent; }
+    #cte-logo { position: absolute; left: 0; top: 330px; width: 1080px; height: 1080px; }
+    #cte-logo img { position: absolute; left: 0; top: 0; width: 1080px; height: 1080px; }
+    #cte-dot { position: absolute; left: 748px; top: 554px; width: 36px; height: 36px; border-radius: 50%; background: #dd483f; }
+    #cte-rule { clip-path: inset(0 78% 0 0); }
+    #cte-tag { clip-path: inset(0 69% 0 0); }
+    #cte-circle {
+      --p: 0;
+      -webkit-mask-image: conic-gradient(from 340deg at 660px 612px, #000 calc(var(--p) * 1deg), transparent calc(var(--p) * 1deg));
+      mask-image: conic-gradient(from 340deg at 660px 612px, #000 calc(var(--p) * 1deg), transparent calc(var(--p) * 1deg));
+    }
+    #cte-c, #cte-t, #cte-e { opacity: 0; }
+  </style>
+  <div id="root" data-composition-id="logo-sting" data-width="1080" data-height="1920">
+    <div id="cte-logo">
+      <img id="cte-rule" src="assets/logo/rule.png" alt="" />
+      <img id="cte-c" src="assets/logo/c.png" alt="" />
+      <img id="cte-t" src="assets/logo/t.png" alt="" />
+      <img id="cte-e" src="assets/logo/e.png" alt="" />
+      <img id="cte-circle" src="assets/logo/circle.png" alt="" />
+      <img id="cte-tag" src="assets/logo/tagline.png" alt="CATCH · THE · ERROR" />
+      <div id="cte-dot"></div>
+    </div>
+  </div>
+  <script>
+    (() => {
+      const tl = gsap.timeline({ paused: true });
+      // the error falls onto the line
+      tl.fromTo("#cte-dot", { y: -1000 }, { y: 0, duration: 0.32, ease: "power3.in" }, 0);
+      tl.fromTo("#cte-dot", { scaleX: 1, scaleY: 1 }, { scaleX: 1.35, scaleY: 0.7, duration: 0.06, ease: "power2.out", yoyo: true, repeat: 1, transformOrigin: "50% 100%" }, 0.32);
+      tl.to("#cte-rule", { clipPath: "inset(0 0% 0 0)", duration: 0.4, ease: "power2.inOut" }, 0.1);
+      // c and t drop in
+      tl.fromTo("#cte-c", { opacity: 1, y: -1100 }, { opacity: 1, y: 0, duration: 0.55, ease: "bounce.out", immediateRender: false }, 0.3);
+      tl.fromTo("#cte-t", { opacity: 1, y: -1100 }, { opacity: 1, y: 0, duration: 0.55, ease: "bounce.out", immediateRender: false }, 0.42);
+      // the dot falls through the line and becomes the e
+      tl.to("#cte-dot", { y: 132, duration: 0.18, ease: "power2.in" }, 0.62);
+      tl.to("#cte-dot", { scale: 4.2, opacity: 0, duration: 0.2, ease: "power2.out" }, 0.8);
+      tl.fromTo("#cte-e", { opacity: 1, scale: 0.25, transformOrigin: "766px 686px" }, { opacity: 1, scale: 1, duration: 0.42, ease: "back.out(2.2)", transformOrigin: "766px 686px", immediateRender: false }, 0.8);
+      // the red pen circles it
+      tl.to("#cte-circle", { "--p": 360, duration: 0.55, ease: "power2.inOut" }, 1.1);
+      // CATCH · THE · ERROR types on
+      tl.to("#cte-tag", { clipPath: "inset(0 31% 0 0)", duration: 0.5, ease: "steps(17)" }, 1.75);
+      // a slow settle so the held end card never reads as a frozen frame (qa_frames STATIC gate)
+      tl.fromTo("#cte-logo", { scale: 1 }, { scale: 1.035, duration: 6, ease: "none", transformOrigin: "540px 700px" }, 0.9);
+      window.__timelines["logo-sting"] = tl;
+    })();
+  </script>
+</template>

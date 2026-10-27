@@ -1,0 +1,66 @@
+<template>
+  <style>
+    @font-face { font-family: "Inter"; font-weight: 100 900; font-display: block; src: url("assets/fonts/Inter.ttf") format("truetype"); }
+    @font-face { font-family: "Instrument Serif"; font-style: italic; font-weight: 400; font-display: block; src: url("assets/fonts/InstrumentSerif-Italic.woff2") format("woff2"); }
+    @font-face { font-family: "Courier Prime"; font-weight: 700; font-display: block; src: url("assets/fonts/CourierPrime-Bold.ttf") format("truetype"); }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #e7e7e5 url("assets/logo/paper-1080x1920.png") 0 0 / 1080px 1920px; color: #141414; font-family: "Inter", sans-serif; }
+    .h { position: absolute; left: 76px; width: 930px; font-weight: 800; font-size: 118px; letter-spacing: -0.055em; line-height: 0.93; }
+    .it { position: relative; display: inline-block; font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400; color: #dd483f; letter-spacing: -0.01em; font-size: 1.12em; line-height: 0.8; padding-right: 0.06em; }
+    .ul { position: absolute; left: -2%; bottom: -0.16em; width: 104%; height: 0.3em; overflow: visible; }
+    .ul path { fill: none; stroke: #dd483f; stroke-width: 7; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; }
+    .kick { position: absolute; left: 76px; font-weight: 600; font-size: 46px; letter-spacing: -0.025em; color: #7b7b77; }
+    .mono { position: absolute; font-family: "Courier Prime", monospace; font-weight: 700; font-size: 30px; letter-spacing: 0.12em; text-transform: uppercase; color: #5f5f5c; }
+    .photo { position: absolute; overflow: hidden; background: #fff; border: 6px solid #1b1b1b; border-radius: 26px; box-shadow: 14px 16px 0 rgba(20, 20, 18, 0.10), 0 34px 70px rgba(20, 20, 18, 0.12); }
+    .photo video, .photo img.fill { position: absolute; }
+    .pen { position: absolute; overflow: visible; }
+    .pen path { fill: none; stroke: #dd483f; stroke-width: 9; stroke-linecap: round; stroke-linejoin: round; }
+    .pill { position: relative; display: inline-block; background: #fff; border-radius: 80px; padding: 24px 48px; font-weight: 700; font-size: 58px; letter-spacing: -0.03em; white-space: nowrap; box-shadow: 0 18px 50px rgba(0, 0, 0, 0.2); }
+    .row { position: absolute; left: 0; width: 1080px; text-align: center; }
+    .ch { opacity: 0; }
+    .wm { position: absolute; left: 0; width: 1080px; text-align: center; font-family: "Courier Prime", monospace; font-weight: 700; font-size: 46px; letter-spacing: 0.3em; color: #3f3f3d; }
+    .wm-e { position: relative; display: inline-block; color: #dd483f; }
+    .wm-e img { position: absolute; left: -0.44em; top: -0.36em; width: 1.75em; height: 1.6em; }
+
+    #s3-world { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; overflow: hidden; }
+    #s3-world video, #s3-world img { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
+    #s3-r1 { top: 700px; } #s3-r1 .pill { font-size: 76px; }
+    #s3-r2, #s3-r3 { top: 880px; opacity: 0; }
+    #s3-strike { position: absolute; left: 0; top: 0; width: 100%; height: 100%; }
+    #s3-strike path { stroke-dasharray: 1; stroke-dashoffset: 1; }
+  </style>
+  <div id="root" data-composition-id="s3" data-width="1080" data-height="1920">
+
+    <div id="s3-world">
+      <img src="assets/shots/earth-end.png" alt="" />
+      <video id="s3-v" class="clip" src="assets/footage/earth.mp4" data-start="0" data-duration="5.120" muted playsinline></video>
+    </div>
+    <div id="s3-r1" class="row"><div class="pill"><span class="ch">G</span><span class="ch">P</span><span class="ch">T</span><span class="ch">-</span><span class="ch">6</span><span class="ch">.</span><span class="ch">1</span> <span class="ch">T</span><span class="ch">e</span><span class="ch">r</span><span class="ch">r</span><span class="ch">a</span></div></div>
+    <div id="s3-r2" class="row"><div class="pill">built to chat<svg id="s3-strike" class="pen" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M4 56 C 30 50, 70 52, 96 46" vector-effect="non-scaling-stroke" /></svg></div></div>
+    <div id="s3-r3" class="row"><div class="pill"><span class="ch">b</span><span class="ch">u</span><span class="ch">i</span><span class="ch">l</span><span class="ch">t</span> <span class="ch">t</span><span class="ch">o</span> <span class="ch">u</span><span class="ch">s</span><span class="ch">e</span> <span class="ch">y</span><span class="ch">o</span><span class="ch">u</span><span class="ch">r</span> <span class="ch">c</span><span class="ch">o</span><span class="ch">m</span><span class="ch">p</span><span class="ch">u</span><span class="ch">t</span><span class="ch">e</span><span class="ch">r</span></div></div>
+  </div>
+  <script>
+    (() => {
+      const tl = gsap.timeline({ paused: true });
+      const at = (abs) => Math.max(0, abs - 8.71);
+      const blurIn = (sel, t, d = 0.2) => tl.fromTo(sel, { opacity: 0, filter: "blur(12px)" }, { opacity: 1, filter: "blur(0px)", duration: d, ease: "power4.out", immediateRender: false }, at(t));
+      const rise = (sel, t) => tl.fromTo(sel, { opacity: 0, y: 60, filter: "blur(10px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.45, ease: "expo.out", immediateRender: false }, at(t));
+      const out = (sel, t, d = 0.16) => tl.to(sel, { opacity: 0, filter: "blur(10px)", duration: d, ease: "power2.in" }, at(t));
+      const pen = (sel, t, d = 0.36) => tl.to(sel, { strokeDashoffset: 0, duration: d, ease: "power2.inOut" }, at(t));
+      const type = (sel, t, cps = 34) => tl.to(sel + " .ch", { opacity: 1, duration: 0.001, stagger: 1 / cps, immediateRender: false }, at(t));
+      const ring = (sel, t, d = 0.5) => tl.to(sel, { "--p": 360, duration: d, ease: "power2.inOut" }, at(t));
+
+      type("#s3-r1", 9.167, 26);
+      tl.fromTo("#s3-r1", { scale: 0.9 }, { scale: 1, duration: 0.35, ease: "back.out(1.6)", immediateRender: false }, at(9.167));
+      tl.fromTo("#s3-r2", { opacity: 0, scaleX: 0.4, filter: "blur(12px)" }, { opacity: 1, scaleX: 1, filter: "blur(0px)", duration: 0.22, ease: "power3.out", immediateRender: false }, at(11.447));
+      pen("#s3-strike path", 11.927, 0.3);
+      out("#s3-r2", 12.607000000000001, 0.1);
+      tl.fromTo("#s3-r3", { opacity: 1 }, { opacity: 1, duration: 0.01, immediateRender: false }, at(12.707));
+      type("#s3-r3", 12.707, 40);
+      // the world shrinks into a printed card (OpenAI's own move)
+      tl.to("#s3-world", { scale: 0.6, borderRadius: 40, rotation: -2, y: -60, duration: 0.6, ease: "power2.inOut", transformOrigin: "540px 960px" }, at(13.257));
+      tl.to(["#s3-r1", "#s3-r3"], { y: -60, scale: 0.8, duration: 0.6, ease: "power2.inOut" }, at(13.257));
+      tl.set({}, {}, 5.43);
+      window.__timelines["s3"] = tl;
+    })();
+  </script>
+</template>

@@ -1,0 +1,5 @@
+- Footage: OpenAI, "GPT-6.1 Terra" launch film (Oct 2026), excerpts for commentary/review, credited on screen.
+- Music: "Ethernight Club" by Kevin MacLeod (incompetech.com). Licensed under Creative Commons: By Attribution 4.0 License.
+- SFX: Kenney.nl (CC0) and HyperFrames bundled SFX (assets/sfx/KENNEY-LICENSE.txt).
+- Fonts: Inter, Instrument Serif, Courier Prime (all OFL; licences in assets/fonts/).
+- Logo: CatchTheError logo v3 (brand/logo-v3).

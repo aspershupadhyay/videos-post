@@ -3,7 +3,8 @@
 | Path | What |
 | --- | --- |
 | `PLAYBOOK.md` | How a CatchTheError video is researched, scripted, voiced, mixed and animated |
-| `brand/` | Logo 2.0: mark, avatars (paper / rust / teal), lockups, wordmark — `python3 brand/build_logo.py` |
+| `brand/` | Logo v3 "ct(e)": layers, paper ground, end-card sting, motion library — see `brand/README.md` |
+| `videos/case-021-gpt-6-1-terra/` | Case 021 GPT-6.1 Terra — look v4 "paper", 1080×1920, 50.4 s (current template) |
 | `videos/case-017-artcraft/` | Case 017 "Someone cloned Adobe in a week?" — 1080×1920, 69.7 s |
 | `.claude/skills/` | HyperFrames agent skills (hyperframes, hyperframes-cli, hyperframes-registry, media-use) |
 

@@ -10,6 +10,7 @@ and growth system, and it changes after every video (see "The loop" at the botto
 | 017 | ArtCraft fact-check | ~70 s | — | — | colour worlds; too busy |
 | 018 | Kimi K3.1 Pro | 74 s | 3,253 (account, as of 2026-10-27) | +12 | best story at 0:42; 6 blank gaps |
 | 020 | Viral cliff "AI" HUD check | 49 s | — | — | first v3 type; qa_frames PASS; no captions |
+| 021 | GPT-6.1 Terra: read the line under the demo | 50 s | — | — | v1 rejected (subtitle text, credits, weak cover); v2 look v5, no subtitles |
 
 Target per video: beat the previous one on **3-s hold** and **avg % watched**, not raw views. Ask the creator for
 these two numbers from Insights / YouTube Studio; log them here.
@@ -79,9 +80,11 @@ scores are Moonshot's own.* Everything that doesn't serve the spine is cut, howe
 **Covers (the profile grid is our storefront):**
 - Every video ships `renders/cover.png` (1080×1920) and frame 0 matches it.
 - Instagram's grid shows the **centre 1080×1440 (3:4)**: everything that matters sits inside it.
-- Fixed template so the grid reads as one series: black ground · one real image (product footage still, chart crop,
-  screenshot) in the top two-thirds · **2–4 word claim** in Geist 800 at ≥ 150 px · the one twist word in Instrument
-  Serif Italic with the red pen · `CASE 0NN` in Geist Mono top-left · no logo (the profile picture already says it).
+- **Template (creator's reference, 2026-10-27; built in `videos/case-021-gpt-6-1-terra` s1):** paper ground ·
+  `CASE 0NN / <TOPIC>` in Courier Prime caps (y≈262) · grey line "Fact check · <what>" Inter 600 · headline Inter 800
+  150 px, a question, last word in red Instrument Serif italic with the pen underline · one grey sub-line ("Half the
+  price. 3× faster. Really?") · a real still in a printed-photo frame, slightly rotated, ending at y 1480 ·
+  `CATCH · THE · (E)RROR` wordmark (red E in the pen ring) just below. Frame 0 = the cover, then it animates away.
 - Test: shrink the cover to 120 px wide; if the claim isn't readable, it's too long.
 
 ## 6. No dead frames (hard gate)
