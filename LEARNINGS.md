@@ -2,6 +2,16 @@
 
 Newest first. Each entry: what happened, what we learned, the rule it became (in `CLAUDE.md`).
 
+## 2026-10-27 — Review: strategy setup + Case 019 topic pick (could've done better)
+- I wrote "Kimi redo" as the top pick without asking whether the creator wanted to revisit a posted topic; they didn't.
+  → Next time: offer new topics first; a redo only if asked.
+- I used two extended searches before shortlisting; one standard roundup search plus targeted primary-source fetches
+  would have been enough. → Shortlist from one roundup, then spend fetches only on the top 2 primary sources.
+- Several primary pages (CNBC) block fetching; Fortune and php.net worked. → Prefer the vendor's own page and php.net-style
+  official pages, and note any secondary-only fact in the spec as a to-do before voicing.
+- The "70%" check paid off: Wiz's number had no method; W3Techs gave the real denominator. → Always look up where a
+  headline number comes from; it's usually where our fine-print beat is.
+
 ## 2026-10-27 — Case 018 (Kimi K3.1 Pro): post-mortem, first numbers
 - **Numbers:** account at 3,253 views and 12 followers after Case 018. Growing, but strategy has to change.
 - **Story:** three videos glued together (walking sim → spec sheet → "worse on purpose"); the shareable angle came at
