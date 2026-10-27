@@ -1,6 +1,6 @@
 # REVIEW — Case 020
 
-**Delivered:** `renders/case-020-ai-cliff-hud-9x16.mp4` (1080×1920, 30 fps, 49.3 s) + `renders/cover.png`.
+**Delivered:** `renders/case-020-ai-cliff-hud-9x16.mp4` (1080×1920, 30 fps, 50.0 s; v2 with the "A.I." and CTA fix) + `renders/cover.png`.
 
 ## Verified
 - Facts: every on-screen claim traced to Apple Newsroom, the two papers, or the clip's own overlay (SPEC.md).

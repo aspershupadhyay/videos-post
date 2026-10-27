@@ -39,3 +39,5 @@ Log every new piece of feedback in `LEARNINGS.md` with the date, and promote it 
 12. **Review after every task.** End each task (a video, research, a fix) with a short "Could've done better" note in
     `LEARNINGS.md` (dated): what slowed us, what was weak, what to do differently. Don't redo the finished task for it;
     it's for the next one, so we never repeat a mistake.
+13. **Voice: write "A.I." in the script** (`lexicon: false`, no pronounce rule for it); "ay-eye" stretches into "AAAI".
+    The CTA is a natural ask said like a person ("Seen a clip like this? Send it our way. We'll check it."), never a slogan.

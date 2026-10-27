@@ -23,7 +23,7 @@
   <div id="root" data-composition-id="s2" data-width="1080" data-height="1920">
 
     <div id="s2-wrap" class="full">
-      <video id="s2-v" class="clip" src="assets/footage/drop.mp4" data-start="0" data-duration="3.200" muted playsinline></video>
+      <video id="s2-v" class="clip" src="assets/footage/drop.mp4" data-start="0" data-duration="3.160" muted playsinline></video>
       <svg id="s2-pen" class="pen full" viewBox="0 0 1080 1920" aria-hidden="true"><path d="M850 832 C 975 828, 1030 880, 1022 960 C 1014 1062, 930 1094, 840 1092 C 730 1090, 668 1046, 672 962 C 676 880, 742 836, 880 834" /></svg>
     </div>
     <div class="panel"></div>
@@ -34,16 +34,16 @@
   <script>
     (() => {
       const tl = gsap.timeline({ paused: true });
-      const at = (abs) => Math.max(0, abs - 7.4);
+      const at = (abs) => Math.max(0, abs - 7.26);
       const blurIn = (sel, t, d = 0.18) => tl.fromTo(sel, { opacity: 0, filter: "blur(10px)", y: 14 }, { opacity: 1, filter: "blur(0px)", y: 0, duration: d, ease: "power4.out", immediateRender: false }, at(t));
       const out = (sel, t) => tl.to(sel, { opacity: 0, filter: "blur(8px)", duration: 0.14, ease: "power2.in" }, at(t));
       const pen = (sel, t, d = 0.38) => tl.to(sel, { strokeDashoffset: 0, duration: d, ease: "power2.inOut" }, at(t));
 
-      out("#s2-t1", 8.146);
-      blurIn("#s2-t2", 8.246);
-      tl.to("#s2-wrap", { scale: 1.32, duration: 0.7, ease: "expo.inOut", transformOrigin: "846px 960px" }, at(8.634));
-      pen("#s2-pen path", 9.283999999999999);
-      tl.set({}, {}, 3.2);
+      out("#s2-t1", 8.054);
+      blurIn("#s2-t2", 8.154);
+      tl.to("#s2-wrap", { scale: 1.32, duration: 0.7, ease: "expo.inOut", transformOrigin: "846px 960px" }, at(8.542000000000002));
+      pen("#s2-pen path", 9.192);
+      tl.set({}, {}, 3.16);
       window.__timelines["s2"] = tl;
     })();
   </script>
