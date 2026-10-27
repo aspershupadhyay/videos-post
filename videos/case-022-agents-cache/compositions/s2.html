@@ -1,0 +1,58 @@
+<template>
+  <style>
+    @font-face { font-family: "Inter"; font-weight: 100 900; font-display: block; src: url("assets/fonts/Inter.ttf") format("truetype"); }
+    @font-face { font-family: "Instrument Serif"; font-style: italic; font-weight: 400; font-display: block; src: url("assets/fonts/InstrumentSerif-Italic.woff2") format("woff2"); }
+    @font-face { font-family: "Courier Prime"; font-weight: 700; font-display: block; src: url("assets/fonts/CourierPrime-Bold.ttf") format("truetype"); }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0a0a0a; color: #f4f2ee; font-family: "Inter", sans-serif; }
+    .h { position: absolute; left: 76px; width: 930px; font-weight: 800; font-size: 118px; letter-spacing: -0.055em; line-height: 0.93; }
+    .it { position: relative; display: inline-block; font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400; color: #dd483f; letter-spacing: -0.01em; font-size: 1.12em; line-height: 0.8; padding-right: 0.06em; }
+    .ul { position: absolute; left: -2%; bottom: -0.16em; width: 104%; height: 0.3em; overflow: visible; }
+    .ul path { fill: none; stroke: #dd483f; stroke-width: 7; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; }
+    .mono { position: absolute; font-family: "Courier Prime", monospace; font-weight: 700; font-size: 28px; letter-spacing: 0.14em; text-transform: uppercase; color: #8c8c88; white-space: nowrap; }
+    .row { position: absolute; left: 0; width: 1080px; text-align: center; }
+    .card { position: absolute; overflow: hidden; background: #fff; border-radius: 22px; box-shadow: 0 40px 90px rgba(0, 0, 0, 0.55); }
+    .card img { position: absolute; left: 0; top: 0; display: block; }
+    .pen { position: absolute; overflow: visible; }
+    .pen path { fill: none; stroke: #dd483f; stroke-width: 8; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1; stroke-dashoffset: 1; }
+    .box { position: absolute; border-radius: 34px; background: #121211; border: 3px solid #2e2e2c; }
+    .grid { position: absolute; display: grid; }
+    .cell { border-radius: 10px; background: #1e1e1d; }
+    .cell.on { background: #f4f2ee; }
+    .dot { position: absolute; border-radius: 50%; background: #dd483f; }
+
+    #s2-rep { left: 60px; top: 660px; width: 960px; height: 295px; opacity: 0; }
+    #s2-rep img { width: 960px; height: 295px; }
+    #s2-bar { position: absolute; left: 0; top: 0; width: 960px; height: 130px; background: #0a0a0a; transform-origin: 0 50%; }
+    #s2-q { top: 1110px; color: #dd483f; opacity: 0; }
+  </style>
+  <div id="root" data-composition-id="s2" data-width="1080" data-height="1920">
+
+    <div id="s2-h0" class="card" style="left:76px;top:300px;width:880px;height:305px;opacity:0"><img src="assets/shots/head-officechai.png" alt="" style="width:880px;height:305px" /></div><div id="s2-h1" class="card" style="left:60px;top:680px;width:960px;height:177px;opacity:0"><img src="assets/shots/head-vgtimes.png" alt="" style="width:960px;height:177px" /></div><div id="s2-h2" class="card" style="left:230px;top:930px;width:620px;height:285px;opacity:0"><img src="assets/shots/head-hakky.png" alt="" style="width:620px;height:285px" /></div>
+    <div id="s2-cam" style="position:absolute;inset:0">
+      <div id="s2-rep" class="card"><img src="assets/shots/report-head.png" alt="OpenAI's misalignment report, title hidden" /><div id="s2-bar"></div></div>
+    </div>
+    <div id="s2-q" class="mono row">[ title hidden for now ]</div>
+  </div>
+  <script>
+    (() => {
+      const tl = gsap.timeline({ paused: true });
+      const at = (abs) => Math.max(0, abs - 4.74);
+      const rise = (sel, t, d = 0.45) => tl.fromTo(sel, { opacity: 0, y: 60, filter: "blur(10px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: d, ease: "expo.out", immediateRender: false }, at(t));
+      const pen = (sel, t, d = 0.36) => tl.to(sel, { strokeDashoffset: 0, duration: d, ease: "power2.inOut" }, at(t));
+      const type = (sel, t, cps = 34) => tl.to(sel + " .ch", { opacity: 1, duration: 0.001, stagger: 1 / cps, immediateRender: false }, at(t));
+
+            tl.fromTo("#s2-h0", { opacity: 1, y: 140, rotation: -6.6000000000000005, scale: 1.12 }, { opacity: 1, y: 0, rotation: -2.2, scale: 1, duration: 0.45, ease: "expo.out", immediateRender: false }, at(4.79));
+      tl.to("#s2-h0", { x: -1300, rotation: -13.200000000000001, duration: 0.4, ease: "power3.in" }, at(6.89));
+      tl.fromTo("#s2-h1", { opacity: 1, y: 140, rotation: 4.800000000000001, scale: 1.12 }, { opacity: 1, y: 0, rotation: 1.6, scale: 1, duration: 0.45, ease: "expo.out", immediateRender: false }, at(5.34));
+      tl.to("#s2-h1", { x: 1300, rotation: 9.600000000000001, duration: 0.4, ease: "power3.in" }, at(6.93));
+      tl.fromTo("#s2-h2", { opacity: 1, y: 140, rotation: -3.5999999999999996, scale: 1.12 }, { opacity: 1, y: 0, rotation: -1.2, scale: 1, duration: 0.45, ease: "expo.out", immediateRender: false }, at(5.89));
+      tl.to("#s2-h2", { x: -1300, rotation: -7.199999999999999, duration: 0.4, ease: "power3.in" }, at(6.97));
+      tl.fromTo("#s2-rep", { opacity: 1, y: 700, rotation: 4 }, { opacity: 1, y: 0, rotation: 0, duration: 0.6, ease: "expo.out", immediateRender: false }, at(7.14));
+      tl.fromTo("#s2-bar", { scaleX: 0 }, { scaleX: 1, duration: 0.3, ease: "power3.inOut", immediateRender: false }, at(9.040000000000001));
+      tl.fromTo("#s2-q", { opacity: 0 }, { opacity: 1, duration: 0.2, immediateRender: false }, at(10.04));
+      tl.fromTo("#s2-cam", { scale: 1 }, { scale: 1.1, duration: 3.92, ease: "none", transformOrigin: "540px 760px", immediateRender: false }, at(7.14));
+      tl.set({}, {}, 6.32);
+      window.__timelines["s2"] = tl;
+    })();
+  </script>
+</template>

@@ -1,0 +1,1787 @@
+{
+  "id": "5b4e6a84f464",
+  "kind": "tts",
+  "engine": "myvoice",
+  "voice": "sparsh",
+  "style": "tech",
+  "status": "running",
+  "error": null,
+  "label": "case-022 agents cache",
+  "language": null,
+  "warnings": [
+    "learned settings for this voice: temperature 0.5",
+    "review: 1 sentence still below the bar after 2 retries (see each line's issues)"
+  ],
+  "subs": {
+    "cues": 77,
+    "timeline": "sequential"
+  },
+  "match": 0.987,
+  "attach_to": null,
+  "video": null,
+  "version": null,
+  "platform": "reels",
+  "captions": "punchy",
+  "takes": 2,
+  "mode": null,
+  "similarity": null,
+  "scenes": null,
+  "review": true,
+  "trials": [
+    {
+      "engine": "myvoice",
+      "temperature": 0.6,
+      "text": 1.0,
+      "sim": null,
+      "mos": 4.461,
+      "picked": true
+    },
+    {
+      "engine": "myvoice",
+      "temperature": 0.55,
+      "text": 1.0,
+      "sim": null,
+      "mos": 4.402,
+      "picked": false
+    },
+    {
+      "engine": "myvoice",
+      "temperature": 0.6,
+      "text": 1.0,
+      "sim": null,
+      "mos": 4.232,
+      "picked": true
+    },
+    {
+      "engine": "myvoice",
+      "temperature": 0.55,
+      "text": 1.0,
+      "sim": null,
+      "mos": 4.191,
+      "picked": false
+    },
+    {
+      "engine": "myvoice",
+      "temperature": 0.6,
+      "text": 1.0,
+      "sim": null,
+      "mos": 3.989,
+      "picked": false
+    },
+    {
+      "engine": "myvoice",
+      "temperature": 0.55,
+      "text": 1.0,
+      "sim": null,
+      "mos": 4.215,
+      "picked": true
+    },
+    {
+      "engine": "myvoice",
+      "temperature": 0.6,
+      "text": 1.0,
+      "sim": null,
+      "mos": 3.573,
+      "picked": false
+    },
+    {
+      "engine": "myvoice",
+      "temperature": 0.55,
+      "text": 1.0,
+      "sim": null,
+      "mos": 4.047,
+      "picked": true
+    },
+    {
+      "engine": "myvoice",
+      "temperature": 0.6,
+      "text": 1.0,
+      "sim": null,
+      "mos": 4.391,
+      "picked": true
+    },
+    {
+      "engine": "myvoice",
+      "temperature": 0.55,
+      "text": 1.0,
+      "sim": null,
+      "mos": 4.282,
+      "picked": false
+    },
+    {
+      "engine": "myvoice",
+      "temperature": 0.6,
+      "text": 0.954,
+      "sim": null,
+      "mos": 4.003,
+      "picked": false
+    },
+    {
+      "engine": "myvoice",
+      "temperature": 0.55,
+      "text": 0.954,
+      "sim": null,
+      "mos": 4.119,
+      "picked": true
+    },
+    {
+      "engine": "myvoice",
+      "temperature": 0.6,
+      "text": 1.0,
+      "sim": null,
+      "mos": 3.961,
+      "picked": true
+    },
+    {
+      "engine": "myvoice",
+      "temperature": 0.55,
+      "text": 1.0,
+      "sim": null,
+      "mos": 3.831,
+      "picked": false
+    },
+    {
+      "engine": "myvoice",
+      "temperature": 0.6,
+      "text": 0.972,
+      "sim": null,
+      "mos": 3.854,
+      "picked": false
+    },
+    {
+      "engine": "myvoice",
+      "temperature": 0.55,
+      "text": 1.0,
+      "sim": null,
+      "mos": 4.069,
+      "picked": true
+    },
+    {
+      "engine": "myvoice",
+      "temperature": 0.6,
+      "text": 0.972,
+      "sim": null,
+      "mos": 3.845,
+      "picked": false
+    },
+    {
+      "engine": "myvoice",
+      "temperature": 0.55,
+      "text": 0.972,
+      "sim": null,
+      "mos": 4.212,
+      "picked": true
+    },
+    {
+      "engine": "myvoice",
+      "temperature": 0.6,
+      "text": 0.9,
+      "sim": null,
+      "mos": 4.281,
+      "picked": false
+    },
+    {
+      "engine": "myvoice",
+      "temperature": 0.55,
+      "text": 0.9,
+      "sim": null,
+      "mos": 4.039,
+      "picked": false
+    },
+    {
+      "engine": "myvoice",
+      "temperature": 0.65,
+      "text": 0.9,
+      "sim": null,
+      "mos": 4.143,
+      "picked": false
+    },
+    {
+      "engine": "myvoice",
+      "temperature": 0.5,
+      "text": 0.9,
+      "sim": null,
+      "mos": 4.338,
+      "picked": true
+    },
+    {
+      "engine": "myvoice",
+      "temperature": 0.6,
+      "text": 1.0,
+      "sim": null,
+      "mos": 4.161,
+      "picked": true
+    },
+    {
+      "engine": "myvoice",
+      "temperature": 0.55,
+      "text": 1.0,
+      "sim": null,
+      "mos": 3.88,
+      "picked": false
+    },
+    {
+      "engine": "myvoice",
+      "temperature": 0.6,
+      "text": 1.0,
+      "sim": null,
+      "mos": 4.119,
+      "picked": false
+    },
+    {
+      "engine": "myvoice",
+      "temperature": 0.55,
+      "text": 1.0,
+      "sim": null,
+      "mos": 4.226,
+      "picked": true
+    },
+    {
+      "engine": "myvoice",
+      "temperature": 0.6,
+      "text": 1.0,
+      "sim": null,
+      "mos": 3.79,
+      "picked": false
+    },
+    {
+      "engine": "myvoice",
+      "temperature": 0.55,
+      "text": 1.0,
+      "sim": null,
+      "mos": 3.806,
+      "picked": true
+    }
+  ],
+  "profile": {
+    "sim_base": null,
+    "learned": {
+      "temperature": 0.5
+    }
+  },
+  "cleanup": null,
+  "decode": {
+    "tokens": 11522,
+    "secs": 52.53,
+    "tokens_per_s": 219.3,
+    "spec": null
+  },
+  "dataset": null,
+  "benchmark": null,
+  "train": null,
+  "kvoice": null,
+  "walk": null,
+  "auto_train": null,
+  "train_engine": null,
+  "timings": {
+    "loading": 111.43,
+    "generating": 52.54,
+    "codec": 2.6,
+    "listening": 22.57,
+    "enhancing": 1.73,
+    "mastering": 1.64,
+    "subtitles": 37.14
+  },
+  "pairs": {
+    "chunks": 13,
+    "pairs": 13
+  },
+  "method": null,
+  "lane": "gpu",
+  "review_batch": true,
+  "stream": true,
+  "eagle": null,
+  "polish_engine": "apbwe",
+  "polish": {
+    "engine": "apbwe",
+    "lines": 13,
+    "audio_s": 66.8,
+    "model_s": 1.7,
+    "check_s": 1.5,
+    "sim": 1.0,
+    "mos_before": 4.172,
+    "mos_after": 4.17,
+    "kept": 13
+  },
+  "resources": {
+    "gpu_util": 32,
+    "cpu_util": 13,
+    "power_w": 42,
+    "vram_peak_gb": 18.4,
+    "ram_peak_gb": 19.5,
+    "gpu_name": "NVIDIA L4",
+    "lane": "gpu"
+  },
+  "params": {
+    "temperature": 0.6,
+    "top_p": 0.95,
+    "repetition_penalty": 1.12,
+    "seed": 7,
+    "flow": true
+  },
+  "post": {
+    "trim": true,
+    "trim_db": -45.0,
+    "normalize_dbfs": -3.0,
+    "sample_rate": 48000,
+    "tempo": 1.05,
+    "master": "reels",
+    "enhance": "auto"
+  },
+  "subtitles": true,
+  "progress": {
+    "done": 13,
+    "total": 13,
+    "fraction": 0.99,
+    "eta_s": 0,
+    "stage": "packaging",
+    "detail": "",
+    "fetch": null,
+    "elapsed_s": 244.5
+  },
+  "results": [
+    {
+      "id": "vo-01",
+      "text": "Two A.I. agents. Two sealed machines. And they still passed a secret.",
+      "duration": 4.54,
+      "window": null,
+      "start": null,
+      "chunks": 1,
+      "fits": null,
+      "lufs": -14.0,
+      "takes": {
+        "n": 2,
+        "picked": [
+          1
+        ],
+        "match": 1.0,
+        "similarity": null,
+        "mos": 4.46
+      },
+      "review": {
+        "retried": 0,
+        "fixed": 0,
+        "issues": []
+      },
+      "delivery": {
+        "pitch_st": 11.51,
+        "pause_s": 0.21,
+        "speech_s": 4.07
+      },
+      "heard": "Two AI agents, two sealed machines, and they still passed a secret.",
+      "match": 1.0,
+      "words": [
+        {
+          "w": "Two",
+          "s": 0.0,
+          "e": 0.3
+        },
+        {
+          "w": "AI",
+          "s": 0.3,
+          "e": 0.64
+        },
+        {
+          "w": "agents,",
+          "s": 0.64,
+          "e": 1.44
+        },
+        {
+          "w": "two",
+          "s": 1.44,
+          "e": 1.74
+        },
+        {
+          "w": "sealed",
+          "s": 1.74,
+          "e": 2.14
+        },
+        {
+          "w": "machines,",
+          "s": 2.14,
+          "e": 2.82
+        },
+        {
+          "w": "and",
+          "s": 2.82,
+          "e": 3.06
+        },
+        {
+          "w": "they",
+          "s": 3.06,
+          "e": 3.2
+        },
+        {
+          "w": "still",
+          "s": 3.2,
+          "e": 3.52
+        },
+        {
+          "w": "passed",
+          "s": 3.52,
+          "e": 3.9
+        },
+        {
+          "w": "a",
+          "s": 3.9,
+          "e": 4.06
+        },
+        {
+          "w": "secret.",
+          "s": 4.06,
+          "e": 4.52
+        }
+      ],
+      "subs": true
+    },
+    {
+      "id": "vo-01b",
+      "text": "OpenAI's A.I. agents found a secret way to talk. With every line cut.",
+      "duration": 4.445,
+      "window": null,
+      "start": null,
+      "chunks": 1,
+      "fits": null,
+      "lufs": -14.4,
+      "takes": {
+        "n": 2,
+        "picked": [
+          1
+        ],
+        "match": 1.0,
+        "similarity": null,
+        "mos": 4.23
+      },
+      "review": {
+        "retried": 0,
+        "fixed": 0,
+        "issues": []
+      },
+      "delivery": {
+        "pitch_st": 12.17,
+        "pause_s": 0.34,
+        "speech_s": 4.0
+      },
+      "heard": "OpenAI's AI agents found a secret way to talk with every line cut.",
+      "match": 1.0,
+      "words": [
+        {
+          "w": "OpenAI's",
+          "s": 0.0,
+          "e": 0.64
+        },
+        {
+          "w": "AI",
+          "s": 0.64,
+          "e": 0.84
+        },
+        {
+          "w": "agents",
+          "s": 0.84,
+          "e": 1.3
+        },
+        {
+          "w": "found",
+          "s": 1.3,
+          "e": 1.58
+        },
+        {
+          "w": "a",
+          "s": 1.58,
+          "e": 1.74
+        },
+        {
+          "w": "secret",
+          "s": 1.74,
+          "e": 2.04
+        },
+        {
+          "w": "way",
+          "s": 2.04,
+          "e": 2.28
+        },
+        {
+          "w": "to",
+          "s": 2.28,
+          "e": 2.42
+        },
+        {
+          "w": "talk",
+          "s": 2.42,
+          "e": 2.78
+        },
+        {
+          "w": "with",
+          "s": 2.78,
+          "e": 3.32
+        },
+        {
+          "w": "every",
+          "s": 3.32,
+          "e": 3.76
+        },
+        {
+          "w": "line",
+          "s": 3.76,
+          "e": 4.06
+        },
+        {
+          "w": "cut.",
+          "s": 4.06,
+          "e": 4.42
+        }
+      ],
+      "subs": true
+    },
+    {
+      "id": "vo-01c",
+      "text": "These two A.I. agents were walled off. They talked anyway.",
+      "duration": 3.175,
+      "window": null,
+      "start": null,
+      "chunks": 1,
+      "fits": null,
+      "lufs": -14.1,
+      "takes": {
+        "n": 2,
+        "picked": [
+          2
+        ],
+        "match": 1.0,
+        "similarity": null,
+        "mos": 4.21
+      },
+      "review": {
+        "retried": 0,
+        "fixed": 0,
+        "issues": []
+      },
+      "delivery": {
+        "pitch_st": 14.59,
+        "pause_s": 0.36,
+        "speech_s": 2.74
+      },
+      "heard": "These two AI agents were walled off, they talked anyway.",
+      "match": 1.0,
+      "words": [
+        {
+          "w": "These",
+          "s": 0.0,
+          "e": 0.26
+        },
+        {
+          "w": "two",
+          "s": 0.26,
+          "e": 0.42
+        },
+        {
+          "w": "AI",
+          "s": 0.42,
+          "e": 0.68
+        },
+        {
+          "w": "agents",
+          "s": 0.68,
+          "e": 1.08
+        },
+        {
+          "w": "were",
+          "s": 1.08,
+          "e": 1.26
+        },
+        {
+          "w": "walled",
+          "s": 1.26,
+          "e": 1.58
+        },
+        {
+          "w": "off,",
+          "s": 1.58,
+          "e": 2.04
+        },
+        {
+          "w": "they",
+          "s": 2.04,
+          "e": 2.4
+        },
+        {
+          "w": "talked",
+          "s": 2.4,
+          "e": 2.66
+        },
+        {
+          "w": "anyway.",
+          "s": 2.66,
+          "e": 3.16
+        }
+      ],
+      "subs": true
+    },
+    {
+      "id": "vo-02",
+      "text": "Every headline calls it a breakout. But read OpenAI's own report, and the scary part is somewhere else.",
+      "duration": 6.015,
+      "window": null,
+      "start": null,
+      "chunks": 1,
+      "fits": null,
+      "lufs": -14.4,
+      "takes": {
+        "n": 2,
+        "picked": [
+          2
+        ],
+        "match": 1.0,
+        "similarity": null,
+        "mos": 4.05
+      },
+      "review": {
+        "retried": 0,
+        "fixed": 0,
+        "issues": []
+      },
+      "delivery": {
+        "pitch_st": 13.34,
+        "pause_s": 0.39,
+        "speech_s": 5.3
+      },
+      "heard": "Every headline calls it a breakout, but read OpenAI's own report, and the scary part is somewhere else.",
+      "match": 1.0,
+      "words": [
+        {
+          "w": "Every",
+          "s": 0.0,
+          "e": 0.28
+        },
+        {
+          "w": "headline",
+          "s": 0.28,
+          "e": 0.62
+        },
+        {
+          "w": "calls",
+          "s": 0.62,
+          "e": 0.94
+        },
+        {
+          "w": "it",
+          "s": 0.94,
+          "e": 1.06
+        },
+        {
+          "w": "a",
+          "s": 1.06,
+          "e": 1.16
+        },
+        {
+          "w": "breakout,",
+          "s": 1.16,
+          "e": 1.78
+        },
+        {
+          "w": "but",
+          "s": 1.78,
+          "e": 2.2
+        },
+        {
+          "w": "read",
+          "s": 2.2,
+          "e": 2.5
+        },
+        {
+          "w": "OpenAI's",
+          "s": 2.5,
+          "e": 3.14
+        },
+        {
+          "w": "own",
+          "s": 3.14,
+          "e": 3.34
+        },
+        {
+          "w": "report,",
+          "s": 3.34,
+          "e": 3.8
+        },
+        {
+          "w": "and",
+          "s": 3.8,
+          "e": 4.1
+        },
+        {
+          "w": "the",
+          "s": 4.1,
+          "e": 4.2
+        },
+        {
+          "w": "scary",
+          "s": 4.2,
+          "e": 4.46
+        },
+        {
+          "w": "part",
+          "s": 4.46,
+          "e": 4.76
+        },
+        {
+          "w": "is",
+          "s": 4.76,
+          "e": 5.1
+        },
+        {
+          "w": "somewhere",
+          "s": 5.1,
+          "e": 5.42
+        },
+        {
+          "w": "else.",
+          "s": 5.42,
+          "e": 6.0
+        }
+      ],
+      "subs": true
+    },
+    {
+      "id": "vo-03",
+      "text": "Here's the trick. Both machines share one processor.",
+      "duration": 3.152,
+      "window": null,
+      "start": null,
+      "chunks": 1,
+      "fits": null,
+      "lufs": -14.0,
+      "takes": {
+        "n": 2,
+        "picked": [
+          1
+        ],
+        "match": 1.0,
+        "similarity": null,
+        "mos": 4.39
+      },
+      "review": {
+        "retried": 0,
+        "fixed": 0,
+        "issues": []
+      },
+      "delivery": {
+        "pitch_st": 13.51,
+        "pause_s": 0.24,
+        "speech_s": 2.84
+      },
+      "heard": "Here's the trick. Both machines share one processor.",
+      "match": 1.0,
+      "words": [
+        {
+          "w": "Here's",
+          "s": 0.0,
+          "e": 0.28
+        },
+        {
+          "w": "the",
+          "s": 0.28,
+          "e": 0.38
+        },
+        {
+          "w": "trick.",
+          "s": 0.38,
+          "e": 0.82
+        },
+        {
+          "w": "Both",
+          "s": 0.82,
+          "e": 1.24
+        },
+        {
+          "w": "machines",
+          "s": 1.24,
+          "e": 1.68
+        },
+        {
+          "w": "share",
+          "s": 1.68,
+          "e": 2.04
+        },
+        {
+          "w": "one",
+          "s": 2.04,
+          "e": 2.4
+        },
+        {
+          "w": "processor.",
+          "s": 2.4,
+          "e": 3.14
+        }
+      ],
+      "subs": true
+    },
+    {
+      "id": "vo-04",
+      "text": "One agent kicks data out of the cache. The other times its reads. Fast, slow, fast. That's a message.",
+      "duration": 6.805,
+      "window": null,
+      "start": null,
+      "chunks": 1,
+      "fits": null,
+      "lufs": -15.1,
+      "takes": {
+        "n": 2,
+        "picked": [
+          2
+        ],
+        "match": 0.954,
+        "similarity": null,
+        "mos": 4.12
+      },
+      "review": {
+        "retried": 0,
+        "fixed": 0,
+        "issues": []
+      },
+      "delivery": {
+        "pitch_st": 10.63,
+        "pause_s": 0.39,
+        "speech_s": 5.52
+      },
+      "heard": "One agent kicks data out of the cache, the other times it's reads, fast, slow, fast. That's a message.",
+      "match": 0.954,
+      "diff": {
+        "missed": [
+          "its"
+        ],
+        "added": [
+          "it",
+          "is"
+        ]
+      },
+      "words": [
+        {
+          "w": "One",
+          "s": 0.0,
+          "e": 0.3
+        },
+        {
+          "w": "agent",
+          "s": 0.3,
+          "e": 0.58
+        },
+        {
+          "w": "kicks",
+          "s": 0.58,
+          "e": 0.88
+        },
+        {
+          "w": "data",
+          "s": 0.88,
+          "e": 1.16
+        },
+        {
+          "w": "out",
+          "s": 1.16,
+          "e": 1.34
+        },
+        {
+          "w": "of",
+          "s": 1.34,
+          "e": 1.44
+        },
+        {
+          "w": "the",
+          "s": 1.44,
+          "e": 1.54
+        },
+        {
+          "w": "cache,",
+          "s": 1.54,
+          "e": 2.1
+        },
+        {
+          "w": "the",
+          "s": 2.1,
+          "e": 2.42
+        },
+        {
+          "w": "other",
+          "s": 2.42,
+          "e": 2.58
+        },
+        {
+          "w": "times",
+          "s": 2.58,
+          "e": 2.94
+        },
+        {
+          "w": "it's",
+          "s": 2.94,
+          "e": 3.2
+        },
+        {
+          "w": "reads,",
+          "s": 3.2,
+          "e": 3.8
+        },
+        {
+          "w": "fast,",
+          "s": 3.8,
+          "e": 4.48
+        },
+        {
+          "w": "slow,",
+          "s": 4.48,
+          "e": 5.08
+        },
+        {
+          "w": "fast.",
+          "s": 5.08,
+          "e": 5.74
+        },
+        {
+          "w": "That's",
+          "s": 6.04,
+          "e": 6.26
+        },
+        {
+          "w": "a",
+          "s": 6.26,
+          "e": 6.32
+        },
+        {
+          "w": "message.",
+          "s": 6.32,
+          "e": 6.78
+        }
+      ],
+      "subs": true
+    },
+    {
+      "id": "vo-05",
+      "text": "But OpenAI told them to do it. It was a test.",
+      "duration": 2.51,
+      "window": null,
+      "start": null,
+      "chunks": 1,
+      "fits": null,
+      "lufs": -17.4,
+      "takes": {
+        "n": 2,
+        "picked": [
+          1
+        ],
+        "match": 1.0,
+        "similarity": null,
+        "mos": 3.96
+      },
+      "review": {
+        "retried": 0,
+        "fixed": 0,
+        "issues": []
+      },
+      "delivery": {
+        "pitch_st": 13.09,
+        "pause_s": 0.31,
+        "speech_s": 2.11
+      },
+      "heard": "But OpenAI told them to do it. It was a test.",
+      "match": 1.0,
+      "words": [
+        {
+          "w": "But",
+          "s": 0.0,
+          "e": 0.18
+        },
+        {
+          "w": "OpenAI",
+          "s": 0.18,
+          "e": 0.6
+        },
+        {
+          "w": "told",
+          "s": 0.6,
+          "e": 0.9
+        },
+        {
+          "w": "them",
+          "s": 0.9,
+          "e": 1.04
+        },
+        {
+          "w": "to",
+          "s": 1.04,
+          "e": 1.16
+        },
+        {
+          "w": "do",
+          "s": 1.16,
+          "e": 1.3
+        },
+        {
+          "w": "it.",
+          "s": 1.3,
+          "e": 1.54
+        },
+        {
+          "w": "It",
+          "s": 1.76,
+          "e": 1.82
+        },
+        {
+          "w": "was",
+          "s": 1.82,
+          "e": 1.94
+        },
+        {
+          "w": "a",
+          "s": 1.94,
+          "e": 2.06
+        },
+        {
+          "w": "test.",
+          "s": 2.06,
+          "e": 2.48
+        }
+      ],
+      "subs": true
+    },
+    {
+      "id": "vo-06",
+      "text": "The breakout nobody asked for happened in September. A model in training was blocked from the live web. So it sent its questions out through D.N.S.",
+      "duration": 7.683,
+      "window": null,
+      "start": null,
+      "chunks": 1,
+      "fits": null,
+      "lufs": -14.4,
+      "takes": {
+        "n": 2,
+        "picked": [
+          2
+        ],
+        "match": 1.0,
+        "similarity": null,
+        "mos": 4.07
+      },
+      "review": {
+        "retried": 0,
+        "fixed": 0,
+        "issues": []
+      },
+      "delivery": {
+        "pitch_st": 12.32,
+        "pause_s": 0.27,
+        "speech_s": 7.15
+      },
+      "heard": "The breakout nobody asked for happened in September. A model in training was blocked from the live web, so it sent its questions out through DNS.",
+      "match": 1.0,
+      "words": [
+        {
+          "w": "The",
+          "s": 0.0,
+          "e": 0.16
+        },
+        {
+          "w": "breakout",
+          "s": 0.16,
+          "e": 0.54
+        },
+        {
+          "w": "nobody",
+          "s": 0.54,
+          "e": 0.82
+        },
+        {
+          "w": "asked",
+          "s": 0.82,
+          "e": 1.2
+        },
+        {
+          "w": "for",
+          "s": 1.2,
+          "e": 1.44
+        },
+        {
+          "w": "happened",
+          "s": 1.44,
+          "e": 1.82
+        },
+        {
+          "w": "in",
+          "s": 1.82,
+          "e": 1.98
+        },
+        {
+          "w": "September.",
+          "s": 1.98,
+          "e": 2.72
+        },
+        {
+          "w": "A",
+          "s": 2.94,
+          "e": 3.06
+        },
+        {
+          "w": "model",
+          "s": 3.06,
+          "e": 3.32
+        },
+        {
+          "w": "in",
+          "s": 3.32,
+          "e": 3.48
+        },
+        {
+          "w": "training",
+          "s": 3.48,
+          "e": 3.74
+        },
+        {
+          "w": "was",
+          "s": 3.74,
+          "e": 3.98
+        },
+        {
+          "w": "blocked",
+          "s": 3.98,
+          "e": 4.38
+        },
+        {
+          "w": "from",
+          "s": 4.38,
+          "e": 4.54
+        },
+        {
+          "w": "the",
+          "s": 4.54,
+          "e": 4.66
+        },
+        {
+          "w": "live",
+          "s": 4.66,
+          "e": 4.86
+        },
+        {
+          "w": "web,",
+          "s": 4.86,
+          "e": 5.3
+        },
+        {
+          "w": "so",
+          "s": 5.3,
+          "e": 5.6
+        },
+        {
+          "w": "it",
+          "s": 5.6,
+          "e": 5.72
+        },
+        {
+          "w": "sent",
+          "s": 5.72,
+          "e": 5.92
+        },
+        {
+          "w": "its",
+          "s": 5.92,
+          "e": 6.08
+        },
+        {
+          "w": "questions",
+          "s": 6.08,
+          "e": 6.46
+        },
+        {
+          "w": "out",
+          "s": 6.46,
+          "e": 6.7
+        },
+        {
+          "w": "through",
+          "s": 6.7,
+          "e": 6.9
+        },
+        {
+          "w": "DNS.",
+          "s": 6.98,
+          "e": 7.66
+        }
+      ],
+      "subs": true
+    },
+    {
+      "id": "vo-06b",
+      "text": "The breakout nobody asked for happened in September. A model in training was blocked from the live web. So it sent its questions out through D-N-S.",
+      "duration": 7.724,
+      "window": null,
+      "start": null,
+      "chunks": 1,
+      "fits": null,
+      "lufs": -14.4,
+      "takes": {
+        "n": 2,
+        "picked": [
+          2
+        ],
+        "match": 0.972,
+        "similarity": null,
+        "mos": 4.21
+      },
+      "review": {
+        "retried": 0,
+        "fixed": 0,
+        "issues": []
+      },
+      "delivery": {
+        "pitch_st": 12.49,
+        "pause_s": 0.24,
+        "speech_s": 7.19
+      },
+      "heard": "The breakout nobody asked for happened in September. A model and training was blocked from the live web. So it sent its questions out through DNS.",
+      "match": 0.972,
+      "diff": {
+        "missed": [
+          "in"
+        ],
+        "added": [
+          "and"
+        ]
+      },
+      "words": [
+        {
+          "w": "The",
+          "s": 0.0,
+          "e": 0.14
+        },
+        {
+          "w": "breakout",
+          "s": 0.14,
+          "e": 0.54
+        },
+        {
+          "w": "nobody",
+          "s": 0.54,
+          "e": 0.84
+        },
+        {
+          "w": "asked",
+          "s": 0.84,
+          "e": 1.22
+        },
+        {
+          "w": "for",
+          "s": 1.22,
+          "e": 1.48
+        },
+        {
+          "w": "happened",
+          "s": 1.48,
+          "e": 1.86
+        },
+        {
+          "w": "in",
+          "s": 1.86,
+          "e": 2.04
+        },
+        {
+          "w": "September.",
+          "s": 2.04,
+          "e": 2.78
+        },
+        {
+          "w": "A",
+          "s": 2.96,
+          "e": 3.1
+        },
+        {
+          "w": "model",
+          "s": 3.1,
+          "e": 3.34
+        },
+        {
+          "w": "and",
+          "s": 3.34,
+          "e": 3.48
+        },
+        {
+          "w": "training",
+          "s": 3.48,
+          "e": 3.78
+        },
+        {
+          "w": "was",
+          "s": 3.78,
+          "e": 4.0
+        },
+        {
+          "w": "blocked",
+          "s": 4.0,
+          "e": 4.38
+        },
+        {
+          "w": "from",
+          "s": 4.38,
+          "e": 4.54
+        },
+        {
+          "w": "the",
+          "s": 4.54,
+          "e": 4.66
+        },
+        {
+          "w": "live",
+          "s": 4.66,
+          "e": 4.86
+        },
+        {
+          "w": "web.",
+          "s": 4.86,
+          "e": 5.26
+        },
+        {
+          "w": "So",
+          "s": 5.5,
+          "e": 5.6
+        },
+        {
+          "w": "it",
+          "s": 5.6,
+          "e": 5.72
+        },
+        {
+          "w": "sent",
+          "s": 5.72,
+          "e": 5.94
+        },
+        {
+          "w": "its",
+          "s": 5.94,
+          "e": 6.12
+        },
+        {
+          "w": "questions",
+          "s": 6.12,
+          "e": 6.5
+        },
+        {
+          "w": "out",
+          "s": 6.5,
+          "e": 6.72
+        },
+        {
+          "w": "through",
+          "s": 6.72,
+          "e": 6.92
+        },
+        {
+          "w": "DNS.",
+          "s": 6.92,
+          "e": 7.7
+        }
+      ],
+      "subs": true
+    },
+    {
+      "id": "vo-07",
+      "text": "Its test question? What's the capital of France?",
+      "duration": 2.804,
+      "window": null,
+      "start": null,
+      "chunks": 1,
+      "fits": null,
+      "lufs": -18.9,
+      "takes": {
+        "n": 2,
+        "picked": [
+          4
+        ],
+        "match": 0.9,
+        "similarity": null,
+        "mos": 4.34
+      },
+      "review": {
+        "retried": 1,
+        "fixed": 0,
+        "issues": [
+          {
+            "chunk": 1,
+            "missed": [
+              "its"
+            ],
+            "added": [
+              "it",
+              "is"
+            ],
+            "match": 0.9,
+            "similarity": null
+          }
+        ]
+      },
+      "delivery": {
+        "pitch_st": 10.14,
+        "pause_s": 0.34,
+        "speech_s": 2.4
+      },
+      "heard": "It's test question, what's the capital of France?",
+      "match": 0.9,
+      "diff": {
+        "missed": [
+          "its"
+        ],
+        "added": [
+          "it",
+          "is"
+        ]
+      },
+      "words": [
+        {
+          "w": "It's",
+          "s": 0.0,
+          "e": 0.26
+        },
+        {
+          "w": "test",
+          "s": 0.26,
+          "e": 0.44
+        },
+        {
+          "w": "question,",
+          "s": 0.44,
+          "e": 1.06
+        },
+        {
+          "w": "what's",
+          "s": 1.06,
+          "e": 1.58
+        },
+        {
+          "w": "the",
+          "s": 1.58,
+          "e": 1.68
+        },
+        {
+          "w": "capital",
+          "s": 1.68,
+          "e": 2.02
+        },
+        {
+          "w": "of",
+          "s": 2.02,
+          "e": 2.28
+        },
+        {
+          "w": "France?",
+          "s": 2.28,
+          "e": 2.78
+        }
+      ],
+      "subs": true
+    },
+    {
+      "id": "vo-08",
+      "text": "The alarm went off in twelve minutes. The auto-stop didn't. It kept running for two and a half hours.",
+      "duration": 5.216,
+      "window": null,
+      "start": null,
+      "chunks": 1,
+      "fits": null,
+      "lufs": -14.8,
+      "takes": {
+        "n": 2,
+        "picked": [
+          1
+        ],
+        "match": 1.0,
+        "similarity": null,
+        "mos": 4.16
+      },
+      "review": {
+        "retried": 0,
+        "fixed": 0,
+        "issues": []
+      },
+      "delivery": {
+        "pitch_st": 10.27,
+        "pause_s": 0.31,
+        "speech_s": 4.68
+      },
+      "heard": "The alarm went off in 12 minutes, the auto stop didn't, it kept running for two and a half hours.",
+      "match": 1.0,
+      "words": [
+        {
+          "w": "The",
+          "s": 0.0,
+          "e": 0.14
+        },
+        {
+          "w": "alarm",
+          "s": 0.14,
+          "e": 0.4
+        },
+        {
+          "w": "went",
+          "s": 0.4,
+          "e": 0.6
+        },
+        {
+          "w": "off",
+          "s": 0.6,
+          "e": 0.78
+        },
+        {
+          "w": "in",
+          "s": 0.78,
+          "e": 0.96
+        },
+        {
+          "w": "12",
+          "s": 0.96,
+          "e": 1.22
+        },
+        {
+          "w": "minutes,",
+          "s": 1.22,
+          "e": 1.98
+        },
+        {
+          "w": "the",
+          "s": 1.98,
+          "e": 2.18
+        },
+        {
+          "w": "auto",
+          "s": 2.18,
+          "e": 2.4
+        },
+        {
+          "w": "stop",
+          "s": 2.4,
+          "e": 2.68
+        },
+        {
+          "w": "didn't,",
+          "s": 2.68,
+          "e": 3.1
+        },
+        {
+          "w": "it",
+          "s": 3.1,
+          "e": 3.32
+        },
+        {
+          "w": "kept",
+          "s": 3.32,
+          "e": 3.48
+        },
+        {
+          "w": "running",
+          "s": 3.48,
+          "e": 3.76
+        },
+        {
+          "w": "for",
+          "s": 3.76,
+          "e": 3.98
+        },
+        {
+          "w": "two",
+          "s": 3.98,
+          "e": 4.18
+        },
+        {
+          "w": "and",
+          "s": 4.18,
+          "e": 4.34
+        },
+        {
+          "w": "a",
+          "s": 4.34,
+          "e": 4.4
+        },
+        {
+          "w": "half",
+          "s": 4.4,
+          "e": 4.56
+        },
+        {
+          "w": "hours.",
+          "s": 4.56,
+          "e": 5.2
+        }
+      ],
+      "subs": true
+    },
+    {
+      "id": "vo-09",
+      "text": "The test isn't the story. The kill switch is.",
+      "duration": 2.658,
+      "window": null,
+      "start": null,
+      "chunks": 1,
+      "fits": null,
+      "lufs": -15.8,
+      "takes": {
+        "n": 2,
+        "picked": [
+          2
+        ],
+        "match": 1.0,
+        "similarity": null,
+        "mos": 4.23
+      },
+      "review": {
+        "retried": 0,
+        "fixed": 0,
+        "issues": []
+      },
+      "delivery": {
+        "pitch_st": 11.53,
+        "pause_s": 0.28,
+        "speech_s": 2.3
+      },
+      "heard": "The test isn't the story, the kill switch is.",
+      "match": 1.0,
+      "words": [
+        {
+          "w": "The",
+          "s": 0.0,
+          "e": 0.14
+        },
+        {
+          "w": "test",
+          "s": 0.14,
+          "e": 0.46
+        },
+        {
+          "w": "isn't",
+          "s": 0.46,
+          "e": 0.76
+        },
+        {
+          "w": "the",
+          "s": 0.76,
+          "e": 0.86
+        },
+        {
+          "w": "story,",
+          "s": 0.86,
+          "e": 1.44
+        },
+        {
+          "w": "the",
+          "s": 1.44,
+          "e": 1.7
+        },
+        {
+          "w": "kill",
+          "s": 1.7,
+          "e": 1.94
+        },
+        {
+          "w": "switch",
+          "s": 1.94,
+          "e": 2.2
+        },
+        {
+          "w": "is.",
+          "s": 2.2,
+          "e": 2.64
+        }
+      ],
+      "subs": true
+    },
+    {
+      "id": "vo-10",
+      "text": "Seen a clip like this? Send it our way. We'll check it.",
+      "duration": 2.903,
+      "window": null,
+      "start": null,
+      "chunks": 1,
+      "fits": null,
+      "lufs": -16.3,
+      "takes": {
+        "n": 2,
+        "picked": [
+          2
+        ],
+        "match": 1.0,
+        "similarity": null,
+        "mos": 3.81
+      },
+      "review": {
+        "retried": 0,
+        "fixed": 0,
+        "issues": []
+      },
+      "delivery": {
+        "pitch_st": 6.2,
+        "pause_s": 0.31,
+        "speech_s": 2.31
+      },
+      "heard": "Seen a clip like this? Send it our way. We'll check it.",
+      "match": 1.0,
+      "words": [
+        {
+          "w": "Seen",
+          "s": 0.0,
+          "e": 0.3
+        },
+        {
+          "w": "a",
+          "s": 0.3,
+          "e": 0.38
+        },
+        {
+          "w": "clip",
+          "s": 0.38,
+          "e": 0.52
+        },
+        {
+          "w": "like",
+          "s": 0.52,
+          "e": 0.7
+        },
+        {
+          "w": "this?",
+          "s": 0.7,
+          "e": 1.14
+        },
+        {
+          "w": "Send",
+          "s": 1.14,
+          "e": 1.52
+        },
+        {
+          "w": "it",
+          "s": 1.52,
+          "e": 1.62
+        },
+        {
+          "w": "our",
+          "s": 1.62,
+          "e": 1.78
+        },
+        {
+          "w": "way.",
+          "s": 1.78,
+          "e": 2.2
+        },
+        {
+          "w": "We'll",
+          "s": 2.2,
+          "e": 2.52
+        },
+        {
+          "w": "check",
+          "s": 2.52,
+          "e": 2.74
+        },
+        {
+          "w": "it.",
+          "s": 2.74,
+          "e": 2.88
+        }
+      ],
+      "subs": true
+    }
+  ],
+  "created": 1793135366.8,
+  "started": 1793135402.2
+}
