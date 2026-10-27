@@ -1,0 +1,95 @@
+<template>
+  <style>
+    @font-face { font-family: "League Gothic"; font-stretch: 75% 100%; font-display: block; src: url("assets/fonts/LeagueGothic.woff2") format("woff2"); }
+    @font-face { font-family: "Libre Franklin"; font-weight: 400 900; font-display: block; src: url("assets/fonts/LibreFranklin.woff2") format("woff2"); }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #e9e5df; color: #0a0a0a; font-family: "Libre Franklin", sans-serif; }
+    .lg { font-family: "League Gothic", sans-serif; text-transform: uppercase; line-height: 0.86; letter-spacing: 0.005em; }
+    #bg { position: absolute; inset: -40px; width: 1160px; height: 2000px; object-fit: cover; }
+    #mast { position: absolute; left: 0; top: 0; width: 1080px; height: 150px; background: #0a0a0a; color: #f4f2ee; display: flex; align-items: flex-end; justify-content: space-between; padding: 0 48px 22px; }
+    #mast .name { font-size: 96px; }
+    #mast .meta { font-size: 26px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #bdb8b0; padding-bottom: 10px; }
+    #rule { position: absolute; left: 0; top: 150px; width: 1080px; height: 14px; background: #d4231c; }
+    .beat { position: absolute; inset: 0; }
+    #h { position: absolute; left: 48px; top: 300px; width: 1000px; font-size: 248px; white-space: nowrap; }
+    #h div { display: block; }
+    #h .red { color: #d4231c; }
+    #clip { position: absolute; left: 30px; top: 470px; width: 1020px; background: #fff; box-shadow: 0 2px 0 rgba(0,0,0,.12), 0 30px 50px -25px rgba(0,0,0,.45); transform: rotate(-2.2deg); }
+    #clip img { display: block; width: 1020px; }
+    .banner { position: absolute; left: 0; background: #d4231c; color: #fff; padding: 18px 48px 8px; font-size: 130px; }
+    #b2 { top: 1000px; }
+    #src2 { position: absolute; left: 60px; top: 1200px; font-size: 26px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #4a4640; }
+    #react { position: absolute; left: 130px; top: 360px; width: 820px; height: 820px; transform: rotate(2.5deg); }
+    #react img { width: 820px; height: 820px; }
+    #cap3 { position: absolute; left: 0; top: 1240px; width: 1080px; background: #0a0a0a; color: #f4f2ee; text-align: center; padding: 22px 0 10px; font-size: 120px; }
+    #n2 { position: absolute; left: 30px; top: 170px; font-size: 1020px; line-height: 0.9; }
+    #n2t { position: absolute; left: 520px; top: 560px; width: 520px; font-size: 230px; }
+    #stamp { position: absolute; left: 110px; top: 1300px; border: 12px solid #d4231c; color: #d4231c; padding: 24px 40px 10px; font-size: 200px; transform: rotate(-7deg); }
+    #b5 { top: 260px; }
+    #q { position: absolute; left: 60px; top: 560px; width: 960px; font-size: 118px; font-weight: 800; letter-spacing: -0.03em; line-height: 1.02; }
+    #q .hl { background: linear-gradient(transparent 58%, rgba(212,35,28,.28) 58%); }
+    #qs { position: absolute; left: 60px; top: 1420px; font-size: 32px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #4a4640; }
+    #s2, #s3, #s4, #s5 { opacity: 0; }
+  </style>
+  <div id="root" data-composition-id="tab" data-width="1080" data-height="1920">
+    <img id="bg" src="assets/img/newsprint.jpg" alt="" />
+    <!-- 1 · headline slam -->
+    <div id="s1" class="beat">
+      <div id="h" class="lg"><div id="h1">A.I. agents</div><div id="h2">switched off</div><div id="h3">their own</div><div id="h4" class="red">alarms.</div></div>
+    </div>
+    <!-- 2 · the real clipping -->
+    <div id="s2" class="beat">
+      <div id="clip"><img src="assets/img/clipping.png" alt="Tech Times: OpenAI Found AI Agents That Disabled Safety Monitoring and Lied When Asked, Oct 22 2026" /></div>
+      <div id="b2" class="banner lg">OpenAI told on itself</div>
+      <div id="src2">Tech Times · Oct 22, 2026 · from OpenAI's own report</div>
+    </div>
+    <!-- 3 · reaction (public-domain art) -->
+    <div id="s3" class="beat">
+      <div id="react"><img src="assets/img/reaction.png" alt="Courbet, Le Désespéré (1843), halftone" /></div>
+      <div id="cap3" class="lg">The security team, Oct 3</div>
+    </div>
+    <!-- 4 · the number + stamp -->
+    <div id="s4" class="beat">
+      <div id="n2" class="lg">2</div>
+      <div id="n2t" class="lg">A.I. agents.</div>
+      <div id="stamp" class="lg">one denied it.</div>
+    </div>
+    <!-- 5 · the catch -->
+    <div id="s5" class="beat">
+      <div id="b5" class="banner lg">The catch</div>
+      <div id="q">“We don't yet have a <span class="hl">satisfying explanation</span> for this behavior.”</div>
+      <div id="qs">— OpenAI, quoted by AFP · Oct 2026</div>
+    </div>
+    <div id="mast"><div class="name lg">Catch the Error</div><div class="meta">Extra · 27 Oct 2026</div></div>
+    <div id="rule"></div>
+  </div>
+  <script>
+    (() => {
+      const tl = gsap.timeline({ paused: true });
+      const slam = (sel, t, from = 1.14) => tl.fromTo(sel, { scale: from, y: 18, opacity: 1 }, { scale: 1, y: 0, opacity: 1, duration: 0.12, ease: "power4.out", immediateRender: false }, t);
+      const show = (sel, t) => tl.set(sel, { opacity: 1 }, t);
+      const hide = (sel, t) => tl.set(sel, { opacity: 0 }, t);
+      tl.fromTo("#bg", { scale: 1 }, { scale: 1.05, duration: 10, ease: "none" }, 0);
+      // 1 — headline lines slam on the beat (line 1 is on screen at frame 0: the cover)
+      tl.set("#h2, #h3, #h4", { opacity: 0 }, 0);
+      [["#h2", 0.22], ["#h3", 0.44], ["#h4", 0.7]].forEach(([s, t]) => slam(s, t));
+      hide("#s1", 1.62);
+      // 2 — clipping
+      show("#s2", 1.62); tl.fromTo("#clip", { y: 60, rotation: -6 }, { y: 0, rotation: -2.2, duration: 0.22, ease: "power3.out" }, 1.62);
+      tl.set("#b2", { opacity: 0 }, 0); show("#b2", 2.13); slam("#b2", 2.13, 1.2);
+      tl.fromTo("#clip", { scale: 1 }, { scale: 1.04, duration: 1.4, ease: "none" }, 1.84);
+      hide("#s2", 3.05);
+      // 3 — reaction cut-in
+      show("#s3", 3.05); slam("#react", 3.05, 1.25); tl.fromTo("#react", { rotation: 2.5 }, { rotation: 1, duration: 1.5, ease: "none" }, 3.17);
+      hide("#s3", 4.6);
+      // 4 — number + stamp
+      show("#s4", 4.6); slam("#n2", 4.6, 1.1); tl.set("#stamp", { opacity: 0 }, 0); show("#stamp", 5.53); slam("#stamp", 5.53, 1.7);
+      tl.fromTo("#n2", { x: 0 }, { x: -24, duration: 2.2, ease: "none" }, 4.72);
+      hide("#s4", 6.8);
+      // 5 — the catch
+      show("#s5", 6.8); slam("#b5", 6.8, 1.2); tl.fromTo("#q", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.25, ease: "power3.out", immediateRender: false }, 7.05);
+      tl.fromTo("#q", { scale: 1 }, { scale: 1.03, duration: 2.7, ease: "none", transformOrigin: "0 0" }, 7.3);
+      tl.set({}, {}, 10);
+      window.__timelines["tab"] = tl;
+    })();
+  </script>
+</template>

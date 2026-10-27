@@ -1,0 +1,92 @@
+<template>
+  <style>
+    @font-face { font-family: "Permanent Marker"; font-display: block; src: url("assets/fonts/PermanentMarker.woff2") format("woff2"); }
+    @font-face { font-family: "Courier Prime"; font-display: block; src: url("assets/fonts/CourierPrime.woff2") format("woff2"); }
+    @font-face { font-family: "League Gothic"; font-display: block; src: url("assets/fonts/LeagueGothic.woff2") format("woff2"); }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #f2f0eb; color: #111; font-family: "Courier Prime", monospace; }
+    #bg { position: absolute; inset: -30px; width: 1140px; height: 1980px; object-fit: cover; }
+    .mk { font-family: "Permanent Marker", cursive; }
+    .tape { position: absolute; width: 190px; height: 54px; background: rgba(236, 226, 196, 0.82); clip-path: polygon(0 8%, 4% 0, 9% 10%, 14% 2%, 100% 0, 97% 50%, 100% 100%, 6% 94%, 2% 100%, 0 60%); }
+    /* hook */
+    #hook { position: absolute; inset: 0; }
+    #hk { position: absolute; left: 70px; top: 230px; width: 940px; font-size: 100px; line-height: 1.02; transform: rotate(-2deg); }
+    #vprint { position: absolute; left: 160px; top: 560px; width: 760px; transform: rotate(1.5deg); }
+    #vprint .m { position: absolute; left: -22px; top: -22px; width: 804px; height: 780px; }
+    #vprint .shot { position: absolute; left: 0; top: 0; width: 760px; }
+    #hkpen { position: absolute; left: 0; top: 0; width: 760px; height: 740px; overflow: visible; }
+    .mpen { fill: none; stroke: #d4231c; stroke-width: 10; stroke-linecap: round; stroke-linejoin: round; }
+    /* demo */
+    #demo { position: absolute; inset: 0; opacity: 0; }
+    #mount { position: absolute; left: 20px; top: 560px; width: 1040px; height: 874px; }
+    #win { position: absolute; left: 60px; top: 597px; width: 960px; height: 800px; overflow: hidden; background: #fff; }
+    #cam { position: absolute; left: 0; top: 0; width: 1200px; height: 1000px; transform-origin: 0 0; }
+    #cam video { position: absolute; left: 0; top: 0; width: 1200px; height: 1000px; }
+    .step { position: absolute; left: 70px; top: 250px; width: 940px; height: 250px; opacity: 0; }
+    .step .card { position: absolute; left: 0; top: 0; width: 940px; height: 230px; transform: rotate(-1.2deg); }
+    .step .card img { position: absolute; inset: 0; width: 940px; height: 230px; }
+    .step .num { position: absolute; left: 44px; top: 6px; font-size: 190px; line-height: 1; color: #d4231c; }
+    .step .txt { position: absolute; left: 230px; top: 52px; width: 680px; font-size: 52px; line-height: 1.15; font-weight: 700; }
+    #chip { position: absolute; left: 110px; top: 1500px; width: 860px; opacity: 0; transform: rotate(1deg); }
+    #chip .card { position: absolute; inset: 0; background: #111; }
+    #chip p { position: relative; padding: 26px 34px; color: #f4f2ee; font-size: 44px; line-height: 1.2; }
+    #pen2 { position: absolute; left: 60px; top: 597px; width: 960px; height: 800px; overflow: visible; }
+    #pen2 path, #hkpen path { stroke-dasharray: 1400; stroke-dashoffset: 1400; }
+    #src { position: absolute; left: 70px; top: 1820px; font-size: 28px; color: #5a554d; }
+  </style>
+  <div id="root" data-composition-id="zine" data-width="1080" data-height="1920">
+    <img id="bg" src="assets/img/paper.jpg" alt="" />
+
+    <!-- HOOK: the result first (a real frame of the tool), marker headline -->
+    <div id="hook">
+      <div id="hk" class="mk">This photo's “ID” doesn't check out.</div>
+      <div id="vprint">
+        <img class="m" src="assets/img/mount-small.png" alt="" />
+        <img class="shot" src="assets/img/verdict.png" alt="Content Credentials Verify: CA.jpg, Unrecognized — the issuer couldn't be recognized" />
+        <svg id="hkpen" viewBox="0 0 760 740" aria-hidden="true"><path class="mpen" d="M560 92 C 700 88, 760 120, 752 160 C 744 214, 640 238, 520 234 C 420 230, 380 200, 386 160 C 392 112, 470 92, 600 96" /></svg>
+        <div class="tape" style="left:-40px;top:-20px;transform:rotate(-28deg)"></div>
+        <div class="tape" style="right:-50px;top:-14px;transform:rotate(24deg)"></div>
+      </div>
+    </div>
+
+    <!-- DEMO: the real recording, camera follows each action -->
+    <div id="demo">
+      <img id="mount" src="assets/img/mount.png" alt="" />
+      <div id="win"><div id="cam"><video id="v" class="clip" src="assets/footage/demo.mp4" data-start="2" data-duration="8" muted playsinline></video></div></div>
+      <div class="tape" style="left:20px;top:575px;transform:rotate(-22deg)"></div>
+      <div class="tape" style="left:880px;top:580px;transform:rotate(18deg)"></div>
+      <svg id="pen2" viewBox="0 0 960 800" aria-hidden="true"><path class="mpen" d="M516 484 C 640 478, 800 482, 934 476" /></svg>
+      <div id="st1" class="step"><div class="card"><img src="assets/img/mount-small.png" alt="" style="width:940px;height:230px" /></div><div class="num mk">1</div><div class="txt">Open contentcredentials .org/verify</div></div>
+      <div id="st2" class="step"><div class="card"><img src="assets/img/mount-small.png" alt="" style="width:940px;height:230px" /></div><div class="num mk">2</div><div class="txt">Drop in the photo</div></div>
+      <div id="st3" class="step"><div class="card"><img src="assets/img/mount-small.png" alt="" style="width:940px;height:230px" /></div><div class="num mk">3</div><div class="txt">Read its history: who made it, what changed</div></div>
+      <div id="chip"><div class="card"></div><p>“Unrecognized” = the label can't be trusted. No label ≠ fake.</p></div>
+      <div id="src">Content Credentials Verify (C2PA) · sample: C2PA test file</div>
+    </div>
+  </div>
+  <script>
+    (() => {
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#bg", { scale: 1 }, { scale: 1.04, duration: 10, ease: "none" }, 0);
+      // HOOK 0–2s: result first
+      tl.fromTo("#vprint", { scale: 1 }, { scale: 1.05, duration: 2, ease: "none" }, 0);
+      tl.to("#hkpen path", { strokeDashoffset: 0, duration: 0.4, ease: "power2.inOut" }, 0.45);
+      tl.set("#hook", { opacity: 0 }, 2.0);
+      tl.set("#demo", { opacity: 1 }, 2.0);
+      // camera: the page is 1200x1000 in a 960x800 window; frame each action's box (from demo-log.json, film = 2 + (t - 6.4))
+      const W = 960, H = 800, PW = 1200, PH = 1000;
+      const frame = (cx, cy, s) => ({ scale: s, x: Math.min(0, Math.max(W - PW * s, W / 2 - cx * s)), y: Math.min(0, Math.max(H - PH * s, H / 2 - cy * s)) });
+      tl.set("#cam", frame(600, 500, 0.8), 0);
+      tl.to("#cam", { ...frame(879, 466, 1.5), duration: 0.7, ease: "power2.inOut" }, 2.6);    // upload
+      tl.to("#cam", { ...frame(1000, 300, 1.25), duration: 0.7, ease: "power2.inOut" }, 4.9);   // verdict panel
+      tl.to("#cam", { ...frame(1000, 700, 1.6), duration: 0.7, ease: "power2.inOut" }, 6.85);   // edit history
+      // step cards
+      const pop = (sel, t) => tl.fromTo(sel, { opacity: 1, scale: 1.15, rotation: -4 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.18, ease: "back.out(2)", immediateRender: false }, t);
+      pop("#st1", 2.0); tl.set("#st1", { opacity: 0 }, 3.75);
+      pop("#st2", 3.75); tl.set("#st2", { opacity: 0 }, 6.6);
+      pop("#st3", 6.6);
+      tl.to("#pen2 path", { strokeDashoffset: 0, duration: 0.35, ease: "power2.inOut" }, 7.95);
+      pop("#chip", 8.4);
+      tl.set({}, {}, 10);
+      window.__timelines["zine"] = tl;
+    })();
+  </script>
+</template>
