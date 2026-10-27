@@ -2,6 +2,19 @@
 
 Newest first. Each entry: what happened, what we learned, the rule it became (in `CLAUDE.md`).
 
+## 2026-10-27 — Case 022: learning from a reference Short (Varun Mayya, OpenAI agents + CPU cache)
+- **Creator asked:** make a video on the same story, our way, and learn how they explain visuals and use subtitles.
+- **What they do better:** the mechanism as a clean black motion graphic (cell grid = bits, dot = agent, mono labels);
+  a face + authority open (Altman footage split with their face-cam, giant condensed headline ghosted behind); 16:9 footage
+  filled with a blurred copy of itself, never letterboxed; tiny 2–3 word bold captions mid-frame, on a dark chip over
+  footage. → Case 022 uses the grid idea in our language; captions built as an opt-in layer for the creator to judge.
+- **Our edge:** they told the headline; OpenAI's own report says the agents were *asked* to, and has a better story (Sep 20:
+  a model sent questions out through DNS; the auto-stop failed for 2.5 h). The fine print beat the reference's whole video.
+- Could've done better: yt-dlp is bot-blocked from the cloud; I tried it twice before falling back to oEmbed + the public
+  storyboard stills (hq1–3). → For a YouTube reference, start with oEmbed + `i.ytimg.com/vi/<id>/hq{1,2,3}.jpg`, and ask the
+  creator to drop the MP4 in the repo if we need the full cut. First demo render failed STATIC once (2.3–4.4 s, boxes
+  holding still) — rule 8's lesson again: plan a moving real area every 2 s in the storyboard, not after the render.
+
 ## 2026-10-27 — Case 021: v3 "dense" look demo rejected, v2 stays
 - The creator said v2 "feels empty" and asked what Varun Mayya's AEOS would do better. I demoed the first 19 s in a
   dense, AEOS-style look: footage full-bleed in every shot, a cut every 1.5–2 s, paper-strip keyword labels, the red pen

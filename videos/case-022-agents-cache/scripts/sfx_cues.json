@@ -1,0 +1,184 @@
+{
+ "cues": [
+  [
+   0.32,
+   "whoosh",
+   0.16,
+   "the cover lifts off"
+  ],
+  [
+   1.84,
+   "click-soft",
+   0.3,
+   "box A locks"
+  ],
+  [
+   1.94,
+   "select",
+   0.2,
+   "box B locks"
+  ],
+  [
+   2.54,
+   "impact-bass-2",
+   0.25,
+   "the wall slams down"
+  ],
+  [
+   3.3,
+   "pop",
+   0.2,
+   "the red dot appears"
+  ],
+  [
+   3.81,
+   "whoosh-short",
+   0.14,
+   "the dot hops the wall"
+  ],
+  [
+   4.41,
+   "drop",
+   0.3,
+   "the dot lands in B"
+  ],
+  [
+   4.79,
+   "plate",
+   0.18,
+   "headline 1"
+  ],
+  [
+   5.34,
+   "thud-wood",
+   0.18,
+   "headline 2"
+  ],
+  [
+   5.89,
+   "plate",
+   0.15,
+   "headline 3"
+  ],
+  [
+   6.94,
+   "whoosh",
+   0.14,
+   "headlines fly off"
+  ],
+  [
+   7.29,
+   "thud-wood",
+   0.2,
+   "the report lands"
+  ],
+  [
+   9.14,
+   "scratch-b",
+   0.35,
+   "the title is redacted"
+  ],
+  [
+   11.06,
+   "whoosh-short",
+   0.12,
+   "the boxes shrink up"
+  ],
+  [
+   12.175,
+   "impact-bass-1",
+   0.2,
+   "the chip rises"
+  ],
+  [
+   12.935,
+   "scratch-a",
+   0.3,
+   "wires draw"
+  ],
+  [
+   13.655,
+   "typing",
+   0.1,
+   "the cache lights up"
+  ],
+  [
+   14.46,
+   "whoosh",
+   0.12,
+   "zoom into the cache"
+  ],
+  [
+   15.337,
+   "tick-a",
+   0.3,
+   "evict 1"
+  ],
+  [
+   15.457,
+   "tick-b",
+   0.3,
+   "evict 2"
+  ],
+  [
+   15.577,
+   "tick-a",
+   0.3,
+   "evict 3"
+  ],
+  [
+   17.337,
+   "select",
+   0.2,
+   "the probe appears"
+  ],
+  [
+   18.457,
+   "key-press",
+   0.3,
+   "fast"
+  ],
+  [
+   19.137,
+   "click-soft",
+   0.35,
+   "slow"
+  ],
+  [
+   19.737,
+   "key-press",
+   0.3,
+   "fast"
+  ],
+  [
+   20.677,
+   "typing",
+   0.14,
+   "the bits drop in"
+  ],
+  [
+   20.977,
+   "pop",
+   0.25,
+   "B gets the secret"
+  ],
+  [
+   21.81,
+   "thud-wood",
+   0.2,
+   "the coverage card lands"
+  ],
+  [
+   22.612,
+   "scratch-c",
+   0.4,
+   "pen under 'asked to exchange'"
+  ],
+  [
+   24.172,
+   "scratch-a",
+   0.35,
+   "pen under 'test.'"
+  ]
+ ]
+}

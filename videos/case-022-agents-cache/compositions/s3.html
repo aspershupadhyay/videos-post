@@ -1,0 +1,70 @@
+<template>
+  <style>
+    @font-face { font-family: "Inter"; font-weight: 100 900; font-display: block; src: url("assets/fonts/Inter.ttf") format("truetype"); }
+    @font-face { font-family: "Instrument Serif"; font-style: italic; font-weight: 400; font-display: block; src: url("assets/fonts/InstrumentSerif-Italic.woff2") format("woff2"); }
+    @font-face { font-family: "Courier Prime"; font-weight: 700; font-display: block; src: url("assets/fonts/CourierPrime-Bold.ttf") format("truetype"); }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0a0a0a; color: #f4f2ee; font-family: "Inter", sans-serif; }
+    .h { position: absolute; left: 76px; width: 930px; font-weight: 800; font-size: 118px; letter-spacing: -0.055em; line-height: 0.93; }
+    .it { position: relative; display: inline-block; font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400; color: #dd483f; letter-spacing: -0.01em; font-size: 1.12em; line-height: 0.8; padding-right: 0.06em; }
+    .ul { position: absolute; left: -2%; bottom: -0.16em; width: 104%; height: 0.3em; overflow: visible; }
+    .ul path { fill: none; stroke: #dd483f; stroke-width: 7; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; }
+    .mono { position: absolute; font-family: "Courier Prime", monospace; font-weight: 700; font-size: 28px; letter-spacing: 0.14em; text-transform: uppercase; color: #8c8c88; white-space: nowrap; }
+    .row { position: absolute; left: 0; width: 1080px; text-align: center; }
+    .card { position: absolute; overflow: hidden; background: #fff; border-radius: 22px; box-shadow: 0 40px 90px rgba(0, 0, 0, 0.55); }
+    .card img { position: absolute; left: 0; top: 0; display: block; }
+    .pen { position: absolute; overflow: visible; }
+    .pen path { fill: none; stroke: #dd483f; stroke-width: 8; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1; stroke-dashoffset: 1; }
+    .box { position: absolute; border-radius: 34px; background: #121211; border: 3px solid #2e2e2c; }
+    .grid { position: absolute; display: grid; }
+    .cell { border-radius: 10px; background: #1e1e1d; }
+    .cell.on { background: #f4f2ee; }
+    .dot { position: absolute; border-radius: 50%; background: #dd483f; }
+
+    #s3-chip { left: 220px; top: 820px; width: 640px; height: 640px; background: #121211; border-color: #f4f2ee;
+      outline: 14px dashed #2e2e2c; outline-offset: 10px; opacity: 0; }
+    #s3-lc { top: 300px; opacity: 0; color: #c9c9c5; }
+    #s3-wire { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
+    #s3-wire path { stroke-width: 6; stroke: #f4f2ee; }
+  </style>
+  <div id="root" data-composition-id="s3" data-width="1080" data-height="1920">
+
+    
+    <div id="s3-a" class="box" style="left:110px;top:700px;width:360px;height:360px">
+      <div id="s3-ga" class="grid" style="grid-template-columns:repeat(4,62px);grid-auto-rows:62px;gap:14px;left:35px;top:35px"><span id="s3-ga-0" class="cell on"></span><span id="s3-ga-1" class="cell"></span><span id="s3-ga-2" class="cell"></span><span id="s3-ga-3" class="cell on"></span><span id="s3-ga-4" class="cell"></span><span id="s3-ga-5" class="cell on"></span><span id="s3-ga-6" class="cell on"></span><span id="s3-ga-7" class="cell"></span><span id="s3-ga-8" class="cell"></span><span id="s3-ga-9" class="cell on"></span><span id="s3-ga-10" class="cell"></span><span id="s3-ga-11" class="cell"></span><span id="s3-ga-12" class="cell"></span><span id="s3-ga-13" class="cell"></span><span id="s3-ga-14" class="cell"></span><span id="s3-ga-15" class="cell on"></span></div>
+    </div>
+    <div id="s3-b" class="box" style="left:610px;top:700px;width:360px;height:360px">
+      <div id="s3-gb" class="grid" style="grid-template-columns:repeat(4,62px);grid-auto-rows:62px;gap:14px;left:35px;top:35px"><span id="s3-gb-0" class="cell"></span><span id="s3-gb-1" class="cell on"></span><span id="s3-gb-2" class="cell on"></span><span id="s3-gb-3" class="cell"></span><span id="s3-gb-4" class="cell"></span><span id="s3-gb-5" class="cell"></span><span id="s3-gb-6" class="cell"></span><span id="s3-gb-7" class="cell on"></span><span id="s3-gb-8" class="cell on"></span><span id="s3-gb-9" class="cell"></span><span id="s3-gb-10" class="cell"></span><span id="s3-gb-11" class="cell"></span><span id="s3-gb-12" class="cell on"></span><span id="s3-gb-13" class="cell"></span><span id="s3-gb-14" class="cell on"></span><span id="s3-gb-15" class="cell"></span></div>
+    </div>
+    <div id="s3-la" class="mono" style="left:110px;top:1086px;width:360px;text-align:center">Agent A · VM 1</div>
+    <div id="s3-lb" class="mono" style="left:610px;top:1086px;width:360px;text-align:center">Agent B · VM 2</div>
+    <svg id="s3-wire" class="pen" viewBox="0 0 1080 1920" aria-hidden="true">
+      <path pathLength="1" d="M290 570 C 290 700, 470 680, 470 806" />
+      <path pathLength="1" d="M790 570 C 790 700, 610 680, 610 806" />
+    </svg>
+    <div id="s3-chip" class="box"><div id="s3-g" class="grid" style="grid-template-columns:repeat(8,56px);grid-auto-rows:56px;gap:14px;left:44px;top:44px"><span id="s3-g-0" class="cell"></span><span id="s3-g-1" class="cell"></span><span id="s3-g-2" class="cell"></span><span id="s3-g-3" class="cell on"></span><span id="s3-g-4" class="cell"></span><span id="s3-g-5" class="cell"></span><span id="s3-g-6" class="cell"></span><span id="s3-g-7" class="cell"></span><span id="s3-g-8" class="cell"></span><span id="s3-g-9" class="cell"></span><span id="s3-g-10" class="cell on"></span><span id="s3-g-11" class="cell"></span><span id="s3-g-12" class="cell on"></span><span id="s3-g-13" class="cell"></span><span id="s3-g-14" class="cell"></span><span id="s3-g-15" class="cell"></span><span id="s3-g-16" class="cell"></span><span id="s3-g-17" class="cell"></span><span id="s3-g-18" class="cell"></span><span id="s3-g-19" class="cell"></span><span id="s3-g-20" class="cell"></span><span id="s3-g-21" class="cell on"></span><span id="s3-g-22" class="cell"></span><span id="s3-g-23" class="cell"></span><span id="s3-g-24" class="cell"></span><span id="s3-g-25" class="cell"></span><span id="s3-g-26" class="cell"></span><span id="s3-g-27" class="cell on"></span><span id="s3-g-28" class="cell"></span><span id="s3-g-29" class="cell"></span><span id="s3-g-30" class="cell on"></span><span id="s3-g-31" class="cell"></span><span id="s3-g-32" class="cell"></span><span id="s3-g-33" class="cell"></span><span id="s3-g-34" class="cell"></span><span id="s3-g-35" class="cell"></span><span id="s3-g-36" class="cell on"></span><span id="s3-g-37" class="cell"></span><span id="s3-g-38" class="cell"></span><span id="s3-g-39" class="cell"></span><span id="s3-g-40" class="cell"></span><span id="s3-g-41" class="cell"></span><span id="s3-g-42" class="cell"></span><span id="s3-g-43" class="cell"></span><span id="s3-g-44" class="cell on"></span><span id="s3-g-45" class="cell on"></span><span id="s3-g-46" class="cell"></span><span id="s3-g-47" class="cell"></span><span id="s3-g-48" class="cell"></span><span id="s3-g-49" class="cell"></span><span id="s3-g-50" class="cell"></span><span id="s3-g-51" class="cell on"></span><span id="s3-g-52" class="cell"></span><span id="s3-g-53" class="cell"></span><span id="s3-g-54" class="cell"></span><span id="s3-g-55" class="cell"></span><span id="s3-g-56" class="cell"></span><span id="s3-g-57" class="cell"></span><span id="s3-g-58" class="cell on"></span><span id="s3-g-59" class="cell"></span><span id="s3-g-60" class="cell"></span><span id="s3-g-61" class="cell on"></span><span id="s3-g-62" class="cell"></span><span id="s3-g-63" class="cell"></span></div></div>
+    <div id="s3-lc" class="mono row">One processor · one shared cache</div>
+  </div>
+  <script>
+    (() => {
+      const tl = gsap.timeline({ paused: true });
+      const at = (abs) => Math.max(0, abs - 11.06);
+      const rise = (sel, t, d = 0.45) => tl.fromTo(sel, { opacity: 0, y: 60, filter: "blur(10px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: d, ease: "expo.out", immediateRender: false }, at(t));
+      const pen = (sel, t, d = 0.36) => tl.to(sel, { strokeDashoffset: 0, duration: d, ease: "power2.inOut" }, at(t));
+      const type = (sel, t, cps = 34) => tl.to(sel + " .ch", { opacity: 1, duration: 0.001, stagger: 1 / cps, immediateRender: false }, at(t));
+
+      // carry from s1: the boxes shrink up and make room for the chip
+      tl.fromTo("#s3-a", { x: 0, y: 0, scale: 1 }, { x: 50, y: -310, scale: 0.62, duration: 0.6, ease: "power3.inOut" }, 0);
+      tl.fromTo("#s3-b", { x: 0, y: 0, scale: 1 }, { x: -50, y: -310, scale: 0.62, duration: 0.6, ease: "power3.inOut" }, 0);
+      tl.to(["#s3-la", "#s3-lb"], { opacity: 0, duration: 0.2 }, 0);
+      tl.set(["#s3-a", "#s3-b"], { borderColor: "#f4f2ee" }, 0);
+      tl.set("#s3-gb-5", { backgroundColor: "#dd483f" }, 0);
+      tl.fromTo("#s3-chip", { opacity: 1, y: 500, scale: 0.9 }, { opacity: 1, y: 0, scale: 1, duration: 0.6, ease: "expo.out", immediateRender: false }, at(11.975));
+      pen("#s3-wire path", 12.885, 0.4);
+      tl.fromTo("#s3-lc", { opacity: 0 }, { opacity: 1, duration: 0.25, immediateRender: false }, at(13.655));
+      tl.fromTo("#s3-g .cell", { scale: 0.6 }, { scale: 1, duration: 0.3, ease: "back.out(2)", stagger: { each: 0.008, from: "center", grid: [8, 8] }, immediateRender: false }, at(13.655));
+      tl.to("#s3-chip", { scale: 1.06, duration: 0.81, ease: "none" }, at(13.955));
+      tl.set({}, {}, 3.4);
+      window.__timelines["s3"] = tl;
+    })();
+  </script>
+</template>
