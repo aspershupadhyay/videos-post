@@ -2,169 +2,169 @@
  "_doc": "[film time the picture lands, file, volume, label]; build_sfx.py aligns each peak one frame after it.",
  "cues": [
   [
-   3.37,
+   3.274,
    "select",
    0.2,
    "568,000 lands"
   ],
   [
-   7.4,
+   7.26,
    "whoosh-short",
    0.16,
    "cut to the readout"
   ],
   [
-   8.984,
+   8.892,
    "whoosh",
    0.16,
    "punch into the drop box"
   ],
   [
-   9.484,
+   9.392,
    "scratch-c",
    0.45,
    "red pen circles >300 m"
   ],
   [
-   10.6,
+   10.42,
    "tick-a",
    0.25,
    "cut to the scale"
   ],
   [
-   10.81,
+   10.718,
    "riser",
    0.12,
    "the 300 m bar rises"
   ],
   [
-   12.41,
+   12.318,
    "pop",
    0.26,
    "5 m tick lands"
   ],
   [
-   12.81,
+   12.718,
    "scratch-a",
    0.4,
    "red pen under Apple's '5 meters'"
   ],
   [
-   13.75,
+   13.6,
    "whoosh-short",
    0.14,
    "back to the clip"
   ],
   [
-   16.114,
+   16.022,
    "scratch-b",
    0.45,
    "red pen under WONDERFUL"
   ],
   [
-   16.7,
+   16.57,
    "tick-b",
    0.25,
    "cut to the post"
   ],
   [
-   17.81,
+   17.718,
    "tick-a",
    0.22,
    "row: company"
   ],
   [
-   18.646,
+   18.554,
    "tick-b",
    0.22,
    "row: paper"
   ],
   [
-   19.525,
+   19.433,
    "tick-a",
    0.22,
    "row: device"
   ],
   [
-   20.484,
+   20.392,
    "tick-b",
    0.22,
    "row: our search"
   ],
   [
-   21.565,
+   21.473,
    "scratch-c",
    0.45,
    "red pen circles 'nothing'"
   ],
   [
-   22.1,
+   21.99,
    "impact-bass-2",
    0.28,
    "the twist: cut to white, music drops"
   ],
   [
-   23.653,
+   23.577,
    "thud-wood",
    0.25,
    "The real AI exists"
   ],
   [
-   27.0,
+   27.14,
    "whoosh-short",
    0.16,
    "to the research"
   ],
   [
-   27.9,
+   28.04,
    "whoosh",
    0.14,
    "figure arrives"
   ],
   [
-   32.55,
+   32.78,
    "whoosh-short",
    0.16,
    "to Hong Kong"
   ],
   [
-   35.985,
+   36.254,
    "tick-a",
    0.22,
    "figure swap"
   ],
   [
-   37.6,
+   37.8,
    "tick-b",
    0.25,
    "side by side"
   ],
   [
-   38.866,
+   39.135,
    "pop",
    0.24,
    "Actually real"
   ],
   [
-   39.95,
+   40.33,
    "impact-bass-1",
    0.22,
    "the line, on white"
   ],
   [
-   42.878,
+   43.023,
    "scratch-a",
    0.45,
    "red pen under 'edit'"
   ],
   [
-   43.5,
+   43.65,
    "whoosh-short",
    0.16,
    "the mark builds"
   ],
   [
-   44.03,
+   44.18,
    "stamp-c",
    0.3,
    "the bug lands in the lens"

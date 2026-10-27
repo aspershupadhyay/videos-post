@@ -28,7 +28,7 @@
   </style>
   <div id="root" data-composition-id="s9" data-width="1080" data-height="1920">
 
-    <div id="s9-b1" class="s9-box"><video id="s9-v" class="clip" src="assets/footage/walk.mp4" data-start="0" data-duration="2.350" muted playsinline></video></div>
+    <div id="s9-b1" class="s9-box"><video id="s9-v" class="clip" src="assets/footage/walk.mp4" data-start="0" data-duration="2.530" muted playsinline></video></div>
     <div id="s9-l1" class="s9-l disp">Less cinematic</div>
     <div id="s9-b2" class="s9-box"><img src="assets/shots/p9.png" alt="Fig. 9 from Huang et al. 2026" /></div>
     <div id="s9-l2" class="s9-l disp"><span class="it">Actually real.</span></div>
@@ -36,15 +36,15 @@
   <script>
     (() => {
       const tl = gsap.timeline({ paused: true });
-      const at = (abs) => Math.max(0, abs - 37.6);
+      const at = (abs) => Math.max(0, abs - 37.8);
       const blurIn = (sel, t, d = 0.18) => tl.fromTo(sel, { opacity: 0, filter: "blur(10px)", y: 14 }, { opacity: 1, filter: "blur(0px)", y: 0, duration: d, ease: "power4.out", immediateRender: false }, at(t));
       const out = (sel, t) => tl.to(sel, { opacity: 0, filter: "blur(8px)", duration: 0.14, ease: "power2.in" }, at(t));
       const pen = (sel, t, d = 0.38) => tl.to(sel, { strokeDashoffset: 0, duration: d, ease: "power2.inOut" }, at(t));
 
-      tl.to("#s9-b1", { opacity: 0.35, duration: 0.3 }, at(38.816));
-      tl.to("#s9-b2", { opacity: 1, duration: 0.3 }, at(38.816));
-      blurIn("#s9-l2", 38.866);
-      tl.set({}, {}, 2.35);
+      tl.to("#s9-b1", { opacity: 0.35, duration: 0.3 }, at(39.085));
+      tl.to("#s9-b2", { opacity: 1, duration: 0.3 }, at(39.085));
+      blurIn("#s9-l2", 39.135);
+      tl.set({}, {}, 2.53);
       window.__timelines["s9"] = tl;
     })();
   </script>

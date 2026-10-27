@@ -32,15 +32,15 @@
   <script>
     (() => {
       const tl = gsap.timeline({ paused: true });
-      const at = (abs) => Math.max(0, abs - 22.1);
+      const at = (abs) => Math.max(0, abs - 21.99);
       const blurIn = (sel, t, d = 0.18) => tl.fromTo(sel, { opacity: 0, filter: "blur(10px)", y: 14 }, { opacity: 1, filter: "blur(0px)", y: 0, duration: d, ease: "power4.out", immediateRender: false }, at(t));
       const out = (sel, t) => tl.to(sel, { opacity: 0, filter: "blur(8px)", duration: 0.14, ease: "power2.in" }, at(t));
       const pen = (sel, t, d = 0.38) => tl.to(sel, { strokeDashoffset: 0, duration: d, ease: "power2.inOut" }, at(t));
 
-      tl.fromTo("#s6-a", { opacity: 0.35 }, { opacity: 1, duration: 0.25, immediateRender: false }, at(22.479));
-      blurIn("#s6-b", 23.653);
-      blurIn("#s6-c", 25.506);
-      tl.set({}, {}, 4.9);
+      tl.fromTo("#s6-a", { opacity: 0.35 }, { opacity: 1, duration: 0.25, immediateRender: false }, at(22.387));
+      blurIn("#s6-b", 23.577);
+      blurIn("#s6-c", 25.455);
+      tl.set({}, {}, 5.15);
       window.__timelines["s6"] = tl;
     })();
   </script>

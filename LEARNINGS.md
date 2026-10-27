@@ -2,6 +2,18 @@
 
 Newest first. Each entry: what happened, what we learned, the rule it became (in `CLAUDE.md`).
 
+## 2026-10-27 — Case 020 fix: "AI" pronunciation + a natural CTA (creator feedback)
+- **Heard by the creator:** "AI" came out stretched ("AAAI ai ai") with `pronounce {"AI": "ay-eye"}`.
+  Tested three spellings on 3 lines (myvoice `sparsh`, lexicon off): **"A.I." → clean "AI" in all 3, word 0.26–0.34 s**;
+  "A-I" also clean; **"Ay Eye" fails** (heard "and I.I.", "A.I.I."). → Rule: write **A.I.** in the script text,
+  `lexicon: false`, no pronounce entry for AI. Measure the word's length (natural ≈ 0.3–0.45 s) when in doubt.
+- **CTA:** "We read the fine print. Catch the Error." sounded like a slogan (AI slop). Replaced with a person talking:
+  "Seen a clip like this? Send it our way. We'll check it." — also asks for DMs (free topic sourcing).
+  → Rule: the CTA is a natural ask a creator would say out loud, never a tagline read aloud.
+- Scene cuts were hard-coded seconds and drifted when lines were re-voiced. → `build_scenes.py` now derives every
+  cut from `timing.json` (0.2 s before the line). Never hard-code cut times.
+- Cost: one L4 job with 10 lines (~6 min incl. model load), GPU stopped straight after.
+
 ## 2026-10-27 — Review: Case 020 (viral cliff "AI" HUD) — could've done better
 - **Worked:** blank-frame gate PASS first try (rule 8 paid off); voice with subtitles/polish OFF took ~2 min on an L4
   and 0 re-voices; GPU stopped right after (≈0.15 units). Phrase cues from the voice's own pauses replaced Whisper.
@@ -44,7 +56,7 @@ Newest first. Each entry: what happened, what we learned, the rule it became (in
   "Catch the Air/Ur" three times. At **0.5–0.7** with the name written as plain words ("Catch the Error",
   not "CatchTheError" + a pronounce rule) it was heard correctly in 12 of 12 takes.
   → Rule: pin `params.temperature` 0.6 for brand names and numbers; always read each line's `heard` text.
-- "AI" via the lexicon became "A I" with a pause ("an A, I took over"). Fix: `lexicon: false` + `pronounce {"AI": "ay-eye"}`.
+- "AI" via the lexicon became "A I" with a pause ("an A, I took over"). Fix then: `lexicon: false` + `pronounce {"AI": "ay-eye"}` — **superseded 2026-10-27: write "A.I." instead (ay-eye stretches).**
 - "Kimi" needed `Kee-mee` (with hyphen) for Whisper to hear "Kimi"; "Keemee" was heard as "Kami".
 - Never end on two sentences that can run together ("…don't have to. Follow…" was heard as "don't have to follow").
 - Moonshot's research footage has labels burned over the subject: show it 16:9 framed on black instead of
