@@ -32,7 +32,8 @@ Log every new piece of feedback in `LEARNINGS.md` with the date, and promote it 
    the one-sentence spine first; the strongest fact is line 1 and frame 0. 40–50 s, max 3 numbers on screen, have a take.
 8. **No dead frames.** Something real is on screen from the first frame of every scene; nothing frozen > 2 s.
    `python3 tools/qa_frames.py` must PASS on the draft render before the delivery render.
-9. **Every video ships a cover** (`renders/cover.png`, series template in `STRATEGY.md` §5) that reads in the 3:4 grid crop.
+9. **Every video ships a cover** (`renders/cover.png`, series template in `STRATEGY.md` §5) that reads in the 3:4 grid crop
+   and at 120 px wide. The printed-photo still shows whole lines only (crop off any half-cut line).
 10. **Spend resources once.** Draft render → QA → one delivery render; re-voice only the failing lines; reuse the last
     case's scripts, SFX and fonts.
 11. **Learn every video.** Log the creator's numbers and feedback in `LEARNINGS.md` + the `STRATEGY.md` scoreboard; promote
@@ -64,3 +65,10 @@ Log every new piece of feedback in `LEARNINGS.md` with the date, and promote it 
     must be clearly readable on a phone (its text ≥ 26 px tall in the frame: shoot pages at ~400 css px wide ×3, crop to
     the lines that matter, declare `data-text-px` on the `<img>`). Run `node tools/qa_layout.mjs <project>` on the live
     preview; it must PASS, then look at a snapshot of every scene, then the draft render + `qa_frames.py`.
+19. **Explain a mechanism one cause per line (creator, Case 022).** When a story has a "how it works", give each step
+    its own short line and its own on-screen action (cache = a shelf → on-shelf fast / off-shelf slow → kick = 1 /
+    leave = 0 → time the read → bit by bit). One sentence carrying the whole mechanism over an abstract graphic failed.
+20. **Deliver to VoiceBox only (creator, 2026-10-27).** The final MP4 and cover go to VoiceBox Files (`add_media`;
+    Videos / Images), named `case-0NN-<slug>-9x16.mp4` and `case-0NN-<slug>-cover.png`; check the copy's md5 against
+    the local file, then keep them out of git (`renders/` is ignored). Files over ~3 MB need a public link for
+    `add_media`; the repo is public, so push the file, copy it, then `git rm --cached` it in the next commit.

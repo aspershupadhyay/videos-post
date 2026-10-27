@@ -1,6 +1,8 @@
 # Case 022 — post copy
 
-File: `renders/case-022-agents-cache-9x16.mp4` (64.6 s). Cover: `renders/cover.png` (frame 0).
+File (VoiceBox only, Files → Videos): `case-022-openai-agents-cache-channel-9x16.mp4` (64.6 s, md5 cf396978…).
+Cover (VoiceBox, Files → Images): `case-022-openai-agents-cache-channel-cover.png` (= frame 0). Rebuild locally with
+`python3 scripts/build_scenes.py --captions && python3 scripts/make_cues.py`, then render.
 
 ## Instagram Reels / YouTube Shorts
 > Two A.I. agents, two sealed machines, and they still passed a secret: one kicked data out of the shared CPU cache,

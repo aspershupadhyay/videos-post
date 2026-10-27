@@ -3,8 +3,7 @@ node_modules/
 **/.hyperframes/
 __pycache__/
 .DS_Store
+# Final renders and covers live on VoiceBox only (Files → Videos / Images), not in git (creator, 2026-10-27).
 videos/*/renders/*
-!videos/*/renders/*.mp4
-!videos/*/renders/cover.png
 **/.thumbnails/
 **/.waveform-cache/
