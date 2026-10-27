@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en" data-resolution="portrait">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1080, height=1920" />
+  <title>CatchTheError — Case 021 v3 look demo</title>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>
+    @font-face { font-family: "Inter"; font-weight: 100 900; font-display: block; src: url("assets/fonts/Inter.ttf") format("truetype"); }
+    @font-face { font-family: "Instrument Serif"; font-style: italic; font-weight: 400; font-display: block; src: url("assets/fonts/InstrumentSerif-Italic.woff2") format("woff2"); }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { width: 1080px; height: 1920px; overflow: hidden; background: #e7e7e5; }
+    #root { position: relative; width: 1080px; height: 1920px; overflow: hidden; background: #e7e7e5; font-family: "Inter", sans-serif; color: #141414; }
+    .shot { position: absolute; inset: 0; overflow: hidden; visibility: hidden; }
+    .bleed, .plate { position: absolute; inset: 0; overflow: hidden; }
+    .plate { filter: blur(26px) brightness(0.72) saturate(1.1); transform: scale(1.12); }
+    .photo { position: absolute; overflow: hidden; background: #fff; border: 6px solid #1b1b1b; border-radius: 26px; box-shadow: 14px 16px 0 rgba(0, 0, 0, 0.28), 0 40px 90px rgba(0, 0, 0, 0.35); }
+    /* the keyword label: a strip of the logo's paper, slapped on the footage */
+    .lab { position: absolute; left: 56px; max-width: 880px; padding: 16px 34px 26px; background: #e7e7e5 url("assets/logo/paper-1080x1920.png") 0 0 / 1080px 1920px;
+           font-weight: 800; font-size: 124px; letter-spacing: -0.055em; line-height: 0.95; color: #141414; transform: rotate(-2deg); transform-origin: 0 50%;
+           box-shadow: 10px 12px 0 rgba(0, 0, 0, 0.32); }
+    .it { position: relative; display: inline-block; font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400; color: #dd483f; letter-spacing: -0.01em; font-size: 1.14em; line-height: 0.8; padding-right: 0.06em; }
+    .ul { position: absolute; left: -2%; bottom: -0.14em; width: 104%; height: 0.3em; overflow: visible; }
+    .ul path, .pen path { fill: none; stroke: #dd483f; stroke-width: 8; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; }
+    .pen { position: absolute; overflow: visible; }
+    #grain { position: absolute; inset: 0; background: url("assets/logo/paper-1080x1920.png") 0 0 / 1080px 1920px; mix-blend-mode: multiply; opacity: 0.22; pointer-events: none; z-index: 40; }
+  </style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="19.0" data-width="1080" data-height="1920">
+  <div id="A" class="shot">
+  <div class="plate"><img src="assets/shots/photo-end.png" style="position:absolute;left:-1764.0px;top:-288.0px;width:4608.0px;height:2592.0px" alt="" /></div>
+  <div id="A-hero" class="photo" style="left:40px;top:640px;width:1000px;height:730px">
+    <img src="assets/shots/photo-end.png" style="position:absolute;left:-371.1px;top:-121.6px;width:1742.3px;height:980.0px" alt="The Lisbon photo OpenAI's demo starts from" />
+  </div>
+  <div id="A-ring" style="position:absolute;left:458px;top:945px;width:300px;height:230px;--p:0;-webkit-mask-image:conic-gradient(from 340deg at 50% 50%, #000 calc(var(--p) * 1deg), transparent calc(var(--p) * 1deg));mask-image:conic-gradient(from 340deg at 50% 50%, #000 calc(var(--p) * 1deg), transparent calc(var(--p) * 1deg))"><img src="assets/logo/circle-crop.png" alt="" style="position:absolute;left:0;top:0;width:100%;height:100%" /></div>
+  <div id="A-l" class="lab" style="top:330px">One <span class="it" id="A-it">photo.<svg class="ul" viewBox="0 0 100 20" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" vector-effect="non-scaling-stroke" d="M2 12 C 30 7, 66 11, 98 5" /></svg></span></div>
+  </div>
+  <div id="B" class="shot">
+  <div class="plate"><img src="assets/shots/photo-end.png" style="position:absolute;left:-1764.0px;top:-288.0px;width:4608.0px;height:2592.0px" alt="" /></div>
+  <div id="B-cam" style="position:absolute;inset:0">
+    <div class="photo" style="left:40px;top:640px;width:1000px;height:730px">
+      <img src="assets/shots/photo-end.png" style="position:absolute;left:-371.1px;top:-121.6px;width:1742.3px;height:980.0px" alt="" />
+      <video id="B-v" class="clip" src="assets/footage/photo.mp4" data-start="1.080" data-duration="1.100" data-media-start="0.60" muted playsinline style="position:absolute;left:-371.1px;top:-121.6px;width:1742.3px;height:980.0px"></video>
+    </div>
+    <svg id="B-ul" class="pen" style="left:70px;top:1362px;width:900px;height:40px" viewBox="0 0 900 40" aria-hidden="true"><path pathLength="1" d="M6 24 C 260 14, 600 22, 894 10" /></svg>
+  </div>
+  <div id="B-l" class="lab" style="top:330px">One <span class="it" id="B-it">sentence.<svg class="ul" viewBox="0 0 100 20" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" vector-effect="non-scaling-stroke" d="M2 12 C 30 7, 66 11, 98 5" /></svg></span></div>
+  </div>
+  <div id="C" class="shot">
+  <div class="bleed"><video id="C-v" class="clip" src="assets/footage/build.mp4" data-start="2.180" data-duration="1.240" data-media-start="2.40" muted playsinline style="position:absolute;left:-1810.0px;top:-340.0px;width:4800.0px;height:2700.0px"></video></div>
+  <div id="C-l" class="lab" style="top:330px">A.I. <span class="it" id="C-it">designed<svg class="ul" viewBox="0 0 100 20" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" vector-effect="non-scaling-stroke" d="M2 12 C 30 7, 66 11, 98 5" /></svg></span></div>
+  </div>
+  <div id="D" class="shot">
+  <div class="bleed" style="background:#fff">
+    <img src="assets/shots/toytall-end.png" style="position:absolute;left:0;top:0;width:1080px;height:1920px" alt="" />
+    <video id="D-v" class="clip" src="assets/footage/toytall.mp4" data-start="3.420" data-duration="0.853" data-media-start="0.00" muted playsinline style="position:absolute;left:0;top:0;width:1080px;height:1920px"></video>
+  </div>
+  <div id="D-ring" style="position:absolute;left:200px;top:660px;width:720px;height:540px;--p:0;-webkit-mask-image:conic-gradient(from 340deg at 50% 50%, #000 calc(var(--p) * 1deg), transparent calc(var(--p) * 1deg));mask-image:conic-gradient(from 340deg at 50% 50%, #000 calc(var(--p) * 1deg), transparent calc(var(--p) * 1deg))"><img src="assets/logo/circle-crop.png" alt="" style="position:absolute;left:0;top:0;width:100%;height:100%" /></div>
+  <div id="D-l" class="lab" style="top:330px">this <span class="it" id="D-it">toy.<svg class="ul" viewBox="0 0 100 20" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" vector-effect="non-scaling-stroke" d="M2 12 C 30 7, 66 11, 98 5" /></svg></span></div>
+  </div>
+  <div id="E" class="shot">
+  <div class="plate"><video id="E-pv" class="clip" src="assets/footage/build.mp4" data-start="4.273" data-duration="4.434" data-media-start="0.20" muted playsinline style="position:absolute;left:-1668.0px;top:-236.0px;width:4416.0px;height:2484.0px"></video></div>
+  <div id="E-cam" style="position:absolute;inset:0">
+    <div id="E-hero" class="photo" style="left:40px;top:720px;width:1000px;height:551px">
+      <video id="E-v" class="clip" src="assets/footage/build.mp4" data-start="4.273" data-duration="4.434" data-media-start="0.20" muted playsinline style="position:absolute;left:-111.3px;top:-63.9px;width:1227.6px;height:690.5px"></video>
+    </div>
+    <div id="E-ring" style="position:absolute;left:361px;top:1226px;width:364px;height:76px;--p:0;-webkit-mask-image:conic-gradient(from 340deg at 50% 50%, #000 calc(var(--p) * 1deg), transparent calc(var(--p) * 1deg));mask-image:conic-gradient(from 340deg at 50% 50%, #000 calc(var(--p) * 1deg), transparent calc(var(--p) * 1deg))"><img src="assets/logo/circle-crop.png" alt="" style="position:absolute;left:0;top:0;width:100%;height:100%" /></div>
+    <div id="E-red" style="position:absolute;left:395px;top:1257px;width:296px;height:20px;background:#dd483f;clip-path:inset(0 100% 0 0);border-radius:3px"></div>
+  </div>
+  <div id="E-l" class="lab" style="top:330px">One tiny <span class="it" id="E-it">line.<svg class="ul" viewBox="0 0 100 20" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" vector-effect="non-scaling-stroke" d="M2 12 C 30 7, 66 11, 98 5" /></svg></span></div>
+  <div id="E-l2" class="lab" style="top:330px;opacity:0">Keep your <span class="it" id="E-it2">eye<svg class="ul" viewBox="0 0 100 20" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" vector-effect="non-scaling-stroke" d="M2 12 C 30 7, 66 11, 98 5" /></svg></span> on it.</div>
+  </div>
+  <div id="H" class="shot">
+  <div class="bleed" style="background:#000"><video id="H-v" class="clip" src="assets/footage/source.mp4" data-start="8.707" data-duration="2.520" data-media-start="1.35" muted playsinline style="position:absolute;left:-1236.0px;top:-76.0px;width:3552.0px;height:1998.0px"></video></div>
+  <div id="H-l" class="lab" style="top:330px">GPT-6.1 <span class="it" id="H-it">Terra<svg class="ul" viewBox="0 0 100 20" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" vector-effect="non-scaling-stroke" d="M2 12 C 30 7, 66 11, 98 5" /></svg></span></div>
+  </div>
+  <div id="I" class="shot">
+  <div class="bleed"><video id="I-v" class="clip" src="assets/footage/source.mp4" data-start="11.227" data-duration="1.240" data-media-start="4.60" muted playsinline style="position:absolute;left:-1495.0px;top:-39.0px;width:3552.0px;height:1998.0px"></video></div>
+  <div id="I-l" class="lab" style="top:330px">Built to <span id="I-chat" style="position:relative;display:inline-block">chat.<svg class="pen" style="left:-4%;top:0;width:108%;height:100%" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path id="I-strike" pathLength="1" vector-effect="non-scaling-stroke" d="M2 58 C 30 50, 70 54, 98 46" style="stroke-width:13" /></svg></span></div>
+  </div>
+  <div id="J" class="shot">
+  <div class="bleed" style="background:#fff"><video id="J-v" class="clip" src="assets/footage/app.mp4" data-start="12.467" data-duration="1.668" data-media-start="0.40" muted playsinline style="position:absolute;left:-1170.0px;top:-104.0px;width:3648.0px;height:2052.0px"></video></div>
+  <svg id="J-cur" style="position:absolute;left:0;top:0;width:70px;height:90px;overflow:visible" viewBox="0 0 70 90" aria-hidden="true"><path d="M4 4 L 4 70 L 22 54 L 36 84 L 48 78 L 34 50 L 58 50 Z" fill="#dd483f" stroke="#fff" stroke-width="5" stroke-linejoin="round" /></svg>
+  <div id="J-rip" style="position:absolute;width:120px;height:120px;border:7px solid #dd483f;border-radius:50%;opacity:0"></div>
+  <div id="J-l" class="lab" style="top:330px">Uses your <span class="it" id="J-it">computer.<svg class="ul" viewBox="0 0 100 20" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" vector-effect="non-scaling-stroke" d="M2 12 C 30 7, 66 11, 98 5" /></svg></span></div>
+  </div>
+  <div id="K" class="shot">
+  <div class="bleed" style="background:#e9e9e9"><video id="K-v" class="clip" src="assets/footage/build.mp4" data-start="14.135" data-duration="2.160" data-media-start="0.00" muted playsinline style="position:absolute;left:-930.0px;top:-90.0px;width:4032.0px;height:2268.0px"></video></div>
+  <div id="K-l" class="lab" style="top:330px">Opens a <span class="it" id="K-it">3D app.<svg class="ul" viewBox="0 0 100 20" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" vector-effect="non-scaling-stroke" d="M2 12 C 30 7, 66 11, 98 5" /></svg></span></div>
+  </div>
+  <div id="L" class="shot">
+  <div class="bleed" style="background:#9a9a9a"><div id="L-z" style="position:absolute;inset:0"><video id="L-v" class="clip" src="assets/footage/build.mp4" data-start="16.295" data-duration="0.880" data-media-start="1.60" muted playsinline style="position:absolute;left:-1930.0px;top:-392.0px;width:4992.0px;height:2808.0px"></video></div></div>
+  <div id="L-l" class="lab" style="top:330px">builds the <span class="it" id="L-it">tram.<svg class="ul" viewBox="0 0 100 20" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" vector-effect="non-scaling-stroke" d="M2 12 C 30 7, 66 11, 98 5" /></svg></span></div>
+  </div>
+  <div id="M0" class="shot">
+  <div class="bleed" style="background:#9a9a9a"><video id="M0-v" class="clip" src="assets/footage/build.mp4" data-start="17.175" data-duration="0.580" data-media-start="0.60" muted playsinline style="position:absolute;left:-2215.0px;top:-606.0px;width:5568.0px;height:3132.0px"></video></div>
+  <div id="M0-l" class="lab" style="top:330px">piece</div>
+  </div>
+  <div id="M1" class="shot">
+  <div class="bleed" style="background:#9a9a9a"><video id="M1-v" class="clip" src="assets/footage/build.mp4" data-start="17.755" data-duration="0.200" data-media-start="2.60" muted playsinline style="position:absolute;left:-2025.0px;top:-498.0px;width:5184.0px;height:2916.0px"></video></div>
+  <div id="M1-l" class="lab" style="top:330px">piece by</div>
+  </div>
+  <div id="M2" class="shot">
+  <div class="bleed" style="background:#9a9a9a"><video id="M2-v" class="clip" src="assets/footage/build.mp4" data-start="17.955" data-duration="1.045" data-media-start="4.20" muted playsinline style="position:absolute;left:-1835.0px;top:-390.0px;width:4800.0px;height:2700.0px"></video></div>
+  <div id="M2-l" class="lab" style="top:330px">piece by <span class="it" id="M2-it">piece.<svg class="ul" viewBox="0 0 100 20" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" vector-effect="non-scaling-stroke" d="M2 12 C 30 7, 66 11, 98 5" /></svg></span></div>
+  </div>
+  <div id="grain"></div>
+    <audio id="vo-01" class="clip" src="assets/vo/vo-01.wav" data-start="0.1" data-duration="4.073" data-track-index="10" data-volume="1" data-audio-group="voiceover"></audio>
+    <audio id="vo-02" class="clip" src="assets/vo/vo-02.wav" data-start="4.473" data-duration="4.084" data-track-index="10" data-volume="1" data-audio-group="voiceover"></audio>
+    <audio id="vo-03" class="clip" src="assets/vo/vo-03.wav" data-start="8.907" data-duration="5.128" data-track-index="10" data-volume="1" data-audio-group="voiceover"></audio>
+    <audio id="vo-04" class="clip" src="assets/vo/vo-04.wav" data-start="14.335" data-duration="4.187" data-track-index="10" data-volume="1" data-audio-group="voiceover"></audio>
+    <audio id="music" class="clip" src="assets/music/bed.wav" data-start="0" data-duration="19.0" data-track-index="11" data-volume="1" data-audio-group="music"></audio>
+    <audio id="sfx-00" class="clip" src="assets/sfx/stamp-b.mp3" data-start="0.050" data-duration="0.600" data-track-index="12" data-volume="0.12" data-audio-group="sfx"></audio>
+    <audio id="sfx-01" class="clip" src="assets/sfx/stamp-b.mp3" data-start="1.080" data-duration="0.600" data-track-index="13" data-volume="0.12" data-audio-group="sfx"></audio>
+    <audio id="sfx-02" class="clip" src="assets/sfx/whoosh-short.mp3" data-start="1.080" data-duration="0.575" data-track-index="12" data-volume="0.14" data-audio-group="sfx"></audio>
+    <audio id="sfx-03" class="clip" src="assets/sfx/typing.mp3" data-start="1.280" data-duration="1.541" data-track-index="13" data-volume="0.1" data-audio-group="sfx"></audio>
+    <audio id="sfx-04" class="clip" src="assets/sfx/whoosh.mp3" data-start="2.180" data-duration="0.575" data-track-index="12" data-volume="0.16" data-audio-group="sfx"></audio>
+    <audio id="sfx-05" class="clip" src="assets/sfx/stamp-b.mp3" data-start="2.530" data-duration="0.600" data-track-index="13" data-volume="0.12" data-audio-group="sfx"></audio>
+    <audio id="sfx-06" class="clip" src="assets/sfx/thud-wood.mp3" data-start="3.420" data-duration="0.288" data-track-index="12" data-volume="0.3" data-audio-group="sfx"></audio>
+    <audio id="sfx-07" class="clip" src="assets/sfx/stamp-b.mp3" data-start="3.470" data-duration="0.600" data-track-index="13" data-volume="0.12" data-audio-group="sfx"></audio>
+    <audio id="sfx-08" class="clip" src="assets/sfx/scratch-c.mp3" data-start="3.710" data-duration="0.360" data-track-index="12" data-volume="0.4" data-audio-group="sfx"></audio>
+    <audio id="sfx-09" class="clip" src="assets/sfx/tick-a.mp3" data-start="4.273" data-duration="0.072" data-track-index="13" data-volume="0.25" data-audio-group="sfx"></audio>
+    <audio id="sfx-10" class="clip" src="assets/sfx/stamp-b.mp3" data-start="5.413" data-duration="0.600" data-track-index="12" data-volume="0.12" data-audio-group="sfx"></audio>
+    <audio id="sfx-11" class="clip" src="assets/sfx/scratch-a.mp3" data-start="6.133" data-duration="0.168" data-track-index="13" data-volume="0.4" data-audio-group="sfx"></audio>
+    <audio id="sfx-12" class="clip" src="assets/sfx/scratch-b.mp3" data-start="7.103" data-duration="0.168" data-track-index="12" data-volume="0.45" data-audio-group="sfx"></audio>
+    <audio id="sfx-13" class="clip" src="assets/sfx/stamp-b.mp3" data-start="7.753" data-duration="0.600" data-track-index="13" data-volume="0.12" data-audio-group="sfx"></audio>
+    <audio id="sfx-14" class="clip" src="assets/sfx/whoosh-cinematic.mp3" data-start="7.753" data-duration="5.544" data-track-index="12" data-volume="0.12" data-audio-group="sfx"></audio>
+    <audio id="sfx-15" class="clip" src="assets/sfx/stamp-a.mp3" data-start="9.217" data-duration="0.552" data-track-index="13" data-volume="0.25" data-audio-group="sfx"></audio>
+    <audio id="sfx-16" class="clip" src="assets/sfx/whoosh-short.mp3" data-start="11.227" data-duration="0.575" data-track-index="12" data-volume="0.14" data-audio-group="sfx"></audio>
+    <audio id="sfx-17" class="clip" src="assets/sfx/stamp-b.mp3" data-start="11.557" data-duration="0.600" data-track-index="13" data-volume="0.12" data-audio-group="sfx"></audio>
+    <audio id="sfx-18" class="clip" src="assets/sfx/scratch-a.mp3" data-start="12.047" data-duration="0.168" data-track-index="12" data-volume="0.4" data-audio-group="sfx"></audio>
+    <audio id="sfx-19" class="clip" src="assets/sfx/whoosh-short.mp3" data-start="12.467" data-duration="0.575" data-track-index="13" data-volume="0.14" data-audio-group="sfx"></audio>
+    <audio id="sfx-20" class="clip" src="assets/sfx/stamp-b.mp3" data-start="13.047" data-duration="0.600" data-track-index="12" data-volume="0.12" data-audio-group="sfx"></audio>
+    <audio id="sfx-21" class="clip" src="assets/sfx/click-soft.mp3" data-start="13.087" data-duration="0.366" data-track-index="13" data-volume="0.35" data-audio-group="sfx"></audio>
+    <audio id="sfx-22" class="clip" src="assets/sfx/tick-b.mp3" data-start="14.135" data-duration="0.048" data-track-index="12" data-volume="0.25" data-audio-group="sfx"></audio>
+    <audio id="sfx-23" class="clip" src="assets/sfx/stamp-b.mp3" data-start="14.755" data-duration="0.600" data-track-index="13" data-volume="0.12" data-audio-group="sfx"></audio>
+    <audio id="sfx-24" class="clip" src="assets/sfx/whoosh.mp3" data-start="16.295" data-duration="0.575" data-track-index="12" data-volume="0.14" data-audio-group="sfx"></audio>
+    <audio id="sfx-25" class="clip" src="assets/sfx/stamp-b.mp3" data-start="16.345" data-duration="0.600" data-track-index="13" data-volume="0.12" data-audio-group="sfx"></audio>
+    <audio id="sfx-26" class="clip" src="assets/sfx/thud-wood.mp3" data-start="17.175" data-duration="0.288" data-track-index="12" data-volume="0.3" data-audio-group="sfx"></audio>
+    <audio id="sfx-27" class="clip" src="assets/sfx/plate.mp3" data-start="17.755" data-duration="0.528" data-track-index="13" data-volume="0.3" data-audio-group="sfx"></audio>
+    <audio id="sfx-28" class="clip" src="assets/sfx/drop.mp3" data-start="17.955" data-duration="0.216" data-track-index="12" data-volume="0.35" data-audio-group="sfx"></audio>
+</div>
+<script>
+  window.__timelines = window.__timelines || {};
+  const tl = gsap.timeline({ paused: true });
+    tl.set("#A", { visibility: "visible" }, 0.000); tl.set("#A", { visibility: "hidden" }, 1.080);
+  tl.set("#B", { visibility: "visible" }, 1.080); tl.set("#B", { visibility: "hidden" }, 2.180);
+  tl.set("#C", { visibility: "visible" }, 2.180); tl.set("#C", { visibility: "hidden" }, 3.420);
+  tl.set("#D", { visibility: "visible" }, 3.420); tl.set("#D", { visibility: "hidden" }, 4.273);
+  tl.set("#E", { visibility: "visible" }, 4.273); tl.set("#E", { visibility: "hidden" }, 8.707);
+  tl.set("#H", { visibility: "visible" }, 8.707); tl.set("#H", { visibility: "hidden" }, 11.227);
+  tl.set("#I", { visibility: "visible" }, 11.227); tl.set("#I", { visibility: "hidden" }, 12.467);
+  tl.set("#J", { visibility: "visible" }, 12.467); tl.set("#J", { visibility: "hidden" }, 14.135);
+  tl.set("#K", { visibility: "visible" }, 14.135); tl.set("#K", { visibility: "hidden" }, 16.295);
+  tl.set("#L", { visibility: "visible" }, 16.295); tl.set("#L", { visibility: "hidden" }, 17.175);
+  tl.set("#M0", { visibility: "visible" }, 17.175); tl.set("#M0", { visibility: "hidden" }, 17.755);
+  tl.set("#M1", { visibility: "visible" }, 17.755); tl.set("#M1", { visibility: "hidden" }, 17.955);
+  tl.set("#M2", { visibility: "visible" }, 17.955); tl.set("#M2", { visibility: "hidden" }, 19.000);
+  tl.fromTo("#A .bleed, #A .plate", { scale: 1.12 }, { scale: 1.0, duration: 1.080, ease: "power1.out", immediateRender: false }, 0.000);
+  tl.fromTo("#B .bleed, #B .plate", { scale: 1.12 }, { scale: 1.0, duration: 1.100, ease: "power1.out", immediateRender: false }, 1.080);
+  tl.fromTo("#C .bleed, #C .plate", { scale: 1.12 }, { scale: 1.0, duration: 1.240, ease: "power1.out", immediateRender: false }, 2.180);
+  tl.fromTo("#D .bleed, #D .plate", { scale: 1.12 }, { scale: 1.0, duration: 0.853, ease: "power1.out", immediateRender: false }, 3.420);
+  tl.fromTo("#E .bleed, #E .plate", { scale: 1.12 }, { scale: 1.0, duration: 4.434, ease: "power1.out", immediateRender: false }, 4.273);
+  tl.fromTo("#H .bleed, #H .plate", { scale: 1.12 }, { scale: 1.0, duration: 2.520, ease: "power1.out", immediateRender: false }, 8.707);
+  tl.fromTo("#I .bleed, #I .plate", { scale: 1.12 }, { scale: 1.0, duration: 1.240, ease: "power1.out", immediateRender: false }, 11.227);
+  tl.fromTo("#J .bleed, #J .plate", { scale: 1.12 }, { scale: 1.0, duration: 1.668, ease: "power1.out", immediateRender: false }, 12.467);
+  tl.fromTo("#K .bleed, #K .plate", { scale: 1.12 }, { scale: 1.0, duration: 2.160, ease: "power1.out", immediateRender: false }, 14.135);
+  tl.fromTo("#L .bleed, #L .plate", { scale: 1.12 }, { scale: 1.0, duration: 0.880, ease: "power1.out", immediateRender: false }, 16.295);
+  tl.fromTo("#M0 .bleed, #M0 .plate", { scale: 1.12 }, { scale: 1.0, duration: 0.580, ease: "power1.out", immediateRender: false }, 17.175);
+  tl.fromTo("#M1 .bleed, #M1 .plate", { scale: 1.12 }, { scale: 1.0, duration: 0.200, ease: "power1.out", immediateRender: false }, 17.755);
+  tl.fromTo("#M2 .bleed, #M2 .plate", { scale: 1.12 }, { scale: 1.0, duration: 1.045, ease: "power1.out", immediateRender: false }, 17.955);
+  tl.fromTo("#A-l", { scale: 1.35, rotation: -6, opacity: 0 }, { scale: 1, rotation: -2, opacity: 1, duration: 0.22, ease: "back.out(2.4)", immediateRender: false }, 0.050);
+  tl.fromTo("#A-it path", { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.32, ease: "power2.inOut", immediateRender: false }, 0.560);
+  tl.fromTo("#A-ring", { "--p": 0 }, { "--p": 360, duration: 0.45, ease: "power2.inOut", immediateRender: false }, 0.550);
+  tl.fromTo("#A-hero", { y: 260, rotation: 4, scale: 0.9 }, { y: 0, rotation: -1.5, scale: 1, duration: 0.5, ease: "expo.out", immediateRender: false }, 0);
+  tl.fromTo("#B-l", { scale: 1.35, rotation: -6, opacity: 0 }, { scale: 1, rotation: -2, opacity: 1, duration: 0.22, ease: "back.out(2.4)", immediateRender: false }, 1.080);
+  tl.fromTo("#B-it path", { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.32, ease: "power2.inOut", immediateRender: false }, 1.780);
+  tl.fromTo("#B-ul path", { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.5, ease: "power2.inOut", immediateRender: false }, 1.330);
+  tl.fromTo("#B-cam", { scale: 1 }, { scale: 1.35, duration: 1.100, ease: "power2.inOut", transformOrigin: "540px 1370px", immediateRender: false }, 1.080);
+  tl.fromTo("#C-l", { scale: 1.35, rotation: -6, opacity: 0 }, { scale: 1, rotation: -2, opacity: 1, duration: 0.22, ease: "back.out(2.4)", immediateRender: false }, 2.530);
+  tl.fromTo("#C-it path", { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.32, ease: "power2.inOut", immediateRender: false }, 3.150);
+  tl.fromTo("#D-l", { scale: 1.35, rotation: -6, opacity: 0 }, { scale: 1, rotation: -2, opacity: 1, duration: 0.22, ease: "back.out(2.4)", immediateRender: false }, 3.470);
+  tl.fromTo("#D-ring", { "--p": 0 }, { "--p": 360, duration: 0.45, ease: "power2.inOut", immediateRender: false }, 3.710);
+  tl.fromTo("#D-it path", { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.32, ease: "power2.inOut", immediateRender: false }, 3.860);
+  tl.fromTo("#E-hero", { y: 300, rotation: -4, scale: 0.9 }, { y: 0, rotation: 0, scale: 1, duration: 0.5, ease: "expo.out", immediateRender: false }, 4.273);
+  tl.fromTo("#E-l", { scale: 1.35, rotation: -6, opacity: 0 }, { scale: 1, rotation: -2, opacity: 1, duration: 0.22, ease: "back.out(2.4)", immediateRender: false }, 5.413);
+  tl.fromTo("#E-it path", { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.32, ease: "power2.inOut", immediateRender: false }, 6.233);
+  tl.fromTo("#E-ring", { "--p": 0 }, { "--p": 360, duration: 0.5, ease: "power2.inOut", immediateRender: false }, 6.133);
+  tl.fromTo("#E-cam", { scale: 1 }, { scale: 1.6, duration: 0.7, ease: "power2.inOut", transformOrigin: "543px 1260px", immediateRender: false }, 6.603);
+  tl.to("#E-red", { clipPath: "inset(0 0% 0 0)", duration: 0.3, ease: "power2.inOut" }, 7.103);
+  tl.to("#E-l", { opacity: 0, duration: 0.08 }, 7.753);
+  tl.fromTo("#E-l2", { scale: 1.35, rotation: -6, opacity: 0 }, { scale: 1, rotation: -2, opacity: 1, duration: 0.22, ease: "back.out(2.4)", immediateRender: false }, 7.753);
+  tl.fromTo("#E-it2 path", { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.32, ease: "power2.inOut", immediateRender: false }, 8.163);
+  tl.to("#E-cam", { scale: 3.4, duration: 0.954, ease: "power1.in", transformOrigin: "543px 1260px" }, 7.753);
+  tl.fromTo("#H-l", { scale: 1.35, rotation: -6, opacity: 0 }, { scale: 1, rotation: -2, opacity: 1, duration: 0.22, ease: "back.out(2.4)", immediateRender: false }, 9.217);
+  tl.fromTo("#H-it path", { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.32, ease: "power2.inOut", immediateRender: false }, 10.657);
+  tl.fromTo("#I-l", { scale: 1.35, rotation: -6, opacity: 0 }, { scale: 1, rotation: -2, opacity: 1, duration: 0.22, ease: "back.out(2.4)", immediateRender: false }, 11.557);
+  tl.fromTo("#I-strike", { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.22, ease: "power2.inOut", immediateRender: false }, 12.047);
+  tl.fromTo("#J-l", { scale: 1.35, rotation: -6, opacity: 0 }, { scale: 1, rotation: -2, opacity: 1, duration: 0.22, ease: "back.out(2.4)", immediateRender: false }, 13.047);
+  tl.fromTo("#J-it path", { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.32, ease: "power2.inOut", immediateRender: false }, 13.557);
+  tl.fromTo("#J-cur", { x: 900, y: 1500 }, { x: 610, y: 1080, duration: 0.6, ease: "power3.out", immediateRender: false }, 12.467);
+  tl.to("#J-cur", { scale: 0.85, duration: 0.06, yoyo: true, repeat: 1, transformOrigin: "0 0" }, 13.087);
+  tl.fromTo("#J-rip", { x: 550, y: 1020, scale: 0.2, opacity: 1 }, { scale: 1.4, opacity: 0, duration: 0.45, ease: "power2.out", immediateRender: false }, 13.107);
+  tl.to("#J-cur", { x: 360, y: 1250, duration: 0.6, ease: "power2.inOut" }, 13.417);
+  tl.fromTo("#K-l", { scale: 1.35, rotation: -6, opacity: 0 }, { scale: 1, rotation: -2, opacity: 1, duration: 0.22, ease: "back.out(2.4)", immediateRender: false }, 14.755);
+  tl.fromTo("#K-it path", { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.32, ease: "power2.inOut", immediateRender: false }, 15.625);
+  tl.fromTo("#L-l", { scale: 1.35, rotation: -6, opacity: 0 }, { scale: 1, rotation: -2, opacity: 1, duration: 0.22, ease: "back.out(2.4)", immediateRender: false }, 16.345);
+  tl.fromTo("#L-it path", { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.32, ease: "power2.inOut", immediateRender: false }, 16.905);
+  tl.fromTo("#L-z", { scale: 1 }, { scale: 1.25, duration: 0.880, ease: "power2.in", immediateRender: false }, 16.295);
+  tl.fromTo("#M0-l", { scale: 1.15, rotation: -2 }, { scale: 1, rotation: -2, duration: 0.18, ease: "power3.out", immediateRender: false }, 17.175);
+  tl.fromTo("#M1-l", { scale: 1.15, rotation: -2 }, { scale: 1, rotation: -2, duration: 0.18, ease: "power3.out", immediateRender: false }, 17.755);
+  tl.fromTo("#M2-l", { scale: 1.15, rotation: -2 }, { scale: 1, rotation: -2, duration: 0.18, ease: "power3.out", immediateRender: false }, 17.955);
+  tl.fromTo("#M2-it path", { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.32, ease: "power2.inOut", immediateRender: false }, 18.155);
+  tl.set({}, {}, 19.0);
+  window.__timelines["main"] = tl;
+</script>
+</body>
+</html>
