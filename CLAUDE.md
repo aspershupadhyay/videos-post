@@ -45,6 +45,14 @@ Log every new piece of feedback in `LEARNINGS.md` with the date, and promote it 
 14. **A passing check is not quality.** Whisper match can't hear a stretched word and qa_frames can't see a boring stretch.
     Before delivery: A/B any acronym or name in the first voice job, re-watch the 25–40 s middle for retention, and ask the
     creator to listen once.
-15. **Match the logo (creator, 2026-10-27).** Look v4 "paper": the logo's paper ground (`brand/logo-v3/paper-1080x1920.png`),
-    ink type in Courier Prime Bold, source footage in rounded cards, red #DD483F only for the pen / the logo's pen ring.
-    Use the logo creatively (the sting, the pen ring round the key fact). Template: `videos/case-021-gpt-6-1-terra`.
+15. **Match the logo (creator, 2026-10-27).** Paper ground (`brand/logo-v3/paper-1080x1920.png`); red #DD483F only for the
+    pen, the logo's pen ring and the one italic word. Use the logo creatively; every end card is `brand/motion/logo-sting.html`
+    ("amazing" — keep it). Template: `videos/case-021-gpt-6-1-terra` (look v5 below).
+16. **No subtitles, no on-screen credits (creator, 2026-10-27).** Never put the voice on screen as text, and no source /
+    credit lines in the frame (sources go in `POST.md`). Text appears only as one short expressive line on some beats:
+    Inter 800 + one red Instrument Serif italic word underlined by the pen. Show it, don't read it: turn each claim into a
+    visual (the pen slices the tram = half price; the pen cuts the demo = "slow parts cut out"; an AD stamp on the demo).
+    Real footage big, in "printed photo" frames (6 px #1B1B1B border, offset shadow). Cover = the creator's template
+    (`STRATEGY.md` §5).
+17. **Safe zones (Shorts + Reels).** Key content lives in y 240–1480 on 1080×1920; no text under the right button rail
+    (x > 940) below y 950. Rearrange to fit, never shrink. Check with the overlay in `brand/README.md` before delivery.

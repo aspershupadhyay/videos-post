@@ -15,6 +15,10 @@ film, each caused by something on screen. Working code for every move is in `vid
 | **Dot → logo** | 0:27–0:31 a coloured dot pulses, the ChatGPT wordmark and sticker icons pop round it, it resolves into the logo | `brand/motion/logo-sting.html`: our red dot falls onto the rule, then through it, and becomes the circled e |
 
 ## Ours (brand signatures)
+- **Printed photo**: real footage in a card with a 6 px #1B1B1B border, 26 px radius, offset shadow; lands from below with a
+  small rotation that settles to 0 (`expo.out`).
+- **Claim → object**: the pen slices the object (half the price), cuts the footage card in two (slow parts cut out), an
+  AD stamp slams onto the demo (`power4.in`, lands rotated −9°), an unverified number fades to a grey ghost.
 - **Red pen** (`pen()`): SVG path, `stroke-dasharray` draw-on in 0.3–0.45 s, under or through the one fact that matters.
 - **Pen ring** (`ring_img()` + `ring()`): the logo's own hand-drawn circle, drawn on with a conic mask.
 - **Red asterisk** = "there's fine print": appears on the claim, paid off when the fine print is shown.

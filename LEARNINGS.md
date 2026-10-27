@@ -2,6 +2,21 @@
 
 Newest first. Each entry: what happened, what we learned, the rule it became (in `CLAUDE.md`).
 
+## 2026-10-27 — Case 021 v2: creator feedback on v1
+- **Disliked:** the aesthetic (typewriter text everywhere), the subtitle-like headlines repeating the voice, the source
+  credits on screen, the cover ("pretty shit"). **Liked:** the script, the logo CTA sting ("amazing").
+- **Asked for:** cover like their reference (paper, big Inter headline with a red serif-italic word + pen, real still in a
+  frame, CATCH · THE · (E)RROR), `CASE 0NN / topic` on top, no subtitles, clean and visually expressive, everything inside
+  the Shorts/Reels safe zone without shrinking. → Rules 15–17, `STRATEGY.md` §5.
+- My own review of v1: footage small in cards with the lower 40% of the frame empty; every line typed on screen; 3 scenes
+  of type only; cover was just frame 0. v2: footage 1000 px wide or full-bleed, one line of type per beat at most, the
+  numbers become objects (the pen slices the tram; the pen cuts the demo; AD stamp; the 3× fades to a ghost when "no one
+  has confirmed it").
+- Checked before claiming: the demo looked like it had 4 jump cuts (frame-diff spikes) — the frames show camera moves, not
+  edits, so we didn't say it.
+- Could've done better: I treated "match the logo" as "use the logo's font for everything". → Match the logo's *feel*
+  (paper, red pen, restraint), take type from the creator's references; show one style frame before building 10 scenes.
+
 ## 2026-10-27 — Case 021 (GPT-6.1 Terra) + new logo v3 "ct(e)"
 - **Creator:** new logo (red "ct" on a rule, the "e" dropped below and circled in red pen, CATCH · THE · ERROR, paper
   ground). Asked to save it for future sessions, match the video's look to it, use it creatively in motion, and learn the
