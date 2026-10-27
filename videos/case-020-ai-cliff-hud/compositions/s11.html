@@ -1,0 +1,71 @@
+<template>
+  <style>
+    @font-face { font-family: "Geist"; font-weight: 100 900; font-display: block; src: url("assets/fonts/Geist.woff2") format("woff2"); }
+    @font-face { font-family: "Geist Mono"; font-weight: 100 900; font-display: block; src: url("assets/fonts/GeistMono.woff2") format("woff2"); }
+    @font-face { font-family: "Instrument Serif"; font-style: italic; font-weight: 400; font-display: block; src: url("assets/fonts/InstrumentSerif-Italic.woff2") format("woff2"); }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0a0a0a; color: #f4f2ee; font-family: "Geist", sans-serif; }
+    .disp { font-weight: 800; letter-spacing: -0.045em; line-height: 0.96; }
+    .it { font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400; letter-spacing: -0.01em; }
+    .mono { font-family: "Geist Mono", monospace; font-weight: 500; font-size: 28px; letter-spacing: 0.05em; text-transform: uppercase; color: #8c8a86; }
+    .panel { position: absolute; left: 0; top: 1480px; width: 1080px; height: 440px; background: #0a0a0a; }
+    .head { position: absolute; left: 64px; top: 1528px; width: 952px; font-size: 84px; }
+    .credit { position: absolute; left: 64px; top: 1836px; width: 952px; }
+    .full { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
+    .full video, .full img { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; object-fit: cover; }
+    .pen path { fill: none; stroke: #e0502b; stroke-width: 8; stroke-linecap: round; stroke-linejoin: round; }
+    .card { position: absolute; border-radius: 18px; overflow: hidden; background: #fff; }
+    .card img { display: block; width: 100%; height: auto; }
+    .ic { vertical-align: -6px; margin-right: 14px; }
+
+    #s11-mark { position: absolute; left: 315px; top: 470px; width: 450px; height: 450px; overflow: visible; }
+    #s11-line { position: absolute; left: 0; top: 960px; width: 1080px; text-align: center; font-size: 52px; font-weight: 600; letter-spacing: -0.02em; color: #8c8a86; }
+    #s11-word { position: absolute; left: 0; top: 1040px; width: 1080px; text-align: center; font-size: 124px; }
+    #s11-handle { position: absolute; left: 0; top: 1200px; width: 1080px; text-align: center; font-size: 32px; color: #f4f2ee; }
+    #s11-ring { stroke-dasharray: 942.48; stroke-dashoffset: 942.48; }
+    #s11-glint, #s11-bug, #s11-handle-g, #s11-word, #s11-handle { opacity: 0; }
+  </style>
+  <div id="root" data-composition-id="s11" data-width="1080" data-height="1920">
+
+    <svg id="s11-mark" viewBox="0 0 512 512" aria-hidden="true">
+      <g id="s11-handle-g">
+        <path d="M318 318 L446 446" stroke="#f4f2ee" stroke-width="62" stroke-linecap="round" />
+        <path d="M300 300 L334 334" stroke="#f4f2ee" stroke-width="82" />
+      </g>
+      <circle id="s11-ring" cx="214" cy="214" r="150" fill="none" stroke="#f4f2ee" stroke-width="34" transform="rotate(-90 214 214)" />
+      <path id="s11-glint" d="M110 170 A112 112 0 0 1 170 110" fill="none" stroke="#8c8a86" stroke-width="12" stroke-linecap="round" />
+      <g id="s11-bug">
+        <g stroke="#f4f2ee" stroke-width="11" stroke-linecap="round" fill="none">
+          <path d="M168 196 L124 172" /><path d="M260 196 L304 172" />
+          <path d="M164 228 L112 228" /><path d="M264 228 L316 228" />
+          <path d="M170 262 L128 292" /><path d="M258 262 L300 292" />
+          <path d="M204 150 L186 116" /><path d="M224 150 L242 116" />
+        </g>
+        <ellipse cx="214" cy="236" rx="52" ry="66" fill="#e0502b" />
+        <path d="M214 178 L214 298" stroke="#0a0a0a" stroke-width="7" stroke-linecap="round" />
+        <circle cx="214" cy="166" r="22" fill="#f4f2ee" />
+      </g>
+    </svg>
+    <div id="s11-line">We read the fine print.</div>
+    <div id="s11-word" class="disp">Catch the Error</div>
+    <div id="s11-handle" class="mono">@catchtheerror</div>
+  </div>
+  <script>
+    (() => {
+      const tl = gsap.timeline({ paused: true });
+      const at = (abs) => Math.max(0, abs - 43.45);
+      const blurIn = (sel, t, d = 0.18) => tl.fromTo(sel, { opacity: 0, filter: "blur(10px)", y: 14 }, { opacity: 1, filter: "blur(0px)", y: 0, duration: d, ease: "power4.out", immediateRender: false }, at(t));
+      const out = (sel, t) => tl.to(sel, { opacity: 0, filter: "blur(8px)", duration: 0.14, ease: "power2.in" }, at(t));
+      const pen = (sel, t, d = 0.38) => tl.to(sel, { strokeDashoffset: 0, duration: d, ease: "power2.inOut" }, at(t));
+
+      tl.to("#s11-ring", { strokeDashoffset: 0, duration: 0.5, ease: "power2.inOut" }, at(43.5));
+      tl.fromTo("#s11-bug", { opacity: 1, y: -380 }, { opacity: 1, y: 0, duration: 0.28, ease: "power4.in", immediateRender: false }, at(43.75));
+      tl.fromTo("#s11-handle-g", { opacity: 1, rotation: -150, svgOrigin: "214 214" }, { opacity: 1, rotation: 0, svgOrigin: "214 214", duration: 0.5, ease: "expo.out", immediateRender: false }, at(43.95));
+      tl.fromTo("#s11-glint", { opacity: 0 }, { opacity: 1, duration: 0.12, immediateRender: false }, at(44.25));
+      blurIn("#s11-word", 45.205, 0.22);
+      blurIn("#s11-handle", 46.105);
+      tl.fromTo("#s11-mark", { scale: 1 }, { scale: 1.04, duration: 5.88, ease: "none" }, 0);
+      tl.set({}, {}, 5.88);
+      window.__timelines["s11"] = tl;
+    })();
+  </script>
+</template>

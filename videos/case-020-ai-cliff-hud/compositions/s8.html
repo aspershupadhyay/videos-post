@@ -1,0 +1,72 @@
+<template>
+  <style>
+    @font-face { font-family: "Geist"; font-weight: 100 900; font-display: block; src: url("assets/fonts/Geist.woff2") format("woff2"); }
+    @font-face { font-family: "Geist Mono"; font-weight: 100 900; font-display: block; src: url("assets/fonts/GeistMono.woff2") format("woff2"); }
+    @font-face { font-family: "Instrument Serif"; font-style: italic; font-weight: 400; font-display: block; src: url("assets/fonts/InstrumentSerif-Italic.woff2") format("woff2"); }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0a0a0a; color: #f4f2ee; font-family: "Geist", sans-serif; }
+    .disp { font-weight: 800; letter-spacing: -0.045em; line-height: 0.96; }
+    .it { font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400; letter-spacing: -0.01em; }
+    .mono { font-family: "Geist Mono", monospace; font-weight: 500; font-size: 28px; letter-spacing: 0.05em; text-transform: uppercase; color: #8c8a86; }
+    .panel { position: absolute; left: 0; top: 1480px; width: 1080px; height: 440px; background: #0a0a0a; }
+    .head { position: absolute; left: 64px; top: 1528px; width: 952px; font-size: 84px; }
+    .credit { position: absolute; left: 64px; top: 1836px; width: 952px; }
+    .full { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
+    .full video, .full img { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; object-fit: cover; }
+    .pen path { fill: none; stroke: #e0502b; stroke-width: 8; stroke-linecap: round; stroke-linejoin: round; }
+    .card { position: absolute; border-radius: 18px; overflow: hidden; background: #fff; }
+    .card img { display: block; width: 100%; height: auto; }
+    .ic { vertical-align: -6px; margin-right: 14px; }
+#s8-fb, #s8-cb { opacity: 0; }
+  </style>
+  <div id="root" data-composition-id="s8" data-width="1080" data-height="1920">
+
+    <div id="s8-where" class="mono" style="position:absolute;left:60px;top:120px;color:#f4f2ee"><svg
+  aria-hidden="true" class="ic lucide lucide-drone"
+  xmlns="http://www.w3.org/2000/svg"
+  width="34"
+  height="34"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="#f4f2ee"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M10 10 7 7" />
+  <path d="m10 14-3 3" />
+  <path d="m14 10 3-3" />
+  <path d="m14 14 3 3" />
+  <path d="M14.205 4.139a4 4 0 1 1 5.439 5.863" />
+  <path d="M19.637 14a4 4 0 1 1-5.432 5.868" />
+  <path d="M4.367 10a4 4 0 1 1 5.438-5.862" />
+  <path d="M9.795 19.862a4 4 0 1 1-5.429-5.873" />
+  <rect x="10" y="8" width="4" height="8" rx="1" />
+</svg>
+Hong Kong · Nature Communications · Aug 2025</div>
+    <div id="s8-head" class="card" style="left:60px;top:190px;width:960px"><img src="assets/shots/drone-head.png" alt="Paper header" /></div>
+    <div id="s8-figs" style="position:absolute;left:40px;top:600px;width:1000px">
+      <div id="s8-fa" class="card" style="position:absolute;left:0;top:0;width:1000px"><img src="assets/shots/drone-fig2.png" alt="Fig. 2: the LiDAR quadrotor and its mapping system" /></div>
+      <div id="s8-fb" class="card" style="position:absolute;left:0;top:0;width:1000px"><img src="assets/shots/drone-fig1.png" alt="Fig. 1: landslide, debris-resisting barriers, dense vegetation" /></div>
+    </div>
+    <div id="s8-ca" class="credit mono">Fig. 2 · Liu et al., Nat. Commun. 16, 7411 (2025) · CC BY-NC-ND 4.0</div>
+    <div id="s8-cb" class="credit mono">Fig. 1 · Liu et al., Nat. Commun. 16, 7411 (2025) · CC BY-NC-ND 4.0</div>
+  </div>
+  <script>
+    (() => {
+      const tl = gsap.timeline({ paused: true });
+      const at = (abs) => Math.max(0, abs - 32.55);
+      const blurIn = (sel, t, d = 0.18) => tl.fromTo(sel, { opacity: 0, filter: "blur(10px)", y: 14 }, { opacity: 1, filter: "blur(0px)", y: 0, duration: d, ease: "power4.out", immediateRender: false }, at(t));
+      const out = (sel, t) => tl.to(sel, { opacity: 0, filter: "blur(8px)", duration: 0.14, ease: "power2.in" }, at(t));
+      const pen = (sel, t, d = 0.38) => tl.to(sel, { strokeDashoffset: 0, duration: d, ease: "power2.inOut" }, at(t));
+
+      tl.fromTo("#s8-head", { scale: 1 }, { scale: 1.03, duration: 5.05, ease: "none" }, 0);
+      tl.fromTo("#s8-fa", { opacity: 0, y: 80, filter: "blur(10px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.5, ease: "expo.out", immediateRender: false }, at(32.9));
+      tl.fromTo("#s8-figs", { scale: 1 }, { scale: 1.08, duration: 4.70, ease: "none", transformOrigin: "300px 300px" }, at(32.9));
+      tl.fromTo("#s8-fb", { opacity: 0 }, { opacity: 1, duration: 0.25, immediateRender: false }, at(35.985));
+      tl.to("#s8-ca", { opacity: 0, duration: 0.15 }, at(35.985));
+      tl.fromTo("#s8-cb", { opacity: 0 }, { opacity: 1, duration: 0.25, immediateRender: false }, at(35.985));
+      tl.set({}, {}, 5.05);
+      window.__timelines["s8"] = tl;
+    })();
+  </script>
+</template>
