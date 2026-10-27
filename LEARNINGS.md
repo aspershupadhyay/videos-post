@@ -2,6 +2,16 @@
 
 Newest first. Each entry: what happened, what we learned, the rule it became (in `CLAUDE.md`).
 
+## 2026-10-27 — Case 022 delivered: cover + VoiceBox-only delivery
+- Cover: frame 0 per the template; my own rule 18 caught a half-cut text line at the bottom of the printed photo →
+  cropped to headline + date. Passes the 3:4 grid crop and the 120 px test. → Rule 9 now says "whole lines only".
+- Creator: deliver the video and cover to VoiceBox, renamed, and keep them only there. → Rule 20; `renders/` ignored.
+  The old commits on this public branch still hold earlier renders in history (purging needs a force-push; not done).
+- Promoted from this case: rule 18 (layout gate), rule 19 (one cause per line for a mechanism), rule 20 (VoiceBox only).
+- Could've done better: I exported the cover from frame 0 without applying the same legibility check to it as to the
+  scenes. → The cover is a scene too: it goes through qa_layout (the gate checks t = 0 with the cover exempt only from
+  safe-zone/crowding, not from SMALL/COVERED).
+
 ## 2026-10-27 — Case 022 v3: creator review of the full cut → a layout gate
 - **Creator:** keep the captions; fix 0:38–0:46 (three report cards stacked, too dense); the "CPU" text sat cramped in its
   box and a data block flew over it; the cache label touched the CPU box. **Make a sanity check part of the repo: spacing,
