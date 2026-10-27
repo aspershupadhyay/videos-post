@@ -50,15 +50,15 @@ Chongqing, China · Scientific Reports · Jul 2026</div>
   <script>
     (() => {
       const tl = gsap.timeline({ paused: true });
-      const at = (abs) => Math.max(0, abs - 27.0);
+      const at = (abs) => Math.max(0, abs - 27.14);
       const blurIn = (sel, t, d = 0.18) => tl.fromTo(sel, { opacity: 0, filter: "blur(10px)", y: 14 }, { opacity: 1, filter: "blur(0px)", y: 0, duration: d, ease: "power4.out", immediateRender: false }, at(t));
       const out = (sel, t) => tl.to(sel, { opacity: 0, filter: "blur(8px)", duration: 0.14, ease: "power2.in" }, at(t));
       const pen = (sel, t, d = 0.38) => tl.to(sel, { strokeDashoffset: 0, duration: d, ease: "power2.inOut" }, at(t));
 
-      tl.fromTo("#s7-head", { scale: 1 }, { scale: 1.03, duration: 5.55, ease: "none" }, 0);
-      tl.fromTo("#s7-fa", { opacity: 0, y: 80, filter: "blur(10px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.5, ease: "expo.out", immediateRender: false }, at(27.9));
-      tl.fromTo("#s7-figs", { scale: 1 }, { scale: 1.08, duration: 4.65, ease: "none", transformOrigin: "280px 300px" }, at(27.9));
-      tl.set({}, {}, 5.55);
+      tl.fromTo("#s7-head", { scale: 1 }, { scale: 1.03, duration: 5.64, ease: "none" }, 0);
+      tl.fromTo("#s7-fa", { opacity: 0, y: 80, filter: "blur(10px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.5, ease: "expo.out", immediateRender: false }, at(28.04));
+      tl.fromTo("#s7-figs", { scale: 1 }, { scale: 1.08, duration: 4.74, ease: "none", transformOrigin: "280px 300px" }, at(28.04));
+      tl.set({}, {}, 5.64);
       window.__timelines["s7"] = tl;
     })();
   </script>

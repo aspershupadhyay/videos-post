@@ -45,26 +45,26 @@
         <circle cx="214" cy="166" r="22" fill="#f4f2ee" />
       </g>
     </svg>
-    <div id="s11-line">We read the fine print.</div>
+    <div id="s11-line">Seen a clip like this?</div>
     <div id="s11-word" class="disp">Catch the Error</div>
-    <div id="s11-handle" class="mono">@catchtheerror</div>
+    <div id="s11-handle" class="mono">Send it to @catchtheerror · we'll check it</div>
   </div>
   <script>
     (() => {
       const tl = gsap.timeline({ paused: true });
-      const at = (abs) => Math.max(0, abs - 43.45);
+      const at = (abs) => Math.max(0, abs - 43.6);
       const blurIn = (sel, t, d = 0.18) => tl.fromTo(sel, { opacity: 0, filter: "blur(10px)", y: 14 }, { opacity: 1, filter: "blur(0px)", y: 0, duration: d, ease: "power4.out", immediateRender: false }, at(t));
       const out = (sel, t) => tl.to(sel, { opacity: 0, filter: "blur(8px)", duration: 0.14, ease: "power2.in" }, at(t));
       const pen = (sel, t, d = 0.38) => tl.to(sel, { strokeDashoffset: 0, duration: d, ease: "power2.inOut" }, at(t));
 
-      tl.to("#s11-ring", { strokeDashoffset: 0, duration: 0.5, ease: "power2.inOut" }, at(43.5));
-      tl.fromTo("#s11-bug", { opacity: 1, y: -380 }, { opacity: 1, y: 0, duration: 0.28, ease: "power4.in", immediateRender: false }, at(43.75));
-      tl.fromTo("#s11-handle-g", { opacity: 1, rotation: -150, svgOrigin: "214 214" }, { opacity: 1, rotation: 0, svgOrigin: "214 214", duration: 0.5, ease: "expo.out", immediateRender: false }, at(43.95));
-      tl.fromTo("#s11-glint", { opacity: 0 }, { opacity: 1, duration: 0.12, immediateRender: false }, at(44.25));
-      blurIn("#s11-word", 45.205, 0.22);
-      blurIn("#s11-handle", 46.105);
-      tl.fromTo("#s11-mark", { scale: 1 }, { scale: 1.04, duration: 5.88, ease: "none" }, 0);
-      tl.set({}, {}, 5.88);
+      tl.to("#s11-ring", { strokeDashoffset: 0, duration: 0.5, ease: "power2.inOut" }, at(43.65));
+      tl.fromTo("#s11-bug", { opacity: 1, y: -380 }, { opacity: 1, y: 0, duration: 0.28, ease: "power4.in", immediateRender: false }, at(43.9));
+      tl.fromTo("#s11-handle-g", { opacity: 1, rotation: -150, svgOrigin: "214 214" }, { opacity: 1, rotation: 0, svgOrigin: "214 214", duration: 0.5, ease: "expo.out", immediateRender: false }, at(44.1));
+      tl.fromTo("#s11-glint", { opacity: 0 }, { opacity: 1, duration: 0.12, immediateRender: false }, at(44.4));
+      blurIn("#s11-word", 45.096, 0.22);
+      blurIn("#s11-handle", 46.277);
+      tl.fromTo("#s11-mark", { scale: 1 }, { scale: 1.04, duration: 6.41, ease: "none" }, 0);
+      tl.set({}, {}, 6.41);
       window.__timelines["s11"] = tl;
     })();
   </script>

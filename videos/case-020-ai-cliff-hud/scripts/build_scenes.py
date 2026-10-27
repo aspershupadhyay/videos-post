@@ -59,7 +59,10 @@ def scene(sid, start, end, css, body, js):
     return (sid, start, dur)
 
 S = []
-b = [0.0, 7.4, 10.6, 13.75, 16.7, 22.1, 27.0, 32.55, 37.6, 39.95, 43.45, FILM]
+# Each scene cuts in 0.2 s before the line it carries (s6, the twist, cuts on the end of vo-07 + 0.35 s).
+cut = lambda vid: round(L[vid]["start"] - 0.2, 2)
+b = [0.0, cut("vo-04"), cut("vo-05"), cut("vo-06"), cut("vo-07"), round(L["vo-07"]["end"] + 0.35, 2),
+     cut("vo-09"), cut("vo-10"), cut("vo-11"), cut("vo-12"), cut("vo-13"), FILM]
 
 # S1 hook ---------------------------------------------------------------
 s, e = b[0], b[1]
@@ -269,15 +272,15 @@ S.append(scene("s11", s, e, """
     #s11-ring { stroke-dasharray: 942.48; stroke-dashoffset: 942.48; }
     #s11-glint, #s11-bug, #s11-handle-g, #s11-word, #s11-handle { opacity: 0; }""", f"""
     {mark}
-    <div id="s11-line">We read the fine print.</div>
+    <div id="s11-line">Seen a clip like this?</div>
     <div id="s11-word" class="disp">Catch the Error</div>
-    <div id="s11-handle" class="mono">@catchtheerror</div>""", f"""
+    <div id="s11-handle" class="mono">Send it to @catchtheerror · we'll check it</div>""", f"""
       tl.to("#s11-ring", {{ strokeDashoffset: 0, duration: 0.5, ease: "power2.inOut" }}, at({s+0.05}));
       tl.fromTo("#s11-bug", {{ opacity: 1, y: -380 }}, {{ opacity: 1, y: 0, duration: 0.28, ease: "power4.in", immediateRender: false }}, at({s+0.3}));
       tl.fromTo("#s11-handle-g", {{ opacity: 1, rotation: -150, svgOrigin: "214 214" }}, {{ opacity: 1, rotation: 0, svgOrigin: "214 214", duration: 0.5, ease: "expo.out", immediateRender: false }}, at({s+0.5}));
       tl.fromTo("#s11-glint", {{ opacity: 0 }}, {{ opacity: 1, duration: 0.12, immediateRender: false }}, at({s+0.8}));
       blurIn("#s11-word", {p[1]}, 0.22);
-      blurIn("#s11-handle", {p[1]+0.9});
+      blurIn("#s11-handle", {p[-1]});
       tl.fromTo("#s11-mark", {{ scale: 1 }}, {{ scale: 1.04, duration: {e-s:.2f}, ease: "none" }}, 0);"""))
 
 # index -------------------------------------------------------------------

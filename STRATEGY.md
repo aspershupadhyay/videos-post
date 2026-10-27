@@ -60,7 +60,7 @@ scores are Moonshot's own.* Everything that doesn't serve the spine is cut, howe
 | 35–60 | Payoff | answer the loop; the twist |
 | 60–80 | The catch | our brand beat: vendor-reported vs independent, what isn't out yet |
 | 80–92 | Repeatable line | ≤ 10 words, a take people would quote |
-| 92–100 | End card | logo + "We read the fine print." ≥ 3 s, last frame echoes frame 0 so it loops |
+| 92–100 | End card | a natural spoken ask ("Seen a clip like this? Send it our way. We'll check it.") over the logo, ≥ 3 s |
 
 - **Max 3 numbers on screen** per video. Each one gets a red-pen moment; the rest stay in the caption.
 - **Have a take.** Say what we think, then show why. Neutral recaps don't get shared.
