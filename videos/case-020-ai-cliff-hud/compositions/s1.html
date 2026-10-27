@@ -23,7 +23,7 @@
   </style>
   <div id="root" data-composition-id="s1" data-width="1080" data-height="1920">
 
-    <div id="s1-wrap" class="full"><video id="s1-v" class="clip" src="assets/footage/hook.mp4" data-start="0" data-duration="7.400" muted playsinline></video></div>
+    <div id="s1-wrap" class="full"><video id="s1-v" class="clip" src="assets/footage/hook.mp4" data-start="0" data-duration="7.260" muted playsinline></video></div>
     <div class="panel"></div>
     <div id="s1-t1" class="head disp">AI picks every <span class="it">safe</span> step down a cliff.</div>
     <div id="s1-c1" class="credit mono">The viral clip · as posted on X</div>
@@ -39,14 +39,14 @@
       const out = (sel, t) => tl.to(sel, { opacity: 0, filter: "blur(8px)", duration: 0.14, ease: "power2.in" }, at(t));
       const pen = (sel, t, d = 0.38) => tl.to(sel, { strokeDashoffset: 0, duration: d, ease: "power2.inOut" }, at(t));
 
-      tl.fromTo("#s1-wrap", { scale: 1 }, { scale: 1.07, duration: 7.40, ease: "none", transformOrigin: "540px 700px" }, 0);
-      out(["#s1-t1", "#s1-c1"], 3.246);
-      blurIn(["#s1-t2", "#s1-c2"], 3.366);
+      tl.fromTo("#s1-wrap", { scale: 1 }, { scale: 1.07, duration: 7.26, ease: "none", transformOrigin: "540px 700px" }, 0);
+      out(["#s1-t1", "#s1-c1"], 3.154);
+      blurIn(["#s1-t2", "#s1-c2"], 3.274);
       const n = { v: 0 };
-      tl.fromTo(n, { v: 0 }, { v: 568000, duration: 1.1, ease: "power3.out", immediateRender: false, onUpdate: () => { document.querySelector("#s1-n").textContent = Math.round(n.v).toLocaleString("en-US"); } }, at(3.366));
-      out(["#s1-t2", "#s1-c2"], 5.8709999999999996);
-      blurIn("#s1-t3", 5.991);
-      tl.set({}, {}, 7.4);
+      tl.fromTo(n, { v: 0 }, { v: 568000, duration: 1.1, ease: "power3.out", immediateRender: false, onUpdate: () => { document.querySelector("#s1-n").textContent = Math.round(n.v).toLocaleString("en-US"); } }, at(3.274));
+      out(["#s1-t2", "#s1-c2"], 5.779);
+      blurIn("#s1-t3", 5.899);
+      tl.set({}, {}, 7.26);
       window.__timelines["s1"] = tl;
     })();
   </script>

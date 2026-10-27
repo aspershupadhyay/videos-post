@@ -34,16 +34,16 @@
   <script>
     (() => {
       const tl = gsap.timeline({ paused: true });
-      const at = (abs) => Math.max(0, abs - 13.75);
+      const at = (abs) => Math.max(0, abs - 13.6);
       const blurIn = (sel, t, d = 0.18) => tl.fromTo(sel, { opacity: 0, filter: "blur(10px)", y: 14 }, { opacity: 1, filter: "blur(0px)", y: 0, duration: d, ease: "power4.out", immediateRender: false }, at(t));
       const out = (sel, t) => tl.to(sel, { opacity: 0, filter: "blur(8px)", duration: 0.14, ease: "power2.in" }, at(t));
       const pen = (sel, t, d = 0.38) => tl.to(sel, { strokeDashoffset: 0, duration: d, ease: "power2.inOut" }, at(t));
 
-      tl.fromTo("#s4-wrap", { scale: 1 }, { scale: 1.1, duration: 2.95, ease: "none", transformOrigin: "540px 440px" }, 0);
-      out("#s4-t1", 15.714);
-      blurIn("#s4-t2", 15.814);
-      pen("#s4-pen path", 15.914);
-      tl.set({}, {}, 2.95);
+      tl.fromTo("#s4-wrap", { scale: 1 }, { scale: 1.1, duration: 2.97, ease: "none", transformOrigin: "540px 440px" }, 0);
+      out("#s4-t1", 15.622);
+      blurIn("#s4-t2", 15.722);
+      pen("#s4-pen path", 15.822);
+      tl.set({}, {}, 2.97);
       window.__timelines["s4"] = tl;
     })();
   </script>

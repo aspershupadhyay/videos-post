@@ -1,6 +1,6 @@
 # Case 020 — post copy
 
-File: `renders/case-020-ai-cliff-hud-9x16.mp4` (49 s). Cover: `renders/cover.png` (frame 0).
+File: `renders/case-020-ai-cliff-hud-9x16.mp4` (50 s). Cover: `renders/cover.png` (frame 0).
 
 ## Instagram Reels / YouTube Shorts
 > 568,000 views for an "AI" that picks safe steps down a cliff.

@@ -5,8 +5,8 @@ SPINE:   568K people watched an "AI" pick safe footsteps down a cliff, but its r
          The real AI for rock slopes exists: fixed cameras and LiDAR drones, not your boots.
 TAKE:    "If the AI looks like a movie, it's probably an edit."
 SCORE:   stakes 1 · twist 2 · real media 2 · fresh 2 (post < 24 h) · spine 2 = 9/10.
-OUTPUT:  HyperFrames 1080×1920, 30 fps, 49.3 s. Type v3 (Geist 800 / Instrument Serif Italic / Geist Mono).
-VOICE:   VoiceBox `sparsh` (myvoice), 13 lines, takes 2, temperature 0.6, subtitles OFF, polish OFF; all lines
+OUTPUT:  HyperFrames 1080×1920, 30 fps, 50.0 s (scene cuts derived from timing.json). Type v3 (Geist 800 / Instrument Serif Italic / Geist Mono).
+VOICE:   VoiceBox `sparsh` (myvoice), 13 lines ("AI" written "A.I."; lines 01/08/12 and the CTA re-voiced), takes 2, temperature 0.6, subtitles OFF, polish OFF; all lines
          match ≥ 0.995, 0 re-voices. Levelled to −14 LUFS per line in `scripts/prep_audio.py`; phrase cues from pauses.
 MUSIC:   "Ethernight Club" (Kevin MacLeod, CC BY 4.0) at −26 LUFS; dips under the twist; +5 dB after the last word.
 FRAMING: we don't say "fake". We say what the frame shows, what a real sensor can do, and that no source is named.
@@ -23,7 +23,7 @@ FRAMING: we don't say "fake". We say what the frame shows, what a real sensor ca
 | 32.55–37.6 | s8 | "In Hong Kong, a LiDAR drone flies under the trees to inspect landslide barriers." | Nat. Commun. header + Fig. 2 (drone, LiDAR maps) → Fig. 1 (landslide, barriers) |
 | 37.6–39.95 | s9 | "Less cinematic. Actually real." | Viral clip vs Fig. 9, stacked |
 | 39.95–43.45 | s10 | "If the AI looks like a movie, it's probably an edit." | White ground; pen under *edit.* |
-| 43.45–49.33 | s11 | "We read the fine print. Catch the Error." | End card, mark builds |
+| 43.6–50.0 | s11 | "Seen a clip like this? Send it our way. We'll check it." | End card; "Send it to @catchtheerror · we'll check it" |
 
 ## Facts → source (checked 2026-10-27)
 - Post: @CodeByPoonam on X, "AI uses Cameras and Lidars to spot dangerous rock slopes.", 568K views, 5.2K likes,
