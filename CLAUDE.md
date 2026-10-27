@@ -6,6 +6,7 @@ Short-form research videos for **CatchTheError** (Instagram Reels, YouTube Short
 - **Start every session by reading `STRATEGY.md`** (topic scoring, hook method, structure, covers, no-dead-frames gate,
   scoreboard) and `TOPICS.md` (the scored topic bank). Then `PLAYBOOK.md` for production: research, voice, sound, motion.
 - `VISUALS.md` is the visual language (Exhibit → Source → Verdict → Proof; style frames in `brand/lookbook/`).
+- `EDITING.md` is the cutting/sound taste guide and the type + logo v2 proposal (awaiting the creator's pick).
 - `LEARNINGS.md` is the dated feedback log; `tools/qa_frames.py <render>` is the blank/frozen-frame gate.
 - HyperFrames skills are vendored in `.claude/skills/` (`/hyperframes` first). Pinned CLI: `npx hyperframes@0.8.192`.
 - Brand: `brand/` (logo SVGs from `brand/build_logo.py`) and each video's `DESIGN.md`.
