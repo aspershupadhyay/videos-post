@@ -6,3 +6,5 @@ __pycache__/
 videos/*/renders/*
 !videos/*/renders/*.mp4
 !videos/*/renders/cover.png
+**/.thumbnails/
+**/.waveform-cache/
