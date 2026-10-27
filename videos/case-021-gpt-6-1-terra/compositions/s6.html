@@ -1,0 +1,73 @@
+<template>
+  <style>
+    @font-face { font-family: "Courier Prime"; font-weight: 700; font-display: block; src: url("assets/fonts/CourierPrime-Bold.ttf") format("truetype"); }
+    @font-face { font-family: "Courier Prime"; font-weight: 400; font-display: block; src: url("assets/fonts/CourierPrime-Regular.ttf") format("truetype"); }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #e7e7e5 url("assets/logo/paper-1080x1920.png") 0 0 / 1080px 1920px; color: #161616; font-family: "Courier Prime", monospace; font-weight: 700; }
+    .head { position: absolute; left: 60px; top: 1150px; width: 960px; font-size: 84px; line-height: 1.0; letter-spacing: -0.03em; }
+    .big { font-size: 108px; line-height: 0.98; letter-spacing: -0.04em; }
+    .mono { position: absolute; font-size: 28px; letter-spacing: 0.08em; text-transform: uppercase; color: #6b6b68; font-weight: 700; }
+    .credit { left: 60px; top: 192px; width: 960px; }
+    .red { color: #dd483f; }
+    .card { position: absolute; border-radius: 30px; overflow: hidden; background: #fff; box-shadow: 0 24px 60px rgba(20, 20, 18, 0.13); }
+    .card video, .card img.fill { position: absolute; }
+    .pen { position: absolute; overflow: visible; }
+    .pen path { fill: none; stroke: #dd483f; stroke-width: 9; stroke-linecap: round; stroke-linejoin: round; }
+    .ch { opacity: 0; }
+    .pill { position: absolute; background: #fff; border-radius: 80px; padding: 26px 46px; font-size: 60px; letter-spacing: -0.02em; white-space: nowrap; box-shadow: 0 18px 50px rgba(0, 0, 0, 0.18); }
+
+    #s6-cam { position: absolute; inset: 0; }
+    #s6-card { left: 40px; top: 330px; width: 1000px; height: 592px; }
+    #s6-card video, #s6-card img.fill { left:-131.6px;top:-59.2px;width:1263.2px;height:710.5px }
+    #s6-type { position: absolute; left: 70px; top: 600px; width: 960px; font-size: 70px; line-height: 1.02; letter-spacing: -0.04em; }
+    #s6-l2 { margin-top: 40px; }
+    #s6-type { opacity: 0; }
+    #s6-pen { position: absolute; left: 64px; top: 800px; width: 940px; height: 60px; }
+    #s6-pen path { stroke-dasharray: 1000; stroke-dashoffset: 1000; stroke-width: 11; }
+    #s6-src { left: 70px; top: 900px; opacity: 0; }
+  </style>
+  <div id="root" data-composition-id="s6" data-width="1080" data-height="1920">
+
+    <div class="mono credit">The line, as printed under OpenAI's demo</div>
+    <div id="s6-cam">
+      <div id="s6-card" class="card">
+        <img class="fill" src="assets/shots/build-end.png" alt="" />
+        <video id="s6-v" class="clip" src="assets/footage/build.mp4" data-start="0" data-media-start="0.6" data-duration="4.300" muted playsinline></video>
+      </div>
+      <div id="s6-ring" style="position:absolute;left:332px;top:852px;width:372px;height:80px;--p:0;-webkit-mask-image:conic-gradient(from 340deg at 50% 50%, #000 calc(var(--p) * 1deg), transparent calc(var(--p) * 1deg));mask-image:conic-gradient(from 340deg at 50% 50%, #000 calc(var(--p) * 1deg), transparent calc(var(--p) * 1deg))"><img src="assets/logo/circle-crop.png" alt="" style="position:absolute;left:0;top:0;width:100%;height:100%" /></div>
+    </div>
+    <div id="s6-type">
+      <div id="s6-l1"><span class="ch">S</span><span class="ch">h</span><span class="ch">o</span><span class="ch">w</span><span class="ch">n</span> <span class="ch">a</span><span class="ch">t</span> <span class="ch">a</span><span class="ch">c</span><span class="ch">t</span><span class="ch">u</span><span class="ch">a</span><span class="ch">l</span> <span class="ch">s</span><span class="ch">p</span><span class="ch">e</span><span class="ch">e</span><span class="ch">d</span><span class="ch">.</span></div>
+      <div id="s6-l2"><span class="ch">S</span><span class="ch">o</span><span class="ch">m</span><span class="ch">e</span> <span class="ch">s</span><span class="ch">e</span><span class="ch">c</span><span class="ch">t</span><span class="ch">i</span><span class="ch">o</span><span class="ch">n</span><span class="ch">s</span> <span class="ch">o</span><span class="ch">m</span><span class="ch">i</span><span class="ch">t</span><span class="ch">t</span><span class="ch">e</span><span class="ch">d</span><span class="ch">.</span></div>
+    </div>
+    <svg id="s6-pen" class="pen" viewBox="0 0 900 60" aria-hidden="true"><path d="M6 34 C 200 24, 520 30, 880 18" /></svg>
+    <div id="s6-src" class="mono">OpenAI · GPT-6.1 Terra launch film, 0:12–0:17</div>
+    <div id="s6-mini" class="card" style="left:190px;top:990px;width:700px;height:414px;opacity:0">
+      <video id="s6-v2" class="clip" src="assets/footage/build.mp4" data-start="1.859" data-media-start="1.2" data-duration="2.911" muted playsinline style="left:-92.1px;top:-41.4px;width:884.2px;height:497.4px"></video>
+    </div>
+  </div>
+  <script>
+    (() => {
+      const tl = gsap.timeline({ paused: true });
+      const at = (abs) => Math.max(0, abs - 26.14);
+      const blurIn = (sel, t, d = 0.18) => tl.fromTo(sel, { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: d, ease: "power4.out", immediateRender: false }, at(t));
+      const out = (sel, t, d = 0.14) => tl.to(sel, { opacity: 0, filter: "blur(8px)", duration: d, ease: "power2.in" }, at(t));
+      const pen = (sel, t, d = 0.36) => tl.to(sel, { strokeDashoffset: 0, duration: d, ease: "power2.inOut" }, at(t));
+      const type = (sel, t, cps = 34) => { const n = document.querySelectorAll(sel + " .ch").length; tl.to(sel + " .ch", { opacity: 1, duration: 0.001, stagger: 1 / cps, immediateRender: false }, at(t)); return n / cps; };
+      const ring = (sel, t, d = 0.5) => tl.to(sel, { "--p": 360, duration: d, ease: "power2.inOut" }, at(t));
+
+      tl.set("#s6-ring", { "--p": 360 }, 0);
+      // zoom into the real footnote
+      tl.to("#s6-cam", { scale: 2.6, duration: 0.99, ease: "power2.inOut", transformOrigin: "540px 898px" }, at(26.759));
+      // zoom through it: the line becomes the frame
+      tl.to("#s6-cam", { scale: 14, opacity: 0, filter: "blur(10px)", duration: 0.3, ease: "power3.in", transformOrigin: "540px 898px" }, at(27.749));
+      tl.fromTo("#s6-type", { opacity: 1 }, { opacity: 1, duration: 0.01, immediateRender: false }, at(27.899));
+      type("#s6-l1", 27.899, 30);
+      type("#s6-l2", 29.489, 28);
+      pen("#s6-pen path", 30.429, 0.45);
+      blurIn("#s6-src", 30.579);
+      tl.fromTo("#s6-mini", { opacity: 0, y: 80, filter: "blur(8px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.45, ease: "expo.out", immediateRender: false }, at(28.049));
+      tl.set({}, {}, 4.77);
+      window.__timelines["s6"] = tl;
+    })();
+  </script>
+</template>

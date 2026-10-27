@@ -1,0 +1,61 @@
+<template>
+  <style>
+    @font-face { font-family: "Courier Prime"; font-weight: 700; font-display: block; src: url("assets/fonts/CourierPrime-Bold.ttf") format("truetype"); }
+    @font-face { font-family: "Courier Prime"; font-weight: 400; font-display: block; src: url("assets/fonts/CourierPrime-Regular.ttf") format("truetype"); }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #e7e7e5 url("assets/logo/paper-1080x1920.png") 0 0 / 1080px 1920px; color: #161616; font-family: "Courier Prime", monospace; font-weight: 700; }
+    .head { position: absolute; left: 60px; top: 1150px; width: 960px; font-size: 84px; line-height: 1.0; letter-spacing: -0.03em; }
+    .big { font-size: 108px; line-height: 0.98; letter-spacing: -0.04em; }
+    .mono { position: absolute; font-size: 28px; letter-spacing: 0.08em; text-transform: uppercase; color: #6b6b68; font-weight: 700; }
+    .credit { left: 60px; top: 192px; width: 960px; }
+    .red { color: #dd483f; }
+    .card { position: absolute; border-radius: 30px; overflow: hidden; background: #fff; box-shadow: 0 24px 60px rgba(20, 20, 18, 0.13); }
+    .card video, .card img.fill { position: absolute; }
+    .pen { position: absolute; overflow: visible; }
+    .pen path { fill: none; stroke: #dd483f; stroke-width: 9; stroke-linecap: round; stroke-linejoin: round; }
+    .ch { opacity: 0; }
+    .pill { position: absolute; background: #fff; border-radius: 80px; padding: 26px 46px; font-size: 60px; letter-spacing: -0.02em; white-space: nowrap; box-shadow: 0 18px 50px rgba(0, 0, 0, 0.18); }
+
+    #s4-a { left: 40px; top: 250px; width: 1000px; height: 867px; }
+    #s4-a video, #s4-a img.fill { left:-479.6px;top:-112.2px;width:1959.2px;height:1102.0px }
+    #s4-b { left: 40px; top: 375px; width: 1000px; height: 617px; opacity: 0; }
+    #s4-bz { position: absolute; inset: 0; }
+    #s4-b video, #s4-b img.fill { left:-92.6px;top:-24.7px;width:1185.2px;height:666.7px }
+    #s4-h2 { opacity: 0; }
+  </style>
+  <div id="root" data-composition-id="s4" data-width="1080" data-height="1920">
+
+    <div class="mono credit">OpenAI's demo · GPT-6.1 Terra at work</div>
+    <div id="s4-a" class="card">
+      <img class="fill" src="assets/shots/build-end.png" alt="" />
+      <video id="s4-va" class="clip" src="assets/footage/build.mp4" data-start="0" data-media-start="1.8" data-duration="3.100" muted playsinline></video>
+    </div>
+    <div id="s4-b" class="card"><div id="s4-bz">
+      <img class="fill" src="assets/shots/app-end.png" alt="" />
+      <video id="s4-vb" class="clip" src="assets/footage/app.mp4" data-start="2.565" data-duration="1.965" muted playsinline></video>
+    </div></div>
+    <div id="s4-h1" class="head">It opens a 3D app.</div>
+    <div id="s4-h2" class="head">Builds the tram, piece by piece.</div>
+  </div>
+  <script>
+    (() => {
+      const tl = gsap.timeline({ paused: true });
+      const at = (abs) => Math.max(0, abs - 14.14);
+      const blurIn = (sel, t, d = 0.18) => tl.fromTo(sel, { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: d, ease: "power4.out", immediateRender: false }, at(t));
+      const out = (sel, t, d = 0.14) => tl.to(sel, { opacity: 0, filter: "blur(8px)", duration: d, ease: "power2.in" }, at(t));
+      const pen = (sel, t, d = 0.36) => tl.to(sel, { strokeDashoffset: 0, duration: d, ease: "power2.inOut" }, at(t));
+      const type = (sel, t, cps = 34) => { const n = document.querySelectorAll(sel + " .ch").length; tl.to(sel + " .ch", { opacity: 1, duration: 0.001, stagger: 1 / cps, immediateRender: false }, at(t)); return n / cps; };
+      const ring = (sel, t, d = 0.5) => tl.to(sel, { "--p": 360, duration: d, ease: "power2.inOut" }, at(t));
+
+      tl.fromTo("#s4-a", { scale: 0.86, borderRadius: 48 }, { scale: 1, borderRadius: 30, duration: 0.45, ease: "expo.out" }, 0);
+      tl.fromTo("#s4-a", { filter: "blur(10px)" }, { filter: "blur(0px)", duration: 0.3, ease: "power2.out" }, 0);
+      // carry across: the app card takes over, then the camera pushes to the model (OpenAI 21-22 s)
+      tl.to("#s4-a", { opacity: 0, scale: 0.94, filter: "blur(8px)", duration: 0.22, ease: "power2.in" }, at(16.705000000000002));
+      tl.fromTo("#s4-b", { opacity: 0, scale: 1.08 }, { opacity: 1, scale: 1, duration: 0.35, ease: "expo.out", immediateRender: false }, at(16.705000000000002));
+      tl.fromTo("#s4-bz", { scale: 1 }, { scale: 1.55, duration: 1.76, ease: "power2.inOut", transformOrigin: "50% 62%" }, at(16.955000000000002));
+      out("#s4-h1", 16.294999999999998, 0.1);
+      blurIn("#s4-h2", 16.395);
+      tl.set({}, {}, 4.53);
+      window.__timelines["s4"] = tl;
+    })();
+  </script>
+</template>

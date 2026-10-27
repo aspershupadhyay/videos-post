@@ -1,0 +1,691 @@
+{
+  "id": "13a650d0e05d",
+  "kind": "tts",
+  "engine": "myvoice",
+  "voice": "sparsh",
+  "style": "tech",
+  "status": "running",
+  "error": null,
+  "label": "case-021 GPT-6.1 Terra",
+  "language": null,
+  "warnings": [
+    "learned settings for this voice: temperature 0.5"
+  ],
+  "subs": null,
+  "match": null,
+  "attach_to": null,
+  "video": null,
+  "version": null,
+  "platform": "reels",
+  "captions": "punchy",
+  "takes": 2,
+  "mode": null,
+  "similarity": null,
+  "scenes": null,
+  "review": true,
+  "trials": [
+    {
+      "engine": "myvoice",
+      "temperature": 0.6,
+      "text": 1.0,
+      "sim": null,
+      "mos": 4.362,
+      "picked": false
+    },
+    {
+      "engine": "myvoice",
+      "temperature": 0.55,
+      "text": 1.0,
+      "sim": null,
+      "mos": 4.407,
+      "picked": true
+    },
+    {
+      "engine": "myvoice",
+      "temperature": 0.6,
+      "text": 1.0,
+      "sim": null,
+      "mos": 3.994,
+      "picked": true
+    },
+    {
+      "engine": "myvoice",
+      "temperature": 0.55,
+      "text": 1.0,
+      "sim": null,
+      "mos": 3.98,
+      "picked": false
+    },
+    {
+      "engine": "myvoice",
+      "temperature": 0.6,
+      "text": 1.0,
+      "sim": null,
+      "mos": 4.319,
+      "picked": true
+    },
+    {
+      "engine": "myvoice",
+      "temperature": 0.55,
+      "text": 1.0,
+      "sim": null,
+      "mos": 3.968,
+      "picked": false
+    },
+    {
+      "engine": "myvoice",
+      "temperature": 0.6,
+      "text": 1.0,
+      "sim": null,
+      "mos": 4.321,
+      "picked": true
+    },
+    {
+      "engine": "myvoice",
+      "temperature": 0.55,
+      "text": 1.0,
+      "sim": null,
+      "mos": 4.277,
+      "picked": false
+    },
+    {
+      "engine": "myvoice",
+      "temperature": 0.6,
+      "text": 1.0,
+      "sim": null,
+      "mos": 3.675,
+      "picked": false
+    },
+    {
+      "engine": "myvoice",
+      "temperature": 0.55,
+      "text": 0.997,
+      "sim": null,
+      "mos": 4.127,
+      "picked": true
+    },
+    {
+      "engine": "myvoice",
+      "temperature": 0.6,
+      "text": 0.997,
+      "sim": null,
+      "mos": 4.131,
+      "picked": true
+    },
+    {
+      "engine": "myvoice",
+      "temperature": 0.55,
+      "text": 0.997,
+      "sim": null,
+      "mos": 4.04,
+      "picked": false
+    },
+    {
+      "engine": "myvoice",
+      "temperature": 0.6,
+      "text": 1.0,
+      "sim": null,
+      "mos": 3.682,
+      "picked": false
+    },
+    {
+      "engine": "myvoice",
+      "temperature": 0.55,
+      "text": 1.0,
+      "sim": null,
+      "mos": 4.339,
+      "picked": true
+    },
+    {
+      "engine": "myvoice",
+      "temperature": 0.6,
+      "text": 1.0,
+      "sim": null,
+      "mos": 4.342,
+      "picked": true
+    },
+    {
+      "engine": "myvoice",
+      "temperature": 0.55,
+      "text": 1.0,
+      "sim": null,
+      "mos": 4.328,
+      "picked": false
+    },
+    {
+      "engine": "myvoice",
+      "temperature": 0.6,
+      "text": 1.0,
+      "sim": null,
+      "mos": 4.403,
+      "picked": true
+    },
+    {
+      "engine": "myvoice",
+      "temperature": 0.55,
+      "text": 1.0,
+      "sim": null,
+      "mos": 4.137,
+      "picked": false
+    },
+    {
+      "engine": "myvoice",
+      "temperature": 0.6,
+      "text": 1.0,
+      "sim": null,
+      "mos": 4.294,
+      "picked": false
+    },
+    {
+      "engine": "myvoice",
+      "temperature": 0.55,
+      "text": 1.0,
+      "sim": null,
+      "mos": 4.429,
+      "picked": true
+    },
+    {
+      "engine": "myvoice",
+      "temperature": 0.6,
+      "text": 1.0,
+      "sim": null,
+      "mos": 3.978,
+      "picked": false
+    },
+    {
+      "engine": "myvoice",
+      "temperature": 0.55,
+      "text": 1.0,
+      "sim": null,
+      "mos": 4.4,
+      "picked": true
+    },
+    {
+      "engine": "myvoice",
+      "temperature": 0.6,
+      "text": 1.0,
+      "sim": null,
+      "mos": 4.329,
+      "picked": true
+    },
+    {
+      "engine": "myvoice",
+      "temperature": 0.55,
+      "text": 1.0,
+      "sim": null,
+      "mos": 4.063,
+      "picked": false
+    },
+    {
+      "engine": "myvoice",
+      "temperature": 0.6,
+      "text": 1.0,
+      "sim": null,
+      "mos": 3.932,
+      "picked": false
+    },
+    {
+      "engine": "myvoice",
+      "temperature": 0.55,
+      "text": 1.0,
+      "sim": null,
+      "mos": 4.004,
+      "picked": true
+    }
+  ],
+  "profile": {
+    "sim_base": null,
+    "learned": {
+      "temperature": 0.5
+    }
+  },
+  "cleanup": null,
+  "decode": {
+    "tokens": 9850,
+    "secs": 31.84,
+    "tokens_per_s": 309.4,
+    "spec": null
+  },
+  "dataset": null,
+  "benchmark": null,
+  "train": null,
+  "kvoice": null,
+  "walk": null,
+  "auto_train": null,
+  "train_engine": null,
+  "timings": {
+    "loading": 0.0,
+    "generating": 31.84,
+    "codec": 2.23,
+    "listening": 11.38,
+    "mastering": 2.59
+  },
+  "pairs": {
+    "chunks": 13,
+    "pairs": 13
+  },
+  "method": null,
+  "lane": "gpu",
+  "review_batch": true,
+  "stream": true,
+  "eagle": null,
+  "polish_engine": null,
+  "polish": null,
+  "resources": {
+    "gpu_util": 59,
+    "cpu_util": 12,
+    "power_w": 58,
+    "vram_peak_gb": 14.8,
+    "ram_peak_gb": 17.8,
+    "gpu_name": "NVIDIA L4",
+    "lane": "gpu"
+  },
+  "params": {
+    "temperature": 0.6,
+    "top_p": 0.95,
+    "repetition_penalty": 1.12,
+    "seed": 7,
+    "flow": true
+  },
+  "post": {
+    "trim": true,
+    "trim_db": -45.0,
+    "normalize_dbfs": -3.0,
+    "sample_rate": 48000,
+    "tempo": 1.05,
+    "master": "reels",
+    "enhance": false
+  },
+  "subtitles": false,
+  "progress": {
+    "done": 13,
+    "total": 13,
+    "fraction": 0.99,
+    "eta_s": 0,
+    "stage": "packaging",
+    "detail": "",
+    "fetch": null,
+    "elapsed_s": 61.0
+  },
+  "results": [
+    {
+      "id": "vo-01a",
+      "text": "One photo. One sentence. And an A.I. designed this toy.",
+      "duration": 4.073,
+      "window": null,
+      "start": null,
+      "chunks": 1,
+      "fits": null,
+      "lufs": -14.7,
+      "takes": {
+        "n": 2,
+        "picked": [
+          2
+        ],
+        "match": 1.0,
+        "similarity": null,
+        "mos": 4.41
+      },
+      "review": {
+        "retried": 0,
+        "fixed": 0,
+        "issues": []
+      },
+      "delivery": {
+        "pitch_st": 10.01,
+        "pause_s": 0.38,
+        "speech_s": 3.41
+      }
+    },
+    {
+      "id": "vo-01b",
+      "text": "An A.I. looked at one photo, and designed this toy.",
+      "duration": 2.787,
+      "window": null,
+      "start": null,
+      "chunks": 1,
+      "fits": null,
+      "lufs": -16.6,
+      "takes": {
+        "n": 2,
+        "picked": [
+          1
+        ],
+        "match": 1.0,
+        "similarity": null,
+        "mos": 3.99
+      },
+      "review": {
+        "retried": 0,
+        "fixed": 0,
+        "issues": []
+      },
+      "delivery": {
+        "pitch_st": 9.93,
+        "pause_s": 0.04,
+        "speech_s": 2.69
+      }
+    },
+    {
+      "id": "vo-01c",
+      "text": "This toy was designed by an A.I. that saw one photo.",
+      "duration": 2.882,
+      "window": null,
+      "start": null,
+      "chunks": 1,
+      "fits": null,
+      "lufs": -15.8,
+      "takes": {
+        "n": 2,
+        "picked": [
+          1
+        ],
+        "match": 1.0,
+        "similarity": null,
+        "mos": 4.32
+      },
+      "review": {
+        "retried": 0,
+        "fixed": 0,
+        "issues": []
+      },
+      "delivery": {
+        "pitch_st": 7.94,
+        "pause_s": 0.0,
+        "speech_s": 2.84
+      }
+    },
+    {
+      "id": "vo-02",
+      "text": "But OpenAI put one tiny line under this demo. Keep your eye on it.",
+      "duration": 4.084,
+      "window": null,
+      "start": null,
+      "chunks": 1,
+      "fits": null,
+      "lufs": -14.2,
+      "takes": {
+        "n": 2,
+        "picked": [
+          1
+        ],
+        "match": 1.0,
+        "similarity": null,
+        "mos": 4.32
+      },
+      "review": {
+        "retried": 0,
+        "fixed": 0,
+        "issues": []
+      },
+      "delivery": {
+        "pitch_st": 11.37,
+        "pause_s": 0.45,
+        "speech_s": 3.58
+      }
+    },
+    {
+      "id": "vo-03a",
+      "text": "This is G.P.T. six point one Terra. It's not built to chat. It's built to use your computer.",
+      "duration": 5.191,
+      "window": null,
+      "start": null,
+      "chunks": 1,
+      "fits": null,
+      "lufs": -14.1,
+      "takes": {
+        "n": 2,
+        "picked": [
+          2
+        ],
+        "match": 0.997,
+        "similarity": null,
+        "mos": 4.13
+      },
+      "review": {
+        "retried": 0,
+        "fixed": 0,
+        "issues": []
+      },
+      "delivery": {
+        "pitch_st": 12.58,
+        "pause_s": 0.25,
+        "speech_s": 4.67
+      }
+    },
+    {
+      "id": "vo-03b",
+      "text": "This is GPT six point one Terra. It's not built to chat. It's built to use your computer.",
+      "duration": 5.128,
+      "window": null,
+      "start": null,
+      "chunks": 1,
+      "fits": null,
+      "lufs": -14.0,
+      "takes": {
+        "n": 2,
+        "picked": [
+          1
+        ],
+        "match": 0.997,
+        "similarity": null,
+        "mos": 4.13
+      },
+      "review": {
+        "retried": 0,
+        "fixed": 0,
+        "issues": []
+      },
+      "delivery": {
+        "pitch_st": 11.58,
+        "pause_s": 0.25,
+        "speech_s": 4.56
+      }
+    },
+    {
+      "id": "vo-04",
+      "text": "Here it opens a three D app, and builds the tram, piece by piece.",
+      "duration": 4.187,
+      "window": null,
+      "start": null,
+      "chunks": 1,
+      "fits": null,
+      "lufs": -14.2,
+      "takes": {
+        "n": 2,
+        "picked": [
+          2
+        ],
+        "match": 1.0,
+        "similarity": null,
+        "mos": 4.34
+      },
+      "review": {
+        "retried": 0,
+        "fixed": 0,
+        "issues": []
+      },
+      "delivery": {
+        "pitch_st": 9.6,
+        "pause_s": 0.24,
+        "speech_s": 3.62
+      }
+    },
+    {
+      "id": "vo-05",
+      "text": "It's half the price of the last Terra. And OpenAI says it finishes tasks three times faster than its bigger models.",
+      "duration": 6.767,
+      "window": null,
+      "start": null,
+      "chunks": 1,
+      "fits": null,
+      "lufs": -14.4,
+      "takes": {
+        "n": 2,
+        "picked": [
+          1
+        ],
+        "match": 1.0,
+        "similarity": null,
+        "mos": 4.34
+      },
+      "review": {
+        "retried": 0,
+        "fixed": 0,
+        "issues": []
+      },
+      "delivery": {
+        "pitch_st": 11.0,
+        "pause_s": 0.25,
+        "speech_s": 6.39
+      }
+    },
+    {
+      "id": "vo-06",
+      "text": "Now, that tiny line. Shown at actual speed. Some sections omitted.",
+      "duration": 4.468,
+      "window": null,
+      "start": null,
+      "chunks": 1,
+      "fits": null,
+      "lufs": -14.8,
+      "takes": {
+        "n": 2,
+        "picked": [
+          1
+        ],
+        "match": 1.0,
+        "similarity": null,
+        "mos": 4.4
+      },
+      "review": {
+        "retried": 0,
+        "fixed": 0,
+        "issues": []
+      },
+      "delivery": {
+        "pitch_st": 12.59,
+        "pause_s": 0.22,
+        "speech_s": 3.91
+      }
+    },
+    {
+      "id": "vo-07",
+      "text": "Actual speed. With the slow parts cut out.",
+      "duration": 2.698,
+      "window": null,
+      "start": null,
+      "chunks": 1,
+      "fits": null,
+      "lufs": -18.5,
+      "takes": {
+        "n": 2,
+        "picked": [
+          2
+        ],
+        "match": 1.0,
+        "similarity": null,
+        "mos": 4.43
+      },
+      "review": {
+        "retried": 0,
+        "fixed": 0,
+        "issues": []
+      },
+      "delivery": {
+        "pitch_st": 12.52,
+        "pause_s": 0.45,
+        "speech_s": 2.19
+      }
+    },
+    {
+      "id": "vo-08",
+      "text": "And three times faster? That's OpenAI's own test. No one outside OpenAI has confirmed it yet.",
+      "duration": 6.012,
+      "window": null,
+      "start": null,
+      "chunks": 1,
+      "fits": null,
+      "lufs": -14.7,
+      "takes": {
+        "n": 2,
+        "picked": [
+          2
+        ],
+        "match": 1.0,
+        "similarity": null,
+        "mos": 4.4
+      },
+      "review": {
+        "retried": 0,
+        "fixed": 0,
+        "issues": []
+      },
+      "delivery": {
+        "pitch_st": 12.76,
+        "pause_s": 0.29,
+        "speech_s": 5.44
+      }
+    },
+    {
+      "id": "vo-09",
+      "text": "A demo is an ad. Read the line under it.",
+      "duration": 2.608,
+      "window": null,
+      "start": null,
+      "chunks": 1,
+      "fits": null,
+      "lufs": -18.0,
+      "takes": {
+        "n": 2,
+        "picked": [
+          1
+        ],
+        "match": 1.0,
+        "similarity": null,
+        "mos": 4.33
+      },
+      "review": {
+        "retried": 0,
+        "fixed": 0,
+        "issues": []
+      },
+      "delivery": {
+        "pitch_st": 13.41,
+        "pause_s": 0.29,
+        "speech_s": 2.25
+      }
+    },
+    {
+      "id": "vo-10",
+      "text": "Seen a demo like this? Send it our way. We'll check it.",
+      "duration": 2.936,
+      "window": null,
+      "start": null,
+      "chunks": 1,
+      "fits": null,
+      "lufs": -17.1,
+      "takes": {
+        "n": 2,
+        "picked": [
+          2
+        ],
+        "match": 1.0,
+        "similarity": null,
+        "mos": 4.0
+      },
+      "review": {
+        "retried": 0,
+        "fixed": 0,
+        "issues": []
+      },
+      "delivery": {
+        "pitch_st": 6.88,
+        "pause_s": 0.34,
+        "speech_s": 2.31
+      }
+    }
+  ],
+  "created": 1793122234.8,
+  "started": 1793122234.8
+}

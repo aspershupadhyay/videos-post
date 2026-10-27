@@ -1,0 +1,244 @@
+{
+ "cues": [
+  [
+   0.4,
+   "whoosh-short",
+   0.12,
+   "toy -> photo swap"
+  ],
+  [
+   1.28,
+   "typing",
+   0.1,
+   "the prompt types"
+  ],
+  [
+   2.68,
+   "whoosh",
+   0.18,
+   "zoom through into the toy"
+  ],
+  [
+   3.76,
+   "pop",
+   0.2,
+   "red asterisk"
+  ],
+  [
+   4.27,
+   "tick-a",
+   0.2,
+   "cut to the demo"
+  ],
+  [
+   6.003,
+   "scratch-c",
+   0.45,
+   "pen ring round the footnote"
+  ],
+  [
+   9.167,
+   "key-press",
+   0.2,
+   "pill types GPT-6.1 Terra"
+  ],
+  [
+   10.31,
+   "whoosh-cinematic",
+   0.1,
+   "earth -> Lisbon zoom"
+  ],
+  [
+   12.077,
+   "scratch-a",
+   0.4,
+   "strike 'built to chat'"
+  ],
+  [
+   12.707,
+   "typing",
+   0.12,
+   "built to use your computer"
+  ],
+  [
+   13.557,
+   "whoosh-short",
+   0.14,
+   "the world shrinks into a card"
+  ],
+  [
+   14.14,
+   "click-soft",
+   0.25,
+   "the 3D app"
+  ],
+  [
+   16.705,
+   "whoosh-short",
+   0.13,
+   "carry to ChatGPT"
+  ],
+  [
+   18.67,
+   "tick-b",
+   0.22,
+   "cut to the numbers"
+  ],
+  [
+   19.092,
+   "typing",
+   0.12,
+   "Half the price types"
+  ],
+  [
+   20.312,
+   "whoosh-short",
+   0.12,
+   "the tram rolls in"
+  ],
+  [
+   23.042,
+   "punch",
+   0.3,
+   "3x faster*"
+  ],
+  [
+   24.212,
+   "whoosh",
+   0.16,
+   "the tram drives off on 'faster'"
+  ],
+  [
+   24.812,
+   "select",
+   0.15,
+   "the asterisk note"
+  ],
+  [
+   27.159,
+   "whoosh",
+   0.14,
+   "zoom into the footnote"
+  ],
+  [
+   28.019,
+   "whoosh-short",
+   0.16,
+   "zoom through it"
+  ],
+  [
+   28.039,
+   "typing",
+   0.12,
+   "Shown at actual speed."
+  ],
+  [
+   29.539,
+   "typing",
+   0.12,
+   "Some sections omitted."
+  ],
+  [
+   30.679,
+   "scratch-b",
+   0.45,
+   "pen under 'Some sections omitted.'"
+  ],
+  [
+   30.91,
+   "tick-a",
+   0.2,
+   "Actual speed."
+  ],
+  [
+   33.287,
+   "scratch-a",
+   0.5,
+   "the slash"
+  ],
+  [
+   33.387,
+   "plate",
+   0.22,
+   "'cut.' splits"
+  ],
+  [
+   34.0,
+   "whoosh-short",
+   0.14,
+   "3x faster? + the write-up"
+  ],
+  [
+   34.725,
+   "whoosh",
+   0.1,
+   "zoom to the 3x sentence"
+  ],
+  [
+   35.175,
+   "scratch-b",
+   0.4,
+   "pen under 'three times faster'"
+  ],
+  [
+   37.275,
+   "scratch-c",
+   0.4,
+   "pen under 'OpenAI's claims'"
+  ],
+  [
+   38.145,
+   "stamp-a",
+   0.28,
+   "Not yet."
+  ],
+  [
+   40.57,
+   "impact-bass-1",
+   0.22,
+   "the line"
+  ],
+  [
+   43.067,
+   "scratch-a",
+   0.45,
+   "pen under the line"
+  ],
+  [
+   44.04,
+   "drop",
+   0.3,
+   "the dot lands on the rule"
+  ],
+  [
+   44.24,
+   "thud-wood",
+   0.22,
+   "c lands"
+  ],
+  [
+   44.36,
+   "plate",
+   0.18,
+   "t lands"
+  ],
+  [
+   44.57,
+   "pop",
+   0.25,
+   "the dot becomes the e"
+  ],
+  [
+   45.02,
+   "scratch-c",
+   0.45,
+   "the pen circles the e"
+  ],
+  [
+   45.47,
+   "typing",
+   0.14,
+   "CATCH · THE · ERROR"
+  ]
+ ]
+}
