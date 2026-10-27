@@ -49,16 +49,10 @@
    "headline 1"
   ],
   [
-   5.34,
+   6.05,
    "thud-wood",
    0.18,
    "headline 2"
-  ],
-  [
-   5.89,
-   "plate",
-   0.15,
-   "headline 3"
   ],
   [
    6.94,
@@ -97,88 +91,304 @@
    "wires draw"
   ],
   [
-   13.655,
-   "typing",
-   0.1,
-   "the cache lights up"
-  ],
-  [
    14.46,
    "whoosh",
-   0.12,
-   "zoom into the cache"
-  ],
-  [
-   15.337,
-   "tick-a",
-   0.3,
-   "evict 1"
-  ],
-  [
-   15.457,
-   "tick-b",
-   0.3,
-   "evict 2"
-  ],
-  [
-   15.577,
-   "tick-a",
-   0.3,
-   "evict 3"
-  ],
-  [
-   17.337,
-   "select",
-   0.2,
-   "the probe appears"
-  ],
-  [
-   18.457,
-   "key-press",
-   0.3,
-   "fast"
-  ],
-  [
-   19.137,
-   "click-soft",
-   0.35,
-   "slow"
-  ],
-  [
-   19.737,
-   "key-press",
-   0.3,
-   "fast"
-  ],
-  [
-   20.677,
-   "typing",
    0.14,
-   "the bits drop in"
+   "into the CPU"
   ],
   [
-   20.977,
+   15.657,
+   "typing",
+   0.12,
+   "the shelf fills"
+  ],
+  [
+   17.037,
+   "scratch-c",
+   0.25,
+   "the plank draws"
+  ],
+  [
+   17.957,
+   "thud-wood",
+   0.15,
+   "memory slides in"
+  ],
+  [
+   19.459,
+   "key-press",
+   0.35,
+   "fast read"
+  ],
+  [
+   21.319,
+   "drop",
+   0.25,
+   "block drops to memory"
+  ],
+  [
+   21.719,
+   "riser",
+   0.12,
+   "slow read climbs"
+  ],
+  [
+   24.204,
+   "drop",
+   0.28,
+   "A kicks a block off"
+  ],
+  [
+   25.504,
    "pop",
    0.25,
-   "B gets the secret"
+   "bit 1"
   ],
   [
-   21.81,
+   26.204,
+   "whoosh-short",
+   0.1,
+   "A moves on"
+  ],
+  [
+   27.284,
+   "tick-a",
+   0.3,
+   "bit 0"
+  ],
+  [
+   28.62,
+   "riser",
+   0.12,
+   "B: slow read"
+  ],
+  [
+   30.07,
+   "stamp-a",
+   0.2,
+   "slow = 1"
+  ],
+  [
+   31.24,
+   "key-press",
+   0.35,
+   "fast = 0"
+  ],
+  [
+   32.755,
+   "tick-b",
+   0.25,
+   "bit 2"
+  ],
+  [
+   32.918,
+   "tick-a",
+   0.25,
+   "bit 3"
+  ],
+  [
+   33.081,
+   "tick-b",
+   0.25,
+   "bit 4"
+  ],
+  [
+   33.245,
+   "tick-a",
+   0.25,
+   "bit 5"
+  ],
+  [
+   33.408,
+   "tick-b",
+   0.25,
+   "bit 6"
+  ],
+  [
+   33.571,
+   "tick-a",
+   0.25,
+   "bit 7"
+  ],
+  [
+   33.753,
+   "pop",
+   0.25,
+   "message received"
+  ],
+  [
+   34.61,
    "thud-wood",
    0.2,
    "the coverage card lands"
   ],
   [
-   22.612,
+   35.409,
    "scratch-c",
    0.4,
    "pen under 'asked to exchange'"
   ],
   [
-   24.172,
+   36.969,
    "scratch-a",
    0.35,
    "pen under 'test.'"
+  ],
+  [
+   37.77,
+   "impact-bass-1",
+   0.22,
+   "the report returns"
+  ],
+  [
+   38.509,
+   "whoosh-short",
+   0.2,
+   "the redaction tears off"
+  ],
+  [
+   39.949,
+   "scratch-b",
+   0.35,
+   "pen under Sep 20"
+  ],
+  [
+   41.799,
+   "whoosh-short",
+   0.14,
+   "the proxy block slides in"
+  ],
+  [
+   42.629,
+   "scratch-c",
+   0.4,
+   "ring CACHE_MISS"
+  ],
+  [
+   43.549,
+   "thud-wood",
+   0.2,
+   "the model's reasoning lands"
+  ],
+  [
+   44.749,
+   "scratch-a",
+   0.45,
+   "pen under its reasoning"
+  ],
+  [
+   45.75,
+   "whoosh-short",
+   0.14,
+   "the DNS query card"
+  ],
+  [
+   47.012,
+   "typing",
+   0.12,
+   "underline the query"
+  ],
+  [
+   47.632,
+   "whoosh-short",
+   0.14,
+   "the answer comes back"
+  ],
+  [
+   48.332,
+   "scratch-b",
+   0.4,
+   "ring Paris"
+  ],
+  [
+   48.96,
+   "thud-wood",
+   0.2,
+   "timeline lands"
+  ],
+  [
+   49.296,
+   "scratch-c",
+   0.35,
+   "ring the alert"
+  ],
+  [
+   50.116,
+   "punch",
+   0.25,
+   "12 min"
+  ],
+  [
+   51.136,
+   "whoosh-short",
+   0.12,
+   "not-stopped line"
+  ],
+  [
+   53.036,
+   "impact-bass-2",
+   0.25,
+   "2.5 hours"
+  ],
+  [
+   53.636,
+   "scratch-a",
+   0.35,
+   "pen under hours"
+  ],
+  [
+   54.72,
+   "click-soft",
+   0.25,
+   "the switch"
+  ],
+  [
+   56.622,
+   "plate",
+   0.25,
+   "flip... stuck"
+  ],
+  [
+   57.122,
+   "stamp-b",
+   0.2,
+   "it won't go off"
+  ],
+  [
+   58.25,
+   "drop",
+   0.3,
+   "the dot lands on the rule"
+  ],
+  [
+   58.45,
+   "thud-wood",
+   0.22,
+   "c lands"
+  ],
+  [
+   58.57,
+   "plate",
+   0.18,
+   "t lands"
+  ],
+  [
+   58.78,
+   "pop",
+   0.25,
+   "the dot becomes the e"
+  ],
+  [
+   59.23,
+   "scratch-c",
+   0.45,
+   "the pen circles the e"
+  ],
+  [
+   59.68,
+   "typing",
+   0.14,
+   "CATCH · THE · ERROR"
   ]
  ]
 }

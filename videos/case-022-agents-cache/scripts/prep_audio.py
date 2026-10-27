@@ -3,7 +3,7 @@
     python3 scripts/prep_audio.py
 
 Picked takes: hook A (vo-01) and the "D.N.S." spelling (vo-06, 0.68 s vs 0.78 s for "D-N-S"); the others stay in
-assets/vo/raw for A/B.
+assets/vo/raw for A/B. vo-04-v1 is the first explainer line, replaced by vo-03b..vo-04c (the step-by-step cache explainer).
 Phrase onsets inside a line come from its own pauses (silencedetect); word times from Whisper
 (assets/vo/raw/subs/*.subs.json) are copied in as "words" for cues that land on a word.
 Writes assets/vo/timing.json and assets/music/bed.wav.
@@ -16,7 +16,8 @@ from pathlib import Path
 P = Path(__file__).resolve().parent.parent
 RAW = P / "assets/vo/raw"
 # line id -> (raw take, gap before it). The payoff (vo-06) and the repeatable line (vo-09) get air.
-LINES = {"vo-01": ("vo-01", 0.10), "vo-02": ("vo-02", 0.30), "vo-03": ("vo-03", 0.30), "vo-04": ("vo-04", 0.25),
+LINES = {"vo-01": ("vo-01", 0.10), "vo-02": ("vo-02", 0.30), "vo-03": ("vo-03", 0.30), "vo-03b": ("vo-03b", 0.25),
+         "vo-03c": ("vo-03c", 0.25), "vo-04": ("vo-04", 0.30), "vo-04b": ("vo-04b", 0.30), "vo-04c": ("vo-04c", 0.20),
          "vo-05": ("vo-05", 0.55), "vo-06": ("vo-06", 0.65), "vo-07": ("vo-07", 0.30), "vo-08": ("vo-08", 0.40),
          "vo-09": ("vo-09", 0.55), "vo-10": ("vo-10", 0.50)}
 TAIL = 3.6      # end card holds after the last word
@@ -58,7 +59,7 @@ film = round(t + TAIL, 2)
 (P / "assets/vo/timing.json").write_text(json.dumps({"film": film, "lines": lines}, indent=1))
 
 l = {x["id"]: x for x in lines}
-quiet_a, quiet_b = l["vo-04"]["end"] + 0.1, l["vo-06"]["start"] + 0.3   # music drops out under the twist (vo-05)
+quiet_a, quiet_b = l["vo-04c"]["end"] + 0.1, l["vo-06"]["start"] + 0.3   # music drops out under the twist (vo-05)
 lift = l["vo-10"]["end"]
 env = (f"volume='if(between(t,{quiet_a:.2f},{quiet_b:.2f}),0.12,if(between(t,{quiet_b:.2f},{quiet_b + 0.6:.2f}),"
        f"0.12+0.88*(t-{quiet_b:.2f})/0.6,if(gt(t,{lift + 0.4:.2f}),1.78,if(gt(t,{lift:.2f}),1+0.78*(t-{lift:.2f})/0.4,1))))':eval=frame")

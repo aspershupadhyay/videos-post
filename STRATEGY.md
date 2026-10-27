@@ -11,6 +11,7 @@ and growth system, and it changes after every video (see "The loop" at the botto
 | 018 | Kimi K3.1 Pro | 74 s | 3,253 (account, as of 2026-10-27) | +12 | best story at 0:42; 6 blank gaps |
 | 020 | Viral cliff "AI" HUD check | 49 s | — | — | first v3 type; qa_frames PASS; no captions |
 | 021 | GPT-6.1 Terra: read the line under the demo | 50 s | — | — | v1 rejected (subtitle text, credits, weak cover); v2 look v5, no subtitles |
+| 022 | OpenAI agents: the cache channel was a test; the DNS breakout wasn't | 65 s | — | — | from a Varun Mayya reference; step-by-step explainer; captions on (reference style) |
 
 Target per video: beat the previous one on **3-s hold** and **avg % watched**, not raw views. Ask the creator for
 these two numbers from Insights / YouTube Studio; log them here.

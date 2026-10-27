@@ -20,9 +20,9 @@
     .cell.on { background: #f4f2ee; }
     .dot { position: absolute; border-radius: 50%; background: #dd483f; }
 
-    #s3-chip { left: 220px; top: 820px; width: 640px; height: 640px; background: #121211; border-color: #f4f2ee;
-      outline: 14px dashed #2e2e2c; outline-offset: 10px; opacity: 0; }
-    #s3-lc { top: 300px; opacity: 0; color: #c9c9c5; }
+    #s3-chip { left: 330px; top: 860px; width: 420px; height: 420px; background: #121211; border-color: #f4f2ee; outline: 14px dashed #2e2e2c; outline-offset: 10px; opacity: 0;
+      display: flex; align-items: center; justify-content: center; font-family: "Courier Prime", monospace; font-weight: 700; font-size: 72px; letter-spacing: 0.1em; }
+    #s3-lc { top: 1340px; opacity: 0; color: #c9c9c5; }
     #s3-wire { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
     #s3-wire path { stroke-width: 6; stroke: #f4f2ee; }
   </style>
@@ -38,11 +38,11 @@
     <div id="s3-la" class="mono" style="left:110px;top:1086px;width:360px;text-align:center">Agent A · VM 1</div>
     <div id="s3-lb" class="mono" style="left:610px;top:1086px;width:360px;text-align:center">Agent B · VM 2</div>
     <svg id="s3-wire" class="pen" viewBox="0 0 1080 1920" aria-hidden="true">
-      <path pathLength="1" d="M290 570 C 290 700, 470 680, 470 806" />
-      <path pathLength="1" d="M790 570 C 790 700, 610 680, 610 806" />
+      <path pathLength="1" d="M290 570 C 290 760, 470 720, 470 846" />
+      <path pathLength="1" d="M790 570 C 790 760, 610 720, 610 846" />
     </svg>
-    <div id="s3-chip" class="box"><div id="s3-g" class="grid" style="grid-template-columns:repeat(8,56px);grid-auto-rows:56px;gap:14px;left:44px;top:44px"><span id="s3-g-0" class="cell"></span><span id="s3-g-1" class="cell"></span><span id="s3-g-2" class="cell"></span><span id="s3-g-3" class="cell on"></span><span id="s3-g-4" class="cell"></span><span id="s3-g-5" class="cell"></span><span id="s3-g-6" class="cell"></span><span id="s3-g-7" class="cell"></span><span id="s3-g-8" class="cell"></span><span id="s3-g-9" class="cell"></span><span id="s3-g-10" class="cell on"></span><span id="s3-g-11" class="cell"></span><span id="s3-g-12" class="cell on"></span><span id="s3-g-13" class="cell"></span><span id="s3-g-14" class="cell"></span><span id="s3-g-15" class="cell"></span><span id="s3-g-16" class="cell"></span><span id="s3-g-17" class="cell"></span><span id="s3-g-18" class="cell"></span><span id="s3-g-19" class="cell"></span><span id="s3-g-20" class="cell"></span><span id="s3-g-21" class="cell on"></span><span id="s3-g-22" class="cell"></span><span id="s3-g-23" class="cell"></span><span id="s3-g-24" class="cell"></span><span id="s3-g-25" class="cell"></span><span id="s3-g-26" class="cell"></span><span id="s3-g-27" class="cell on"></span><span id="s3-g-28" class="cell"></span><span id="s3-g-29" class="cell"></span><span id="s3-g-30" class="cell on"></span><span id="s3-g-31" class="cell"></span><span id="s3-g-32" class="cell"></span><span id="s3-g-33" class="cell"></span><span id="s3-g-34" class="cell"></span><span id="s3-g-35" class="cell"></span><span id="s3-g-36" class="cell on"></span><span id="s3-g-37" class="cell"></span><span id="s3-g-38" class="cell"></span><span id="s3-g-39" class="cell"></span><span id="s3-g-40" class="cell"></span><span id="s3-g-41" class="cell"></span><span id="s3-g-42" class="cell"></span><span id="s3-g-43" class="cell"></span><span id="s3-g-44" class="cell on"></span><span id="s3-g-45" class="cell on"></span><span id="s3-g-46" class="cell"></span><span id="s3-g-47" class="cell"></span><span id="s3-g-48" class="cell"></span><span id="s3-g-49" class="cell"></span><span id="s3-g-50" class="cell"></span><span id="s3-g-51" class="cell on"></span><span id="s3-g-52" class="cell"></span><span id="s3-g-53" class="cell"></span><span id="s3-g-54" class="cell"></span><span id="s3-g-55" class="cell"></span><span id="s3-g-56" class="cell"></span><span id="s3-g-57" class="cell"></span><span id="s3-g-58" class="cell on"></span><span id="s3-g-59" class="cell"></span><span id="s3-g-60" class="cell"></span><span id="s3-g-61" class="cell on"></span><span id="s3-g-62" class="cell"></span><span id="s3-g-63" class="cell"></span></div></div>
-    <div id="s3-lc" class="mono row">One processor · one shared cache</div>
+    <div id="s3-chip" class="box">CPU</div>
+    <div id="s3-lc" class="mono row">One shared processor</div>
   </div>
   <script>
     (() => {
@@ -51,8 +51,8 @@
       const rise = (sel, t, d = 0.45) => tl.fromTo(sel, { opacity: 0, y: 60, filter: "blur(10px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: d, ease: "expo.out", immediateRender: false }, at(t));
       const pen = (sel, t, d = 0.36) => tl.to(sel, { strokeDashoffset: 0, duration: d, ease: "power2.inOut" }, at(t));
       const type = (sel, t, cps = 34) => tl.to(sel + " .ch", { opacity: 1, duration: 0.001, stagger: 1 / cps, immediateRender: false }, at(t));
+      const ring = (sel, t, d = 0.5) => tl.to(sel, { "--p": 360, duration: d, ease: "power2.inOut" }, at(t));
 
-      // carry from s1: the boxes shrink up and make room for the chip
       tl.fromTo("#s3-a", { x: 0, y: 0, scale: 1 }, { x: 50, y: -310, scale: 0.62, duration: 0.6, ease: "power3.inOut" }, 0);
       tl.fromTo("#s3-b", { x: 0, y: 0, scale: 1 }, { x: -50, y: -310, scale: 0.62, duration: 0.6, ease: "power3.inOut" }, 0);
       tl.to(["#s3-la", "#s3-lb"], { opacity: 0, duration: 0.2 }, 0);
@@ -61,8 +61,7 @@
       tl.fromTo("#s3-chip", { opacity: 1, y: 500, scale: 0.9 }, { opacity: 1, y: 0, scale: 1, duration: 0.6, ease: "expo.out", immediateRender: false }, at(11.975));
       pen("#s3-wire path", 12.885, 0.4);
       tl.fromTo("#s3-lc", { opacity: 0 }, { opacity: 1, duration: 0.25, immediateRender: false }, at(13.655));
-      tl.fromTo("#s3-g .cell", { scale: 0.6 }, { scale: 1, duration: 0.3, ease: "back.out(2)", stagger: { each: 0.008, from: "center", grid: [8, 8] }, immediateRender: false }, at(13.655));
-      tl.to("#s3-chip", { scale: 1.06, duration: 0.81, ease: "none" }, at(13.955));
+      tl.to("#s3-chip", { scale: 1.08, duration: 0.81, ease: "none" }, at(13.854999999999999));
       tl.set({}, {}, 3.4);
       window.__timelines["s3"] = tl;
     })();

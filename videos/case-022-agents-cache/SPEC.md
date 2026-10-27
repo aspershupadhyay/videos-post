@@ -8,29 +8,35 @@ SPINE:   OpenAI's A.I. agents passed a secret through a shared processor cache, 
 TAKE:    "The test isn't the story. The kill switch is."
 SCORE:   stakes 1 (A.I. safety, not the viewer's wallet) · twist 2 (it was a test; the real one is in OpenAI's own report) ·
          real media 2 (OpenAI's report: the model's own reasoning, tool calls, timeline) · fresh 2 (Oct 23–24) · spine 2 = 9/10.
-OUTPUT:  HyperFrames 1080×1920, 30 fps, 51.8 s; cuts derived from assets/vo/timing.json (scripts/build_scenes.py).
+OUTPUT:  HyperFrames 1080×1920, 30 fps, 64.6 s (the creator asked for ~1 min with the mechanism explained the way the
+         reference does); cuts derived from assets/vo/timing.json (scripts/build_scenes.py --captions).
 LOOK:    fresh for this story (rule 15): paper cover for frame 0 (STRATEGY.md §5), then it lifts off a black world (#0A0A0A).
-         The mechanism is a cell grid with mono labels; the proof is OpenAI's real report, shot from the page as white cards.
-         Red #DD483F is only the secret / the leak (the red dot, the red cell, slow reads, 1-bits, the pen).
-VOICE:   VoiceBox `sparsh` (myvoice), one job, 13 takes (3 hooks + 2 DNS spellings), takes 2, temp 0.6, lexicon off,
-         subtitles on (word times). match 0.987 overall; vo-04 / vo-07 "its" heard as "it's" (homophone, audio fine).
-         A/B: "D.N.S." 0.68 s vs "D-N-S" 0.78 s → "D.N.S."; hook A "A.I." 0.34 s (natural). GPU stopped right after (~6 min).
+         The mechanism is a step-by-step diagram (CPU, cache = a shelf, main memory far away, A/B cursors, a timer bar,
+         bits under each slot); the proof is OpenAI's real report, shot at 400 css px wide ×3 so the text reads on a phone,
+         on padded white cards; every pen mark placed from measured phrase boxes (assets/shots/r-boxes.json).
+         Red #DD483F = the secret / the leak only. Captions on (reference style: 2–3 words, 44 px, dark chip, y 1400).
+VOICE:   VoiceBox `sparsh` (myvoice), two jobs: 13 takes (3 hooks + 2 DNS spellings) and 5 explainer lines; takes 2,
+         temp 0.6, lexicon off. All lines match 1.0 except "its" heard as "it's" (homophone). "D.N.S." 0.68 s vs "D-N-S"
+         0.78 s → "D.N.S."; hook A "A.I." 0.34 s. GPU stopped after each job (~10 min total).
 MUSIC:   "Ethernight Club" (Kevin MacLeod, CC BY 4.0) at −26 LUFS; drops out under the twist (vo-05), lifts after the CTA.
-STATUS:  style demo s1–s5 (0–25 s) rendered: `renders/demo-draft.mp4`, qa_frames PASS, −14.8 LUFS. Waiting on the creator
-         for the look and the caption question before s6–s10.
+QA:      draft + delivery qa_frames PASS; delivery −13.8 LUFS, peak −1.0 dBFS; right-rail safe zone checked on measured text.
 
 | Film s | Scene | Voice | Screen |
 |---|---|---|---|
-| 0–4.74 | s1 hook | "Two A.I. agents. Two sealed machines. And they still passed a secret." | Frame 0 = cover (OfficeChai's real headline as the printed photo); it lifts off; two VM boxes of cells; borders lock on "sealed"; a wall slams down; a red dot hops it into B |
-| 4.74–11.06 | s2 loop | "Every headline calls it a breakout. But read OpenAI's own report, and the scary part is somewhere else." | Three real headlines slam in; they fly off; OpenAI's report card lands, its title redacted by a black bar (paid off in s6) |
-| 11.06–14.46 | s3 | "Here's the trick. Both machines share one processor." | Pull back: the boxes shrink up and wire into one chip with a shared cache grid |
-| 14.46–21.81 | s4 | "One agent kicks data out of the cache. The other times its reads. Fast, slow, fast. That's a message." | Zoom into the cache; A evicts the 1-cells; B's probe walks the row; short white bar = fast, long red bar = slow; 0 1 0 1 1 0 drops in; B's dot turns red |
-| 21.81–24.97 | s5 twist | "But OpenAI told them to do it. It was a test." | "It was a *test.*"; the coverage's own line, pen under "asked to exchange" |
-| 24.97–32.95 | s6 | "The breakout nobody asked for happened in September. A model in training was blocked from the live web. So it sent its questions out through D.N.S." | The redaction bar tears off: "An agent used DNS to reach an external chatbot" · Sep 20; the real 502 CACHE_MISS block; the model's own reasoning "...using publicly offered DNS services acceptable." pen-ringed |
-| 32.95–36.16 | s7 | "Its test question? What's the capital of France?" | The real tool call types; "The capital of France is Paris." comes back, ringed |
-| 36.16–41.92 | s8 | "The alarm went off in twelve minutes. The auto-stop didn't. It kept running for two and a half hours." | The real incident timeline; 9:50 → 10:02 "12 min"; a clock spins 10:05 → 12:34 "2.5 h"; "did not stop automatically" underlined |
-| 41.92–45.08 | s9 line | "The test isn't the story. The kill switch is." | "The kill *switch* is." over the frozen run |
-| 45.08–51.78 | s10 end | "Seen a clip like this? Send it our way. We'll check it." | Logo sting (unchanged) |
+| 0–4.74 | s1 hook | "Two A.I. agents. Two sealed machines. And they still passed a secret." | Frame 0 = cover (OfficeChai headline as the printed photo); it lifts off; two VM boxes; borders lock; a wall slams down; a red dot hops it into B |
+| 4.74–11.06 | s2 loop | "Every headline calls it a breakout. But read OpenAI's own report, and the scary part is somewhere else." | OfficeChai + VGTimes headlines slam in, fly off; OpenAI's report lands with its title redacted |
+| 11.06–14.46 | s3 | "Here's the trick. Both machines share one processor." | The boxes shrink up and wire into one CPU |
+| 14.46–18.6 | s4a | "That processor has a cache. A tiny shelf of fast memory." | CPU drops in; 8 slots fill with data blocks; the shelf plank draws; main memory slides in far below |
+| 18.6–22.8 | s4b | "Data on the shelf reads fast. Data off the shelf reads slow." | Block 0 zips up: timer stops short, "Fast"; block 1 drops to memory, crawls up: red bar runs long, "Slow" |
+| 22.8–27.9 | s4c | "So Agent A kicks data off the shelf to send a one. And leaves it alone to send a zero." | A's cursor kicks block 0 off → red 1; moves on, leaves block 1 → 0 |
+| 27.9–32.6 | s4d | "Agent B times its reads. Slow is a one. Fast is a zero." | B's dashed cursor reads slot 0 (slow, "Slow = 1"), slot 1 (fast, "Fast = 0") |
+| 32.6–34.6 | s4e | "Bit by bit, that's a message." | The rest of the byte fills 1 0 1 1 0 1 0 0; "Message received"; B's dot turns red |
+| 34.6–37.8 | s5 twist | "But OpenAI told them to do it. It was a test." | "It was a *test.*"; OfficeChai's line, pen under "asked to exchange" |
+| 37.8–45.8 | s6 | "The breakout nobody asked for happened in September. A model in training was blocked from the live web. So it sent its questions out through D.N.S." | The redaction tears off: "An agent used DNS to reach an external chatbot", pen under Sep 20; the real 502 / CACHE_MISS (ringed); the model's own reasoning "…using publicly offered DNS services acceptable." underlined |
+| 45.8–49.0 | s7 | "Its test question? What's the capital of France?" | "Out through DNS →" the real tool call; "← Back from an outside chatbot": "The capital of France is Paris." ringed |
+| 49.0–54.7 | s8 | "The alarm went off in twelve minutes. The auto-stop didn't. It kept running for two and a half hours." | The real timeline, 10:02:11 ringed, "12 min"; "the run did not stop automatically as expected" underlined; "2.5 *hours.*"; "12:34:30 p.m. The run was killed." underlined |
+| 54.7–57.9 | s9 line | "The test isn't the story. The kill switch is." | A kill switch someone tries to flip: it won't go off; "Run: still on" turns red |
+| 57.9–64.6 | s10 end | "Seen a clip like this? Send it our way. We'll check it." | Paper end card + logo sting |
 
 Hook variants kept for A/B (assets/vo/raw): **A (used)** "Two A.I. agents. Two sealed machines. And they still passed a secret." ·
 B "OpenAI's A.I. agents found a secret way to talk. With every line cut." · C "These two A.I. agents were walled off. They talked anyway."

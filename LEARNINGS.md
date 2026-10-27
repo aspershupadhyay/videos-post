@@ -2,6 +2,19 @@
 
 Newest first. Each entry: what happened, what we learned, the rule it became (in `CLAUDE.md`).
 
+## 2026-10-27 — Case 022 v2: creator feedback on the style demo
+- **Creator:** make it ~1 minute; explain the mechanism the exact way the reference does; the screenshots had visual
+  issues; the visual explanation wasn't good.
+- My read of what failed: the abstract cell grid showed *that* bits move, not *why* (no cache vs memory, no notion of a
+  slow read), and one 7 s line carried the whole mechanism. Report screenshots were shot at 668 css px wide, so text was
+  ~20 px on a phone; the VGTimes crop carried the site's nav bar; the redaction bar overhung its card.
+- Fixed: one idea per line (cache = a shelf by the CPU → on-shelf fast / off-shelf slow → A kicks = 1, leaves = 0 →
+  B times reads → bit by bit), each line its own visible action; screenshots re-shot at 400 css px ×3 with measured
+  phrase boxes driving every pen mark; padded cards. → Rule candidate: **explain a mechanism one cause per line, each with
+  its own on-screen action; shoot any text screenshot at the width it'll be read at (≥ 32 px text in the frame).**
+- Could've done better: I should have checked screenshot text size at phone scale before the demo (it was visible in the
+  first contact sheet), and storyboarded the explainer as steps before drawing a diagram.
+
 ## 2026-10-27 — Case 022: learning from a reference Short (Varun Mayya, OpenAI agents + CPU cache)
 - **Creator asked:** make a video on the same story, our way, and learn how they explain visuals and use subtitles.
 - **What they do better:** the mechanism as a clean black motion graphic (cell grid = bits, dot = agent, mono labels);
