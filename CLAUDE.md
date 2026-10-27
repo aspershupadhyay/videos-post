@@ -45,14 +45,16 @@ Log every new piece of feedback in `LEARNINGS.md` with the date, and promote it 
 14. **A passing check is not quality.** Whisper match can't hear a stretched word and qa_frames can't see a boring stretch.
     Before delivery: A/B any acronym or name in the first voice job, re-watch the 25–40 s middle for retention, and ask the
     creator to listen once.
-15. **Match the logo (creator, 2026-10-27).** Paper ground (`brand/logo-v3/paper-1080x1920.png`); red #DD483F only for the
-    pen, the logo's pen ring and the one italic word. Use the logo creatively; every end card is `brand/motion/logo-sting.html`
-    ("amazing" — keep it). Template: `videos/case-021-gpt-6-1-terra` (look v5 below).
+15. **Match the logo's feel; design each video fresh (creator, 2026-10-27).** Fixed: every end card is
+    `brand/motion/logo-sting.html` ("amazing" — keep it), red #DD483F stays the brand's one accent. Open: the look, layout,
+    motion graphics and animation of each video. Pick what serves that story; don't copy the last case. Case 021's
+    paper + printed-photo look is one good reference (`videos/case-021-gpt-6-1-terra`), not a template. Show a short style
+    demo before building a whole video in a new look.
 16. **No subtitles, no on-screen credits (creator, 2026-10-27).** Never put the voice on screen as text, and no source /
-    credit lines in the frame (sources go in `POST.md`). Text appears only as one short expressive line on some beats:
-    Inter 800 + one red Instrument Serif italic word underlined by the pen. Show it, don't read it: turn each claim into a
+    credit lines in the frame (sources go in `POST.md`). Text appears only as short expressive lines on some beats
+    (Case 021: Inter 800 + one red Instrument Serif italic word underlined by the pen). Show it, don't read it: turn each claim into a
     visual (the pen slices the tram = half price; the pen cuts the demo = "slow parts cut out"; an AD stamp on the demo).
-    Real footage big, in "printed photo" frames (6 px #1B1B1B border, offset shadow). Cover = the creator's template
-    (`STRATEGY.md` §5).
+    Real footage big (Case 021 framed it as printed photos; any treatment that keeps it real works). Cover = the creator's
+    template (`STRATEGY.md` §5).
 17. **Safe zones (Shorts + Reels).** Key content lives in y 240–1480 on 1080×1920; no text under the right button rail
     (x > 940) below y 950. Rearrange to fit, never shrink. Check with the overlay in `brand/README.md` before delivery.

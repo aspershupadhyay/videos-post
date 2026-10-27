@@ -5,10 +5,12 @@ Newest first. Each entry: what happened, what we learned, the rule it became (in
 ## 2026-10-27 — Case 021: v3 "dense" look demo rejected, v2 stays
 - The creator said v2 "feels empty" and asked what Varun Mayya's AEOS would do better. I demoed the first 19 s in a
   dense, AEOS-style look: footage full-bleed in every shot, a cut every 1.5–2 s, paper-strip keyword labels, the red pen
-  in every shot, the footnote redacted as the open loop. **Verdict: "the first one is better", keep v2.**
-- Learned: "it feels empty" was not a request for density or the AEOS look. The calm, spacious, printed-photo v2
-  (rules 15–17) is the house style; don't swap it for wall-to-wall footage and labels. Fix emptiness inside v2's look
-  (a bigger hero, a better beat), not by changing the whole style.
+  in every shot, the footnote redacted as the open loop. **Verdict for this video: "the first one is better", keep v2.**
+- The creator on what to take from it: **don't hard-code a look.** v2 suited this story; the next video can be any design,
+  motion graphics or animation. Stay open, pick the treatment per story. → Rule 15 rewritten (fixed: logo sting, red
+  accent, no subtitles, safe zones, cover template; open: everything else).
+- Learned: "feels empty" is a note on that cut, not a request to swap in someone else's style. Try the fix in the
+  video's own language first.
 - Did right: a 19 s demo plus a side-by-side before building 50 s, so the "no" cost one render, not a full video.
   Keep doing that for any change of look.
 
