@@ -145,8 +145,8 @@ S.append(scene("s1", s, e, f"""
     #s1-g {{ position: absolute; left: 76px; top: 318px; font-weight: 600; font-size: 46px; letter-spacing: -0.025em; color: #7b7b77; }}
     #s1-h {{ top: 392px; font-size: 150px; width: 960px; }}
     #s1-sub {{ position: absolute; left: 76px; top: 852px; font-weight: 700; font-size: 52px; letter-spacing: -0.025em; color: #3a3a38; }}
-    #s1-cov {{ left: 150px; top: 1010px; width: 780px; height: 408px; border: 6px solid #1b1b1b; border-radius: 26px; box-shadow: 14px 16px 0 rgba(20, 20, 18, 0.10), 0 34px 70px rgba(20, 20, 18, 0.12); }}
-    #s1-cov img {{ width: 768px; height: 401px; }}
+    #s1-cov {{ left: 90px; top: 1075px; width: 900px; height: 369px; border: 6px solid #1b1b1b; border-radius: 26px; box-shadow: 14px 16px 0 rgba(20, 20, 18, 0.10), 0 34px 70px rgba(20, 20, 18, 0.12); }}
+    #s1-cov img {{ width: 888px; height: 357px; }}   /* headline + date only: no half-cut lines (rule 18) */
     #s1-wall {{ position: absolute; left: 524px; top: 680px; width: 32px; height: 400px; border-radius: 6px;
       background: repeating-linear-gradient(-45deg, #3a3a38 0 6px, #161615 6px 14px); }}
     #s1-seal {{ top: 1170px; color: #c9c9c5; opacity: 0; }}
@@ -162,7 +162,7 @@ S.append(scene("s1", s, e, f"""
       <div id="s1-g">Fact check · OpenAI's agent report</div>
       <div id="s1-h" class="h" style="color:#141414">A.I. agents broke {it("s1-it", "out?")}</div>
       <div id="s1-sub">Sealed off. Still talking. Really?</div>
-      <div id="s1-cov" class="card" style="transform: rotate(-2.5deg)"><img src="assets/shots/cover-still.png" alt="OfficeChai headline: OpenAI says its AI agents found a way to talk through the processor's cache" /></div>
+      <div id="s1-cov" class="card" style="transform: rotate(-2.5deg)"><img src="assets/shots/cover-still.png" data-text-px="50" alt="OfficeChai headline: OpenAI says its AI agents found a way to talk through the processor's cache" /></div>
       {WORDMARK.format(id="s1-wm", top=1530)}
     </div>""", f"""
       tl.set("#s1-it path", {{ strokeDashoffset: 0 }}, 0);
