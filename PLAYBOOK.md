@@ -68,6 +68,8 @@ Template: `videos/case-018-kimi-k3-1-pro/DESIGN.md`.
 - Re-hook at ~50%: the music cuts to silence, giant type says the line, then the music returns on the next beat.
 - Frame 0 is the thumbnail: a headline that creates the question is already on screen.
 - Captions: white, no box, active word full white, others 50%; skip lines that big type already says.
+- No dead frames: every scene's first element is visible on its first frame (enter from 0.85 opacity/scale or a mask,
+  never from 0 on bare ground). `tools/qa_frames.py` gates it.
 - Drop black flash frames from source footage (`scripts/cut_footage.sh` does it with signalstats).
 
 ## 5b. Script like a creator with a million followers
@@ -75,9 +77,10 @@ Template: `videos/case-018-kimi-k3-1-pro/DESIGN.md`.
 - Open on the most surprising true thing, as a story with a body in it ("This simulated human couldn't take a
   single step."), not on the product name. Name the product only after the hook pays off (~25%).
 - Short declaratives, numbers spoken plainly, one idea per line. Cut every adjective you can.
-- A re-hook halfway ("But here's the part nobody's talking about.") and then the angle nobody else covered.
+- Superseded by `STRATEGY.md` §2–4 (spine, hook method, structure). No stock re-hooks ("nobody's talking about" is banned);
+  pay off a specific open loop instead.
 - The CatchTheError beat: "The catch" — vendor-reported vs independent, what isn't released yet.
-- End on a line with a number that moves ("from twelve points to three"), then the follow line.
+- End on a repeatable line (≤ 10 words, a take), then the end card for ≥ 3 s; the last frame echoes frame 0.
 
 ## 6. HyperFrames gotchas we hit
 
@@ -100,8 +103,10 @@ Template: `videos/case-018-kimi-k3-1-pro/DESIGN.md`.
 ```bash
 npx hyperframes check --json
 npx hyperframes snapshot --at 0,5,10,...
+npx hyperframes render -q draft -o renders/draft.mp4
+python3 ../../tools/qa_frames.py renders/draft.mp4        # must PASS: no empty or frozen stretches
 npx hyperframes render -q delivery -o renders/<name>-9x16.mp4
 npx hyperframes audio renders/<name>-9x16.mp4 --json   # loudness and hits, measured
 ```
 
-Post copy goes in the video folder's `POST.md`: a hook caption, three hashtags at most, and the music credit.
+Export `renders/cover.png` (template: `STRATEGY.md` §5). Post copy goes in the video folder's `POST.md`: a hook caption, three hashtags at most, and the music credit.
