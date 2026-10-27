@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8" />
+<title>CatchTheError lookbook v1</title>
+<style>
+  @font-face { font-family: "Geist"; font-weight: 100 900; src: url("../../videos/case-020-ai-cliff-hud/assets/fonts/Geist.woff2") format("woff2"); }
+  @font-face { font-family: "Geist Mono"; font-weight: 100 900; src: url("../../videos/case-020-ai-cliff-hud/assets/fonts/GeistMono.woff2") format("woff2"); }
+  @font-face { font-family: "Instrument Serif"; font-style: italic; src: url("../../videos/case-020-ai-cliff-hud/assets/fonts/InstrumentSerif-Italic.woff2") format("woff2"); }
+  :root { --ink: #f4f2ee; --ground: #0a0a0a; --paper: #f2f0eb; --red: #e0502b; --dim: #8c8a86; --line: #2a2a2a; }
+  body { margin: 0; background: #222; font-family: "Geist", sans-serif; }
+  .f { position: relative; width: 1080px; height: 1920px; overflow: hidden; margin: 0 0 40px; }
+  .mono { font-family: "Geist Mono", monospace; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; font-size: 28px; }
+  .disp { font-weight: 800; letter-spacing: -0.045em; line-height: 0.95; }
+  .it { font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400; letter-spacing: -0.01em; }
+  .abs { position: absolute; }
+  svg.pen path { fill: none; stroke: var(--red); stroke-width: 8; stroke-linecap: round; }
+
+  /* A — Forensic: freeze-frame evidence, numbered callouts, measurement lines */
+  #a { background: var(--ground); color: var(--ink); }
+  #a .img { position: absolute; inset: 0; width: 1080px; height: 1920px; object-fit: cover; }
+  #a .shade { position: absolute; inset: 0; background: rgba(10,10,10,0.42); }
+  #a .tag { left: 48px; top: 56px; color: var(--ink); }
+  #a .tc { right: 48px; top: 56px; color: var(--ink); }
+  #a .co { display: flex; gap: 18px; align-items: flex-start; width: 470px; }
+  #a .num { flex: none; width: 54px; height: 54px; border: 2px solid var(--ink); border-radius: 50%; display: grid; place-items: center; font-family: "Geist Mono"; font-size: 26px; }
+  #a .co p { margin: 4px 0 0; font-size: 38px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.1; }
+  #a .verdict { left: 0; right: 0; bottom: 0; height: 380px; background: var(--ground); padding: 56px 64px; box-sizing: border-box; }
+  #a .verdict .k { color: var(--dim); }
+  #a .verdict .v { font-size: 84px; margin-top: 18px; }
+
+  /* B — Paper trail: the source as a printed document, pull quote */
+  #b { background: var(--paper); color: #111; }
+  #b .reg { position: absolute; width: 40px; height: 40px; border-color: #b9b5ad; border-style: solid; border-width: 0; }
+  #b .card { left: 60px; top: 520px; width: 960px; background: #fff; border-radius: 6px; box-shadow: 0 1px 0 rgba(0,0,0,0.06), 0 30px 60px -20px rgba(0,0,0,0.18); padding: 26px 0; }
+  #b .card img { display: block; width: 960px; }
+  #b .quote { left: 64px; top: 860px; width: 952px; font-size: 168px; line-height: 0.92; }
+  #b .src { left: 64px; top: 1420px; color: #6b6965; }
+  #b .k { left: 64px; top: 380px; color: #6b6965; }
+
+  /* C — Split verdict: two numbers, one line, Swiss grid */
+  #c .top { position: absolute; left: 0; top: 0; width: 1080px; height: 960px; background: var(--ground); color: var(--ink); }
+  #c .bot { position: absolute; left: 0; top: 960px; width: 1080px; height: 960px; background: #fafafa; color: #0a0a0a; }
+  #c .lab { position: absolute; left: 64px; top: 120px; }
+  #c .big { position: absolute; left: 56px; top: 360px; font-size: 300px; white-space: nowrap; }
+  #c .bot .big { font-size: 400px; top: 300px; }
+  #c .note { position: absolute; left: 64px; bottom: 80px; color: var(--dim); }
+  #c .scale { position: absolute; right: 90px; top: 150px; width: 8px; height: 760px; background: var(--ink); }
+  #c .tick { position: absolute; right: 90px; top: 150px; width: 8px; height: 13px; background: var(--red); }
+
+  /* D — Screen proof: the search, as it happened */
+  #d { background: var(--ground); color: var(--ink); }
+  #d .win { left: 40px; top: 300px; width: 1000px; height: 1060px; background: #fff; border-radius: 22px; overflow: hidden; }
+  #d .bar { height: 76px; background: #f1f1f1; display: flex; align-items: center; gap: 12px; padding: 0 26px; border-bottom: 1px solid #e3e3e3; }
+  #d .dot { width: 16px; height: 16px; border-radius: 50%; background: #d4d4d4; }
+  #d .url { margin-left: 18px; flex: 1; height: 44px; border-radius: 22px; background: #fff; border: 1px solid #ddd; font: 500 24px "Geist Mono"; color: #555; display: flex; align-items: center; padding-left: 22px; letter-spacing: 0; text-transform: none; }
+  #d .page { padding: 34px 40px; }
+  #d .page img { width: 920px; display: block; }
+  #d .cursor { left: 560px; top: 760px; }
+  #d .head { left: 64px; top: 120px; font-size: 92px; }
+  #d .foot { left: 64px; top: 1450px; width: 952px; font-size: 64px; }
+  #d .foot small { display: block; margin-top: 20px; color: var(--dim); }
+  .label { position: absolute; right: 30px; bottom: 26px; background: #fff; color: #000; font: 600 22px "Geist Mono"; padding: 6px 12px; letter-spacing: .08em; }
+</style></head>
+<body>
+
+<!-- A — FORENSIC -->
+<section class="f" id="a">
+  <img class="img" src="../../videos/case-020-ai-cliff-hud/assets/shots/wonderful.png" alt="" />
+  <div class="shade"></div>
+  <div class="abs mono tag">Exhibit 02</div>
+  <div class="abs mono tc">00:20.75 · frame 622</div>
+  <svg class="abs" style="left:0;top:0" width="1080" height="1920" aria-hidden="true">
+    <g stroke="#f4f2ee" stroke-width="2" fill="none">
+      <rect x="160" y="362" width="760" height="148" />
+      <path d="M540 510 L540 600 L330 600 L330 650" />
+      <rect x="690" y="842" width="314" height="236" />
+      <path d="M846 1078 L846 1160 L640 1160 L640 1200" />
+    </g>
+  </svg>
+  <svg class="abs pen" style="left:0;top:0" width="1080" height="1920" aria-hidden="true"><path d="M850 826 C 985 822, 1040 880, 1030 962 C 1020 1068, 930 1100, 838 1098 C 724 1096, 660 1050, 664 962 C 668 876, 740 830, 886 828" /></svg>
+  <div class="abs co" style="left:96px;top:664px"><div class="num">1</div><p>A caption, not a measurement.</p></div>
+  <div class="abs co" style="left:420px;top:1214px"><div class="num">2</div><p>Counts 133 → 300 like a slot machine.</p></div>
+  <div class="abs verdict">
+    <div class="mono k">The claim</div>
+    <div class="disp v">“Measured” a <span class="it">300 m</span> drop.</div>
+  </div>
+  <div class="label">A · FORENSIC</div>
+</section>
+
+<!-- B — PAPER TRAIL -->
+<section class="f" id="b">
+  <div class="reg" style="left:40px;top:40px;border-left-width:2px;border-top-width:2px"></div>
+  <div class="reg" style="right:40px;top:40px;border-right-width:2px;border-top-width:2px"></div>
+  <div class="reg" style="left:40px;bottom:40px;border-left-width:2px;border-bottom-width:2px"></div>
+  <div class="reg" style="right:40px;bottom:40px;border-right-width:2px;border-bottom-width:2px"></div>
+  <div class="abs mono k">Apple, in its own words</div>
+  <div class="abs card"><img src="../../videos/case-020-ai-cliff-hud/assets/shots/apple-lidar.png" alt="" /></div>
+  <div class="abs quote it">“up to 5 meters away.”</div>
+  <svg class="abs pen" style="left:64px;top:1180px" width="900" height="40" aria-hidden="true"><path d="M6 20 C 260 12, 560 18, 890 10" /></svg>
+  <div class="abs mono src">Apple Newsroom · iPad Pro LiDAR Scanner · 18 Mar 2020</div>
+  <div class="label">B · PAPER TRAIL</div>
+</section>
+
+<!-- C — SPLIT VERDICT -->
+<section class="f" id="c">
+  <div class="top">
+    <div class="mono lab" style="color:#8c8a86">The clip says</div>
+    <div class="disp big">300 m</div>
+    <div class="mono note">Overlay text · no sensor named</div>
+    <div class="scale"></div><div class="tick" style="top:897px"></div>
+  </div>
+  <div class="bot">
+    <div class="mono lab" style="color:#6b6965">Apple's LiDAR reaches</div>
+    <div class="big it">5 m</div>
+    <div class="mono note" style="color:#6b6965">Apple Newsroom, 2020 · bar to scale above</div>
+  </div>
+  <div class="label">C · SPLIT VERDICT</div>
+</section>
+
+<!-- D — SCREEN PROOF -->
+<section class="f" id="d">
+  <div class="abs disp head">We looked.</div>
+  <div class="abs win">
+    <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><div class="url">nature.com/articles/s41598-026-49008-x</div></div>
+    <div class="page"><img src="../../videos/case-020-ai-cliff-hud/assets/shots/ptz-head.png" alt="" /><img src="../../videos/case-020-ai-cliff-hud/assets/shots/p9.png" alt="" style="margin-top:24px" /></div>
+  </div>
+  <svg class="abs pen" style="left:70px;top:420px" width="940" height="200" aria-hidden="true"><path d="M30 40 C 300 26, 700 30, 900 44 C 930 90, 920 150, 880 170 C 600 180, 250 178, 50 168 C 20 130, 18 80, 40 42" /></svg>
+  <svg class="abs cursor" width="44" height="60" viewBox="0 0 22 30" aria-hidden="true"><path d="M1 1 L1 24 L7 18 L11 28 L15 26 L11 17 L19 17 Z" fill="#111" stroke="#fff" stroke-width="1.5" /></svg>
+  <div class="abs disp foot">The real AI watches the mountain.<small class="mono">Huang et al., Sci. Rep. 2026 · scroll recorded live</small></div>
+  <div class="label">D · SCREEN PROOF</div>
+</section>
+</body></html>
