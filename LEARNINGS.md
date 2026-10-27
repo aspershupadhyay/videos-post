@@ -2,6 +2,14 @@
 
 Newest first. Each entry: what happened, what we learned, the rule it became (in `CLAUDE.md`).
 
+
+## 2026-10-27 — Creator: undo the format/look experiments; stick to the Case 020 routine
+- Removed `/cte-explainer`, `/cte-demo`, `cte-kit`, `videos/_lab`, `VISUALS.md`, `EDITING.md`, `brand/lookbook`,
+  `brand/fonts` and the "Catch it yourself" topic entry (all still in git history before this commit).
+  Kept: rules 1–14 and this log. Production goes back to the Case 020 routine (`PLAYBOOK.md`, `STRATEGY.md`).
+- Could've done better: I built two full skills + a kit before the creator had approved even one direction. → Show one
+  small test, get a yes, and only then turn it into reusable tooling.
+
 ## 2026-10-27 — /cte-explainer + /cte-demo skills; Tabloid + Zine lab tests
 - Built 10 s lab tests (`videos/_lab/`): Tabloid explainer (OpenAI agents story, Tech Times clipping, Courbet PD
   reaction) and Zine demo (real Content Credentials Verify recording, zoom-follow, step cards). Both PASS qa_frames.
