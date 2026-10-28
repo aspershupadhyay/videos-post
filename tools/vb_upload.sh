@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 # Upload files to VoiceBox Files (up to 2 GB each) without going through MCP.
 # Usage: VOICEBOX_UPLOAD_TOKEN=... [VB_CAROUSEL=<group name>] tools/vb_upload.sh <folder id or path> <file>...
-# With VB_CAROUSEL set, files are grouped as one carousel in the order given (position 1, 2, ...).
+# With VB_CAROUSEL set, files are grouped as one carousel in the order given (position 1, 2, ...; VB_POSITION_START shifts the first).
 # Prints "<name> <file_id> <ok|md5 mismatch>" per file. The token lives in the environment, never in git.
 set -euo pipefail
 : "${VOICEBOX_UPLOAD_TOKEN:?set VOICEBOX_UPLOAD_TOKEN}"
 API=https://voiceboxstudio.vercel.app/api/files
 folder=$1; shift
-pos=0
+pos=$(( ${VB_POSITION_START:-1} - 1 ))
 for f in "$@"; do
   pos=$((pos+1))
   name=$(basename "$f")

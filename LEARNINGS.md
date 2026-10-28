@@ -9,6 +9,8 @@ Newest first. Each entry: what happened, what we learned, the rule it became (in
   the rest got "carousels are busy: try again", and retries didn't clear it for ≥ 40 s. Likely cause: a probe upload I
   started with the same carousel name and never completed held the lock. → Never start an upload you won't finish;
   upload a carousel in one run.
+- **Fixed by the creator the same day:** re-ran slides 2–9 with `VB_POSITION_START=2`; all joined carousel
+  `r68dwd8ed9` at positions 2–9, no busy errors.
 - Fallback that worked: an `ig_post` target on the board post + `publish_post` (go: save) with the 9 file ids in order;
   this groups them as the Instagram carousel draft.
 
