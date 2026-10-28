@@ -2,6 +2,15 @@
 
 Newest first. Each entry: what happened, what we learned, the rule it became (in `CLAUDE.md`).
 
+## 2026-10-28 — Renders moved to VoiceBox; purged from git history
+- Creator: upload the old renders to VoiceBox and purge them from history. Four finals were already on VoiceBox under the
+  creator's own names (md5-matched); uploaded the 020/021 covers and 4 demo/lab renders (md5-verified), then rewrote all
+  5 branches without any `renders/` file (only renders changed; commit counts equal) and force-pushed with leases.
+  → `RENDERS.md` maps every render to its VoiceBox file.
+- Could've done better: a `'videos/*/renders'` glob pathspec silently matched nothing inside `filter-branch`; I caught it
+  only because I counted reachable render objects after the rewrite. → Always verify a history rewrite by counting what
+  should be gone, never by the tool's "rewritten" message.
+
 ## 2026-10-27 — Case 022 delivered: cover + VoiceBox-only delivery
 - Cover: frame 0 per the template; my own rule 18 caught a half-cut text line at the bottom of the printed photo →
   cropped to headline + date. Passes the 3:4 grid crop and the 120 px test. → Rule 9 now says "whole lines only".
