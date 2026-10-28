@@ -11,6 +11,8 @@ Newest first. Each entry: what happened, what we learned, the rule it became (in
   upload a carousel in one run.
 - **Fixed by the creator the same day:** re-ran slides 2–9 with `VB_POSITION_START=2`; all joined carousel
   `r68dwd8ed9` at positions 2–9, no busy errors.
+- **Filing convention (creator):** posts go in `Images / 30 Days Post Challenge / <post name>`, one carousel per folder,
+  carousel name = post name.
 - Fallback that worked: an `ig_post` target on the board post + `publish_post` (go: save) with the 9 file ids in order;
   this groups them as the Instagram carousel draft.
 

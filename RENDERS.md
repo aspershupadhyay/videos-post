@@ -14,7 +14,7 @@ All render files were purged from this repo's history on 2026-10-28; each one be
 | 021 | `case-021-gpt-6-1-terra-cover.png` (Images) | `case-021-gpt-6-1-terra/renders/cover.png` |
 | 021 | `case-021-gpt-6-1-terra-v3-look-demo.mp4`, `case-021-gpt-6-1-terra-v2-vs-v3-demo.mp4` (Archive) | `case-021-gpt-6-1-terra/renders/` (rejected look demo) |
 | 022 | `case-022-openai-agents-cache-channel-9x16.mp4` (Videos), `case-022-openai-agents-cache-channel-cover.png` (Images) | never kept |
-| 023 | `case-023-moe-slide-01.png` … `-09.png` (Images → Case 023 — MoE carousel; also loose in Images), board post "Case 023 — Mixture of Experts (carousel)" has them as an ig_post draft; source frames in Figma file s5Jo8NJjpLQsqPFvufq1Ew | never kept |
+| 023 | `case-023-moe-slide-01.png` … `-09.png` (Images → 30 Days Post Challenge → Case 023 — Mixture of Experts; one carousel, positions 1–9); the board post "Case 023 — Mixture of Experts (carousel)" holds them as an ig_post draft; source frames in Figma file s5Jo8NJjpLQsqPFvufq1Ew | never kept |
 | lab | `lab-tabloid-explainer-test.mp4`, `lab-zine-demo-test.mp4` (Archive) | `videos/_lab/*/renders/` (removed experiments) |
 
 Case 019 was storyboarded only (no render). To rebuild any video, run its `scripts/` and render (PLAYBOOK §7).
