@@ -9,7 +9,8 @@ Short-form research videos for **CatchTheError** (Instagram Reels, YouTube Short
 - HyperFrames skills are vendored in `.claude/skills/` (`/hyperframes` first). Pinned CLI: `npx hyperframes@0.8.192`.
 - Brand: **logo v3 "ct(e)"** — read `brand/README.md` (layers, paper ground, colours) and `brand/MOTION.md` (transitions
   learned from reference films). Every end card uses the reusable sting `brand/motion/logo-sting.html`. Logo 2.0 is retired.
-- One folder per video in `videos/`; each has `SPEC.md`, `scripts/` (audio prep, captions, SFX cues) and `renders/`.
+- One folder per video in `videos/`; each has `SPEC.md`, `scripts/` (audio prep, captions, SFX cues) and a local, git-ignored
+  `renders/`. Finished renders live on VoiceBox only; `RENDERS.md` says where each one is.
 
 ## Taste rules — from the creator's feedback (read before every video; these override the playbook)
 
