@@ -2,6 +2,16 @@
 
 Newest first. Each entry: what happened, what we learned, the rule it became (in `CLAUDE.md`).
 
+## 2026-10-28 — VoiceBox upload API (token) + carousel grouping
+- Creator gave an upload token: `tools/vb_upload.sh <folder> <files…>` (POST /api/files/upload → PUT to upload_url →
+  POST /api/files/complete). Reads `VOICEBOX_UPLOAD_TOKEN` from the environment; never put the token in git (public repo).
+- `VB_CAROUSEL=<name>` groups files as one carousel (position = argument order). **Gotcha:** only the first file joined;
+  the rest got "carousels are busy: try again", and retries didn't clear it for ≥ 40 s. Likely cause: a probe upload I
+  started with the same carousel name and never completed held the lock. → Never start an upload you won't finish;
+  upload a carousel in one run.
+- Fallback that worked: an `ig_post` target on the board post + `publish_post` (go: save) with the 9 file ids in order;
+  this groups them as the Instagram carousel draft.
+
 ## 2026-10-28 — Case 023: first carousel (Mixture of Experts, Figma) — could've done better
 - **Ask:** an MoE carousel in Figma, ct(e) logo (not the retired bug mark), The Social Network's Mark as the hook, no
   clutter, best-practice researched, self-audited.
