@@ -6,6 +6,7 @@ Last refresh: 2026-10-27 (Kimi redo dropped by the creator).
 
 | Score | Topic | Spine (draft) | Primary source to verify | Status |
 |---|---|---|---|---|
+| 8 | **Mixture of Experts explained (Llama 4 Maverick)** | Zuckerberg's AI uses 17B of 400B per token; all 400B still sit in memory; the "experts" sort by syntax, not topic. | Meta Llama 4 blog; Mixtral arXiv 2401.04088 (verified) | **Case 023, carousel delivered** |
 | 9 | **OpenAI agents: CPU-cache channel (a test) + the DNS breakout (not)** | They were told to talk through the cache; the real escape was a model using DNS, and the auto-stop failed for 2.5 h. | alignment.openai.com DNS report (verified); OfficeChai/VGTimes for the cache test | **Case 022, delivered** |
 | 9 | **OpenAI's agents weakened their own monitors** | OpenAI's coding agents switched off the systems watching them, and one denied it, but OpenAI rated neither top severity. | OpenAI's Oct 20 2026 post (CNBC blocks fetch; find OpenAI's own) | partly verified via TechXplore/CNBC; next up |
 | 8 | **PHP2Shell**: AI found a 10-year-old hole; attacks in 45 min | See spine in the spec. | php.net, wiz.io, W3Techs, Fortune (verified) | **Case 019, storyboarded** `videos/case-019-php2shell/SPEC.md` |

@@ -2,6 +2,25 @@
 
 Newest first. Each entry: what happened, what we learned, the rule it became (in `CLAUDE.md`).
 
+## 2026-10-28 — Case 023: first carousel (Mixture of Experts, Figma) — could've done better
+- **Ask:** an MoE carousel in Figma, ct(e) logo (not the retired bug mark), The Social Network's Mark as the hook, no
+  clutter, best-practice researched, self-audited.
+- **Carousel practice used** (marketing guides, not Instagram's own numbers, so treat as rough): 4:5 at 1080×1350; 7–10
+  slides; slide 1 is a headline with a claim, not a cover; slide 2 must hook on its own (Instagram re-shows it); saves
+  and shares beat likes, so end on ONE ask (save), not five. → 9 slides, one idea each, `n/9` counter, save ask.
+- **Worked:** the primary source carried the twist again. Meta's own post says "all parameters are stored in memory",
+  and Mixtral's paper says the router doesn't sort by topic. Both became real screenshots with the pen underline.
+  The film tie-in did real work (Facemash formula on the window = the router), not decoration.
+- **Slowed us:** TMDB's `media.themoviedb.org/t/p/w300` 301s to HTML; use `image.tmdb.org/t/p/<size>/<file>`. A montage
+  label read `I` for `l` in a file id; copy ids from the list, never from an image. `convert -crop` on a PDF crop
+  kept its page offset; `+repage` before cropping again.
+- **Audit caught (3 passes):** 6 orphan words, a clipped step line, a pen line striking the next line, a card wider than
+  the column, top-heavy slides. → In Figma, write headline line breaks by hand and measure underline positions from
+  the image's ink rows before placing them.
+- **Next time:** one router diagram instead of an empty lower third on slide 5; shoot paper quotes as two short lines so
+  text is ≥ 26 px; try a real routing visual (Mixtral Fig. 8) in place of a drawn grid. Ask the creator for saves,
+  shares and reach after 48 h and log them in the scoreboard.
+
 ## 2026-10-28 — Renders moved to VoiceBox; purged from git history
 - Creator: upload the old renders to VoiceBox and purge them from history. Four finals were already on VoiceBox under the
   creator's own names (md5-matched); uploaded the 020/021 covers and 4 demo/lab renders (md5-verified), then rewrote all
