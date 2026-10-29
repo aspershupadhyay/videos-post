@@ -100,3 +100,13 @@ Log every new piece of feedback in `LEARNINGS.md` with the date, and promote it 
     "…from the post package" means the caption was rewritten → `publish_status` stop at once (it cancels while Instagram
     is still processing). VoiceBox fixed that override on 2026-10-29 (it rewrote our caption twice before the fix);
     keep the check anyway.
+25. **Fast and token-lean (creator, 2026-10-29).** Every video ships in one pass, without detours:
+    - Read only `STRATEGY.md` §1–4 and the last two `LEARNINGS.md` entries at the start; open other docs only when a step needs them.
+    - Source video: one 1 fps contact sheet plus a scene detect (`select='gt(scene,0.28)'`), then pick shots. Strip a clip at
+      2–3 fps only when it will be tracked or timed (Apple hides cuts inside camera whips).
+    - Facts: the vendor's own page via one web-fetch agent and at most one cross-check search. No open-ended browsing.
+    - Voice: one job with every line, hook variants and A/B spellings; download WAVs *and* subs JSON before `gpu stop`.
+      If a job dies with "worker isn't reachable", read `worker_status` first (another session may have stopped the GPU).
+    - Build from the last case's `build_scenes.py`/`make_cues.py`/`cut_clips.py` (`-t` before `-i`; ffprobe each clip).
+    - One snapshot pass of every scene → fix → `qa_layout` → draft → `qa_frames` → delivery. No extra renders.
+    - Don't page through long tool output: `tail`/`grep` it. Keep the end-of-task notes to a few lines.

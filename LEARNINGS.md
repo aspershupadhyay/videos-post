@@ -2,6 +2,10 @@
 
 Newest first. Each entry: what happened, what we learned, the rule it became (in `CLAUDE.md`).
 
+## 2026-10-29 — Creator: "token optimized, faster than ever" (after Case 026)
+- Case 026 took one long session: two GPU restarts, a re-done word-timing pass, ~4 rounds of contact sheets, two re-cuts of
+  every clip (the `-t` bug). → Rule 25 (fast and token-lean): one pass per step, the checklist in `CLAUDE.md`.
+
 ## 2026-10-29 — Case 026 (touchscreen MacBook Pro, from Apple's 4K film): what we learned + could've done better
 - **The ask:** "make it like a MacBook is paying us" + "learn the skill from the video". → An ad-grade cut of Apple's own
   footage, our voice, one brand beat (the only fine print in the ad is "Weight varies…"), and a new reusable skill:
