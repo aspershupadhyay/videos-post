@@ -1,0 +1,54 @@
+<template>
+  <style>
+    @font-face { font-family: "Inter"; font-weight: 100 900; font-display: block; src: url("assets/fonts/Inter.ttf") format("truetype"); }
+    @font-face { font-family: "Instrument Serif"; font-style: italic; font-weight: 400; font-display: block; src: url("assets/fonts/InstrumentSerif-Italic.woff2") format("woff2"); }
+    @font-face { font-family: "Courier Prime"; font-weight: 700; font-display: block; src: url("assets/fonts/CourierPrime-Bold.ttf") format("truetype"); }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0a0a0a; color: #f5f5f7; font-family: "Inter", sans-serif; }
+    .full { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; overflow: hidden; }
+    .full video { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; object-fit: cover; display: block; }
+    .h { position: absolute; left: 76px; width: 930px; font-weight: 800; font-size: 118px; letter-spacing: -0.055em; line-height: 0.95; text-shadow: 0 4px 40px rgba(0, 0, 0, 0.45); }
+    .it { position: relative; display: inline-block; font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400; color: #dd483f; letter-spacing: -0.01em; font-size: 1.12em; line-height: 0.8; padding-right: 0.06em; }
+    .ul { position: absolute; left: -2%; bottom: -0.16em; width: 104%; height: 0.3em; overflow: visible; }
+    .ul path { fill: none; stroke: #dd483f; stroke-width: 7; stroke-linecap: round; stroke-dasharray: 1400; stroke-dashoffset: 1400; }
+    .lab { position: absolute; left: 0; width: 1080px; text-align: center; font-weight: 600; font-size: 78px; letter-spacing: -0.03em; line-height: 1.08; color: #f5f5f7; text-shadow: 0 0 18px rgba(0, 0, 0, 0.75), 0 2px 44px rgba(0, 0, 0, 0.7); }
+    .pen { position: absolute; overflow: visible; }
+    .pen path { fill: none; stroke: #dd483f; stroke-width: 9; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1400; stroke-dashoffset: 1400; }
+    .scrim { position: absolute; left: 0; top: 0; width: 1080px; height: 760px; background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0)); }
+    .pin { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; transform-origin: 0 0; }
+    .photo { position: absolute; overflow: hidden; border: 6px solid #f4f2ee; border-radius: 22px; background: #000; box-shadow: 0 40px 90px rgba(0, 0, 0, 0.6); }
+    .photo img { position: absolute; left: 0; top: 0; display: block; }
+
+    #s3-q { top: 300px; z-index: 4; }
+    #s3-x { left: 286px; top: 312px; width: 520px; height: 90px; z-index: 5; }
+  </style>
+  <div id="root" data-composition-id="s3" data-width="1080" data-height="1920">
+
+    <div id="s3-w" class="full" style="z-index:1"><video id="s3" class="clip" src="assets/clips/logo.mp4" data-start="0.000" data-duration="2.120" data-media-start="0.762" muted playsinline></video></div>
+    <div class="scrim" style="z-index:3"></div>
+    <div id="s3-q" class="h">&ldquo;It <span id="s3-dn">doesn&rsquo;t</span><br />work.&rdquo;</div>
+    <svg id="s3-x" class="pen" viewBox="0 0 520 90" preserveAspectRatio="none"><path d="M4 58 C 140 40, 330 52, 516 30" /></svg>
+  </div>
+  <script>
+    (() => {
+      const tl = gsap.timeline({ paused: true });
+      const at = (abs) => Math.max(0, abs - 5.548);
+      const rise = (sel, t, d = 0.45) => tl.fromTo(sel, { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: d, ease: "expo.out", immediateRender: false }, at(t));
+      const pop = (sel, t, d = 0.32) => tl.fromTo(sel, { opacity: 0, scale: 0.86 }, { opacity: 1, scale: 1, duration: d, ease: "back.out(2)", immediateRender: false }, at(t));
+      const pen = (sel, t, d = 0.36) => tl.to(sel, { strokeDashoffset: 0, duration: d, ease: "power2.inOut" }, at(t));
+      const ring = (sel, t, d = 0.5) => tl.to(sel, { "--p": 360, duration: d, ease: "power2.inOut" }, at(t));
+      // a pinned layer follows a tracked surface: one matrix3d per source frame, stepped by the timeline (seek-safe)
+      const pin = (sel, mats, fps, t0) => {
+        const el = document.querySelector(sel), p = { f: 0 }, n = mats.length - 1;
+        const set = () => { el.style.transform = "matrix3d(" + mats[Math.min(n, Math.max(0, Math.floor(p.f)))].join(",") + ")"; };
+        set();
+        tl.to(p, { f: n + 0.999, duration: (n + 1) / fps, ease: "none", onUpdate: set }, t0);
+      };
+
+      tl.fromTo("#s3-q", { opacity: 0.85 }, { opacity: 1, duration: 0.2 }, 0);
+      pen("#s3-x path", 7.04, 0.32);
+      tl.to("#s3-dn", { opacity: 0.38, duration: 0.25 }, at(7.29));
+      tl.set({}, {}, 2.12);
+      window.__timelines["s3"] = tl;
+    })();
+  </script>
+</template>

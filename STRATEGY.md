@@ -15,6 +15,7 @@ and growth system, and it changes after every video (see "The loop" at the botto
 | 023 | Apple M6 MacBook Pro: "13× faster" vs a 2020 M1; 1.3× vs M5 | 46 s | — | — | from Apple's own film; shard look; fine print from the ad's last frame; captions on |
 | 025 | Carissa Véliz: "technology is never neutral" (Nexus Institute clip) | 59 s | — | — | first insight clip (no voice-over, no fact-check); cold open on her gun line; captions + 3 expressive lines; [live](https://www.instagram.com/reel/DfEtGQejPYw/) |
 | 024 | Mixture of Experts carousel (Llama 4: 17B of 400B) | 9 slides | — | — | first carousel; Figma; Social Network hook; ask for saves/shares/reach |
+| 026 | Touchscreen MacBook Pro: Jobs said it doesn't work (2010); touch is optional | 42 s | — | — | from Apple's 4K film; ad-grade cut; first planar-tracked label; one fine-print beat ("Weight varies") |
 
 Target per video: beat the previous one on **3-s hold** and **avg % watched**, not raw views. Ask the creator for
 these two numbers from Insights / YouTube Studio; log them here.

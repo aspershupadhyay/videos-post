@@ -17,6 +17,7 @@ All render files were purged from this repo's history on 2026-10-28; each one be
 | 023 | `case-023-macbook-m6-13x-9x16.mp4` (Videos), `case-023-macbook-m6-13x-cover.png` (Images) | never kept (removed in the next commit) |
 | 024 | `case-024-moe-slide-01.png` … `-09.png` (Images → 30 Days Post Challenge → Case 024 — Mixture of Experts; one carousel, positions 1–9); the board post "Case 024 — Mixture of Experts (carousel)" holds them as an ig_post draft; source frames in Figma file s5Jo8NJjpLQsqPFvufq1Ew | never kept |
 | 025 | `case-025-veliz-tech-never-neutral-9x16.mp4` (Videos), `case-025-veliz-tech-never-neutral-cover.png` (Images); source footage `veliz-nexus.mp4` (Videos, uploaded by the creator) | never kept |
+| 026 | `case-026-touch-macbook-pro-9x16.mp4` (Videos), `case-026-touch-macbook-pro-cover.png` (Images), md5-checked; source footage `MacBook.mp4` (Videos, uploaded by the creator) | never kept |
 | lab | `lab-tabloid-explainer-test.mp4`, `lab-zine-demo-test.mp4` (Archive) | `videos/_lab/*/renders/` (removed experiments) |
 
 Case 019 was storyboarded only (no render). To rebuild any video, run its `scripts/` and render (PLAYBOOK §7).

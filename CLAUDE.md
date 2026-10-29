@@ -7,6 +7,8 @@ Short-form research videos for **CatchTheError** (Instagram Reels, YouTube Short
   scoreboard) and `TOPICS.md` (the scored topic bank). Then `PLAYBOOK.md` for production: research, voice, sound, motion.
 - `LEARNINGS.md` is the dated feedback log; `tools/qa_frames.py <render>` is the blank/frozen-frame gate.
 - HyperFrames skills are vendored in `.claude/skills/` (`/hyperframes` first). Pinned CLI: `npx hyperframes@0.8.192`.
+- `/apple-film-moves` (`.claude/skills/apple-film-moves`): Apple's product-film grammar (labels pinned to a tracked surface with
+  `tools/track_plane.py`, fixed labels, label rhythm, lid bookends) for any ad-grade or launch-film video. Learned in Case 026.
 - Brand: **logo v3 "ct(e)"** — read `brand/README.md` (layers, paper ground, colours) and `brand/MOTION.md` (transitions
   learned from reference films). Every end card uses the reusable sting `brand/motion/logo-sting.html`. Logo 2.0 is retired.
 - One folder per video in `videos/`; each has `SPEC.md`, `scripts/` (audio prep, captions, SFX cues) and a local, git-ignored
@@ -98,3 +100,13 @@ Log every new piece of feedback in `LEARNINGS.md` with the date, and promote it 
     "…from the post package" means the caption was rewritten → `publish_status` stop at once (it cancels while Instagram
     is still processing). VoiceBox fixed that override on 2026-10-29 (it rewrote our caption twice before the fix);
     keep the check anyway.
+25. **Fast and token-lean (creator, 2026-10-29).** Every video ships in one pass, without detours:
+    - Read only `STRATEGY.md` §1–4 and the last two `LEARNINGS.md` entries at the start; open other docs only when a step needs them.
+    - Source video: one 1 fps contact sheet plus a scene detect (`select='gt(scene,0.28)'`), then pick shots. Strip a clip at
+      2–3 fps only when it will be tracked or timed (Apple hides cuts inside camera whips).
+    - Facts: the vendor's own page via one web-fetch agent and at most one cross-check search. No open-ended browsing.
+    - Voice: one job with every line, hook variants and A/B spellings; download WAVs *and* subs JSON before `gpu stop`.
+      If a job dies with "worker isn't reachable", read `worker_status` first (another session may have stopped the GPU).
+    - Build from the last case's `build_scenes.py`/`make_cues.py`/`cut_clips.py` (`-t` before `-i`; ffprobe each clip).
+    - One snapshot pass of every scene → fix → `qa_layout` → draft → `qa_frames` → delivery. No extra renders.
+    - Don't page through long tool output: `tail`/`grep` it. Keep the end-of-task notes to a few lines.

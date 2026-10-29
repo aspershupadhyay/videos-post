@@ -42,3 +42,13 @@ film, each caused by something on screen. Working code for every move is in `vid
 ## Gate reminder
 `tools/qa_frames.py --ground light` for paper videos. Small changes (a pen line, mono text) don't count as motion
 for the STATIC gate (mean frame diff at 54×96); give every 2 s a beat that moves a real area (footage, a card, an object).
+
+## From Apple's "MacBook Pro with PROLED XDR Display" film (Oct 2026, 1:57, 23.976 fps, 4K, music only)
+Full write-up and recipes: `.claude/skills/apple-film-moves/SKILL.md`.
+| Move | In their film | Our build (Case 026) |
+|---|---|---|
+| **Pinned label** | "Up to 2000 nits peak brightness" lies on the desk in perspective and travels with it (0:16) | s5 "Spin." pinned to the display glass: `tools/track_plane.py` (LK flow + RANSAC homography) → per-frame `matrix3d` stepped by the timeline (`pin()`) |
+| **Fixed label, world passes** | "3 pounds light" holds still while the walker carries the laptop through it (1:09) | s4 "In the panel.", s9 "Trackpad ✓ / Keyboard ✓", s10 "New hinge." (`.lab`) |
+| **Label rhythm** | MagSafe → Headphone jack → HDMI → SDXC, one cut a second, same slot (1:30) | s11 four ad shots at 0.56 s each, ticks on the cuts |
+| **Bookends** | the lid's logo lights up (0:03); the lid closes, logo glows, fine print on black (1:47) | s3 the lid logo under the falling shot; s12 the lid closing under the line |
+| **The claim acts it out** (ours) | — | "fall off": the shot falls off its corner onto the next; "never have to lift it": the arm shot plays backwards |
