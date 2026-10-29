@@ -2,6 +2,15 @@
 
 Newest first. Each entry: what happened, what we learned, the rule it became (in `CLAUDE.md`).
 
+## 2026-10-29 — Case 025 publish: VoiceBox rewrote the Reel caption on "publish now"
+- `publish_post` (ig_reel, go: now) from MCP logged "Title, description and hashtags from the post package" and swapped
+  our caption for "Case Carissa Véliz Technology (2026) … Save this for later. #casecarissa #case …" (credits and the ask
+  gone). Stopped both runs with `publish_status` stop while Instagram was still processing: nothing went live. Saving
+  per-target `captions` and re-saving the plan (go: save) set it right, but go: now regenerated it again.
+- The creator's own dashboard publish kept the saved caption on Case 024. → Rule 24: save, verify `ig.caption`, the
+  creator taps Publish. Worth fixing on the VoiceBox side: "post package" should never override a saved caption.
+- Promoted today: rules 22 (YouTube sources → MP4 via VoiceBox), 23 (insight clips), 24 (publish check).
+
 ## 2026-10-29 — Case 025: first insight clip (Carissa Véliz, Nexus Institute) — could've done better
 - **Ask:** share an Oxford professor's point (not a fact-check, nothing against her), the other speaker included, from
   1:00 to his "I agree", with captions and an elite presentation. Built as a talk clip: cover → cold open on her gun line

@@ -83,3 +83,18 @@ Log every new piece of feedback in `LEARNINGS.md` with the date, and promote it 
     the key into a tracked file (public repo), and never start an upload you won't finish (it can lock the carousel).
     File each post under `Images / 30 Days Post Challenge / <post name>`, then attach the files to the post's `ig_post`
     target with `publish_post` (go: save) so the board has the carousel too.
+22. **Someone else's video (YouTube) as the source (Case 025).** Ask the creator for the link first; never hunt a
+    paraphrased quote across the web. From the cloud, YouTube gives captions (`yt-dlp --skip-download --write-auto-subs`:
+    word times in `<c>` tags) and oEmbed/stills, but refuses the media (bot check / 403) in every permission mode, and
+    trying other clients is blocked as bot-check circumvention. So straight away ask the creator to upload the MP4 to
+    VoiceBox Files (on a phone: screen-record the part; on a computer: `yt-dlp`), then pull it with `get_file`.
+    Name speakers from the video's own name supers, never by guess.
+23. **Insight clips (sharing someone's argument, not checking it).** No voice-over over them and nothing against them:
+    our cover + a cold open on their best line, their exchange uncut, captions, a few expressive lines, the logo sting and
+    a text ask ("Do you agree with her?"). Credit the source and the speakers in the caption (`POST.md`). Template:
+    `videos/case-025-veliz-tech-not-neutral` (`cut_clips.py` per-shot 9:16 crops, `build.py` from the word times).
+24. **Publishing to Instagram: check the caption before anything goes live (Case 025).** `publish_post` with go: now
+    from MCP rewrote the caption from a "post package" ("<Title> (2026)", "Save this for later.", junk hashtags) every
+    time, even after `captions` and go: save had set ours; `publish_status` stop cancelled it before it went live.
+    So: save the plan with our caption (go: save), confirm `ig.caption` in the reply, and ask the creator to tap
+    Publish on the dashboard (their publish keeps the saved caption; the Case 024 carousel went out that way).

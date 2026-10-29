@@ -20,6 +20,8 @@ Last refresh: 2026-10-28 (Case 023 added; M6 iMac "5× vs M4" and the 11× graph
 | 7 | **Viral-claim check series** ("the headline vs the paper") | One viral AI headline per week, checked against its source in 40 s. | per episode | format; repeatable |
 
 ## Series ideas (consistency builds followers)
+- **"Worth hearing"** (insight clips, Case 025): one expert's sharp argument from a real debate, uncut, with our
+  cover + captions. Track its 3-s hold against the fact-checks before making it a series.
 - **"Benchmark fine print"**: who ran the test, on what, and what got left out. One chart per episode.
 - **"Read the terms"**: what free AI products do with your data, your images or your ads.
 - **"Patch this now"**: AI-found security bugs that affect ordinary people's sites and apps.

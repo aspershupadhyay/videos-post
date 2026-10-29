@@ -19,6 +19,8 @@ included, captions, elite presentation.
 - Gates: `check` clean · qa_layout PASS · qa_frames PASS (draft + delivery) · mix -15.2 LUFS integrated.
 - Delivered (md5-checked): VoiceBox Videos `case-025-veliz-tech-never-neutral-9x16.mp4` (59.4 s) and Images
   `case-025-veliz-tech-never-neutral-cover.png`.
+- Board post `6ae310935b4d2f43c22f` (ig_reel), plan saved with the POST.md caption + cover; waiting on the creator's
+  Publish tap (VoiceBox's MCP publish-now rewrote the caption; see LEARNINGS 2026-10-29).
 
 ## The cut (as built)
 Cold open 82.90–87.00 (her gun line), then 59.85 → 109.60: AlQama's "…neutrally" to his "I agree." (the creator's
