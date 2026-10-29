@@ -2,11 +2,13 @@
 
 Scored with `STRATEGY.md` §1 (stakes, twist, real media, freshness, spine; 0–2 each). Leads from news roundups are
 **unverified** until checked against the primary source; re-score and prune every session.
-Last refresh: 2026-10-28 (Case 023 added; M6 iMac "5× vs M4" and the 11× graphics claim noted as follow-ups).
+Last refresh: 2026-10-29 (Case 026 added; Case 023 added 10-28; M6 iMac "5× vs M4" and the 11× graphics claim noted as follow-ups).
 
 | Score | Topic | Spine (draft) | Primary source to verify | Status |
 |---|---|---|---|---|
 | 10 | **Apple M6 MacBook Pro: "13× faster at A.I."** | Against a 2020 M1; vs last year's M5 it's 1.3×; and it's time to first token. | Apple Newsroom Oct 27 2026 footnote 3 + the ad's last frame (verified) | **Case 023, delivered** |
+| 9 | **Touchscreen MacBook Pro (PROLED XDR)** | Jobs said touch on a Mac doesn't work (2010); Apple shipped it; its answer is that touch is optional. | Apple Newsroom Oct 28 2026 + Jobs, Oct 20 2010 (verified) | **Case 026, delivered** |
+| 6 | **$400 for the touch screen?** | The same M5 Pro chip costs $400 more with PROLED + Touch (reported). | needs Apple's own store prices for both models | lead, unverified |
 | 7 | **"Up to 11× faster graphics" (same ad)** | Blender ray tracing vs an M1, a chip with no hardware ray tracing. | Apple Newsroom (verified); Apple M3 launch for hardware RT | in Case 023's caption; a short on its own? |
 | 8 | **Mixture of Experts explained (Llama 4 Maverick)** | Zuckerberg's AI uses 17B of 400B per token; all 400B still sit in memory; the "experts" sort by syntax, not topic. | Meta Llama 4 blog; Mixtral arXiv 2401.04088 (verified) | **Case 024, carousel delivered** |
 | 9 | **OpenAI agents: CPU-cache channel (a test) + the DNS breakout (not)** | They were told to talk through the cache; the real escape was a model using DNS, and the auto-stop failed for 2.5 h. | alignment.openai.com DNS report (verified); OfficeChai/VGTimes for the cache test | **Case 022, delivered** |

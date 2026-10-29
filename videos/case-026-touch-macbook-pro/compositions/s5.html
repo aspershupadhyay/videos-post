@@ -1,0 +1,52 @@
+<template>
+  <style>
+    @font-face { font-family: "Inter"; font-weight: 100 900; font-display: block; src: url("assets/fonts/Inter.ttf") format("truetype"); }
+    @font-face { font-family: "Instrument Serif"; font-style: italic; font-weight: 400; font-display: block; src: url("assets/fonts/InstrumentSerif-Italic.woff2") format("woff2"); }
+    @font-face { font-family: "Courier Prime"; font-weight: 700; font-display: block; src: url("assets/fonts/CourierPrime-Bold.ttf") format("truetype"); }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0a0a0a; color: #f5f5f7; font-family: "Inter", sans-serif; }
+    .full { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; overflow: hidden; }
+    .full video { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; object-fit: cover; display: block; }
+    .h { position: absolute; left: 76px; width: 930px; font-weight: 800; font-size: 118px; letter-spacing: -0.055em; line-height: 0.95; text-shadow: 0 4px 40px rgba(0, 0, 0, 0.45); }
+    .it { position: relative; display: inline-block; font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400; color: #dd483f; letter-spacing: -0.01em; font-size: 1.12em; line-height: 0.8; padding-right: 0.06em; }
+    .ul { position: absolute; left: -2%; bottom: -0.16em; width: 104%; height: 0.3em; overflow: visible; }
+    .ul path { fill: none; stroke: #dd483f; stroke-width: 7; stroke-linecap: round; stroke-dasharray: 1400; stroke-dashoffset: 1400; }
+    .lab { position: absolute; left: 0; width: 1080px; text-align: center; font-weight: 600; font-size: 78px; letter-spacing: -0.03em; line-height: 1.08; color: #f5f5f7; text-shadow: 0 0 18px rgba(0, 0, 0, 0.75), 0 2px 44px rgba(0, 0, 0, 0.7); }
+    .pen { position: absolute; overflow: visible; }
+    .pen path { fill: none; stroke: #dd483f; stroke-width: 9; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1400; stroke-dashoffset: 1400; }
+    .scrim { position: absolute; left: 0; top: 0; width: 1080px; height: 760px; background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0)); }
+    .pin { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; transform-origin: 0 0; }
+    .photo { position: absolute; overflow: hidden; border: 6px solid #f4f2ee; border-radius: 22px; background: #000; box-shadow: 0 40px 90px rgba(0, 0, 0, 0.6); }
+    .photo img { position: absolute; left: 0; top: 0; display: block; }
+
+    #s5-pin { z-index: 4; }
+    #s5-l { position: absolute; left: 149px; top: 364px; font-weight: 800; font-size: 150px; letter-spacing: -0.05em; color: #fff; opacity: 0; text-shadow: 0 0 30px rgba(0,0,0,0.35); }
+  </style>
+  <div id="root" data-composition-id="s5" data-width="1080" data-height="1920">
+
+    <div id="s5-w" class="full" style="z-index:1"><video id="s5" class="clip" src="assets/clips/spin.mp4" data-start="0.000" data-duration="2.065" muted playsinline></video></div>
+    <div id="s5-pin" class="pin"><div id="s5-l">Spin.</div></div>
+  </div>
+  <script>
+    (() => {
+      const tl = gsap.timeline({ paused: true });
+      const at = (abs) => Math.max(0, abs - 9.881);
+      const rise = (sel, t, d = 0.45) => tl.fromTo(sel, { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: d, ease: "expo.out", immediateRender: false }, at(t));
+      const pop = (sel, t, d = 0.32) => tl.fromTo(sel, { opacity: 0, scale: 0.86 }, { opacity: 1, scale: 1, duration: d, ease: "back.out(2)", immediateRender: false }, at(t));
+      const pen = (sel, t, d = 0.36) => tl.to(sel, { strokeDashoffset: 0, duration: d, ease: "power2.inOut" }, at(t));
+      const ring = (sel, t, d = 0.5) => tl.to(sel, { "--p": 360, duration: d, ease: "power2.inOut" }, at(t));
+      // a pinned layer follows a tracked surface: one matrix3d per source frame, stepped by the timeline (seek-safe)
+      const pin = (sel, mats, fps, t0) => {
+        const el = document.querySelector(sel), p = { f: 0 }, n = mats.length - 1;
+        const set = () => { el.style.transform = "matrix3d(" + mats[Math.min(n, Math.max(0, Math.floor(p.f)))].join(",") + ")"; };
+        set();
+        tl.to(p, { f: n + 0.999, duration: (n + 1) / fps, ease: "none", onUpdate: set }, t0);
+      };
+
+      const M5 = [[1.0, 0.0, 0, 0.0, 0.0, 1.0, 0, 0.0, 0, 0, 1, 0, 0.0, 0.0, 0, 1.0], [0.994076, 3.2e-05, 0, 0.0, 0.0003, 0.994443, 0, 0.0, 0, 0, 1, 0, 5.21468, 6.457171, 0, 1.0], [0.988302, 8.8e-05, 0, 0.0, 0.000542, 0.989029, 0, 1e-06, 0, 0, 1, 0, 9.810011, 11.596275, 0, 1.0], [0.982645, 0.000175, 0, 0.0, 0.000741, 0.983656, 0, 1e-06, 0, 0, 1, 0, 14.831299, 16.905667, 0, 1.0], [0.977078, 0.000298, 0, 0.0, 0.000837, 0.978177, 0, 1e-06, 0, 0, 1, 0, 19.703203, 22.637623, 0, 1.0], [0.971169, 0.000283, 0, 0.0, 0.001197, 0.972778, 0, 2e-06, 0, 0, 1, 0, 24.466974, 28.572669, 0, 1.0], [0.96579, 0.000334, 0, 0.0, 0.001477, 0.967727, 0, 2e-06, 0, 0, 1, 0, 29.177856, 33.461793, 0, 1.0], [0.960383, 0.000367, 0, 0.0, 0.001624, 0.962553, 0, 2e-06, 0, 0, 1, 0, 33.903404, 38.300719, 0, 1.0], [0.954822, 0.000414, 0, 1e-06, 0.001871, 0.95735, 0, 3e-06, 0, 0, 1, 0, 38.728521, 43.535421, 0, 1.0], [0.949325, 0.000424, 0, 1e-06, 0.002037, 0.952136, 0, 3e-06, 0, 0, 1, 0, 43.532399, 48.822263, 0, 1.0], [0.944088, 0.000425, 0, 1e-06, 0.002329, 0.947178, 0, 3e-06, 0, 0, 1, 0, 48.197265, 54.153131, 0, 1.0], [0.939014, 0.000465, 0, 1e-06, 0.002536, 0.942417, 0, 3e-06, 0, 0, 1, 0, 52.490407, 59.325557, 0, 1.0], [0.934007, 0.000584, 0, 1e-06, 0.002633, 0.937418, 0, 4e-06, 0, 0, 1, 0, 56.756932, 64.696187, 0, 1.0], [0.928619, 0.000621, 0, 1e-06, 0.002928, 0.932465, 0, 4e-06, 0, 0, 1, 0, 61.356927, 69.655593, 0, 1.0], [0.923595, 0.000619, 0, 1e-06, 0.003034, 0.927644, 0, 4e-06, 0, 0, 1, 0, 65.98704, 74.23419, 0, 1.0], [0.918146, 0.000499, 0, 1e-06, 0.003341, 0.922674, 0, 4e-06, 0, 0, 1, 0, 70.507775, 79.838315, 0, 1.0], [0.913237, 0.000539, 0, 1e-06, 0.003433, 0.917953, 0, 5e-06, 0, 0, 1, 0, 74.932509, 84.855096, 0, 1.0], [0.908587, 0.000653, 0, 1e-06, 0.003644, 0.913402, 0, 5e-06, 0, 0, 1, 0, 79.15233, 89.390378, 0, 1.0], [0.903723, 0.00067, 0, 1e-06, 0.003823, 0.908774, 0, 5e-06, 0, 0, 1, 0, 83.482762, 94.35984, 0, 1.0], [0.898706, 0.000689, 0, 1e-06, 0.004032, 0.903957, 0, 5e-06, 0, 0, 1, 0, 87.95154, 99.909116, 0, 1.0], [0.893974, 0.000656, 0, 1e-06, 0.004157, 0.899463, 0, 6e-06, 0, 0, 1, 0, 92.112997, 104.450596, 0, 1.0], [0.889334, 0.000681, 0, 1e-06, 0.004308, 0.895026, 0, 6e-06, 0, 0, 1, 0, 96.284693, 108.543706, 0, 1.0], [0.884529, 0.000661, 0, 1e-06, 0.004469, 0.890481, 0, 6e-06, 0, 0, 1, 0, 100.324316, 113.077979, 0, 1.0], [0.879858, 0.000697, 0, 1e-06, 0.004626, 0.885879, 0, 6e-06, 0, 0, 1, 0, 104.533176, 117.841131, 0, 1.0], [0.875441, 0.00069, 0, 1e-06, 0.004785, 0.881602, 0, 6e-06, 0, 0, 1, 0, 108.412544, 122.167795, 0, 1.0], [0.8711, 0.000764, 0, 1e-06, 0.004797, 0.877275, 0, 7e-06, 0, 0, 1, 0, 112.037951, 126.394645, 0, 1.0], [0.866632, 0.000801, 0, 1e-06, 0.004818, 0.872996, 0, 7e-06, 0, 0, 1, 0, 115.712932, 130.706531, 0, 1.0], [0.862059, 0.000772, 0, 1e-06, 0.005042, 0.868662, 0, 7e-06, 0, 0, 1, 0, 119.462673, 135.081626, 0, 1.0], [0.857697, 0.00081, 0, 1e-06, 0.004991, 0.864426, 0, 7e-06, 0, 0, 1, 0, 123.038729, 138.664101, 0, 1.0], [0.853422, 0.000864, 0, 1e-06, 0.00514, 0.860152, 0, 7e-06, 0, 0, 1, 0, 127.008302, 142.72677, 0, 1.0], [0.849215, 0.000825, 0, 1e-06, 0.005282, 0.856276, 0, 8e-06, 0, 0, 1, 0, 130.726919, 147.103965, 0, 1.0], [0.845208, 0.00089, 0, 1e-06, 0.005278, 0.852265, 0, 8e-06, 0, 0, 1, 0, 134.117461, 150.605333, 0, 1.0], [0.841088, 0.000942, 0, 1e-06, 0.005318, 0.848242, 0, 8e-06, 0, 0, 1, 0, 137.415391, 154.207258, 0, 1.0], [0.837128, 0.000881, 0, 1e-06, 0.005427, 0.844414, 0, 8e-06, 0, 0, 1, 0, 140.868752, 158.597421, 0, 1.0], [0.833123, 0.000862, 0, 1e-06, 0.005528, 0.84052, 0, 8e-06, 0, 0, 1, 0, 144.425007, 162.76507, 0, 1.0], [0.829403, 0.000923, 0, 1e-06, 0.005497, 0.836768, 0, 8e-06, 0, 0, 1, 0, 147.807656, 166.104983, 0, 1.0], [0.825686, 0.000892, 0, 1e-06, 0.005666, 0.833136, 0, 8e-06, 0, 0, 1, 0, 150.954575, 169.603399, 0, 1.0], [0.821884, 0.000857, 0, 1e-06, 0.005909, 0.829632, 0, 9e-06, 0, 0, 1, 0, 154.332331, 173.423975, 0, 1.0], [0.818413, 0.000919, 0, 2e-06, 0.005923, 0.826213, 0, 9e-06, 0, 0, 1, 0, 157.48509, 176.417314, 0, 1.0], [0.814956, 0.000926, 0, 2e-06, 0.006097, 0.822784, 0, 9e-06, 0, 0, 1, 0, 160.782115, 179.941707, 0, 1.0], [0.811287, 0.000714, 0, 1e-06, 0.006393, 0.819618, 0, 9e-06, 0, 0, 1, 0, 163.937584, 183.94518, 0, 1.0], [0.807938, 0.00076, 0, 2e-06, 0.006559, 0.816448, 0, 9e-06, 0, 0, 1, 0, 166.685903, 187.196735, 0, 1.0], [0.804386, 0.001011, 0, 1e-06, 0.00654, 0.812879, 0, 9e-06, 0, 0, 1, 0, 169.383508, 189.896125, 0, 1.0], [0.801263, 0.001111, 0, 1e-06, 0.006881, 0.809869, 0, 1e-05, 0, 0, 1, 0, 172.025191, 193.097024, 0, 1.0], [0.798309, 0.001223, 0, 2e-06, 0.006306, 0.806402, 0, 9e-06, 0, 0, 1, 0, 175.005471, 196.04234, 0, 1.0], [0.79535, 0.00074, 0, 2e-06, 0.006847, 0.804126, 0, 1e-05, 0, 0, 1, 0, 177.936708, 199.26511, 0, 1.0], [0.792325, 0.001288, 0, 2e-06, 0.006582, 0.800417, 0, 1e-05, 0, 0, 1, 0, 180.66776, 201.747041, 0, 1.0], [0.789338, 0.00095, 0, 2e-06, 0.006419, 0.79719, 0, 9e-06, 0, 0, 1, 0, 183.043542, 205.724119, 0, 1.0], [0.785947, 0.000995, 0, 1e-06, 0.006891, 0.794729, 0, 1e-05, 0, 0, 1, 0, 185.741781, 207.867004, 0, 1.0], [0.783278, 0.001259, 0, 2e-06, 0.006382, 0.791667, 0, 1e-05, 0, 0, 1, 0, 188.084232, 209.669186, 0, 1.0], [0.780339, 0.000929, 0, 2e-06, 0.006998, 0.788984, 0, 1e-05, 0, 0, 1, 0, 190.359389, 213.580812, 0, 1.0]]; const M5_fps = 17.9820;
+      pin("#s5-pin", M5, M5_fps, 0);
+      tl.fromTo("#s5-l", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.35, ease: "expo.out", immediateRender: false }, at(10.03));
+      tl.set({}, {}, 2.065);
+      window.__timelines["s5"] = tl;
+    })();
+  </script>
+</template>

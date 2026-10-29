@@ -2,6 +2,25 @@
 
 Newest first. Each entry: what happened, what we learned, the rule it became (in `CLAUDE.md`).
 
+## 2026-10-29 — Case 026 (touchscreen MacBook Pro, from Apple's 4K film): what we learned + could've done better
+- **The ask:** "make it like a MacBook is paying us" + "learn the skill from the video". → An ad-grade cut of Apple's own
+  footage, our voice, one brand beat (the only fine print in the ad is "Weight varies…"), and a new reusable skill:
+  `.claude/skills/apple-film-moves` + `tools/track_plane.py` (planar tracking → labels pinned to a surface).
+- **Bug that hid in every case so far:** `ffmpeg -ss T -i src -t D` treats `-t` as an *output* cap, so any slowed clip
+  was cut to its source length (a 0.62× clip came out 1.57 s, not 2.5 s; one stretch rendered black). → `-t` before `-i`,
+  and ffprobe every clip's duration before building (grep: no earlier case uses the pattern).
+- **I stopped the GPU while the voice zip was still downloading** through the worker's tunnel. The WAVs were safe in
+  VoiceBox's library (get_file on `g:<job>`), but the Whisper subs JSON wasn't, so I redid word times on CPU
+  (faster-whisper small.en, `scripts/word_times.py`). → Download everything (WAVs *and* subs JSON) before `gpu stop`.
+- **Another session stopped the GPU** 10 s after my job queued; the job died and needed a resend (~3 min lost). → If a job
+  errors with "worker isn't reachable", check `worker_status.colab.session.stop_reason` first, then `gpu start` and resend.
+- **Apple hides cuts inside camera whips.** Two "shots" from the scene detect crossed a cut (0.3 s of Finder, then the 3D
+  model; the typing shot cut at 22.81 s). → Strip every clip at 2–3 fps before tracking or timing against it.
+- **9:16 crops push keyboard decks and hinges to y > 1500**, under the Reels caption area: pins there break rule 17. → Pin
+  to the screen glass; let a fixed label carry what sits too low.
+- **qa_layout earned its keep again:** 3 fails (2010 above y 240; the asterisk under the right rail and touching the card).
+- **Weakest stretch:** 32.4–34.2 s, "Jobs was right." over the dark lid shot with no type until "Touch is" lands.
+
 ## 2026-10-29 — Case 025 publish: VoiceBox rewrote the Reel caption on "publish now"
 - `publish_post` (ig_reel, go: now) from MCP logged "Title, description and hashtags from the post package" and swapped
   our caption for "Case Carissa Véliz Technology (2026) … Save this for later. #casecarissa #case …" (credits and the ask
