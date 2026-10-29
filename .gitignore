@@ -7,3 +7,6 @@ __pycache__/
 videos/*/renders/*
 **/.thumbnails/
 **/.waveform-cache/
+
+# Local secrets (VOICEBOX_UPLOAD_TOKEN etc.). Never commit: the repo is public.
+.env

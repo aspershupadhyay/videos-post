@@ -4,6 +4,9 @@
 # With VB_CAROUSEL set, files are grouped as one carousel in the order given (position 1, 2, ...; VB_POSITION_START shifts the first).
 # Prints "<name> <file_id> <ok|md5 mismatch>" per file. The token lives in the environment, never in git.
 set -euo pipefail
+# Falls back to a git-ignored .env at the repo root when the variable is not in the environment.
+root=$(cd "$(dirname "$0")/.." && pwd)
+if [ -z "${VOICEBOX_UPLOAD_TOKEN:-}" ] && [ -f "$root/.env" ]; then set -a; . "$root/.env"; set +a; fi
 : "${VOICEBOX_UPLOAD_TOKEN:?set VOICEBOX_UPLOAD_TOKEN}"
 API=https://voiceboxstudio.vercel.app/api/files
 folder=$1; shift

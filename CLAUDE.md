@@ -73,3 +73,7 @@ Log every new piece of feedback in `LEARNINGS.md` with the date, and promote it 
     Videos / Images), named `case-0NN-<slug>-9x16.mp4` and `case-0NN-<slug>-cover.png`; check the copy's md5 against
     the local file, then keep them out of git (`renders/` is ignored). Files over ~3 MB need a public link for
     `add_media`; the repo is public, so push the file, copy it, then `git rm --cached` it in the next commit.
+21. **Upload with the key, not MCP (creator, 2026-10-28).** `tools/vb_upload.sh <folder> <files…>` (2 GB/file, md5-safe);
+    `VB_CAROUSEL="<post name>"` groups slides in order. The key is `VOICEBOX_UPLOAD_TOKEN`: from the environment
+    settings, or a git-ignored `.env` at the repo root. Never write the key into a tracked file (public repo). File posts
+    under `Images / 30 Days Post Challenge / <post name>`.
