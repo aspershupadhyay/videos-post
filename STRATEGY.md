@@ -13,7 +13,7 @@ and growth system, and it changes after every video (see "The loop" at the botto
 | 021 | GPT-6.1 Terra: read the line under the demo | 50 s | — | — | v1 rejected (subtitle text, credits, weak cover); v2 look v5, no subtitles |
 | 022 | OpenAI agents: the cache channel was a test; the DNS breakout wasn't | 65 s | — | — | from a Varun Mayya reference; step-by-step explainer; captions on (reference style) |
 | 023 | Apple M6 MacBook Pro: "13× faster" vs a 2020 M1; 1.3× vs M5 | 46 s | — | — | from Apple's own film; shard look; fine print from the ad's last frame; captions on |
-| 025 | Carissa Véliz: "technology is never neutral" (Nexus Institute clip) | 59 s | — | — | first insight clip (no voice-over, no fact-check); cold open on her gun line; captions + 3 expressive lines |
+| 025 | Carissa Véliz: "technology is never neutral" (Nexus Institute clip) | 59 s | — | — | first insight clip (no voice-over, no fact-check); cold open on her gun line; captions + 3 expressive lines; [live](https://www.instagram.com/reel/DfEtGQejPYw/) |
 | 024 | Mixture of Experts carousel (Llama 4: 17B of 400B) | 9 slides | — | — | first carousel; Figma; Social Network hook; ask for saves/shares/reach |
 
 Target per video: beat the previous one on **3-s hold** and **avg % watched**, not raw views. Ask the creator for
