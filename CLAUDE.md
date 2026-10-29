@@ -73,7 +73,13 @@ Log every new piece of feedback in `LEARNINGS.md` with the date, and promote it 
     Videos / Images), named `case-0NN-<slug>-9x16.mp4` and `case-0NN-<slug>-cover.png`; check the copy's md5 against
     the local file, then keep them out of git (`renders/` is ignored). Files over ~3 MB need a public link for
     `add_media`; the repo is public, so push the file, copy it, then `git rm --cached` it in the next commit.
-21. **Upload with the key, not MCP (creator, 2026-10-28).** `tools/vb_upload.sh <folder> <files…>` (2 GB/file, md5-safe);
-    `VB_CAROUSEL="<post name>"` groups slides in order. The key is `VOICEBOX_UPLOAD_TOKEN`: from the environment
-    settings, or a git-ignored `.env` at the repo root. Never write the key into a tracked file (public repo). File posts
-    under `Images / 30 Days Post Challenge / <post name>`.
+21. **Upload with the key, not MCP (creator, 2026-10-28).** The creator saved the VoiceBox upload key in this cloud
+    environment's variables as `VOICEBOX_UPLOAD_TOKEN`; every new session has it (check: `[ -n "$VOICEBOX_UPLOAD_TOKEN" ]
+    && echo set`; never print the value). Upload with `tools/vb_upload.sh <folder id or path> <files…>` (2 GB/file);
+    `VB_CAROUSEL="<post name>"` groups slides as one carousel in argument order (`VB_POSITION_START` to append). Raw API,
+    if needed: `POST https://voiceboxstudio.vercel.app/api/files/upload` with `Authorization: Bearer $VOICEBOX_UPLOAD_TOKEN`
+    and `{"name","folder","carousel","position"}` → `curl -T <file> <upload_url>` → `POST …/api/files/complete
+    {"ticket"}`. If the variable is missing, the script falls back to a git-ignored `.env` at the repo root. Never write
+    the key into a tracked file (public repo), and never start an upload you won't finish (it can lock the carousel).
+    File each post under `Images / 30 Days Post Challenge / <post name>`, then attach the files to the post's `ig_post`
+    target with `publish_post` (go: save) so the board has the carousel too.
