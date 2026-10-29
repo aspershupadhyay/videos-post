@@ -1,0 +1,37 @@
+<template>
+  <style>
+    @font-face { font-family: "Inter"; font-weight: 100 900; font-display: block; src: url("assets/fonts/Inter.ttf") format("truetype"); }
+    @font-face { font-family: "Instrument Serif"; font-style: italic; font-weight: 400; font-display: block; src: url("assets/fonts/InstrumentSerif-Italic.woff2") format("woff2"); }
+    @font-face { font-family: "Courier Prime"; font-weight: 700; font-display: block; src: url("assets/fonts/CourierPrime-Bold.ttf") format("truetype"); }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0a0a0a; color: #f4f2ee; font-family: "Inter", sans-serif; }
+    .it { position: relative; display: inline-block; font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400; color: #dd483f; letter-spacing: -0.01em; font-size: 1.14em; line-height: 0.8; padding-right: 0.06em; }
+    .ul { position: absolute; left: -2%; bottom: -0.12em; width: 104%; height: 0.3em; overflow: visible; }
+    .ul path { fill: none; stroke: #dd483f; stroke-width: 7; stroke-linecap: round; stroke-dasharray: 1400; stroke-dashoffset: 1400; }
+    .cam { position: absolute; inset: 0; overflow: hidden; }
+    .cam video { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; display: block; }
+    .shade { position: absolute; left: 0; width: 1080px; pointer-events: none; }
+    .tag { position: absolute; left: 64px; top: 262px; padding: 16px 26px 18px 30px; border-radius: 14px; background: rgba(10, 10, 10, 0.74); opacity: 0; }
+    .tag::before { content: ""; position: absolute; left: 0; top: 18px; bottom: 18px; width: 6px; border-radius: 3px; background: #dd483f; }
+    .tag .n { font-weight: 700; font-size: 40px; letter-spacing: -0.03em; color: #fff; white-space: nowrap; }
+    .tag .r { margin-top: 6px; font-family: "Courier Prime", monospace; font-weight: 700; font-size: 28px; letter-spacing: 0.12em; text-transform: uppercase; color: #b9b7b2; white-space: nowrap; }
+    .line { position: absolute; left: 0; top: 1176px; width: 1080px; text-align: center; font-weight: 800; font-size: 104px; letter-spacing: -0.05em; line-height: 1; color: #fff;
+      text-shadow: 0 6px 40px rgba(0, 0, 0, 0.75), 0 2px 8px rgba(0, 0, 0, 0.6); opacity: 0; }
+
+    #root { background: #e7e7e5 url("assets/logo/paper-1080x1920.png") 0 0 / 1080px 1920px; color: #141414; }
+    #s3-a { position: absolute; left: 0; top: 330px; width: 1080px; text-align: center; font-family: "Courier Prime", monospace; font-weight: 700; font-size: 72px; letter-spacing: -0.03em; }
+    #s3-b { position: absolute; left: 0; top: 1290px; width: 1080px; text-align: center; font-family: "Courier Prime", monospace; font-weight: 700; font-size: 28px; letter-spacing: 0.08em; text-transform: uppercase; color: #5f5f5c; opacity: 0; }
+  </style>
+  <div data-hf-id="hf-vizh" id="root" data-composition-id="s3" data-width="1080" data-height="1920">
+    <div data-hf-id="hf-9rxb" id="s3-a">Do you agree with her?</div>
+    <div data-hf-id="hf-lubx" id="s3-b">Tell us in the comments</div>
+  </div>
+  <script>
+    (() => {
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#s3-a", { opacity: 0.85, y: -30 }, { opacity: 1, y: 0, duration: 0.3 }, 0);
+      tl.fromTo("#s3-b", { opacity: 0 }, { opacity: 1, duration: 0.25, immediateRender: false }, 2.0);
+      tl.set({}, {}, 5.6);
+      window.__timelines["s3"] = tl;
+    })();
+  </script>
+</template>

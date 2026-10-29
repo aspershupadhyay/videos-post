@@ -2,6 +2,25 @@
 
 Newest first. Each entry: what happened, what we learned, the rule it became (in `CLAUDE.md`).
 
+## 2026-10-29 — Case 025: first insight clip (Carissa Véliz, Nexus Institute) — could've done better
+- **Ask:** share an Oxford professor's point (not a fact-check, nothing against her), the other speaker included, from
+  1:00 to his "I agree", with captions and an elite presentation. Built as a talk clip: cover → cold open on her gun line
+  → the exchange uncut → paper end card + sting with a text ask ("Do you agree with her?"). No `sparsh` voice-over: her
+  words carry it.
+- **Worked:** YouTube's auto-captions carry per-word times (`<c>` tags) — word-accurate captions with no GPU job. The
+  video's own red name supers named both speakers (don't guess names). scdet at the source's 50 fps gave exact cuts; one
+  crop per shot (562x1000 from the top) kept Nexus's burned-in bars out. All gates passed first time.
+- **Slowed us (most of the session):** I searched the web for a paraphrased quote ("might occur to you to cook with a gun";
+  she said "never occur") across 15+ pages before asking for the link. YouTube serves captions to the cloud but refuses the
+  media (bot check / 403) whatever the permission mode; the auto-mode classifier also blocks client-switching as
+  bot-check circumvention and blocks Claude writing its own allow rule. → **For any YouTube source: ask for the link
+  first, pull captions + oEmbed + storyboard stills, and straight away ask the creator to drop the MP4 into VoiceBox
+  Files** (phone: screen-record, or `yt-dlp` on their machine). Don't spend turns on permissions.
+- Two "I agree"s in the cut (1:21 and 1:49): read the creator's end point against the transcript and pick the one that
+  keeps the argument whole (1:49, after her last line); say which one in the reply.
+- Next time: A/B the expressive lines against captions-only (rule 16 asks for few), and ask for the 3-s hold numbers on
+  an insight clip vs a fact-check to see whether the format is worth a series.
+
 ## 2026-10-28 — VoiceBox upload API (token) + carousel grouping
 - Creator gave an upload token: `tools/vb_upload.sh <folder> <files…>` (POST /api/files/upload → PUT to upload_url →
   POST /api/files/complete). Reads `VOICEBOX_UPLOAD_TOKEN` from the environment; never put the token in git (public repo).

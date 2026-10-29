@@ -1,0 +1,44 @@
+<template>
+  <style>
+    @font-face { font-family: "Inter"; font-weight: 100 900; font-display: block; src: url("assets/fonts/Inter.ttf") format("truetype"); }
+    @font-face { font-family: "Instrument Serif"; font-style: italic; font-weight: 400; font-display: block; src: url("assets/fonts/InstrumentSerif-Italic.woff2") format("woff2"); }
+    @font-face { font-family: "Courier Prime"; font-weight: 700; font-display: block; src: url("assets/fonts/CourierPrime-Bold.ttf") format("truetype"); }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0a0a0a; color: #f4f2ee; font-family: "Inter", sans-serif; }
+    .it { position: relative; display: inline-block; font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400; color: #dd483f; letter-spacing: -0.01em; font-size: 1.14em; line-height: 0.8; padding-right: 0.06em; }
+    .ul { position: absolute; left: -2%; bottom: -0.12em; width: 104%; height: 0.3em; overflow: visible; }
+    .ul path { fill: none; stroke: #dd483f; stroke-width: 7; stroke-linecap: round; stroke-dasharray: 1400; stroke-dashoffset: 1400; }
+    .cam { position: absolute; inset: 0; overflow: hidden; }
+    .cam video { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; display: block; }
+    .shade { position: absolute; left: 0; width: 1080px; pointer-events: none; }
+    .tag { position: absolute; left: 64px; top: 262px; padding: 16px 26px 18px 30px; border-radius: 14px; background: rgba(10, 10, 10, 0.74); opacity: 0; }
+    .tag::before { content: ""; position: absolute; left: 0; top: 18px; bottom: 18px; width: 6px; border-radius: 3px; background: #dd483f; }
+    .tag .n { font-weight: 700; font-size: 40px; letter-spacing: -0.03em; color: #fff; white-space: nowrap; }
+    .tag .r { margin-top: 6px; font-family: "Courier Prime", monospace; font-weight: 700; font-size: 28px; letter-spacing: 0.12em; text-transform: uppercase; color: #b9b7b2; white-space: nowrap; }
+    .line { position: absolute; left: 0; top: 1176px; width: 1080px; text-align: center; font-weight: 800; font-size: 104px; letter-spacing: -0.05em; line-height: 1; color: #fff;
+      text-shadow: 0 6px 40px rgba(0, 0, 0, 0.75), 0 2px 8px rgba(0, 0, 0, 0.6); opacity: 0; }
+
+    #s1-cov { position: absolute; inset: 0; background: url("assets/shots/cover.png") 0 0 / 1080px 1920px; z-index: 5; }
+  </style>
+  <div data-hf-id="hf-qmpn" id="root" data-composition-id="s1" data-width="1080" data-height="1920">
+    <div data-hf-id="hf-q35l" id="s1-cam" class="cam">
+      <video data-hf-id="hf-my13" id="s1-v" class="clip" src="assets/clips/coldopen.mp4" data-start="0" data-duration="4.1" muted playsinline></video>
+    </div>
+    <div data-hf-id="hf-mfsf" class="shade" style="top:0;height:560px;background:linear-gradient(rgba(10,10,10,0.55),rgba(10,10,10,0))"></div>
+    <div data-hf-id="hf-lxif" class="shade" style="top:1040px;height:880px;background:linear-gradient(rgba(10,10,10,0),rgba(10,10,10,0.6))"></div>
+    <div data-hf-id="hf-m6yl" id="s1-tag" class="tag"><div data-hf-id="hf-e26j" class="n">Prof. Carissa Véliz</div><div data-hf-id="hf-fgfb" class="r">University of Oxford</div></div>
+    <div data-hf-id="hf-6pdy" id="s1-cov"></div>
+  </div>
+  <script>
+    (() => {
+      const tl = gsap.timeline({ paused: true });
+      // frame 0 is the cover; it lifts away like a page as her line starts
+      tl.to("#s1-cov", { y: -1920, rotation: -4, duration: 0.55, ease: "power3.in", transformOrigin: "0px 1920px" }, 0.28);
+      tl.fromTo("#s1-cam", { scale: 1.12 }, { scale: 1.0, duration: 0.9, ease: "expo.out", transformOrigin: "540px 700px" }, 0.5);
+      tl.fromTo("#s1-cam", { scale: 1.0 }, { scale: 1.07, duration: 2.70, ease: "sine.inOut", transformOrigin: "540px 700px", immediateRender: false }, 1.4);
+      tl.fromTo("#s1-tag", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.4, ease: "expo.out", immediateRender: false }, 0.85);
+      tl.to("#s1-tag", { opacity: 0, duration: 0.2 }, 3.85);
+      tl.set({}, {}, 4.1);
+      window.__timelines["s1"] = tl;
+    })();
+  </script>
+</template>

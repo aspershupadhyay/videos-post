@@ -1,0 +1,56 @@
+<template>
+  <style>
+    @font-face { font-family: "Inter"; font-weight: 100 900; font-display: block; src: url("assets/fonts/Inter.ttf") format("truetype"); }
+    @font-face { font-family: "Instrument Serif"; font-style: italic; font-weight: 400; font-display: block; src: url("assets/fonts/InstrumentSerif-Italic.woff2") format("woff2"); }
+    @font-face { font-family: "Courier Prime"; font-weight: 700; font-display: block; src: url("assets/fonts/CourierPrime-Bold.ttf") format("truetype"); }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0a0a0a; color: #f4f2ee; font-family: "Inter", sans-serif; }
+    .it { position: relative; display: inline-block; font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400; color: #dd483f; letter-spacing: -0.01em; font-size: 1.14em; line-height: 0.8; padding-right: 0.06em; }
+    .ul { position: absolute; left: -2%; bottom: -0.12em; width: 104%; height: 0.3em; overflow: visible; }
+    .ul path { fill: none; stroke: #dd483f; stroke-width: 7; stroke-linecap: round; stroke-dasharray: 1400; stroke-dashoffset: 1400; }
+    .cam { position: absolute; inset: 0; overflow: hidden; }
+    .cam video { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; display: block; }
+    .shade { position: absolute; left: 0; width: 1080px; pointer-events: none; }
+    .tag { position: absolute; left: 64px; top: 262px; padding: 16px 26px 18px 30px; border-radius: 14px; background: rgba(10, 10, 10, 0.74); opacity: 0; }
+    .tag::before { content: ""; position: absolute; left: 0; top: 18px; bottom: 18px; width: 6px; border-radius: 3px; background: #dd483f; }
+    .tag .n { font-weight: 700; font-size: 40px; letter-spacing: -0.03em; color: #fff; white-space: nowrap; }
+    .tag .r { margin-top: 6px; font-family: "Courier Prime", monospace; font-weight: 700; font-size: 28px; letter-spacing: 0.12em; text-transform: uppercase; color: #b9b7b2; white-space: nowrap; }
+    .line { position: absolute; left: 0; top: 1176px; width: 1080px; text-align: center; font-weight: 800; font-size: 104px; letter-spacing: -0.05em; line-height: 1; color: #fff;
+      text-shadow: 0 6px 40px rgba(0, 0, 0, 0.75), 0 2px 8px rgba(0, 0, 0, 0.6); opacity: 0; }
+
+  </style>
+  <div data-hf-id="hf-bmd6" id="root" data-composition-id="s2" data-width="1080" data-height="1920">
+    <div data-hf-id="hf-uzmy" id="s2-cam" class="cam">
+      <video data-hf-id="hf-gfno" id="s2-v" class="clip" src="assets/clips/main.mp4" data-start="0" data-duration="49.7" muted playsinline></video>
+    </div>
+    <div data-hf-id="hf-mfsf" class="shade" style="top:0;height:560px;background:linear-gradient(rgba(10,10,10,0.55),rgba(10,10,10,0))"></div>
+    <div data-hf-id="hf-lxif" class="shade" style="top:1040px;height:880px;background:linear-gradient(rgba(10,10,10,0),rgba(10,10,10,0.6))"></div>
+    <div data-hf-id="hf-8yak" id="s2-tag-a" class="tag"><div data-hf-id="hf-ek9f" class="n">Khalifa AlQama</div></div>
+    <div data-hf-id="hf-bcz7" id="s2-tag-v" class="tag"><div data-hf-id="hf-e26j" class="n">Prof. Carissa Véliz</div><div data-hf-id="hf-fgfb" class="r">University of Oxford</div></div>
+    <div data-hf-id="hf-9tiu" id="s2-l0" class="line">Never <span data-hf-id="hf-zho5" class="it">neutral.<svg data-hf-id="hf-694o" class="ul" viewBox="0 0 100 20" preserveAspectRatio="none"><path data-hf-id="hf-np4f" vector-effect="non-scaling-stroke" d="M2 12 C 30 7, 66 11, 98 5" /></svg></span></div><div data-hf-id="hf-gfe1" id="s2-l1" class="line">Made to <span data-hf-id="hf-oppg" class="it">kill.<svg data-hf-id="hf-pe34" class="ul" viewBox="0 0 100 20" preserveAspectRatio="none"><path data-hf-id="hf-ywwf" vector-effect="non-scaling-stroke" d="M2 12 C 30 7, 66 11, 98 5" /></svg></span></div><div data-hf-id="hf-jhy0" id="s2-l2" class="line">Made to <span data-hf-id="hf-6p2f" class="it">control.<svg data-hf-id="hf-o761" class="ul" viewBox="0 0 100 20" preserveAspectRatio="none"><path data-hf-id="hf-yile" vector-effect="non-scaling-stroke" d="M2 12 C 30 7, 66 11, 98 5" /></svg></span></div>
+  </div>
+  <script>
+    (() => {
+      const tl = gsap.timeline({ paused: true });
+      // who's talking: his tag as he starts, hers as she cuts in
+      tl.fromTo("#s2-tag-a", { opacity: 0.85, x: -20 }, { opacity: 1, x: 0, duration: 0.3, ease: "expo.out" }, 0);
+      tl.to("#s2-tag-a", { opacity: 0, duration: 0.2 }, 3.2);
+      tl.fromTo("#s2-tag-v", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.4, ease: "expo.out", immediateRender: false }, 16.010);
+      tl.to("#s2-tag-v", { opacity: 0, duration: 0.2 }, 19.410);
+      tl.fromTo("#s2-l0", { opacity: 0, y: 40, scale: 0.96 }, { opacity: 1, y: 0, scale: 1, duration: 0.35, ease: "expo.out", immediateRender: false }, 16.460);
+      tl.to("#s2-l0 .ul path", { strokeDashoffset: 0, duration: 0.34, ease: "power2.inOut" }, 16.760);
+      tl.to("#s2-l0", { opacity: 0, duration: 0.18 }, 21.050);
+      tl.fromTo("#s2-l1", { opacity: 0, y: 40, scale: 0.96 }, { opacity: 1, y: 0, scale: 1, duration: 0.35, ease: "expo.out", immediateRender: false }, 28.420);
+      tl.to("#s2-l1 .ul path", { strokeDashoffset: 0, duration: 0.34, ease: "power2.inOut" }, 28.720);
+      tl.to("#s2-l1", { opacity: 0, duration: 0.18 }, 31.550);
+      tl.fromTo("#s2-l2", { opacity: 0, y: 40, scale: 0.96 }, { opacity: 1, y: 0, scale: 1, duration: 0.35, ease: "expo.out", immediateRender: false }, 44.050);
+      tl.to("#s2-l2 .ul path", { strokeDashoffset: 0, duration: 0.34, ease: "power2.inOut" }, 44.350);
+      tl.to("#s2-l2", { opacity: 0, duration: 0.18 }, 45.600);
+      tl.fromTo("#s2-cam", { scale: 1 }, { scale: 1.07, duration: 6.900, ease: "sine.inOut", transformOrigin: "540px 760px", immediateRender: false }, 22.550);
+      tl.set("#s2-cam", { scale: 1 }, 29.450);
+      tl.fromTo("#s2-cam", { scale: 1 }, { scale: 1.07, duration: 6.460, ease: "sine.inOut", transformOrigin: "540px 760px", immediateRender: false }, 39.350);
+      tl.set("#s2-cam", { scale: 1 }, 45.810);
+      tl.set({}, {}, 49.7);
+      window.__timelines["s2"] = tl;
+    })();
+  </script>
+</template>
