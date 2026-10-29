@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>CatchTheError — Case 023: Apple's "13x faster" M6, against a 2020 laptop</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; background: #0a0a0a; }
+      #root { position: relative; width: 100%; height: 100%; overflow: hidden; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="46.01" data-width="1080" data-height="1920">
+      <!-- Scenes, cut to the narration (SPEC.md); the logo sting plays over the end card. Footage: Apple's M6 MacBook Pro film. -->
+      <div id="s1" data-composition-id="s1" data-composition-src="compositions/s1.html" data-start="0.0" data-duration="4.11" data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index: 1"></div>
+      <div id="s2" data-composition-id="s2" data-composition-src="compositions/s2.html" data-start="4.11" data-duration="4.84" data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index: 2"></div>
+      <div id="s3" data-composition-id="s3" data-composition-src="compositions/s3.html" data-start="8.95" data-duration="3.19" data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index: 3"></div>
+      <div id="s4" data-composition-id="s4" data-composition-src="compositions/s4.html" data-start="12.14" data-duration="3.16" data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index: 4"></div>
+      <div id="s5" data-composition-id="s5" data-composition-src="compositions/s5.html" data-start="15.3" data-duration="5.14" data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index: 5"></div>
+      <div id="s6" data-composition-id="s6" data-composition-src="compositions/s6.html" data-start="20.44" data-duration="4.61" data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index: 6"></div>
+      <div id="s7" data-composition-id="s7" data-composition-src="compositions/s7.html" data-start="25.05" data-duration="3.53" data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index: 7"></div>
+      <div id="s8" data-composition-id="s8" data-composition-src="compositions/s8.html" data-start="28.58" data-duration="5.47" data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index: 8"></div>
+      <div id="s9" data-composition-id="s9" data-composition-src="compositions/s9.html" data-start="34.05" data-duration="4.92" data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index: 9"></div>
+      <div id="s10" data-composition-id="s10" data-composition-src="compositions/s10.html" data-start="38.97" data-duration="7.04" data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index: 10"></div>
+      <div id="sting" data-composition-id="logo-sting" data-composition-src="compositions/logo-sting.html" data-start="39.02" data-duration="6.99" data-track-index="2" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index: 50"></div>
+      <div id="caps" data-composition-id="captions" data-composition-src="compositions/captions.html" data-start="0" data-duration="38.97" data-track-index="3" data-track-kind="captions" data-width="1080" data-height="1920" style="z-index: 60"></div>
+
+      <!-- Voiceover: VoiceBox, trained voice "sparsh" (myvoice); levelled to -14 LUFS (scripts/prep_audio.py). -->
+      <audio id="vo-01" class="clip" src="assets/vo/vo-01.wav" data-start="0.1" data-duration="3.962" data-track-index="10" data-volume="1" data-audio-group="voiceover"></audio>
+      <audio id="vo-02" class="clip" src="assets/vo/vo-02.wav" data-start="4.312" data-duration="4.385" data-track-index="10" data-volume="1" data-audio-group="voiceover"></audio>
+      <audio id="vo-03" class="clip" src="assets/vo/vo-03.wav" data-start="9.147" data-duration="2.889" data-track-index="10" data-volume="1" data-audio-group="voiceover"></audio>
+      <audio id="vo-04" class="clip" src="assets/vo/vo-04.wav" data-start="12.336" data-duration="2.716" data-track-index="10" data-volume="1" data-audio-group="voiceover"></audio>
+      <audio id="vo-05" class="clip" src="assets/vo/vo-05.wav" data-start="15.502" data-duration="4.739" data-track-index="10" data-volume="1" data-audio-group="voiceover"></audio>
+      <audio id="vo-06" class="clip" src="assets/vo/vo-06.wav" data-start="20.641" data-duration="4.357" data-track-index="10" data-volume="1" data-audio-group="voiceover"></audio>
+      <audio id="vo-07" class="clip" src="assets/vo/vo-07.wav" data-start="25.249" data-duration="3.085" data-track-index="10" data-volume="1" data-audio-group="voiceover"></audio>
+      <audio id="vo-08" class="clip" src="assets/vo/vo-08.wav" data-start="28.784" data-duration="4.965" data-track-index="10" data-volume="1" data-audio-group="voiceover"></audio>
+      <audio id="vo-09" class="clip" src="assets/vo/vo-09.wav" data-start="34.249" data-duration="4.417" data-track-index="10" data-volume="1" data-audio-group="voiceover"></audio>
+      <audio id="vo-10" class="clip" src="assets/vo/vo-10.wav" data-start="39.166" data-duration="3.245" data-track-index="10" data-volume="1" data-audio-group="voiceover"></audio>
+
+      <!-- Music bed: "Voxel Revolution", Kevin MacLeod (incompetech.com), CC BY 4.0; envelope baked in. -->
+      <audio id="music" class="clip" src="assets/music/bed.wav" data-start="0" data-duration="46.01" data-track-index="11" data-volume="1" data-audio-group="music"></audio>
+
+      <!-- SFX:BEGIN (generated by scripts/build_sfx.py from scripts/sfx_cues.json) -->
+      <audio data-hf-id="hf-dmg1" id="sfx-01" class="clip" src="assets/sfx/impact-bass-2.mp3" data-start="0.032" data-duration="2.592" data-track-index="12" data-volume="0.22" data-audio-group="sfx"></audio><!-- the cover cracks -->
+      <audio data-hf-id="hf-pj6u" id="sfx-02" class="clip" src="assets/sfx/whoosh-cinematic.mp3" data-start="0.000" data-duration="5.544" data-track-index="13" data-volume="0.16" data-audio-group="sfx"></audio><!-- the halves fall away -->
+      <audio data-hf-id="hf-cd8j" id="sfx-03" class="clip" src="assets/sfx/pop.mp3" data-start="3.565" data-duration="0.720" data-track-index="12" data-volume="0.25" data-audio-group="sfx"></audio><!-- the red asterisk -->
+      <audio data-hf-id="hf-iadj" id="sfx-04" class="clip" src="assets/sfx/whoosh-short.mp3" data-start="3.982" data-duration="0.575" data-track-index="14" data-volume="0.14" data-audio-group="sfx"></audio><!-- shard in -->
+      <audio data-hf-id="hf-g25t" id="sfx-05" class="clip" src="assets/sfx/click-soft.mp3" data-start="4.583" data-duration="0.366" data-track-index="12" data-volume="0.22" data-audio-group="sfx"></audio><!-- shard morphs -->
+      <audio data-hf-id="hf-7t75" id="sfx-06" class="clip" src="assets/sfx/plate.mp3" data-start="5.282" data-duration="0.489" data-track-index="12" data-volume="0.18" data-audio-group="sfx"></audio><!-- cut to the last frame -->
+      <audio data-hf-id="hf-hmoz" id="sfx-07" class="clip" src="assets/sfx/scratch-b.mp3" data-start="5.783" data-duration="0.123" data-track-index="12" data-volume="0.4" data-audio-group="sfx"></audio><!-- ring the fine print -->
+      <audio data-hf-id="hf-ksod" id="sfx-08" class="clip" src="assets/sfx/riser.mp3" data-start="4.582" data-duration="10.032" data-track-index="14" data-volume="0.12" data-audio-group="sfx"></audio><!-- zoom into the fine print -->
+      <audio data-hf-id="hf-ca6z" id="sfx-09" class="clip" src="assets/sfx/impact-bass-1.mp3" data-start="8.960" data-duration="2.116" data-track-index="12" data-volume="0.18" data-audio-group="sfx"></audio><!-- arrive in the fine print -->
+      <audio data-hf-id="hf-11s1" id="sfx-10" class="clip" src="assets/sfx/scratch-a.mp3" data-start="11.513" data-duration="0.139" data-track-index="12" data-volume="0.4" data-audio-group="sfx"></audio><!-- pen under 'with M1.' -->
+      <audio data-hf-id="hf-1uc5" id="sfx-11" class="clip" src="assets/sfx/punch.mp3" data-start="12.163" data-duration="0.402" data-track-index="12" data-volume="0.22" data-audio-group="sfx"></audio><!-- M1 lands -->
+      <audio data-hf-id="hf-0kjt" id="sfx-12" class="clip" src="assets/sfx/whoosh-short.mp3" data-start="13.258" data-duration="0.575" data-track-index="12" data-volume="0.14" data-audio-group="sfx"></audio><!-- the 2020 photo flies in -->
+      <audio data-hf-id="hf-q0du" id="sfx-13" class="clip" src="assets/sfx/thud-wood.mp3" data-start="13.868" data-duration="0.263" data-track-index="12" data-volume="0.22" data-audio-group="sfx"></audio><!-- the photo lands -->
+      <audio data-hf-id="hf-59vk" id="sfx-14" class="clip" src="assets/sfx/stamp-a.mp3" data-start="14.364" data-duration="0.527" data-track-index="12" data-volume="0.2" data-audio-group="sfx"></audio><!-- 2020 -->
+      <audio data-hf-id="hf-yjl4" id="sfx-15" class="clip" src="assets/sfx/scratch-c.mp3" data-start="14.635" data-duration="0.325" data-track-index="13" data-volume="0.35" data-audio-group="sfx"></audio><!-- pen under 2020 -->
+      <audio data-hf-id="hf-d34n" id="sfx-16" class="clip" src="assets/sfx/whoosh.mp3" data-start="15.222" data-duration="0.575" data-track-index="12" data-volume="0.14" data-audio-group="sfx"></audio><!-- the newsroom card slides up -->
+      <audio data-hf-id="hf-2wvz" id="sfx-17" class="clip" src="assets/sfx/click-soft.mp3" data-start="16.324" data-duration="0.366" data-track-index="12" data-volume="0.25" data-audio-group="sfx"></audio><!-- dim to the M5 line -->
+      <audio data-hf-id="hf-9yas" id="sfx-18" class="clip" src="assets/sfx/select.mp3" data-start="18.531" data-duration="0.380" data-track-index="12" data-volume="0.22" data-audio-group="sfx"></audio><!-- the digits part -->
+      <audio data-hf-id="hf-nnqx" id="sfx-19" class="clip" src="assets/sfx/drop.mp3" data-start="18.955" data-duration="0.188" data-track-index="12" data-volume="0.32" data-audio-group="sfx"></audio><!-- the red dot lands: 1.3 -->
+      <audio data-hf-id="hf-063s" id="sfx-20" class="clip" src="assets/sfx/scratch-b.mp3" data-start="19.073" data-duration="0.123" data-track-index="13" data-volume="0.35" data-audio-group="sfx"></audio><!-- pen under 1.3x -->
+      <audio data-hf-id="hf-ef4l" id="sfx-21" class="clip" src="assets/sfx/whoosh.mp3" data-start="20.312" data-duration="0.575" data-track-index="12" data-volume="0.14" data-audio-group="sfx"></audio><!-- the shard slides in -->
+      <audio data-hf-id="hf-gr47" id="sfx-22" class="clip" src="assets/sfx/scratch-a.mp3" data-start="21.957" data-duration="0.139" data-track-index="12" data-volume="0.35" data-audio-group="sfx"></audio><!-- pen under 'time to first token' -->
+      <audio data-hf-id="hf-qkqm" id="sfx-23" class="clip" src="assets/sfx/tick-a.mp3" data-start="23.114" data-duration="0.045" data-track-index="12" data-volume="0.2" data-audio-group="sfx"></audio><!-- the wait starts -->
+      <audio data-hf-id="hf-zi0h" id="sfx-24" class="clip" src="assets/sfx/key-press.mp3" data-start="24.419" data-duration="0.400" data-track-index="12" data-volume="0.35" data-audio-group="sfx"></audio><!-- the A.I. answers -->
+      <audio data-hf-id="hf-gxad" id="sfx-25" class="clip" src="assets/sfx/typing.mp3" data-start="24.728" data-duration="1.500" data-track-index="13" data-volume="0.12" data-audio-group="sfx"></audio><!-- tokens stream in -->
+      <audio data-hf-id="hf-ozw1" id="sfx-26" class="clip" src="assets/sfx/pop.mp3" data-start="26.264" data-duration="0.720" data-track-index="12" data-volume="0.25" data-audio-group="sfx"></audio><!-- the first token goes red -->
+      <audio data-hf-id="hf-ss2a" id="sfx-27" class="clip" src="assets/sfx/scratch-c.mp3" data-start="26.598" data-duration="0.325" data-track-index="13" data-volume="0.4" data-audio-group="sfx"></audio><!-- ring the first token -->
+      <audio data-hf-id="hf-bu6k" id="sfx-28" class="clip" src="assets/sfx/whoosh-short.mp3" data-start="28.452" data-duration="0.575" data-track-index="12" data-volume="0.14" data-audio-group="sfx"></audio><!-- M1 shard slides in -->
+      <audio data-hf-id="hf-6b8q" id="sfx-29" class="clip" src="assets/sfx/thud-wood.mp3" data-start="30.316" data-duration="0.263" data-track-index="12" data-volume="0.2" data-audio-group="sfx"></audio><!-- Real upgrade. -->
+      <audio data-hf-id="hf-bsbn" id="sfx-30" class="clip" src="assets/sfx/whoosh-short.mp3" data-start="30.936" data-duration="0.575" data-track-index="12" data-volume="0.14" data-audio-group="sfx"></audio><!-- M5 shard slides in -->
+      <audio data-hf-id="hf-hx4y" id="sfx-31" class="clip" src="assets/sfx/thud-wood.mp3" data-start="32.775" data-duration="0.263" data-track-index="12" data-volume="0.2" data-audio-group="sfx"></audio><!-- Keep your money. -->
+      <audio data-hf-id="hf-3yu8" id="sfx-32" class="clip" src="assets/sfx/scratch-b.mp3" data-start="33.664" data-duration="0.123" data-track-index="12" data-volume="0.35" data-audio-group="sfx"></audio><!-- pen under money -->
+      <audio data-hf-id="hf-owm4" id="sfx-33" class="clip" src="assets/sfx/whoosh-short.mp3" data-start="33.922" data-duration="0.575" data-track-index="12" data-volume="0.14" data-audio-group="sfx"></audio><!-- montage in -->
+      <audio data-hf-id="hf-gdvy" id="sfx-34" class="clip" src="assets/sfx/tick-a.mp3" data-start="34.680" data-duration="0.045" data-track-index="12" data-volume="0.22" data-audio-group="sfx"></audio><!-- shard cut 1 -->
+      <audio data-hf-id="hf-5fyo" id="sfx-35" class="clip" src="assets/sfx/tick-b.mp3" data-start="35.277" data-duration="0.020" data-track-index="12" data-volume="0.22" data-audio-group="sfx"></audio><!-- shard cut 2 -->
+      <audio data-hf-id="hf-mx4t" id="sfx-36" class="clip" src="assets/sfx/tick-a.mp3" data-start="35.875" data-duration="0.045" data-track-index="12" data-volume="0.22" data-audio-group="sfx"></audio><!-- shard cut 3 -->
+      <audio data-hf-id="hf-tm0i" id="sfx-37" class="clip" src="assets/sfx/impact-bass-1.mp3" data-start="36.409" data-duration="2.116" data-track-index="12" data-volume="0.2" data-audio-group="sfx"></audio><!-- the last frame again -->
+      <audio data-hf-id="hf-e5ad" id="sfx-38" class="clip" src="assets/sfx/scratch-c.mp3" data-start="37.948" data-duration="0.325" data-track-index="13" data-volume="0.4" data-audio-group="sfx"></audio><!-- ring the fine print -->
+      <audio data-hf-id="hf-is6q" id="sfx-39" class="clip" src="assets/sfx/drop.mp3" data-start="39.373" data-duration="0.188" data-track-index="12" data-volume="0.3" data-audio-group="sfx"></audio><!-- the dot lands on the rule -->
+      <audio data-hf-id="hf-n1zy" id="sfx-40" class="clip" src="assets/sfx/thud-wood.mp3" data-start="39.572" data-duration="0.263" data-track-index="12" data-volume="0.22" data-audio-group="sfx"></audio><!-- c lands -->
+      <audio data-hf-id="hf-t5hf" id="sfx-41" class="clip" src="assets/sfx/plate.mp3" data-start="39.690" data-duration="0.489" data-track-index="13" data-volume="0.18" data-audio-group="sfx"></audio><!-- t lands -->
+      <audio data-hf-id="hf-2ksj" id="sfx-42" class="clip" src="assets/sfx/pop.mp3" data-start="39.785" data-duration="0.720" data-track-index="14" data-volume="0.25" data-audio-group="sfx"></audio><!-- the dot becomes the e -->
+      <audio data-hf-id="hf-dgh1" id="sfx-43" class="clip" src="assets/sfx/scratch-c.mp3" data-start="40.319" data-duration="0.325" data-track-index="12" data-volume="0.45" data-audio-group="sfx"></audio><!-- the pen circles the e -->
+      <audio data-hf-id="hf-bq0w" id="sfx-44" class="clip" src="assets/sfx/typing.mp3" data-start="40.348" data-duration="1.500" data-track-index="13" data-volume="0.14" data-audio-group="sfx"></audio><!-- CATCH · THE · ERROR -->      <!-- SFX:END -->
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = gsap.timeline({ paused: true });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+<template>
+  <style>
+    @font-face { font-family: "Inter"; font-weight: 100 900; font-display: block; src: url("assets/fonts/Inter.ttf") format("truetype"); }
+    @font-face { font-family: "Instrument Serif"; font-style: italic; font-weight: 400; font-display: block; src: url("assets/fonts/InstrumentSerif-Italic.woff2") format("woff2"); }
+    @font-face { font-family: "Courier Prime"; font-weight: 700; font-display: block; src: url("assets/fonts/CourierPrime-Bold.ttf") format("truetype"); }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0a0a0a; color: #f4f2ee; font-family: "Inter", sans-serif; }
+    .h { position: absolute; left: 76px; width: 930px; font-weight: 800; font-size: 118px; letter-spacing: -0.055em; line-height: 0.93; }
+    .it { position: relative; display: inline-block; font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400; color: #dd483f; letter-spacing: -0.01em; font-size: 1.12em; line-height: 0.8; padding-right: 0.06em; }
+    .ul { position: absolute; left: -2%; bottom: -0.16em; width: 104%; height: 0.3em; overflow: visible; }
+    .ul path { fill: none; stroke: #dd483f; stroke-width: 7; stroke-linecap: round; stroke-dasharray: 1400; stroke-dashoffset: 1400; }
+    .mono { position: absolute; font-family: "Courier Prime", monospace; font-weight: 700; font-size: 30px; letter-spacing: 0.14em; text-transform: uppercase; color: #9a9a96; white-space: nowrap; }
+    .row { position: absolute; left: 0; width: 1080px; text-align: center; }
+    .pen { position: absolute; overflow: visible; }
+    .pen path { fill: none; stroke: #dd483f; stroke-width: 8; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1400; stroke-dashoffset: 1400; }
+    .shard { position: absolute; inset: 0; overflow: hidden; }
+    .shard video, .shard img.fill { position: absolute; display: block; }
+    .chip { position: absolute; padding: 10px 20px 12px; border-radius: 12px; background: rgba(10, 10, 10, 0.78); font-weight: 800; font-size: 44px; letter-spacing: -0.03em; white-space: nowrap; }
+    .photo { position: absolute; overflow: hidden; border: 6px solid #f4f2ee; border-radius: 22px; background: #000; box-shadow: 0 40px 90px rgba(0, 0, 0, 0.6); }
+    .photo img { position: absolute; left: 0; top: 0; display: block; }
+
+    #s2-sh { clip-path: polygon(60px 520px, 1020px 610px, 980px 1330px, 110px 1240px); }
+    #s2-end { position: absolute; left: 40px; top: 560px; width: 1000px; height: 568px; opacity: 0; border: 6px solid #f4f2ee; border-radius: 22px; box-shadow: 0 40px 90px rgba(0, 0, 0, 0.6); }
+    #s2-end img { position: absolute; left: 0; top: 0; width: 988px; height: 556px; border-radius: 16px; }
+    #s2-lab { top: 420px; opacity: 0; }
+  </style>
+  <div id="root" data-composition-id="s2" data-width="1080" data-height="1920">
+
+    <div id="s2-sh" class="shard">
+      <video id="s2-va" class="clip" src="assets/clips/title.mp4" data-start="0.000" data-duration="0.591" data-media-start="0.3" muted playsinline style="left:-314px;top:480px;width:1707px;height:960px;object-fit:cover"></video>
+      <video id="s2-vb" class="clip" src="assets/clips/carry.mp4" data-start="0.591" data-duration="0.641" muted playsinline style="left:-314px;top:480px;width:1707px;height:960px;object-fit:cover"></video>
+    </div>
+    <div id="s2-end">
+      <img src="assets/shots/ad-45.png" alt="The last frame of Apple's M6 ad: the Apple logo and two lines of grey fine print" />
+      <div id="s2-ring" style="position:absolute;left:74px;top:456px;width:839px;height:112px;--p:0;-webkit-mask-image:conic-gradient(from 340deg at 50% 50%, #000 calc(var(--p) * 1deg), transparent calc(var(--p) * 1deg));mask-image:conic-gradient(from 340deg at 50% 50%, #000 calc(var(--p) * 1deg), transparent calc(var(--p) * 1deg))"><img src="assets/logo/circle-crop.png" alt="" style="position:absolute;left:0;top:0;width:100%;height:100%" /></div>
+    </div>
+    <div id="s2-lab" class="mono row">The ad's last frame</div>
+  </div>
+  <script>
+    (() => {
+      const tl = gsap.timeline({ paused: true });
+      const at = (abs) => Math.max(0, abs - 4.11);
+      const rise = (sel, t, d = 0.45) => tl.fromTo(sel, { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: d, ease: "expo.out", immediateRender: false }, at(t));
+      const pen = (sel, t, d = 0.36) => tl.to(sel, { strokeDashoffset: 0, duration: d, ease: "power2.inOut" }, at(t));
+      const ring = (sel, t, d = 0.5) => tl.to(sel, { "--p": 360, duration: d, ease: "power2.inOut" }, at(t));
+      const shape = (sel, poly, t, d = 0.3) => tl.to(sel, { clipPath: poly, duration: d, ease: "power3.inOut" }, at(t));
+
+      tl.fromTo("#s2-sh", { scale: 0.92, rotation: -3 }, { scale: 1, rotation: 0, duration: 0.5, ease: "expo.out" }, 0);
+      shape("#s2-sh", "polygon(0px 640px, 1080px 470px, 1080px 1180px, 0px 1380px)", 0.47, 0.24);
+      shape("#s2-sh", "polygon(200px 480px, 1080px 760px, 880px 1380px, 0px 1100px)", 0.88, 0.22);
+      // "tiny grey text": hard cut to the last frame, the shard snaps shut
+      tl.to("#s2-sh", { opacity: 0, duration: 0.06 }, at(5.232));
+      tl.fromTo("#s2-end", { opacity: 0, scale: 1.06 }, { opacity: 1, scale: 1, duration: 0.4, ease: "expo.out", immediateRender: false }, at(5.252));
+      ring("#s2-ring", 5.70, 0.5);
+      rise("#s2-lab", 6.77, 0.35);
+      // zoom through the fine print into the next shot
+      tl.to("#s2-end", { scale: 5, duration: 0.42, ease: "power3.in", transformOrigin: "493px 512px" }, 4.42);
+      tl.to("#s2-lab", { opacity: 0, duration: 0.2 }, 4.42);
+      tl.set({}, {}, 4.84);
+      window.__timelines["s2"] = tl;
+    })();
+  </script>
+</template>

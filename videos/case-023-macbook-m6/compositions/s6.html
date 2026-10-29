@@ -1,0 +1,59 @@
+<template>
+  <style>
+    @font-face { font-family: "Inter"; font-weight: 100 900; font-display: block; src: url("assets/fonts/Inter.ttf") format("truetype"); }
+    @font-face { font-family: "Instrument Serif"; font-style: italic; font-weight: 400; font-display: block; src: url("assets/fonts/InstrumentSerif-Italic.woff2") format("woff2"); }
+    @font-face { font-family: "Courier Prime"; font-weight: 700; font-display: block; src: url("assets/fonts/CourierPrime-Bold.ttf") format("truetype"); }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0a0a0a; color: #f4f2ee; font-family: "Inter", sans-serif; }
+    .h { position: absolute; left: 76px; width: 930px; font-weight: 800; font-size: 118px; letter-spacing: -0.055em; line-height: 0.93; }
+    .it { position: relative; display: inline-block; font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400; color: #dd483f; letter-spacing: -0.01em; font-size: 1.12em; line-height: 0.8; padding-right: 0.06em; }
+    .ul { position: absolute; left: -2%; bottom: -0.16em; width: 104%; height: 0.3em; overflow: visible; }
+    .ul path { fill: none; stroke: #dd483f; stroke-width: 7; stroke-linecap: round; stroke-dasharray: 1400; stroke-dashoffset: 1400; }
+    .mono { position: absolute; font-family: "Courier Prime", monospace; font-weight: 700; font-size: 30px; letter-spacing: 0.14em; text-transform: uppercase; color: #9a9a96; white-space: nowrap; }
+    .row { position: absolute; left: 0; width: 1080px; text-align: center; }
+    .pen { position: absolute; overflow: visible; }
+    .pen path { fill: none; stroke: #dd483f; stroke-width: 8; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1400; stroke-dashoffset: 1400; }
+    .shard { position: absolute; inset: 0; overflow: hidden; }
+    .shard video, .shard img.fill { position: absolute; display: block; }
+    .chip { position: absolute; padding: 10px 20px 12px; border-radius: 12px; background: rgba(10, 10, 10, 0.78); font-weight: 800; font-size: 44px; letter-spacing: -0.03em; white-space: nowrap; }
+    .photo { position: absolute; overflow: hidden; border: 6px solid #f4f2ee; border-radius: 22px; background: #000; box-shadow: 0 40px 90px rgba(0, 0, 0, 0.6); }
+    .photo img { position: absolute; left: 0; top: 0; display: block; }
+
+    #s6-line { position: absolute; left: 40px; top: 300px; width: 1000px; height: 92px; }
+    #s6-line img { position: absolute; left: 0; top: 0; width: 1000px; height: 92px; }
+    #s6-sh { clip-path: polygon(40px 540px, 1040px 600px, 1040px 1150px, 40px 1110px); }
+    #s6-lab { left: 60px; top: 1194px; }
+    #s6-bar { position: absolute; left: 60px; top: 1260px; width: 960px; height: 14px; border-radius: 7px; background: #262624; }
+    #s6-fill { position: absolute; left: 0; top: 0; width: 960px; height: 14px; border-radius: 7px; background: #dd483f; transform-origin: 0 50%; transform: scaleX(0); }
+  </style>
+  <div id="root" data-composition-id="s6" data-width="1080" data-height="1920">
+
+    <div id="s6-line"><img src="assets/shots/nr-line1.png" data-text-px="37" alt="Apple Newsroom: Up to 13x faster time to first token" />
+      <svg id="s6-ul" class="pen" style="left:386px;top:66px;width:388px;height:24px" viewBox="0 0 100 20" preserveAspectRatio="none"><path vector-effect="non-scaling-stroke" style="stroke-width:8" d="M1 11 C 30 7, 64 13, 99 7" /></svg></div>
+    <div id="s6-sh" class="shard">
+      <video id="s6-va" class="clip" src="assets/clips/x13.mp4" data-start="0.000" data-duration="2.751" data-media-start="1.2" muted playsinline style="left:-180px;top:540px;width:1440px;height:810px;object-fit:cover"></video>
+      <video id="s6-vb" class="clip" src="assets/clips/ai.mp4" data-start="2.711" data-duration="1.899" muted playsinline style="left:-560px;top:270px;width:1600px;height:900px;object-fit:cover"></video>
+    </div>
+    <div id="s6-lab" class="mono">Time to first token</div>
+    <div id="s6-bar"><div id="s6-fill"></div></div>
+  </div>
+  <script>
+    (() => {
+      const tl = gsap.timeline({ paused: true });
+      const at = (abs) => Math.max(0, abs - 20.44);
+      const rise = (sel, t, d = 0.45) => tl.fromTo(sel, { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: d, ease: "expo.out", immediateRender: false }, at(t));
+      const pen = (sel, t, d = 0.36) => tl.to(sel, { strokeDashoffset: 0, duration: d, ease: "power2.inOut" }, at(t));
+      const ring = (sel, t, d = 0.5) => tl.to(sel, { "--p": 360, duration: d, ease: "power2.inOut" }, at(t));
+      const shape = (sel, poly, t, d = 0.3) => tl.to(sel, { clipPath: poly, duration: d, ease: "power3.inOut" }, at(t));
+
+      tl.fromTo("#s6-line", { y: -40, opacity: 0.85 }, { y: 0, opacity: 1, duration: 0.45, ease: "expo.out" }, 0);
+      tl.fromTo("#s6-sh", { x: 1080 }, { x: 0, duration: 0.5, ease: "expo.out" }, 0);
+      pen("#s6-ul path", 21.94, 0.4);
+      shape("#s6-sh", "polygon(40px 600px, 1040px 540px, 1040px 1110px, 40px 1150px)", 2.59, 0.28);
+      // the wait: the bar runs from "wait" until Apple's A.I. starts answering
+      tl.to("#s6-fill", { scaleX: 0.42, duration: 1.38, ease: "none" }, at(23.08));
+      tl.fromTo("#s6-bar", { scaleY: 1 }, { keyframes: [{ scaleY: 2, duration: 0.08 }, { scaleY: 1, duration: 0.2 }], immediateRender: false }, at(24.46));
+      tl.set({}, {}, 4.61);
+      window.__timelines["s6"] = tl;
+    })();
+  </script>
+</template>

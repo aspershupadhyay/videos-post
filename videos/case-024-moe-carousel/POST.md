@@ -1,6 +1,6 @@
-# Case 023 — post copy (Instagram carousel, 9 slides, 4:5)
+# Case 024 — post copy (Instagram carousel, 9 slides, 4:5)
 
-Files (VoiceBox, Files → Images): `case-023-moe-slide-01.png` … `case-023-moe-slide-09.png`. Post them in order.
+Files (VoiceBox, Files → Images): `case-024-moe-slide-01.png` … `case-024-moe-slide-09.png`. Post them in order.
 
 ## Caption
 > Zuckerberg's newest AI is 400 billion parameters. For each word it writes, it uses 17 billion. That's Mixture of

@@ -1,4 +1,4 @@
-# Case 023 — self-audit (2026-10-28)
+# Case 024 — self-audit (2026-10-28)
 
 Three passes on Figma snapshots of all 9 slides at full size, plus the cover in the 3:4 grid crop and at 120 px.
 

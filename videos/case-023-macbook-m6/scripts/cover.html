@@ -1,0 +1,33 @@
+<!doctype html>
+<!-- Case 023 cover (STRATEGY.md §5 template). Rendered to assets/shots/cover.png + renders/cover.png by scripts/make_cover.mjs;
+     frame 0 of the film is this image, which then breaks into two shards. -->
+<html><head><meta charset="utf-8" />
+<style>
+  @font-face { font-family: "Inter"; font-weight: 100 900; src: url("../assets/fonts/Inter.ttf") format("truetype"); }
+  @font-face { font-family: "Instrument Serif"; font-style: italic; font-weight: 400; src: url("../assets/fonts/InstrumentSerif-Italic.woff2") format("woff2"); }
+  @font-face { font-family: "Courier Prime"; font-weight: 700; src: url("../assets/fonts/CourierPrime-Bold.ttf") format("truetype"); }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1080px; height: 1920px; overflow: hidden; position: relative; font-family: "Inter", sans-serif; color: #141414;
+    background: #e7e7e5 url("../assets/logo/paper-1080x1920.png") 0 0 / 1080px 1920px; }
+  #k { position: absolute; left: 76px; top: 262px; font-family: "Courier Prime", monospace; font-weight: 700; font-size: 30px; letter-spacing: 0.12em; text-transform: uppercase; color: #5f5f5c; }
+  #g { position: absolute; left: 76px; top: 318px; font-weight: 600; font-size: 46px; letter-spacing: -0.025em; color: #7b7b77; }
+  #h { position: absolute; left: 76px; top: 392px; width: 960px; font-weight: 800; font-size: 150px; letter-spacing: -0.055em; line-height: 0.93; }
+  .it { position: relative; display: inline-block; font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400; color: #dd483f; letter-spacing: -0.01em; font-size: 1.12em; line-height: 0.8; padding-right: 0.06em; }
+  .ul { position: absolute; left: -2%; bottom: -0.16em; width: 104%; height: 0.3em; overflow: visible; }
+  .ul path { fill: none; stroke: #dd483f; stroke-width: 7; stroke-linecap: round; }
+  #sub { position: absolute; left: 76px; top: 712px; font-weight: 700; font-size: 52px; letter-spacing: -0.025em; color: #3a3a38; }
+  #ph { position: absolute; left: 90px; top: 840px; width: 900px; height: 477px; overflow: hidden; background: #0a0a0a; border: 6px solid #1b1b1b; border-radius: 26px;
+    transform: rotate(-2.5deg); box-shadow: 14px 16px 0 rgba(20, 20, 18, 0.10), 0 34px 70px rgba(20, 20, 18, 0.12); }
+  #ph img { position: absolute; left: 0; top: 0; width: 888px; height: 465px; }
+  #wm { position: absolute; left: 0; top: 1400px; width: 1080px; text-align: center; font-family: "Courier Prime", monospace; font-weight: 700; font-size: 46px; letter-spacing: 0.3em; color: #3f3f3d; }
+  #wm span { position: relative; display: inline-block; color: #dd483f; }
+  #wm img { position: absolute; left: -0.44em; top: -0.36em; width: 1.75em; height: 1.6em; }
+</style></head>
+<body>
+  <div id="k">Case 023 / Apple M6</div>
+  <div id="g">Fact check · Apple's M6 ad</div>
+  <div id="h">13× faster<br />than <span class="it">what?<svg class="ul" viewBox="0 0 100 20" preserveAspectRatio="none"><path vector-effect="non-scaling-stroke" d="M2 12 C 30 7, 66 11, 98 5" /></svg></span></div>
+  <div id="sub">Read the last frame of the ad.</div>
+  <div id="ph"><img src="../assets/shots/cover-still.png" alt="" /></div>
+  <div id="wm">CATCH · THE · <span>E<img src="../assets/logo/circle-crop.png" alt="" /></span>RROR</div>
+</body></html>

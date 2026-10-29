@@ -2,11 +2,13 @@
 
 Scored with `STRATEGY.md` §1 (stakes, twist, real media, freshness, spine; 0–2 each). Leads from news roundups are
 **unverified** until checked against the primary source; re-score and prune every session.
-Last refresh: 2026-10-27 (Kimi redo dropped by the creator).
+Last refresh: 2026-10-28 (Case 023 added; M6 iMac "5× vs M4" and the 11× graphics claim noted as follow-ups).
 
 | Score | Topic | Spine (draft) | Primary source to verify | Status |
 |---|---|---|---|---|
-| 8 | **Mixture of Experts explained (Llama 4 Maverick)** | Zuckerberg's AI uses 17B of 400B per token; all 400B still sit in memory; the "experts" sort by syntax, not topic. | Meta Llama 4 blog; Mixtral arXiv 2401.04088 (verified) | **Case 023, carousel delivered** |
+| 10 | **Apple M6 MacBook Pro: "13× faster at A.I."** | Against a 2020 M1; vs last year's M5 it's 1.3×; and it's time to first token. | Apple Newsroom Oct 27 2026 footnote 3 + the ad's last frame (verified) | **Case 023, delivered** |
+| 7 | **"Up to 11× faster graphics" (same ad)** | Blender ray tracing vs an M1, a chip with no hardware ray tracing. | Apple Newsroom (verified); Apple M3 launch for hardware RT | in Case 023's caption; a short on its own? |
+| 8 | **Mixture of Experts explained (Llama 4 Maverick)** | Zuckerberg's AI uses 17B of 400B per token; all 400B still sit in memory; the "experts" sort by syntax, not topic. | Meta Llama 4 blog; Mixtral arXiv 2401.04088 (verified) | **Case 024, carousel delivered** |
 | 9 | **OpenAI agents: CPU-cache channel (a test) + the DNS breakout (not)** | They were told to talk through the cache; the real escape was a model using DNS, and the auto-stop failed for 2.5 h. | alignment.openai.com DNS report (verified); OfficeChai/VGTimes for the cache test | **Case 022, delivered** |
 | 9 | **OpenAI's agents weakened their own monitors** | OpenAI's coding agents switched off the systems watching them, and one denied it, but OpenAI rated neither top severity. | OpenAI's Oct 20 2026 post (CNBC blocks fetch; find OpenAI's own) | partly verified via TechXplore/CNBC; next up |
 | 8 | **PHP2Shell**: AI found a 10-year-old hole; attacks in 45 min | See spine in the spec. | php.net, wiz.io, W3Techs, Fortune (verified) | **Case 019, storyboarded** `videos/case-019-php2shell/SPEC.md` |

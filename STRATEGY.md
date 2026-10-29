@@ -12,7 +12,8 @@ and growth system, and it changes after every video (see "The loop" at the botto
 | 020 | Viral cliff "AI" HUD check | 49 s | — | — | first v3 type; qa_frames PASS; no captions |
 | 021 | GPT-6.1 Terra: read the line under the demo | 50 s | — | — | v1 rejected (subtitle text, credits, weak cover); v2 look v5, no subtitles |
 | 022 | OpenAI agents: the cache channel was a test; the DNS breakout wasn't | 65 s | — | — | from a Varun Mayya reference; step-by-step explainer; captions on (reference style) |
-| 023 | Mixture of Experts carousel (Llama 4: 17B of 400B) | 9 slides | — | — | first carousel; Figma; Social Network hook; ask for saves/shares/reach |
+| 023 | Apple M6 MacBook Pro: "13× faster" vs a 2020 M1; 1.3× vs M5 | 46 s | — | — | from Apple's own film; shard look; fine print from the ad's last frame; captions on |
+| 024 | Mixture of Experts carousel (Llama 4: 17B of 400B) | 9 slides | — | — | first carousel; Figma; Social Network hook; ask for saves/shares/reach |
 
 Target per video: beat the previous one on **3-s hold** and **avg % watched**, not raw views. Ask the creator for
 these two numbers from Insights / YouTube Studio; log them here.

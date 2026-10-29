@@ -1,0 +1,52 @@
+<template>
+  <style>
+    @font-face { font-family: "Inter"; font-weight: 100 900; font-display: block; src: url("assets/fonts/Inter.ttf") format("truetype"); }
+    @font-face { font-family: "Instrument Serif"; font-style: italic; font-weight: 400; font-display: block; src: url("assets/fonts/InstrumentSerif-Italic.woff2") format("woff2"); }
+    @font-face { font-family: "Courier Prime"; font-weight: 700; font-display: block; src: url("assets/fonts/CourierPrime-Bold.ttf") format("truetype"); }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0a0a0a; color: #f4f2ee; font-family: "Inter", sans-serif; }
+    .h { position: absolute; left: 76px; width: 930px; font-weight: 800; font-size: 118px; letter-spacing: -0.055em; line-height: 0.93; }
+    .it { position: relative; display: inline-block; font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400; color: #dd483f; letter-spacing: -0.01em; font-size: 1.12em; line-height: 0.8; padding-right: 0.06em; }
+    .ul { position: absolute; left: -2%; bottom: -0.16em; width: 104%; height: 0.3em; overflow: visible; }
+    .ul path { fill: none; stroke: #dd483f; stroke-width: 7; stroke-linecap: round; stroke-dasharray: 1400; stroke-dashoffset: 1400; }
+    .mono { position: absolute; font-family: "Courier Prime", monospace; font-weight: 700; font-size: 30px; letter-spacing: 0.14em; text-transform: uppercase; color: #9a9a96; white-space: nowrap; }
+    .row { position: absolute; left: 0; width: 1080px; text-align: center; }
+    .pen { position: absolute; overflow: visible; }
+    .pen path { fill: none; stroke: #dd483f; stroke-width: 8; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1400; stroke-dashoffset: 1400; }
+    .shard { position: absolute; inset: 0; overflow: hidden; }
+    .shard video, .shard img.fill { position: absolute; display: block; }
+    .chip { position: absolute; padding: 10px 20px 12px; border-radius: 12px; background: rgba(10, 10, 10, 0.78); font-weight: 800; font-size: 44px; letter-spacing: -0.03em; white-space: nowrap; }
+    .photo { position: absolute; overflow: hidden; border: 6px solid #f4f2ee; border-radius: 22px; background: #000; box-shadow: 0 40px 90px rgba(0, 0, 0, 0.6); }
+    .photo img { position: absolute; left: 0; top: 0; display: block; }
+
+    #s4-m1 { position: absolute; left: 76px; top: 300px; font-weight: 800; font-size: 330px; letter-spacing: -0.06em; line-height: 0.9; }
+    #s4-yr { position: absolute; left: 600px; top: 388px; font-family: "Instrument Serif", serif; font-style: italic; font-size: 230px; line-height: 0.9; color: #dd483f; opacity: 0; }
+    #s4-ph { left: 90px; top: 780px; width: 900px; height: 518px; }
+    #s4-ph img { width: 888px; height: 506px; }
+  </style>
+  <div id="root" data-composition-id="s4" data-width="1080" data-height="1920">
+
+    <div id="s4-m1">M1</div>
+    <div id="s4-yr">2020<svg id="s4-yu" class="pen" style="left:0px;top:205px;width:380px;height:24px" viewBox="0 0 100 20" preserveAspectRatio="none"><path vector-effect="non-scaling-stroke" style="stroke-width:8" d="M1 11 C 30 7, 64 13, 99 7" /></svg></div>
+    <div id="s4-ph" class="photo"><img src="assets/shots/m1-2020.jpg" alt="Apple's November 2020 press photo of the 13-inch MacBook Pro with M1" /></div>
+  </div>
+  <script>
+    (() => {
+      const tl = gsap.timeline({ paused: true });
+      const at = (abs) => Math.max(0, abs - 12.14);
+      const rise = (sel, t, d = 0.45) => tl.fromTo(sel, { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: d, ease: "expo.out", immediateRender: false }, at(t));
+      const pen = (sel, t, d = 0.36) => tl.to(sel, { strokeDashoffset: 0, duration: d, ease: "power2.inOut" }, at(t));
+      const ring = (sel, t, d = 0.5) => tl.to(sel, { "--p": 360, duration: d, ease: "power2.inOut" }, at(t));
+      const shape = (sel, poly, t, d = 0.3) => tl.to(sel, { clipPath: poly, duration: d, ease: "power3.inOut" }, at(t));
+
+      tl.fromTo("#s4-m1", { scale: 1.6, opacity: 0.85 }, { scale: 1, opacity: 1, duration: 0.5, ease: "expo.out", transformOrigin: "200px 450px" }, 0);
+      tl.fromTo("#s4-m1", { x: 0 }, { x: 20, duration: 2.66, ease: "none", immediateRender: false }, 0.5);
+      tl.fromTo("#s4-ph", { opacity: 1, y: 1200, rotation: -11 }, { opacity: 1, y: 0, rotation: -3, duration: 0.6, ease: "expo.out", immediateRender: false }, at(13.39));
+      tl.set("#s4-ph", { y: 1200 }, 0);
+      tl.fromTo("#s4-ph img", { scale: 1.12 }, { scale: 1, duration: 1.6, ease: "sine.out", immediateRender: false }, at(13.39));
+      tl.fromTo("#s4-yr", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.3, ease: "expo.out", immediateRender: false }, at(14.29));
+      pen("#s4-yu path", 14.64, 0.35);
+      tl.set({}, {}, 3.16);
+      window.__timelines["s4"] = tl;
+    })();
+  </script>
+</template>

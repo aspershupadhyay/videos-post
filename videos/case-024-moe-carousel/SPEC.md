@@ -1,4 +1,4 @@
-# Case 023 — Mixture of Experts (Instagram carousel)
+# Case 024 — Mixture of Experts (Instagram carousel)
 
 First carousel. Built in Figma: https://www.figma.com/design/s5Jo8NJjpLQsqPFvufq1Ew (team CatchTheError, page 1,
 frames `Slide 01 … Slide 09`, 1080×1350 / 4:5). Exports in `renders/` (git-ignored; delivered to VoiceBox, see RENDERS.md).
@@ -36,6 +36,6 @@ slide 4 = the Facemash ranking formula on the dorm window → "every MoE has one
 
 ## Design
 Paper ground (`brand/logo-v3/paper-1080x1920.png`, centre-cropped), Inter Extra Bold headlines (−4.5 %), one Instrument
-Serif Italic red word + pen underline per slide, Courier Prime kicker `CASE 023 / MIXTURE OF EXPERTS` + `n/9`, real
+Serif Italic red word + pen underline per slide, Courier Prime kicker `CASE 024 / MIXTURE OF EXPERTS` + `n/9`, real
 stills as printed photos, real source screenshots on white cards. Red #DD483F only on the pen word, the picked expert,
 the 17B bar and the logo.

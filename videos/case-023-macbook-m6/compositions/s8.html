@@ -1,0 +1,61 @@
+<template>
+  <style>
+    @font-face { font-family: "Inter"; font-weight: 100 900; font-display: block; src: url("assets/fonts/Inter.ttf") format("truetype"); }
+    @font-face { font-family: "Instrument Serif"; font-style: italic; font-weight: 400; font-display: block; src: url("assets/fonts/InstrumentSerif-Italic.woff2") format("woff2"); }
+    @font-face { font-family: "Courier Prime"; font-weight: 700; font-display: block; src: url("assets/fonts/CourierPrime-Bold.ttf") format("truetype"); }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0a0a0a; color: #f4f2ee; font-family: "Inter", sans-serif; }
+    .h { position: absolute; left: 76px; width: 930px; font-weight: 800; font-size: 118px; letter-spacing: -0.055em; line-height: 0.93; }
+    .it { position: relative; display: inline-block; font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400; color: #dd483f; letter-spacing: -0.01em; font-size: 1.12em; line-height: 0.8; padding-right: 0.06em; }
+    .ul { position: absolute; left: -2%; bottom: -0.16em; width: 104%; height: 0.3em; overflow: visible; }
+    .ul path { fill: none; stroke: #dd483f; stroke-width: 7; stroke-linecap: round; stroke-dasharray: 1400; stroke-dashoffset: 1400; }
+    .mono { position: absolute; font-family: "Courier Prime", monospace; font-weight: 700; font-size: 30px; letter-spacing: 0.14em; text-transform: uppercase; color: #9a9a96; white-space: nowrap; }
+    .row { position: absolute; left: 0; width: 1080px; text-align: center; }
+    .pen { position: absolute; overflow: visible; }
+    .pen path { fill: none; stroke: #dd483f; stroke-width: 8; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1400; stroke-dashoffset: 1400; }
+    .shard { position: absolute; inset: 0; overflow: hidden; }
+    .shard video, .shard img.fill { position: absolute; display: block; }
+    .chip { position: absolute; padding: 10px 20px 12px; border-radius: 12px; background: rgba(10, 10, 10, 0.78); font-weight: 800; font-size: 44px; letter-spacing: -0.03em; white-space: nowrap; }
+    .photo { position: absolute; overflow: hidden; border: 6px solid #f4f2ee; border-radius: 22px; background: #000; box-shadow: 0 40px 90px rgba(0, 0, 0, 0.6); }
+    .photo img { position: absolute; left: 0; top: 0; display: block; }
+
+    #s8-a { clip-path: polygon(0px 250px, 1080px 250px, 1080px 610px, 0px 700px); }
+    #s8-b { clip-path: polygon(0px 930px, 1080px 870px, 1080px 1180px, 0px 1180px); }
+    #s8-l1 { left: 60px; top: 276px; }
+    #s8-l2 { left: 60px; top: 960px; }
+    #s8-t1 { top: 735px; font-size: 96px; opacity: 0; }
+    #s8-t2 { top: 1212px; font-size: 96px; opacity: 0; }
+  </style>
+  <div id="root" data-composition-id="s8" data-width="1080" data-height="1920">
+
+    <div id="s8-a" class="shard"><img class="fill" src="assets/shots/m1-2020.jpg" alt="Apple's 2020 photo of the 13-inch MacBook Pro with M1" style="left:-40px;top:200px;width:1160px;height:652px" /></div>
+    <div id="s8-b" class="shard"><video id="s8-v" class="clip" src="assets/clips/funnel.mp4" data-start="2.484" data-duration="2.986" muted playsinline style="left:-280px;top:700px;width:1640px;height:922px;object-fit:cover"></video></div>
+    <div id="s8-l1" class="chip">M1 → M6</div>
+    <div id="s8-l2" class="chip" style="opacity:0">M5 → M6</div>
+    <div id="s8-t1" class="h">Real upgrade.</div>
+    <div id="s8-t2" class="h">Keep your <span class="it" id="s8-it">money.<svg class="ul" viewBox="0 0 100 20" preserveAspectRatio="none" aria-hidden="true"><path vector-effect="non-scaling-stroke" d="M2 12 C 30 7, 66 11, 98 5" /></svg></span></div>
+  </div>
+  <script>
+    (() => {
+      const tl = gsap.timeline({ paused: true });
+      const at = (abs) => Math.max(0, abs - 28.58);
+      const rise = (sel, t, d = 0.45) => tl.fromTo(sel, { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: d, ease: "expo.out", immediateRender: false }, at(t));
+      const pen = (sel, t, d = 0.36) => tl.to(sel, { strokeDashoffset: 0, duration: d, ease: "power2.inOut" }, at(t));
+      const ring = (sel, t, d = 0.5) => tl.to(sel, { "--p": 360, duration: d, ease: "power2.inOut" }, at(t));
+      const shape = (sel, poly, t, d = 0.3) => tl.to(sel, { clipPath: poly, duration: d, ease: "power3.inOut" }, at(t));
+
+      tl.fromTo("#s8-a", { x: -1080 }, { x: 0, duration: 0.5, ease: "expo.out" }, 0);
+      tl.fromTo("#s8-l1", { x: -500 }, { x: 0, duration: 0.5, ease: "expo.out" }, 0.08);
+      tl.fromTo("#s8-a img", { scale: 1.15 }, { scale: 1, duration: 5.47, ease: "sine.out" }, 0);
+      rise("#s8-t1", 30.28, 0.4);
+      tl.fromTo("#s8-b", { x: 1080 }, { x: 0, duration: 0.5, ease: "expo.out", immediateRender: false }, at(31.06));
+      tl.set("#s8-b", { x: 1080 }, 0);
+      tl.fromTo("#s8-l2", { opacity: 1, x: 500 }, { opacity: 1, x: 0, duration: 0.5, ease: "expo.out", immediateRender: false }, at(31.14));
+      tl.to("#s8-a", { opacity: 0.45, duration: 0.3 }, at(31.06));
+      tl.to(["#s8-t1", "#s8-l1"], { opacity: 0.45, duration: 0.3 }, at(31.06));
+      rise("#s8-t2", 32.74, 0.4);
+      pen("#s8-it path", 33.63, 0.35);
+      tl.set({}, {}, 5.47);
+      window.__timelines["s8"] = tl;
+    })();
+  </script>
+</template>

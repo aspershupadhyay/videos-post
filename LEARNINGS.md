@@ -16,7 +16,7 @@ Newest first. Each entry: what happened, what we learned, the rule it became (in
 - Fallback that worked: an `ig_post` target on the board post + `publish_post` (go: save) with the 9 file ids in order;
   this groups them as the Instagram carousel draft.
 
-## 2026-10-28 — Case 023: first carousel (Mixture of Experts, Figma) — could've done better
+## 2026-10-28 — Case 024: first carousel (Mixture of Experts, Figma) — could've done better
 - **Ask:** an MoE carousel in Figma, ct(e) logo (not the retired bug mark), The Social Network's Mark as the hook, no
   clutter, best-practice researched, self-audited.
 - **Carousel practice used** (marketing guides, not Instagram's own numbers, so treat as rough): 4:5 at 1080×1350; 7–10
@@ -43,6 +43,23 @@ Newest first. Each entry: what happened, what we learned, the rule it became (in
 - Could've done better: a `'videos/*/renders'` glob pathspec silently matched nothing inside `filter-branch`; I caught it
   only because I counted reachable render objects after the rewrite. → Always verify a history rewrite by counting what
   should be gone, never by the tool's "rewritten" message.
+## 2026-10-28 — Case 023: Apple's M6 MacBook Pro ad ("13× faster than what?")
+- **Creator asked:** learn from Apple's M6 film (dropped as an MP4: shards, transitions) and make the M6 video, own research
+  and script. The film's best move is on its *last frame*: 8 s of logo + grey fine print, "testing against specific MacBook
+  Pro systems with M1". Apple's newsroom footnote confirms it and gives the real number: 1.3× vs last year's M5. → One spine,
+  best fact at 0 s, all media from Apple itself (film, newsroom footnote, the 2020 M1 press photo). Motion moves logged in
+  `brand/MOTION.md`.
+- The creator wrote "M6 Pro"; there's no M6 Pro chip (the new model is the MacBook Pro *with M6*; Pro/Max stay on M5). The
+  script says "new MacBook Pro". → Check product names against the vendor's page before scripting, even the creator's.
+- One voice job (13 takes incl. 3 hooks + an "M one"/"M1" A/B), 0 re-voices; the model download took 4.5 of the 6.5 min.
+- Gates caught real things: qa_frames FAILED the bare last frame (logo on black = empty on a phone) → printed frame;
+  my own rule-17 check caught screenshot text under the right rail (the DOM gate can't see text inside an image).
+- Could've done better: (1) I drew pen underlines with `pathLength=1` + `vector-effect: non-scaling-stroke`; Chrome draws that
+  dashed. Cost a snapshot round. → `.pen`/`.ul` now dash in screen px (1400). (2) I guessed where Apple's A.I. answer appears
+  in the clip; two snapshot rounds to find it (source 13.63 s, bottom-right). → For any "the moment X happens" beat, scrub the
+  source at 24 fps around it first and note the exact time + position in SPEC. (3) `mix-blend-mode` on an image inside an
+  animated (opacity) group does nothing; lift the source's black to the ground colour in the pixels instead.
+  (4) qa_layout can't see text inside screenshots for the right-rail rule → measure screenshot text boxes against x 940 by hand.
 
 ## 2026-10-27 — Case 022 delivered: cover + VoiceBox-only delivery
 - Cover: frame 0 per the template; my own rule 18 caught a half-cut text line at the bottom of the printed photo →

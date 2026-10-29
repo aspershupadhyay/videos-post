@@ -14,6 +14,21 @@ film, each caused by something on screen. Working code for every move is in `vid
 | **The object becomes real** | 0:23–0:24 a hand sets the die-cast toy down on white | s1 frame 0 + the hook's payoff shot (slowed 2.5×) |
 | **Dot → logo** | 0:27–0:31 a coloured dot pulses, the ChatGPT wordmark and sticker icons pop round it, it resolves into the logo | `brand/motion/logo-sting.html`: our red dot falls onto the rule, then through it, and becomes the circled e |
 
+## From Apple's "MacBook Pro with M6" film (Oct 2026, 48 s, 23.976 fps, black ground)
+| Move | In their film | Our build (Case 023) |
+|---|---|---|
+| **Footage in shards** | 0:02–0:35 every shot lives in an angled 4-point polygon on black; no rectangles | `.shard` (full-frame div) + `clip-path: polygon(...)` in frame px; the clip inside sits in a 16:9 band (`vid()`/`poly()` in `videos/case-023-macbook-m6/scripts/build_scenes.py`) |
+| **The shard morphs at the cut** | the polygon changes shape exactly as the footage inside cuts, so every cut is also a shape change | `shape(sel, poly, t, 0.2–0.3)`: GSAP tweens the polygon string (same 4 points), `power3.inOut`, timed 0.1 s before the clip swap (s2, s9) |
+| **The world breaks** | shards slide apart to reveal the next shot | s1: the cover splits on a diagonal into two `clip-path` halves of the same image that fall away (`power3.in`, 0.62 s, ±7–9° rotation) |
+| **Funnel frame** | 0:18 an inverted trapezoid frames the person; the laptop sits in its neck; "UP TO 13X FASTER AI PERFORMANCE" under it | used their own shot as the hook (slowed 1.75×) |
+| **Type on the shard's edge** | "NEW MACBOOK PRO WITH M6", "24 HOURS OF BATTERY LIFE" set on the shard's diagonal, rotating with it | not used yet (rule 16 keeps type to short lines); next candidate for a title beat |
+| **The last frame** | 0:40–0:48 the Apple logo and two lines of grey fine print, held 8 s | s2/s9: that frame as a white-bordered printed frame (bare, it reads as an EMPTY frame to `qa_frames` and on a phone) |
+
+## Ours (added in Case 023)
+- **The falling dot as a decimal point**: the logo sting's red dot drops (`bounce.out`) between two parted digits: 13× → 1.3×.
+- **Read-along fine print**: a dim copy and a bright copy of the same crop; the bright one's `clip-path: inset(0 X% 0 0)` wipes
+  open as the voice reads it.
+
 ## Ours (brand signatures)
 - **Printed photo**: real footage in a card with a 6 px #1B1B1B border, 26 px radius, offset shadow; lands from below with a
   small rotation that settles to 0 (`expo.out`).

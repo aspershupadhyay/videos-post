@@ -1,0 +1,57 @@
+<template>
+  <style>
+    @font-face { font-family: "Inter"; font-weight: 100 900; font-display: block; src: url("assets/fonts/Inter.ttf") format("truetype"); }
+    @font-face { font-family: "Instrument Serif"; font-style: italic; font-weight: 400; font-display: block; src: url("assets/fonts/InstrumentSerif-Italic.woff2") format("woff2"); }
+    @font-face { font-family: "Courier Prime"; font-weight: 700; font-display: block; src: url("assets/fonts/CourierPrime-Bold.ttf") format("truetype"); }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0a0a0a; color: #f4f2ee; font-family: "Inter", sans-serif; }
+    .h { position: absolute; left: 76px; width: 930px; font-weight: 800; font-size: 118px; letter-spacing: -0.055em; line-height: 0.93; }
+    .it { position: relative; display: inline-block; font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400; color: #dd483f; letter-spacing: -0.01em; font-size: 1.12em; line-height: 0.8; padding-right: 0.06em; }
+    .ul { position: absolute; left: -2%; bottom: -0.16em; width: 104%; height: 0.3em; overflow: visible; }
+    .ul path { fill: none; stroke: #dd483f; stroke-width: 7; stroke-linecap: round; stroke-dasharray: 1400; stroke-dashoffset: 1400; }
+    .mono { position: absolute; font-family: "Courier Prime", monospace; font-weight: 700; font-size: 30px; letter-spacing: 0.14em; text-transform: uppercase; color: #9a9a96; white-space: nowrap; }
+    .row { position: absolute; left: 0; width: 1080px; text-align: center; }
+    .pen { position: absolute; overflow: visible; }
+    .pen path { fill: none; stroke: #dd483f; stroke-width: 8; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1400; stroke-dashoffset: 1400; }
+    .shard { position: absolute; inset: 0; overflow: hidden; }
+    .shard video, .shard img.fill { position: absolute; display: block; }
+    .chip { position: absolute; padding: 10px 20px 12px; border-radius: 12px; background: rgba(10, 10, 10, 0.78); font-weight: 800; font-size: 44px; letter-spacing: -0.03em; white-space: nowrap; }
+    .photo { position: absolute; overflow: hidden; border: 6px solid #f4f2ee; border-radius: 22px; background: #000; box-shadow: 0 40px 90px rgba(0, 0, 0, 0.6); }
+    .photo img { position: absolute; left: 0; top: 0; display: block; }
+
+    #s7-card { position: absolute; left: 70px; top: 560px; width: 940px; height: 500px; border-radius: 30px; background: #141413; border: 2px solid #262624; }
+    #s7-tok { position: absolute; left: 48px; top: 60px; }
+    .pill { position: absolute; height: 40px; border-radius: 20px; background: #5a5a57; opacity: 0; }
+    #s7-a { top: 470px; }
+    #s7-b { top: 1110px; color: #dd483f; opacity: 0; }
+  </style>
+  <div id="root" data-composition-id="s7" data-width="1080" data-height="1920">
+
+    <div id="s7-a" class="mono row">The whole answer: not timed</div>
+    <div id="s7-card"><div id="s7-tok"><span id="s7-p0" class="pill" style="left:0px;top:0px;width:100px"></span><span id="s7-p1" class="pill" style="left:118px;top:0px;width:178px"></span><span id="s7-p2" class="pill" style="left:314px;top:0px;width:82px"></span><span id="s7-p3" class="pill" style="left:414px;top:0px;width:212px"></span><span id="s7-p4" class="pill" style="left:644px;top:0px;width:136px"></span><span id="s7-p5" class="pill" style="left:0px;top:74px;width:162px"></span><span id="s7-p6" class="pill" style="left:180px;top:74px;width:102px"></span><span id="s7-p7" class="pill" style="left:300px;top:74px;width:221px"></span><span id="s7-p8" class="pill" style="left:539px;top:74px;width:119px"></span><span id="s7-p9" class="pill" style="left:676px;top:74px;width:128px"></span><span id="s7-p10" class="pill" style="left:0px;top:148px;width:196px"></span><span id="s7-p11" class="pill" style="left:214px;top:148px;width:83px"></span><span id="s7-p12" class="pill" style="left:315px;top:148px;width:153px"></span><span id="s7-p13" class="pill" style="left:486px;top:148px;width:178px"></span><span id="s7-p14" class="pill" style="left:682px;top:148px;width:102px"></span><span id="s7-p15" class="pill" style="left:0px;top:222px;width:128px"></span><span id="s7-p16" class="pill" style="left:146px;top:222px;width:221px"></span><span id="s7-p17" class="pill" style="left:385px;top:222px;width:94px"></span><span id="s7-p18" class="pill" style="left:497px;top:222px;width:162px"></span><span id="s7-p19" class="pill" style="left:0px;top:296px;width:178px"></span><span id="s7-p20" class="pill" style="left:196px;top:296px;width:110px"></span></div>
+      <div id="s7-ring" style="position:absolute;left:14px;top:28px;width:170px;height:104px;--p:0;-webkit-mask-image:conic-gradient(from 340deg at 50% 50%, #000 calc(var(--p) * 1deg), transparent calc(var(--p) * 1deg));mask-image:conic-gradient(from 340deg at 50% 50%, #000 calc(var(--p) * 1deg), transparent calc(var(--p) * 1deg))"><img src="assets/logo/circle-crop.png" alt="" style="position:absolute;left:0;top:0;width:100%;height:100%" /></div></div>
+    <div id="s7-b" class="mono row">First token: the 13× part</div>
+  </div>
+  <script>
+    (() => {
+      const tl = gsap.timeline({ paused: true });
+      const at = (abs) => Math.max(0, abs - 25.05);
+      const rise = (sel, t, d = 0.45) => tl.fromTo(sel, { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: d, ease: "expo.out", immediateRender: false }, at(t));
+      const pen = (sel, t, d = 0.36) => tl.to(sel, { strokeDashoffset: 0, duration: d, ease: "power2.inOut" }, at(t));
+      const ring = (sel, t, d = 0.5) => tl.to(sel, { "--p": 360, duration: d, ease: "power2.inOut" }, at(t));
+      const shape = (sel, poly, t, d = 0.3) => tl.to(sel, { clipPath: poly, duration: d, ease: "power3.inOut" }, at(t));
+
+      tl.fromTo("#s7-card", { y: 80, scale: 0.94, opacity: 0.85 }, { y: 0, scale: 1, opacity: 1, duration: 0.5, ease: "expo.out" }, 0);
+      // the answer streams in, token by token
+      tl.to(".pill", { opacity: 1, duration: 0.05, stagger: 0.045 }, 0.1);
+      tl.fromTo("#s7-a", { opacity: 0.85 }, { opacity: 1, duration: 0.2 }, 0);
+      // "just how fast it starts": the first token goes red, the rest of the answer fades
+      tl.to("#s7-p0", { backgroundColor: "#dd483f", duration: 0.12 }, at(26.35));
+      tl.to(".pill:not(#s7-p0)", { opacity: 0.55, duration: 0.3 }, at(26.35));
+      ring("#s7-ring", 26.60, 0.45);
+      rise("#s7-b", 26.65, 0.35);
+      tl.fromTo("#s7-card", { scale: 1 }, { scale: 1.08, duration: 2.23, ease: "sine.inOut", transformOrigin: "100px 100px", immediateRender: false }, at(26.35));
+      tl.set({}, {}, 3.53);
+      window.__timelines["s7"] = tl;
+    })();
+  </script>
+</template>
