@@ -93,8 +93,8 @@ Log every new piece of feedback in `LEARNINGS.md` with the date, and promote it 
     our cover + a cold open on their best line, their exchange uncut, captions, a few expressive lines, the logo sting and
     a text ask ("Do you agree with her?"). Credit the source and the speakers in the caption (`POST.md`). Template:
     `videos/case-025-veliz-tech-not-neutral` (`cut_clips.py` per-shot 9:16 crops, `build.py` from the word times).
-24. **Publishing to Instagram: check the caption before anything goes live (Case 025).** `publish_post` with go: now
-    from MCP rewrote the caption from a "post package" ("<Title> (2026)", "Save this for later.", junk hashtags) every
-    time, even after `captions` and go: save had set ours; `publish_status` stop cancelled it before it went live.
-    So: save the plan with our caption (go: save), confirm `ig.caption` in the reply, and ask the creator to tap
-    Publish on the dashboard (their publish keeps the saved caption; the Case 024 carousel went out that way).
+24. **Publishing to Instagram: check the caption before anything goes live (Case 025).** Save the plan with our
+    caption (`publish_post` go: save), confirm `ig.caption` in the reply, then go: now and read the log: a line
+    "…from the post package" means the caption was rewritten → `publish_status` stop at once (it cancels while Instagram
+    is still processing). VoiceBox fixed that override on 2026-10-29 (it rewrote our caption twice before the fix);
+    keep the check anyway.

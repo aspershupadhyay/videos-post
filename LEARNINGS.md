@@ -9,6 +9,8 @@ Newest first. Each entry: what happened, what we learned, the rule it became (in
   per-target `captions` and re-saving the plan (go: save) set it right, but go: now regenerated it again.
 - The creator's own dashboard publish kept the saved caption on Case 024. → Rule 24: save, verify `ig.caption`, the
   creator taps Publish. Worth fixing on the VoiceBox side: "post package" should never override a saved caption.
+- **Fixed by the creator the same day:** the next go: now kept the saved caption (no "post package" line in the log).
+  Rule 24 now says: save, verify, publish, read the log, stop if it was rewritten.
 - Promoted today: rules 22 (YouTube sources → MP4 via VoiceBox), 23 (insight clips), 24 (publish check).
 
 ## 2026-10-29 — Case 025: first insight clip (Carissa Véliz, Nexus Institute) — could've done better
